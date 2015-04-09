@@ -1,0 +1,120 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:jsf="http://java.sun.com/jsf">
+
+	<h1 style="text-align: center;">Articles</h1>
+
+	<div class="row-fluid">
+		<div class="span12">
+			<div class="grid simple ">
+				<div class="grid-title">
+					<h4>
+						Articles <span class="semi-bold">List</span>
+					</h4>
+					<div class="tools">
+						<a href="javascript:;" class="collapse"></a> <a
+							href="javascript:;" class="remove"></a>
+					</div>
+
+				</div>
+
+
+				<div class="grid-body ">
+					<h:form>
+						<h:dataTable rowClasses="order-table-odd-row,order-table-even-row"
+							value="#{ar.articles}" var="o"
+							class="table table-hover table-condensed" id="example3">
+
+							<h:column>
+
+								<f:facet name="header" style="widf:facet:10%"
+									data-hide="phone,tablet">Name</f:facet>
+
+								<h:inputText value="#{o.name}" size="10"
+									rendered="#{o.editable}" />
+								<h:outputText value="#{o.name}" rendered="#{not o.editable}" />
+
+							</h:column>
+							<h:column>
+								<f:facet name="header" style="widf:facet:10%"
+									data-hide="phone,tablet">Author</f:facet>
+								<h:inputText value="#{o.author}" size="10"
+									rendered="#{o.editable}" />
+								<h:outputText value="#{o.author}" rendered="#{not o.editable}" />
+							</h:column>
+							<h:column>
+								<f:facet name="header" style="widf:facet:10%"
+									data-hide="phone,tablet">date</f:facet>
+								<h:inputText value="#{o.date}" size="10"
+									rendered="#{o.editable}">
+									<f:convertDateTime />
+								</h:inputText>
+								<h:outputText value="#{o.date}" rendered="#{not o.editable}" />
+							</h:column>
+							<h:column>
+								<f:facet name="header" style="widf:facet:10%"
+									data-hide="phone,tablet">Topic</f:facet>
+								<h:inputText value="#{o.topic}" size="10"
+									rendered="#{o.editable}" />
+								<h:outputText value="#{o.topic}" rendered="#{not o.editable}" />
+							</h:column>
+
+
+							<h:column>
+								<f:facet name="header" style="widf:facet:10%"
+									data-hide="phone,tablet">
+
+								</f:facet>
+
+								<div style="color: red">
+
+									<h:commandLink action="#{ar.delete(o)}"
+										class="fa fa-times-circle-o" value="Delete" />
+
+
+
+								</div>
+								<!--  <button type="button" class="btn btn-primary btn-sm btn-small" style="margin-left:300px" data-toggle="modal" data-target="#myModal">ADD</button>   -->
+							</h:column>
+
+
+							<h:column>
+								<f:facet name="header" style="widf:facet:10%"
+									data-hide="phone,tablet">
+
+								</f:facet>
+								<div class="fa-hover col-md-3 col-sm-4">
+
+									<h:commandLink class="fa fa-times-circle-o" value="Update"
+										action="#{ar.editAction(o)}" rendered="#{not o.editable}" >
+										 <f:setPropertyActionListener value="#{o}" target="#{ar.article}"></f:setPropertyActionListener> 
+									</h:commandLink>
+
+								</div>
+								<!--  <button type="button" class="btn btn-primary btn-sm btn-small" style="margin-left:300px" data-toggle="modal" data-target="#myModal">ADD</button>   -->
+							</h:column>
+
+							<h:column>
+								<f:facet name="header" style="widf:facet:10%"
+									data-hide="phone,tablet">
+
+								</f:facet>
+								<div class="fa-hover col-md-3 col-sm-4">
+
+									<h:commandButton class="fa fa-times-circle-o" value="Submit"
+										action="#{ar.saveAction()}" />
+								</div>
+								<!--  <button type="button" class="btn btn-primary btn-sm btn-small" style="margin-left:300px" data-toggle="modal" data-target="#myModal">ADD</button>   -->
+							</h:column>
+
+						</h:dataTable>
+					</h:form>
+
+				</div>
+			</div>
+		</div>
+	</div>
+
+</ui:composition>
