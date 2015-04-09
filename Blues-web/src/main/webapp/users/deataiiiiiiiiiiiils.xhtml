@@ -1,0 +1,69 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html">
+	
+	<div class="col-md-16" >
+          <div class="grid simple no-border">
+            <div class="  descriptive clickable">
+              <div class="actions"><button type="button" class="btn btn-success btn-cons">Details</button></div>
+            </div>
+            
+            <div class="grid-body  no-border" style="display:none">
+    			<form class="" id="new-ticket-form">
+              <div class="form-actions">
+                <div class="row form-row">
+                  <div class="col-md-30">
+                    First Name:<h:outputText  value="#{usersBean.selectedCustomer.firstName}" type="text" placeholder="Subject" class="form-control"  id="txtFirst" name="txtFirst"/>
+                  </div>
+                  <div class="col-md-30">
+                    <h:outputText value="#{usersBean.selectedCustomer.lastName}" type="text" placeholder="Department" class="form-control"    id="txtLast" name="txtLast"/>
+                  </div>
+                </div>
+                
+                <div class="row form-row">
+                 <div class="col-md-30">
+                    <h:outputText value="#{usersBean.selectedCustomer.address}" type="text" placeholder="Department" class="form-control" id="txtAddress" name="txtAddress"/>
+                  </div>
+                  <div class="col-md-30">
+                    <h:outputText value="#{usersBean.selectedCustomer.nationality}" type="text" placeholder="Department" class="form-control" id="txtNationality" name="txtNationality"/>
+                  </div>
+                </div>
+                
+                <div class="row form-row">
+                 <div class="col-md-30">
+                    <h:outputText value="#{usersBean.selectedCustomer.job}" type="text" placeholder="Department" class="form-control" id="txtJob" name="txtJob"/>
+                  </div>
+                  <div class="col-md-30">
+                    <h:outputText value="#{usersBean.selectedCustomer.phoneNumber}" type="text" placeholder="Department" class="form-control" id="txtPhone" name="txtPhone"/>
+                  </div>
+                </div>
+                
+                <div class="row form-row">
+                 <div class="col-md-30">
+                    <h:outputText value="#{usersBean.selectedCustomer.email}" type="text" placeholder="Department" class="form-control" id="txtEmail" name="txtEmail"/>
+                  </div>
+                  <div class="col-md-30">
+                    <h:outputText value="#{usersBean.selectedCustomer.password}" type="text" placeholder="Department" class="form-control" id="txtPassword" name="txtPassword"/>
+                  </div>
+                </div>
+                
+                <div class="row form-row">
+                 <div class="col-md-30">
+                    <h:outputText value="#{usersBean.selectedCustomer.profilePicture}" type="text" placeholder="Department" class="form-control" id="txtPic" name="txtPic"/>
+                  </div>
+                </div>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+
+	
+	
+	
+	
+	
+	
+	
+</ui:composition>

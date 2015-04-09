@@ -1,0 +1,38 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html">
+	
+
+      <div class="clearfix"></div>
+      <div class="row">
+        <div class="col-md-12">
+          <div class="grid simple transparent" id="new-ticket-wrapper" style="display:none">
+            <div class="grid-title no-border">
+              <h4 class="semi-bold">Add Bonus</h4>
+            </div>
+            <div class="grid-body">
+              <h:form class="" id="new-ticket-form">
+              
+                <div class="row form-row">
+                  <div class="col-md-6">
+                    <h:inputText value="#{usersBean.bonus}" type="text" placeholder="Subject" class="form-control"  id="txtFirst" name="txtFirst"/>
+                  </div>
+                  
+                </div>
+                
+                <div class="row form-row">
+                  <div class="col-md-12 margin-top-10">
+                    <div class="pull-right">
+                      <button class="btn btn-cons" type="button" id="btn-close-ticket">Close</button>
+                      <h:form><h:commandButton class="btn btn-primary btn-cons" action="#{usersBean.doAddbonus()}" value="Add"/></h:form>
+                    </div>
+                  </div>
+                </div>
+              </h:form>
+            </div>
+          </div>
+        </div>
+      </div>
+	
+	</ui:composition>

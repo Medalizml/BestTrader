@@ -1,0 +1,74 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html">
+	
+		
+      
+      <div class="clearfix"></div>
+      <div class="row">
+        <div class="col-md-12">
+          <div class="grid simple transparent" id="new-ticket-wrapper" style="display:none">
+            <div class="grid-title no-border">
+              <h4 class="semi-bold">Add New User</h4>
+            </div>
+            <div class="grid-body">
+              <form class="" id="new-ticket-form">
+              
+                <div class="row form-row">
+                  <div class="col-md-6">
+                    <h:inputText value="" type="text" placeholder="Subject" class="form-control"  id="txtFirst" name="txtFirst"/>
+                  </div>
+                  <div class="col-md-6">
+                    <h:inputText type="text" placeholder="Department" class="form-control"    id="txtLast" name="txtLast"/>
+                  </div>
+                </div>
+                
+                <div class="row form-row">
+                 <div class="col-md-6">
+                    <h:inputText type="text" placeholder="Department" class="form-control" id="txtAddress" name="txtAddress"/>
+                  </div>
+                  <div class="col-md-6">
+                    <h:inputText type="text" placeholder="Department" class="form-control" id="txtNationality" name="txtNationality"/>
+                  </div>
+                </div>
+                
+                <div class="row form-row">
+                 <div class="col-md-6">
+                    <h:inputText type="text" placeholder="Department" class="form-control" id="txtJob" name="txtJob"/>
+                  </div>
+                  <div class="col-md-6">
+                    <h:inputText type="text" placeholder="Department" class="form-control" id="txtPhone" name="txtPhone"/>
+                  </div>
+                </div>
+                
+                <div class="row form-row">
+                 <div class="col-md-6">
+                    <h:inputText type="text" placeholder="Department" class="form-control" id="txtEmail" name="txtEmail"/>
+                  </div>
+                  <div class="col-md-6">
+                    <h:inputText type="text" placeholder="Department" class="form-control" id="txtPassword" name="txtPassword"/>
+                  </div>
+                </div>
+                
+                <div class="row form-row">
+                 <div class="col-md-8">
+                    <h:inputText type="text" placeholder="Department" class="form-control" id="txtPic" name="txtPic"/>
+                  </div>
+                </div>
+                
+                <div class="row form-row">
+                  <div class="col-md-12 margin-top-10">
+                    <div class="pull-right">
+                      <button class="btn btn-cons" type="button" id="btn-close-ticket">Close</button>
+                      <button class="btn btn-primary btn-cons" type="submit" >Submit</button>
+                    </div>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+	
+	</ui:composition>

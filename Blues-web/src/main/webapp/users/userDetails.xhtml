@@ -1,0 +1,83 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:jsf="http://java.sun.com/jsf"
+	xmlns:p="http://xmlns.jcp.org/jsf/passthrough">
+
+
+
+
+		
+	
+		<div class="grid simple ">
+			
+			<div class=" tiles white col-md-12 no-padding">
+				<div class="tiles green cover-pic-wrapper">
+					<div class="overlayer bottom-right">
+						<div class="overlayer-wrapper"></div>
+					</div>
+					<h:graphicImage value="/resource/img/profiles/fountain_pen.jpg" />
+				</div>
+				<div class="tiles white">
+
+					<div class="row">
+						<div class="col-md-3 col-sm-3">
+							<div class="user-profile-pic">
+
+								<h:graphicImage value="/resource/img/profiles/1.png" />
+							</div>
+						</div>
+
+						<h3 class="text-success semi-bold">
+							#{usersBean.selectedCustomer.firstName}
+							#{usersBean.selectedCustomer.lastName}</h3>
+						<div class="col-md-8 user-description-box  col-sm-5"
+							style="margin-left: 100px; margin-top: 20px">
+							<br />
+							<h:form>
+								<p>
+									<i class="fa fa-briefcase"></i><i style="color: blue">Job :</i>&#160;&#160;&#160;&#160;
+									<h:outputText value="#{usersBean.selectedCustomer.job}" />
+								</p>
+							</h:form>
+							<h:form>
+								<p>
+									<i class="fa fa-globe"></i><i style="color: blue">Email :</i>&#160;&#160;&#160;&#160;
+									<h:outputText value="#{usersBean.selectedCustomer.email}" />
+								</p>
+							</h:form>
+							<h:form>
+								<p>
+									<i class="fa fa-home"></i><i style="color: blue">Address :</i>&#160;&#160;&#160;&#160;
+									<h:outputText value="#{usersBean.selectedCustomer.address}" />
+								</p>
+							</h:form>
+							<h:form>
+								<p>
+									<i class="fa fa-briefcase"></i><i style="color: blue">Nationality
+										:</i>&#160;&#160;&#160;&#160;
+									<h:outputText value="#{usersBean.selectedCustomer.nationality}" />
+								</p>
+							</h:form>
+							<h:form>
+								<p>
+									<i class="fa fa-briefcase"></i><i style="color: blue">Phone_Number
+										:</i>&#160;&#160;&#160;&#160;
+									<h:outputText value="#{usersBean.selectedCustomer.phoneNumber}" />
+								</p>
+							</h:form>
+						</div>
+
+					</div>
+					<div class="tiles-body">
+						<div class="row" style="margin-left: 200px">
+	
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	
+
+</ui:composition>
