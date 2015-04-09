@@ -1,0 +1,186 @@
+
+
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html">
+
+	<div class="row spacing-bottom 2col">
+		<div class="col-md-3 col-sm-6 spacing-bottom-sm spacing-bottom">
+			<div class="tiles blue added-margin">
+				<div class="tiles-body">
+					<div class="controller">
+						<a href="javascript:;" class="reload"></a> <a href="javascript:;"
+							class="remove"></a>
+					</div>
+					<div class="tiles-title">TODAY’S SERVER LOAD</div>
+					<div class="heading">
+						<span class="animate-number" data-value="26.8"
+							data-animation-duration="1200">26.8</span>%
+
+					</div>
+					<div class="progress transparent progress-small no-radius">
+						<div class="progress-bar progress-bar-white animate-progress-bar"
+							data-percentage="26.8%" style="width: 26.8%;"></div>
+					</div>
+					<div class="description">
+						<i class="icon-custom-up"></i><span
+							class="text-white mini-description ">&#160; 4% <span
+							class="blend"><h:outputText value="#{statBean.test}" /> than last month</span></span>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="col-md-3 col-sm-6 spacing-bottom-sm spacing-bottom">
+			<div class="tiles green added-margin">
+				<div class="tiles-body">
+					<div class="controller">
+						<a href="javascript:;" class="reload"></a> <a href="javascript:;"
+							class="remove"></a>
+					</div>
+					<div class="tiles-title">TODAY’S VISITS</div>
+					<div class="heading">
+						<span class="animate-number" data-value="2545665"
+							data-animation-duration="1000">2,545,665</span>
+					</div>
+					<div class="progress transparent progress-small no-radius">
+						<div class="progress-bar progress-bar-white animate-progress-bar"
+							data-percentage="79%" style="width: 79%;"></div>
+					</div>
+					<div class="description">
+						<i class="icon-custom-up"></i><span
+							class="text-white mini-description ">&#160; 2% higher <span
+							class="blend">than last month</span></span>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="col-md-3 col-sm-6 spacing-bottom">
+			<div class="tiles red added-margin">
+				<div class="tiles-body">
+					<div class="controller">
+						<a href="javascript:;" class="reload"></a> <a href="javascript:;"
+							class="remove"></a>
+					</div>
+					<div class="tiles-title">TODAY’S SALES</div>
+					<div class="heading">
+						$ <span class="animate-number" data-value="14500"
+							data-animation-duration="1200">14,500</span>
+					</div>
+					<div
+						class="progress transparent progress-white progress-small no-radius">
+						<div class="progress-bar progress-bar-white animate-progress-bar"
+							data-percentage="45%" style="width: 45%;"></div>
+					</div>
+					<div class="description">
+						<i class="icon-custom-up"></i><span
+							class="text-white mini-description ">&#160; 5% higher <span
+							class="blend">than last month</span></span>
+					</div>
+				</div>
+			</div>
+
+		</div>
+		<div class="col-md-3 col-sm-6">
+			<div class="tiles purple added-margin">
+				<div class="tiles-body">
+					<div class="controller">
+						<a href="javascript:;" class="reload"></a> <a href="javascript:;"
+							class="remove"></a>
+					</div>
+					<div class="tiles-title">TODAY’S FEEDBACKS</div>
+					<div class="row-fluid">
+						<div class="heading">
+							<span class="animate-number" data-value="1600"
+								data-animation-duration="700">1,600</span>
+						</div>
+						<div
+							class="progress transparent progress-white progress-small no-radius">
+							<div class="progress-bar progress-bar-white animate-progress-bar"
+								data-percentage="12%" style="width: 12%;"></div>
+						</div>
+					</div>
+					<div class="description">
+						<i class="icon-custom-up"></i><span
+							class="text-white mini-description ">&#160; 3% higher <span
+							class="blend">than last month</span></span>
+					</div>
+
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="col-md-4">
+		<div class="grid simple">
+			<div class="grid-title no-border">
+				<h4>
+					Morris <span class="semi-bold">Charts</span>
+				</h4>
+				<div class="tools">
+					<a href="javascript:;" class="collapse"></a> <a href="#grid-config"
+						data-toggle="modal" class="config"></a> <a href="javascript:;"
+						class="reload"></a> <a href="javascript:;" class="remove"></a>
+				</div>
+			</div>
+			<div class="grid-body no-border">
+				<h4>
+					Morris <span class="semi-bold">Donut Charts</span>
+				</h4>
+				<p>Similar to pie charts, doughnut charts are great for showing
+					proportional data.Chart.js offers the same customisation options as
+					for pie charts, but with a custom sized inner cutout to turn your
+					pies into doughnuts.</p>
+				<div id="donut-example" style="height: 200px;">
+					<svg height="200" version="1.1" width="277"
+						xmlns="http://www.w3.org/2000/svg"
+						style="overflow: hidden; position: relative;">
+                <desc
+							style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);">Created with Raphaël 2.1.0</desc>
+                <defs
+							style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></defs>
+                <path fill="none" stroke="#60bfb6"
+							d="M138.5,160A60,60,0,0,0,195.45770043472743,118.86320124442965"
+							stroke-width="2" opacity="0"
+							style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); opacity: 0;"></path>
+                <path fill="#60bfb6" stroke="#ffffff"
+							d="M138.5,163A63,63,0,0,0,198.3055854564638,119.80636130665113L219.19007561586383,126.72286842960867A85,85,0,0,1,138.5,185Z"
+							stroke-width="3"
+							style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></path>
+                <path fill="none" stroke="#91cdec"
+							d="M195.45770043472743,118.86320124442965A60,60,0,0,0,84.7086089202603,73.42019101448432"
+							stroke-width="2" opacity="1"
+							style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); opacity: 1;"></path>
+                <path fill="#91cdec" stroke="#ffffff"
+							d="M198.3055854564638,119.80636130665113A63,63,0,0,0,82.01903936627332,72.09120056520852L57.812913380390455,60.13028652172646A90,90,0,0,1,223.9365506520911,128.29480186664446Z"
+							stroke-width="3"
+							style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></path>
+                <path fill="none" stroke="#eceff1"
+							d="M84.7086089202603,73.42019101448432A60,60,0,0,0,138.48115044438853,159.9999970391187"
+							stroke-width="2" opacity="0"
+							style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); opacity: 0;"></path>
+                <path fill="#eceff1" stroke="#ffffff"
+							d="M82.01903936627332,72.09120056520852A63,63,0,0,0,138.48020796660796,162.99999689107466L138.47329646288375,184.99999580541817A85,85,0,0,1,62.2955293037021,62.345270603852775Z"
+							stroke-width="3"
+							style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></path>
+                <text x="138.5" y="90" text-anchor="middle"
+							font="10px &quot;Arial&quot;" stroke="none" fill="#000000"
+							style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); text-anchor: middle; font-style: normal; font-variant: normal; font-weight: 800; font-stretch: normal; font-size: 15px; line-height: normal; font-family: Arial;"
+							font-size="15px" font-weight="800"
+							transform="matrix(0.931,0,0,0.931,9.5517,6.9655)"
+							stroke-width="1.0740740740740742">
+                <tspan dy="6"
+							style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);">In-Store Sales</tspan></text>
+                <text x="138.5" y="110" text-anchor="middle"
+							font="10px &quot;Arial&quot;" stroke="none" fill="#000000"
+							style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); text-anchor: middle; font-style: normal; font-variant: normal; font-weight: normal; font-stretch: normal; font-size: 14px; line-height: normal; font-family: Arial;"
+							font-size="14px" transform="matrix(1.25,0,0,1.25,-34.625,-25.5)"
+							stroke-width="0.8">
+						<tspan dy="5"
+							style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);">30</tspan></text></svg>
+				</div>
+			</div>
+		</div>
+	</div>
+
+</ui:composition>
+
