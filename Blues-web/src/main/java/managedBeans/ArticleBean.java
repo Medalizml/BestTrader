@@ -119,7 +119,7 @@ public class ArticleBean implements Serializable {
 			System.out.println(year);
 			Integer month = date.getMonth();
 			System.out.println(month);
-			Integer day = date.getDay();
+			Integer day = date.getDate();
 			System.out.println(day);
 			java.sql.Date date1 = new java.sql.Date(year, month, day);
 			article.setDate(date1);
