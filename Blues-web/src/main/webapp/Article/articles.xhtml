@@ -3,7 +3,8 @@
 	xmlns:ui="http://java.sun.com/jsf/facelets"
 	xmlns:f="http://java.sun.com/jsf/core"
 	xmlns:h="http://java.sun.com/jsf/html"
-	xmlns:p="http://primefaces.org/ui" xmlns:jsf="http://java.sun.com/jsf">
+	xmlns:p="http://primefaces.org/ui" 
+	xmlns:jsf="http://xmlns.jcp.org/jsf">
 
 
 	<!--  ******************************************************************************* -->
@@ -66,11 +67,24 @@
 
 						<div class="input-with-icon  right">
 							<i class="" />
-							<h:inputTextarea jsf:value="#{ar.article.topic}"
+							<h:inputTextarea value="#{ar.article.topic}"
 								name="form1CardNumber" id="form1CardNumber" class="form-control" />
 						</div>
 					</div>
-
+					
+				    	
+				  <div class="form-group">
+						<label class="form-label">Date</label>
+				  <div class="input-append success date col-md-10 col-lg-6 no-padding">
+                    
+                    <h:inputText  class="form-control" value="#{ar.dateTest}" id="dateOfExpense"  />
+                    <span class="add-on"><span class="arrow"></span><i class="fa fa-th"></i></span>
+					</div>
+					</div>
+					
+					
+							<br></br>
+							<br></br>
 					<div class="form-actions">
 
 						<div class="pull-right">

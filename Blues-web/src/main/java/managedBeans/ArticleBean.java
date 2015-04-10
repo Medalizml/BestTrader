@@ -6,9 +6,14 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
 import java.io.Serializable;
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
+
+
+
 
 
 import javax.annotation.PostConstruct;
@@ -20,6 +25,9 @@ import javax.faces.bean.ManagedBean;
 
 import javax.faces.bean.ViewScoped;
 import javax.faces.context.FacesContext;
+
+
+
 
 
 
@@ -41,7 +49,7 @@ public class ArticleBean implements Serializable {
 	
 	private String destination="resource\\img\\";
 	private String serveurPath="C:\\JAVAEE\\serveur\\wildfly-8.2.0.Final\\standalone\\deployments\\Blues-web.war\\";
-	
+	private String dateTest;
 	
 	
 	
@@ -96,18 +104,51 @@ public class ArticleBean implements Serializable {
 	
 	public String inscrire() {
 		
+		SimpleDateFormat sdf = new SimpleDateFormat("MM/dd/yyyy");
+	    try {
+			dateTest=sdf.format(sdf.parse(dateTest));
+			System.out.println(dateTest+"     1");
+		} catch (ParseException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		Date date=new Date(dateTest);
 		
-		 
+			
+			Integer year = date.getYear();
+			System.out.println(year);
+			Integer month = date.getMonth();
+			System.out.println(month);
+			Integer day = date.getDay();
+			System.out.println(day);
+			java.sql.Date date1 = new java.sql.Date(year, month, day);
+			article.setDate(date1);
+			System.out.println(date1);
+			
+			System.out.println(date);
+			
+			
 		
-		articleServicesWeb.add(article);
+	    
+	    articleServicesWeb.add(article);
 		//FacesMessage message = new FacesMessage("Succès de l'inscription !");
 		//FacesContext.getCurrentInstance().addMessage(null, message);
 		article = new Article();
 		this.init();
+		 
+		
 	
 		return null;
 	}
-	 public void addMessage(String summary) {
+	 public String getDateTest() {
+		return dateTest;
+	}
+
+	public void setDateTest(String dateTest) {
+		this.dateTest = dateTest;
+	}
+
+	public void addMessage(String summary) {
 	        FacesMessage message = new FacesMessage(FacesMessage.SEVERITY_INFO, summary,  null);
 	        FacesContext.getCurrentInstance().addMessage(null, message);
 	    }
@@ -136,6 +177,8 @@ public class ArticleBean implements Serializable {
 	public void setArticle(Article article) {
 		this.article = article;
 	}
+
+	
 
 
 	
