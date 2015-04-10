@@ -4,6 +4,7 @@
       xmlns:ui="http://java.sun.com/jsf/facelets"
       xmlns:f="http://java.sun.com/jsf/core"
       xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f4j2="http://java.sun.com/jsf/composite/flot4jsf2"
       template="/WEB-INF/template/template.xhtml">
       <ui:define name="pageTitle">Charts</ui:define>
       <ui:define name="content">
@@ -13,13 +14,13 @@
         <h3>Back- <span class="semi-bold">Users</span></h3>
      </div>
      
-      <h3 align="center">User <span class="semi-bold">Details</span></h3>
+      <h2 align="left">#{statBean.customer.firstName} <span class="semi-bold">#{statBean.customer.lastName}</span></h2>
 	
 					<br />
        <div class="col-xs-6 .col-md-6">
       <ui:include src="/statistiques/userChart.xhtml" />
       </div>
-       
+    
       </ui:define>
       
 			

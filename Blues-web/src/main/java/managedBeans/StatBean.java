@@ -77,7 +77,12 @@ public class StatBean implements Serializable {
 
 	public String put(Customer customer){
 		StatBean.customer=customer;
-		return "userChart";
+		System.out.println(customer.getFirstName());
+		return "userCharts";
+	}
+	public Integer getRank(){
+		return statServices.getOrderedList().indexOf(customer)+1;
+		
 	}
 
 	public boolean isOpen() {

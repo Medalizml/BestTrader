@@ -32,14 +32,14 @@
 
 							<h:column>
 								<f:facet name="header" style="widf:facet:10%"
-									data-hide="phone,tablet">First Name</f:facet>
-                      #{o.firstName}
+									data-hide="phone,tablet">Name</f:facet>
+                      #{o.firstName} #{o.lastName}
 									
                     </h:column>
 							<h:column>
 								<f:facet name="header" style="widf:facet:10%"
-									data-hide="phone,tablet">Last Name</f:facet>
-						#{o.lastName}
+									data-hide="phone,tablet">Job</f:facet>
+						#{o.job}
                     </h:column>
 
 							<h:column>
@@ -52,20 +52,21 @@
 									data-hide="phone,tablet">Portfolio Value</f:facet>
 						#{o.portfolio.value}
                     </h:column>
+                    <h:column>
+								<f:facet name="header" style="widf:facet:10%"
+									data-hide="phone,tablet">Benefit</f:facet>
+						#{o.portfolio.gain}
+                    </h:column>
 							<h:column>
 								<f:facet name="header" style="widf:facet:10%"
 									data-hide="phone,tablet"></f:facet>
 
 								<h:form>
 									<h:commandLink action="#{statBean.put(o)}"
-										class="btn btn-info dropdown-toggle btn-demo-space">
-										<i class="fa fa-info"></i>&#160;Info</h:commandLink>
+										class="btn btn-success btn-cons">
+										<i class="fa fa-bar-chart-o"></i>&#160;See Charts</h:commandLink>
 										</h:form>
 							</h:column>
-							
-
-
-							<!--<ui:include src="/users/deataiiiiiiiiiiiils.xhtml" />-->
 						</h:dataTable>
 					</table>
 
