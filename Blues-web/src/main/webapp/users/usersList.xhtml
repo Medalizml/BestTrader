@@ -13,7 +13,6 @@
 		<li><a href="#" class="active">Users</a></li>
 	</ul>
 
-	<ui:include src="/users/addUser.xhtml" />
 
 
 	<div class="row-fluid">
@@ -57,7 +56,7 @@
 								data-hide="phone,tablet"></f:facet>
 
 							 <h:form>
-								<h:commandLink action="#{usersBean.insert(o)}"  class="btn btn-info dropdown-toggle btn-demo-space" ><i class="fa fa-info"></i>&#160;Info</h:commandLink>								
+								<h:commandLink action="#{usersBean.insert(o)}"  class="btn btn-info dropdown-toggle btn-demo-space btn-sm btn-small" ><i class="fa fa-info"></i>&#160;Info</h:commandLink>								
 								<!-- 									<button  class="btn btn-lg" -->
 <!-- 										data-toggle="modal" data-target="#myModal" > -->
 									
@@ -67,7 +66,7 @@
 							<h:column>
 							<f:facet name="header" style="widf:facet:10%"
 								data-hide="phone,tablet"></f:facet>
-								<h:form><h:commandLink   class="btn btn-danger btn-cons" action="#{usersBean.doDeleteUser(o)}" ><i class="fa fa-times"></i>&#160;Delete
+								<h:form><h:commandLink   class="btn btn-danger btn-cons btn-sm btn-small" action="#{usersBean.doDeleteUser(o)}" ><i class="fa fa-times"></i>&#160;Delete
 									<!--  <i class="fa fa-trash-o"></i>&#160;<span class="bold">Delete</span>-->
 								</h:commandLink></h:form>
 							</h:column>
@@ -83,16 +82,6 @@
 	</div>
 	
 	
-<script type="text/javascript">
-function fn(){
-
-	window.location.href="http://www.google.com";
-}
-function poponload()
-{
-    testwindow = window.open("http://localhost:8080/Blues-web/welcome.xhtml", "mywindow", "location=1,status=1,scrollbars=1,width=700,height=700","resizable=no");
-    testwindow.moveTo(0, 0);
-}
-</script>	
+<ui:include src="/users/listNoActif.xhtml" />	
 					
 </ui:composition>

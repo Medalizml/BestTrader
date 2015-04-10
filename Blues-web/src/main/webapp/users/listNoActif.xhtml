@@ -1,0 +1,80 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:jsf="http://java.sun.com/jsf"
+	xmlns:p="http://xmlns.jcp.org/jsf/passthrough">
+
+
+	<div class="row-fluid">
+		<div class="span12">
+			<div class="grid simple ">
+				<div class="grid-title">
+					<h4>
+						List Of Users<span class="semi-bold"> No Actif</span>
+					</h4>
+				</div>
+
+				<div class="grid-body ">
+
+					<h:dataTable value="#{usersBean.list1}" var="a"
+						class="table table-hover table-condensed" id="example3">
+
+						<h:column>
+							<f:facet name="header" style="widf:facet:10%"
+								data-hide="phone,tablet">First Name</f:facet>
+                     #{a.firstName}
+									
+                    </h:column>
+						<h:column>
+							<f:facet name="header" style="widf:facet:10%"
+								data-hide="phone,tablet">Last Name</f:facet>
+						#{a.lastName}
+                    </h:column>
+
+						<h:column>
+							<f:facet name="header" style="widf:facet:10%"
+								data-hide="phone,tablet">Nationality</f:facet>
+						#{a.nationality}
+                    	</h:column>
+
+						<h:column>
+							<f:facet name="header" style="widf:facet:10%"
+								data-hide="phone,tablet">Job</f:facet>
+						#{a.job}
+                    	</h:column>
+
+
+						<h:column>
+							<f:facet name="header" style="widf:facet:10%"
+								data-hide="phone,tablet">Age</f:facet>
+						#{a.age}
+                    	</h:column>
+
+						<h:column>
+							<f:facet name="header" style="widf:facet:10%"
+								data-hide="phone,tablet"></f:facet>
+							  <h:form>
+								<h:commandLink class="btn btn-success btn-cons btn-sm btn-small"
+									action="#{usersBean.doActivateUser(a)}">
+									<i class="fa fa-check-square"></i>&#160;&#160;Activate
+								</h:commandLink>
+							</h:form>
+						</h:column>
+						<h:column>
+							<f:facet name="header" style="widf:facet:10%"
+								data-hide="phone,tablet"></f:facet>
+							<h:form>
+								<h:commandLink class="btn btn-danger btn-cons btn-sm btn-small"
+									action="#{usersBean.doDeleteUser(a)}">
+									<i class="fa fa-times"></i>&#160;Refuse
+								</h:commandLink>
+							</h:form>
+						</h:column>
+					</h:dataTable>
+				</div>
+			</div>
+		</div>
+	</div>
+
+</ui:composition>
