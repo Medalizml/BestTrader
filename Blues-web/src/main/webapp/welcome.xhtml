@@ -5,9 +5,13 @@
       xmlns:f="http://java.sun.com/jsf/core"
       xmlns:h="http://java.sun.com/jsf/html"
       template="/WEB-INF/template/template.xhtml">
-      <ui:define name="pageTitle">hhhhhhhhh</ui:define>
+
+      <ui:define name="pageTitle">Dashboard</ui:define>
+
+    
       <ui:define name="content">
       <ui:include src="/dashbord/dashbord.xhtml" />
+      <h:outputText value="#{request.contextPath}" />
       </ui:define>
       
 			

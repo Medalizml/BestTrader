@@ -30,7 +30,7 @@ public class StatBean implements Serializable {
 	private boolean open=false;
 	@PostConstruct
 	public void init() {
-		setTest(statServices.getName());
+		//setTest(statServices.getName());
 		setCustomers(statServices.getList());
 
 	}
