@@ -1,38 +1,56 @@
 <ui:composition xmlns="http://www.w3.org/1999/xhtml"
 	xmlns:ui="http://java.sun.com/jsf/facelets"
 	xmlns:f="http://java.sun.com/jsf/core"
-	xmlns:h="http://java.sun.com/jsf/html">
-	
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://xmlns.jcp.org/jsf/passthrough">
 
-      <div class="clearfix"></div>
-      <div class="row">
-        <div class="col-md-12">
-          <div class="grid simple transparent" id="new-ticket-wrapper" style="display:none">
-            <div class="grid-title no-border">
-              <h4 class="semi-bold">Add Bonus</h4>
-            </div>
-            <div class="grid-body">
-              <h:form class="" id="new-ticket-form">
-              
-                <div class="row form-row">
-                  <div class="col-md-6">
-                    <h:inputText value="#{usersBean.bonus}" type="text" placeholder="Subject" class="form-control"  id="txtFirst" name="txtFirst"/>
-                  </div>
-                  
-                </div>
-                
-                <div class="row form-row">
-                  <div class="col-md-12 margin-top-10">
-                    <div class="pull-right">
-                      <button class="btn btn-cons" type="button" id="btn-close-ticket">Close</button>
-                      <h:form><h:commandButton class="btn btn-primary btn-cons" action="#{usersBean.doAddbonus()}" value="Add"/></h:form>
-                    </div>
-                  </div>
-                </div>
-              </h:form>
-            </div>
-          </div>
-        </div>
-      </div>
-	
-	</ui:composition>
+
+	<div class="clearfix"></div>
+	<div class="row">
+		<div class="col-md-12">
+			<div class="grid simple transparent" id="new-ticket-wrapper"
+				style="display: none">
+				<div class="grid-title no-border">
+					<h4 class="semi-bold">Add Bonus</h4>
+				</div>
+				<div class="grid-body">
+					<h:form class="" id="Bonus">
+
+						<div class="row form-row">
+							<div class="col-md-6">
+								<h:inputText value="#{usersBean.bonus}" type="text"
+									p:placeholder="Fill in" p:required="Please "
+									class="form-control" id="Add_Bonus" name="">
+
+
+
+								</h:inputText>
+							</div>
+
+						</div>
+
+						<div class="row form-row">
+							<div class="col-md-12 margin-top-10">
+								<div class="pull-right">
+									<h:form>
+										<h:commandButton class="btn btn-cons" type="reset"
+											id="btn-close-ticket" value="Cancel">
+											<f:ajax execute="@form" render="@form btn-close-ticket"></f:ajax>
+										</h:commandButton>
+										<h:commandButton class="btn btn-primary btn-cons"
+											action="#{usersBean.doAddbonus()}" value="Add">
+											<f:ajax execute="@form" render="@form message portfolio"></f:ajax>
+										</h:commandButton>
+									</h:form>
+									<h:messages infoStyle="color: green;" errorStyle="color: red;"
+										id="message" />
+								</div>
+							</div>
+						</div>
+					</h:form>
+				</div>
+			</div>
+		</div>
+	</div>
+
+</ui:composition>

@@ -8,82 +8,84 @@
 
 
 
-		
-	
-		<div class="grid simple ">
-			
-			<div class=" tiles white col-md-12 no-padding">
-				<div class="tiles green cover-pic-wrapper">
-					<div class="overlayer bottom-right">
-						<div class="overlayer-wrapper"></div>
-					</div>
-					<h:graphicImage value="/resource/img/profiles/fountain_pen.jpg" />
+
+
+	<div class="grid simple ">
+
+		<div class=" tiles white col-md-12 no-padding">
+			<div class="tiles green cover-pic-wrapper">
+				<div class="overlayer bottom-right">
+					<div class="overlayer-wrapper"></div>
 				</div>
-				<div class="tiles white">
+				<h:graphicImage value="/resource/img/profiles/fountain_pen.jpg" />
+			</div>
+			<div class="tiles white">
 
-					<div class="row">
-						<div class="col-md-3 col-sm-3">
-							<div class="user-profile-pic">
+				<div class="row">
+					<div class="col-md-3 col-sm-3">
+						<div class="user-profile-pic">
 
-								<h:graphicImage value="/resource/img/profiles/1.png" />
-							</div>
-						</div>
-
-						<h3 class="text-success semi-bold">
-							#{usersBean.selectedCustomer.firstName}
-							#{usersBean.selectedCustomer.lastName}</h3>
-						<div class="col-md-8 user-description-box  col-sm-5"
-							style="margin-left: 100px; margin-top: 20px">
-							<br />
-							<h:form>
-								<p>
-									<i class="fa fa-briefcase"></i><i style="color: blue"><span class="bold">Job :</span></i>&#160;&#160;&#160;&#160;
-									<h:outputText value="#{usersBean.selectedCustomer.job}" />
-								</p>
-							</h:form>
-							<h:form>
-								<p>
-									<i class="fa fa-calendar"></i><i style="color: blue"><span class="bold">Age :</span></i>&#160;&#160;&#160;&#160;
-									<h:outputText value="#{usersBean.selectedCustomer.age}" />
-								</p>
-							</h:form>
-							<h:form>
-								<p>
-									<i class="fa fa-globe"></i><i style="color: blue"><span class="bold">Email :</span></i>&#160;&#160;&#160;&#160;
-									<h:outputText value="#{usersBean.selectedCustomer.email}" />
-								</p>
-							</h:form>
-							<h:form>
-								<p>
-									<i class="fa fa-home"></i><i style="color: blue"><span class="bold">Address :</span></i>&#160;&#160;&#160;&#160;
-									<h:outputText value="#{usersBean.selectedCustomer.address}" />
-								</p>
-							</h:form>
-							<h:form>
-								<p>
-									<i class="fa fa-flag"></i><i style="color: blue"><span class="bold">Nationality
-										:</span></i>&#160;&#160;&#160;&#160;
-									<h:outputText value="#{usersBean.selectedCustomer.nationality}" />
-								</p>
-							</h:form>
-							<h:form>
-								<p>
-									<i class="fa fa-phone-square"></i><i style="color: blue"><span class="bold">Phone_Number
-										:</span></i>&#160;&#160;&#160;&#160;
-									<h:outputText value="#{usersBean.selectedCustomer.phoneNumber}" />
-								</p>
-							</h:form>
-						</div>
-
-					</div>
-					<div class="tiles-body">
-						<div class="row" style="margin-left: 200px">
-	
+							<h:graphicImage value="#{usersBean.selectedCustomer.profilePicture}" />
 						</div>
 					</div>
+
+					<h3 class="text-success semi-bold">
+						#{usersBean.selectedCustomer.firstName}
+						#{usersBean.selectedCustomer.lastName}</h3>
+					<div class="col-md-8 user-description-box  col-sm-5"
+						style="margin-left: 100px; margin-top: 20px">
+						<br />
+						<h:form>
+							<p>
+								<i class="fa fa-briefcase"></i><i style="color: black"><span
+									class="bold">Job :</span></i>&#160;&#160;&#160;&#160;
+								<h:outputText value="#{usersBean.selectedCustomer.job}" />
+							</p>
+						</h:form>
+						<h:form>
+							<p>
+								<i class="fa fa-calendar"></i><i style="color: black"><span
+									class="bold">Age :</span></i>&#160;&#160;&#160;&#160;
+								<h:outputText value="#{usersBean.selectedCustomer.age}" />
+							</p>
+						</h:form>
+						<h:form>
+							<p>
+								<i class="fa fa-globe"></i><i style="color: black"><span
+									class="bold">Email :</span></i>&#160;&#160;&#160;&#160;
+								<h:outputText value="#{usersBean.selectedCustomer.email}" />
+							</p>
+						</h:form>
+						<h:form>
+							<p>
+								<i class="fa fa-home"></i><i style="color: black"><span
+									class="bold">Address :</span></i>&#160;&#160;&#160;&#160;
+								<h:outputText value="#{usersBean.selectedCustomer.address}" />
+							</p>
+						</h:form>
+						<h:form>
+							<p>
+								<i class="fa fa-flag"></i><i style="color: black"><span
+									class="bold">Nationality :</span></i>&#160;&#160;&#160;&#160;
+								<h:outputText value="#{usersBean.selectedCustomer.nationality}" />
+							</p>
+						</h:form>
+						<h:form>
+							<p>
+								<i class="fa fa-phone-square"></i><i style="color: black"><span
+									class="bold">Phone_Number :</span></i>&#160;&#160;&#160;&#160;
+								<h:outputText value="#{usersBean.selectedCustomer.phoneNumber}" />
+							</p>
+						</h:form>
+					</div>
+
+				</div>
+				<div class="tiles-body">
+					<div class="row" style="margin-left: 200px"></div>
 				</div>
 			</div>
 		</div>
-	
+	</div>
+
 
 </ui:composition>

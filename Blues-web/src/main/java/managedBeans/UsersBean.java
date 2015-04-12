@@ -4,11 +4,12 @@ import java.util.List;
 
 import javax.annotation.PostConstruct;
 import javax.ejb.EJB;
+import javax.faces.application.FacesMessage;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
-import javax.faces.bean.ViewScoped;
 
-import tn.esprit.Blues.Services.CustomerServicesImpl;
+import javax.faces.context.FacesContext;
+
 import tn.esprit.Blues.UsersServices.UsersServices;
 import tn.esprit.Blues.entities.Customer;
 import tn.esprit.Blues.entities.Portfolio;
@@ -21,56 +22,53 @@ public class UsersBean {
 	UsersServices user;
 	private List<Customer> list;
 	private List<Customer> list1;
-	private Customer customerDet;
-	private String name;
-	private float bonus;
-	private Portfolio portfolio;
-	private Customer selectedCustomer=new Customer();
+	private String bonus;
+	private Customer selectedCustomer = new Customer();
 
-	public Portfolio getPortfolio() {
-		return portfolio;
-	}
-
-	public void setPortfolio(Portfolio portfolio) {
-		this.portfolio = portfolio;
-	}
-
-	public float getBonus() {
+	public String getBonus() {
 		return bonus;
 	}
 
-	public void setBonus(float bonus) {
+	public void setBonus(String bonus) {
 		this.bonus = bonus;
 	}
 
-	public String getName() {
-		return name;
-	}
-
-	public void setName(String name) {
-		this.name = name;
-	}
-
-	public UsersBean() {
-		portfolio = new Portfolio();
-	}
-
 	public String doAddbonus() {
-		Portfolio p;
-		p = selectedCustomer.getPortfolio();
-		p.setValue(p.getValue() + bonus);
-		user.update(p);
-		bonus = 0;
+		FacesContext context = FacesContext.getCurrentInstance();
+		if (isFloat(bonus)) {
+			Portfolio p;
+			p = selectedCustomer.getPortfolio();
+			p.setValue(p.getValue() + Float.parseFloat(bonus));
+			user.update(p);
+			bonus = "0";
+			context.addMessage(null, new FacesMessage(
+					FacesMessage.SEVERITY_INFO, "Succes!", null));
+		} else {
+			context.addMessage(null, new FacesMessage(
+					FacesMessage.SEVERITY_ERROR,
+					"Error! :please enter a valid number", null));
+		}
+		bonus = "0";
 		return null;
 	}
-	
-	public String doActivateUser(Customer customer){
+
+	public boolean isFloat(String chaine) {
+		try {
+			Float.parseFloat(chaine);
+		} catch (NumberFormatException e) {
+			return false;
+		}
+
+		return true;
+	}
+
+	public String doActivateUser(Customer customer) {
 		customer.setActive(true);
 		user.update(customer);
 		init();
 		return null;
 	}
-	
+
 	public String insert(Customer c) {
 		setSelectedCustomer(c);
 		System.out.println(c.getEmail());
@@ -90,7 +88,6 @@ public class UsersBean {
 		setList1(user.findAllNoActif());
 	}
 
-
 	public List<Customer> getList() {
 		return list;
 	}
@@ -105,14 +102,6 @@ public class UsersBean {
 
 	public void setList1(List<Customer> list1) {
 		this.list1 = list1;
-	}
-
-	public Customer getCustomerDet() {
-		return customerDet;
-	}
-
-	public void setCustomerDet(Customer customerDet) {
-		this.customerDet = customerDet;
 	}
 
 	public Customer getSelectedCustomer() {
