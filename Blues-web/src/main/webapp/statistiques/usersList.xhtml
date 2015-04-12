@@ -1,0 +1,86 @@
+
+
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:jsf="http://java.sun.com/jsf">
+	<ul class="breadcrumb">
+		<li>
+			<p>YOU ARE HERE</p>
+		</li>
+		<li><a href="#" class="active">Users</a></li>
+	</ul>
+
+	<ui:include src="/users/addUser.xhtml" />
+
+
+	<div class="row-fluid">
+		<div class="span12">
+			<div class="grid simple ">
+				<div class="grid-title">
+					<h4>
+						Users <span class="semi-bold">List</span>
+					</h4>
+				</div>
+
+				<div class="grid-body ">
+					<table class="table table-striped table-fixed-layout table-hover"
+						id="emails">
+						<h:dataTable value="#{statBean.customers}" var="o"
+							class="table table-hover table-condensed" id="example2">
+
+							<h:column>
+								<f:facet name="header" style="widf:facet:10%"
+									data-hide="phone,tablet">Name</f:facet>
+                      #{o.firstName} #{o.lastName}
+									
+                    </h:column>
+							<h:column>
+								<f:facet name="header" style="widf:facet:10%"
+									data-hide="phone,tablet">Job</f:facet>
+						#{o.job}
+                    </h:column>
+
+							<h:column>
+								<f:facet name="header" style="widf:facet:10%"
+									data-hide="phone,tablet">Nationality</f:facet>
+						#{o.nationality}
+                    </h:column>
+							<h:column>
+								<f:facet name="header" style="widf:facet:10%"
+									data-hide="phone,tablet">Portfolio Value</f:facet>
+						#{o.portfolio.value}
+                    </h:column>
+                    <h:column>
+								<f:facet name="header" style="widf:facet:10%"
+									data-hide="phone,tablet">Benefit</f:facet>
+						#{o.portfolio.gain}
+                    </h:column>
+							<h:column>
+								<f:facet name="header" style="widf:facet:10%"
+									data-hide="phone,tablet"></f:facet>
+
+								<h:form>
+									<h:commandLink action="#{statBean.put(o)}"
+										class="btn btn-success btn-cons">
+										<i class="fa fa-bar-chart-o"></i>&#160;See Charts</h:commandLink>
+										</h:form>
+							</h:column>
+						</h:dataTable>
+					</table>
+
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- <script type="text/javascript">
+	function poponload()
+	{
+	    testwindow = window.open("http://localhost:8180/Blues-web/pop.jsf", "mywindow", "location=1,status=1,scrollbars=1,width=700,height=700","resizable=no");
+	    testwindow.moveTo(0, 0);
+	}
+	</script> -->
+</ui:composition>
+

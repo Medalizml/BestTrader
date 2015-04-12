@@ -1,9 +1,13 @@
-<!DOCTYPE html>
+
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:ui="http://java.sun.com/jsf/facelets"
       xmlns:f="http://java.sun.com/jsf/core"
-      xmlns:h="http://java.sun.com/jsf/html">
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:jsf="http://xmlns.jcp.org/jsf"
+      xmlns:p="http://xmlns.jcp.org/jsf/passthrough">
+      
 <h:head>
+
 <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
 <meta charset="utf-8" />
 <title><ui:insert name="pageTitle" >best trader -  Admin Dashboard</ui:insert></title>
@@ -11,8 +15,10 @@
 <meta content="" name="description" />
 <meta content="" name="author" />
 
-<ui:include src="css.xhtml" />
+<ui:include src="/WEB-INF/template/css.xhtml" />
+
 </h:head>
+
 <!-- END HEAD -->
 
 <!-- BEGIN BODY -->
@@ -26,7 +32,7 @@
 		 <li class="dropdown"> <a id="main-menu-toggle" href="#main-menu"  class="" > <div class="iconset top-menu-toggle-white"></div> </a> </li>		 
 		</ul>
       <!-- BEGIN LOGO -->	
-      <a href="index.html"><img src="resource/img/logo.png" class="logo" alt=""  data-src="resource/img/logo.png" data-src-retina="resource/img/logo2x.png" width="106" height="21"/></a>
+      <a href="index.html"><h:graphicImage src=" img/logo.png" class="logo" alt=""  data-src=" img/logo2x.png" width="106" height="21"/></a>
       <!-- END LOGO --> 
       <ul class="nav pull-right notifcation-center">	
         <li class="dropdown" id="header_task_bar"> <a href="index.html" class="dropdown-toggle active" data-toggle=""> <div class="iconset top-home"></div> </a> </li>
@@ -48,7 +54,9 @@
             <div class="iconset top-reload"></div>
             </a> </li>
           <li class="quicklinks"> <span class="h-seperate"></span></li>
-         
+          <li class="quicklinks"> <a href="#" class="" >
+            <div class="iconset top-tiles"></div>
+            </a> </li>
 			<li class="m-r-10 input-prepend inside search-form no-boarder">
 				<span class="add-on"> <span class="iconset top-search"></span></span>
 				 <input name="" type="text"  class="no-boarder " placeholder="Search Dashboard" style="width:250px;"/>
@@ -57,13 +65,14 @@
 	  </div>
 	 <!-- END TOP NAVIGATION MENU -->
 	 <!-- BEGIN CHAT TOGGLER -->
+	 <h:form>
       <div class="pull-right"> 
 		<div class="chat-toggler">	
 				<a href="#" class="dropdown-toggle" id="my-task-list" data-placement="bottom"  data-content='' data-toggle="dropdown" data-original-title="Notifications">
 					<div class="user-details"> 
 						<div class="username">
 							<span class="badge badge-important">3</span> 
-							John <span class="bold">Smith</span>									
+							#{auth.user.firstName} <span class="bold">#{auth.user.lastName}</span>									
 						</div>						
 					</div> 
 					<div class="iconset top-down-arrow"></div>
@@ -72,7 +81,7 @@
 					<div style="width:300px">
 						  <div class="notification-messages info">
 									<div class="user-profile">
-										<img src="resource/img/profiles/d.jpg"  alt="" data-src="resource/img/profiles/d.jpg" data-src-retina="resource/img/profiles/d2x.jpg" width="35" height="35"/>
+										<h:graphicImage src=" img/profiles/d.jpg"  alt="" data-src=" img/profiles/d.jpg" data-src-retina=" img/profiles/d2x.jpg" width="35" height="35"/>
 									</div>
 									<div class="message-wrapper">
 										<div class="heading">
@@ -106,7 +115,7 @@
 							</div>	
 							<div class="notification-messages success">
 								<div class="user-profile">
-									<img src="resource/img/profiles/h.jpg"  alt="" data-src="resource/img/profiles/h.jpg" data-src-retina="resource/img/profiles/h2x.jpg" width="35" height="35"/>
+									<h:graphicImage src=" img/profiles/h.jpg"  alt="" data-src=" img/profiles/h.jpg" data-src-retina=" img/profiles/h2x.jpg" width="35" height="35"/>
 								</div>
 								<div class="message-wrapper">
 									<div class="heading">
@@ -124,14 +133,17 @@
 						</div>				
 				</div>
 				<div class="profile-pic"> 
-					<img src="resource/img/profiles/avatar_small.jpg"  alt="" data-src="resource/img/profiles/avatar_small.jpg" data-src-retina="resource/img/profiles/avatar_small2x.jpg" width="35" height="35" /> 
+					<img  src="#{request.contextPath}/#{auth.user.profilePicture}"   alt=""  width="35" height="35" /> 
 				</div>       			
 			</div>
+			
 		 <ul class="nav quick-section ">
+		 
 			<li class="quicklinks"> 
 				<a data-toggle="dropdown" class="dropdown-toggle  pull-right " href="#" id="user-options">						
 					<div class="iconset top-settings-dark "></div> 	
 				</a>
+				
 				<ul class="dropdown-menu  pull-right" role="menu" aria-labelledby="user-options">
                   <li><a href="user-profile.html"> My Account</a>
                   </li>
@@ -140,13 +152,15 @@
                   <li><a href="email.html"> My Inbox<span class="badge badge-important animated bounceIn">2</span></a>
                   </li>
                   <li class="divider"></li>                
-                  <li><a href="login.html"><i class="fa fa-power-off"></i>Log Out</a></li>
+                  <li><h:commandLink action="#{auth.doLogOut}"> <i class="fa fa-power-off"></i>Log Out</h:commandLink></li>
                </ul>
+               
 			</li> 
 			<li class="quicklinks"> <span class="h-seperate"></span></li> 
-
+			
 		</ul>
       </div>
+      </h:form>
 	   <!-- END CHAT TOGGLER -->
       </div> 
       <!-- END TOP NAVIGATION MENU --> 
@@ -162,11 +176,11 @@
   <!-- BEGIN MINI-PROFILE -->
    <div class="user-info-wrapper">	
 	<div class="profile-wrapper">
-		<img src="resource/img/profiles/avatar.jpg"  alt="" data-src="resource/img/profiles/avatar.jpg" data-src-retina="resource/img/profiles/avatar2x.jpg" width="69" height="69" />
+		<img src="#{request.contextPath}/#{auth.user.profilePicture}" alt="" width="69" height="69"/>
 	</div>
     <div class="user-info">
       <div class="greeting">Welcome</div>
-      <div class="username">John <span class="semi-bold">Smith</span></div>
+      <div class="username">#{auth.user.firstName} <span class="semi-bold">#{auth.user.lastName}</span></div>
       <div class="status">Status<a href="#"><div class="status-icon green"></div>Online</a></div>
     </div>
    </div>
@@ -175,21 +189,21 @@
    <!-- BEGIN SIDEBAR MENU -->	
 	<p class="menu-title">BROWSE <span class="pull-right"><a href="javascript:;"><i class="fa fa-refresh"></i></a></span></p>
     <ul>	
-      <li class="start active"> <a href="index.html"> <i class="icon-custom-home"></i> <span class="title">Dashboard</span> <span class="selected"></span> <span class="badge badge-important pull-right">5</span></a> </li>
+      <li class="start active"> <a href=""> <i class="icon-custom-home"></i> <span class="title">Dashboard</span> <span class="selected"></span> <span class="badge badge-important pull-right">5</span></a> </li>
 	  <li class=""> <a href="email.html"> <i class="fa fa-envelope"></i> <span class="title">Email</span>  <span class=" badge badge-disable pull-right ">203</span></a> </li>      
 
       <li class=""> <a href="javascript:;"> <i class="icon-custom-ui"></i> <span class="title">Companies</span> <span class="arrow "></span> </a>
         <ul class="sub-menu">
-		  <li > <a href=""> Public Companies </a> </li>
-		  <li > <a href=""> Private Companies </a> </li>
-		   <li > <a href="">Banks</a> </li>
+		  <li > <h:link p:href="#{request.contextPath}/companies/public/public.xhtml"> Public Companies </h:link> </li>
+		  <li > <h:link p:href="#{request.contextPath}/companies/private/private.xhtml"> Private Companies </h:link> </li>
+		   <li > <h:link p:href="#{request.contextPath}/companies/bank/bank.xhtml">Banks</h:link> </li>
 
 
         </ul>
       </li>
 	  <li class=""> <a href="javascript:;"> <i class="icon-custom-form"></i> <span class="title">Articles</span>  </a></li>
 
-      <li class=""> <a href="javascript:;"> <i class="fa fa-users"></i> <span class="title">Users</span>  </a></li>
+      <li class="">  <h:link p:href="#{request.contextPath}/users/user.xhtml"><i class="fa fa-users"></i> <span class="title">Users</span>  </h:link></li>
 
       <li class=""> <a href="javascript:;"> <i class="fa fa-sort"></i> <span class="title">Estimations</span>  </a></li>
 
@@ -284,6 +298,6 @@
 
 
 
-<ui:include src="js.xhtml" />
+<ui:include src="/WEB-INF/template/js.xhtml" />
 </h:body>
 </html>
