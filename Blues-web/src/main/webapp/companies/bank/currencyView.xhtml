@@ -1,0 +1,241 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html">
+
+
+	<div class="row-fluid">
+		<div class="span12">
+			<div class="grid simple ">
+				<h:form>
+					<button class="btn btn-primary pull-right" data-toggle="modal"
+						style="margin-top: 8px; margin-right: 10px" data-target="#myModal">Add
+						Currency for this Bank</button>
+				</h:form>
+				<div class="grid-title">
+					<h4>
+						#{bankManagedBean.bank.name}<span class="semi-bold">
+							Currency List</span>
+					</h4>
+
+				</div>
+				<h:form>
+					<div class="grid-body ">
+						<table class="table table-striped table-fixed-layout table-hover"
+							id="emails">
+
+							<h:dataTable value="#{currencyBankManagedBean.currencybanks}"
+								var="o" class="table table-striped dataTable" id="example3"
+								aria-describedby="example2_info"
+								headerClass="statBean-table-header"
+								rowClasses="statBean-table-odd-row,statBean-table-even-row">
+
+								<h:column>
+
+									<f:facet name="header">Currency</f:facet>
+									<div id="Parks" class="just list">
+										<ul style="">
+											<li class="mix alaska camping climbing fishing mix_all"
+												data-name="Denali" data-area="4740911.37"
+												style="display: block; opacity: 1;">
+
+												<div class="meta name">
+
+													<div class="titles">
+
+														<h3>
+															<i class="fa fa-#{o.currency.name}"></i>
+														</h3>
+														<p>
+															<em><h:outputText value="#{o.currency.name}" /></em>
+														</p>
+													</div>
+												</div>
+											</li>
+										</ul>
+									</div>
+								</h:column>
+
+								<h:column>
+
+									<f:facet name="header">Unity</f:facet>
+									<div id="Parks" class="just list">
+										<ul style="">
+											<li class="mix alaska camping climbing fishing mix_all"
+												data-name="Denali" data-area="4740911.37"
+												style="display: block; opacity: 1;">
+												<div class="meta region">
+													<p>
+														<h:outputText value="#{o.currency.unity}" />
+													</p>
+												</div>
+											</li>
+										</ul>
+									</div>
+								</h:column>
+
+								<h:column>
+
+									<f:facet name="header">Buying Price</f:facet>
+									<div id="Parks" class="just list">
+										<ul style="">
+											<li class="mix alaska camping climbing fishing mix_all"
+												data-name="Denali" data-area="4740911.37"
+												style="display: block; opacity: 1;">
+												<div class="meta rec">
+													<p>
+														<h:outputText value="#{o.buyPrice} TND"
+															rendered="#{not currencyBankManagedBean.render}" />
+													</p>
+													<p>
+														<h:inputText value="#{o.buyPrice}"
+															rendered="#{currencyBankManagedBean.render}" />
+													</p>
+												</div>
+											</li>
+										</ul>
+									</div>
+								</h:column>
+								<h:column>
+
+									<f:facet name="header">Selling Price</f:facet>
+									<div id="Parks" class="just list">
+										<ul style="">
+											<li class="mix alaska camping climbing fishing mix_all"
+												data-name="Denali" data-area="4740911.37"
+												style="display: block; opacity: 1;">
+												<div class="meta rec">
+													<p>
+														<h:outputText value="#{o.sellPrice} TND"
+															rendered="#{not currencyBankManagedBean.render}" />
+													</p>
+													<p>
+														<h:inputText value="#{o.sellPrice}"
+															rendered="#{currencyBankManagedBean.render}" />
+													</p>
+												</div>
+											</li>
+										</ul>
+									</div>
+								</h:column>
+								<h:column>
+
+									<f:facet name="header"></f:facet>
+									<div id="Parks" class="just list">
+										<ul style="">
+											<li class="mix alaska camping climbing fishing mix_all"
+												data-name="Denali" data-area="4740911.37"
+												style="display: block; opacity: 1;">
+												<div class="meta area">
+
+													<p>
+														<h:commandLink
+															class="btn btn-danger dropdown-toggle btn-demo-space "
+															action="#{currencyBankManagedBean.doRemoveCurr(o)}">
+															<i class="fa fa-warning"></i>
+															<span class="bold">Delete</span>
+														</h:commandLink>
+														&#160;
+
+														<h:commandLink
+															class="btn btn-primary dropdown-toggle btn-demo-space"
+															action="#{currencyBankManagedBean.openAdd()}"
+															rendered="#{not currencyBankManagedBean.render}">
+															<i class="fa fa-edit"></i>
+															<span class="bold">Update</span>
+														</h:commandLink>
+
+														<h:commandLink
+															class="btn btn-primary dropdown-toggle btn-demo-space"
+															action="#{currencyBankManagedBean.updateCurrency(o)}"
+															rendered="#{currencyBankManagedBean.render}">
+
+															<i class="fa fa-edit"></i>
+															<span class="bold">Submit</span>
+														</h:commandLink>
+													</p>
+
+												</div>
+											</li>
+										</ul>
+									</div>
+								</h:column>
+
+							</h:dataTable>
+						</table>
+					</div>
+				</h:form>
+			</div>
+		</div>
+	</div>
+
+	<div class="modal fade" id="myModal" tabindex="-1" role="dialog"
+		aria-labelledby="myModalLabel" aria-hidden="true">
+		<div class="modal-dialog">
+			<div class="modal-content">
+
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal"
+						aria-hidden="true">×</button>
+					<br /> <i class="icon-credit-card icon-7x"></i>
+					<h4 id="myModalLabel" class="semi-bold">Add Currency</h4>
+					<p class="no-margin">Please Put the Currency informations here</p>
+					<br />
+				</div>
+				<div class="modal-body">
+
+
+
+
+
+					<div id="form_traditional_validation">
+						<h:form>
+							<div class="form-group">
+								<label class="form-label">Currency</label> <span class="help">Name</span>
+								<div class="input-with-icon  right">
+									<i class=""></i>
+									<h:selectOneMenu value="#{currencyBankManagedBean.currencyN}">
+										<f:selectItems value="#{currencyBankManagedBean.currencies}"
+											var="curr" itemValue="#{curr.id}" itemLabel="#{curr.name}" />
+									</h:selectOneMenu>
+								</div>
+							</div>
+
+							<div class="form-group">
+								<label class="form-label">Selling</label> <span class="help">Price</span>
+								<div class="input-with-icon  right">
+									<i class=""></i>
+									<h:inputText class="form-control"
+										value="#{currencyBankManagedBean.currencybank.sellPrice}" />
+								</div>
+							</div>
+							<div class="form-group">
+								<label class="form-label">Buying</label> <span class="help">Price</span>
+								<div class="input-with-icon  right">
+									<i class=""></i>
+									<h:inputText class="form-control"
+										value="#{currencyBankManagedBean.currencybank.buyPrice}" />
+								</div>
+							</div>
+
+
+							<h:commandButton class="btn btn-primary" value="Submit"
+								action="#{currencyBankManagedBean.AddCurrencyBank()}"></h:commandButton>
+						</h:form>
+					</div>
+
+
+
+
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+
+				</div>
+			</div>
+			<!-- /.modal-content -->
+		</div>
+		<!-- /.modal-dialog -->
+	</div>
+
+</ui:composition>

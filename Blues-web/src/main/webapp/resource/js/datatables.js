@@ -254,7 +254,7 @@ $(document).ready(function() {
 			"sInfo": "Showing <b>_START_ to _END_</b> of _TOTAL_ entries"
 		},
     });
-	$("div.toolbar").html('');
+	$("div.toolbar").html('<div class="table-tools-actions"></div>');
 	
 	$('#test2').on( "click",function() {
 		$("#quick-access").css("bottom","0px");
@@ -310,7 +310,7 @@ function fnFormatDetailsUser ( oTable, nTr )
     sOut += '<tr><td>First Name:</td><td>'+aData[1]+'</td></tr>';
     sOut += '<tr><td>Last Name:</td><td>'+aData[2]+'</td></tr>';
     sOut += '<tr><td>Nationality:</td><td>'+aData[3]+'</td></tr>';
-    sOut += '<tr><td>Portfolio:</td><td>'+aData[4]+'</td></tr>';
+    sOut += '<tr><td>Portfolio Value:</td><td>'+aData[4]+'</td></tr>';
     sOut += '</table>';
      
     return sOut;

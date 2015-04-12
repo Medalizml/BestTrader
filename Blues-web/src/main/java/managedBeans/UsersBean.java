@@ -14,6 +14,7 @@ import tn.esprit.Blues.UsersServices.UsersServices;
 import tn.esprit.Blues.entities.Customer;
 import tn.esprit.Blues.entities.Portfolio;
 
+
 @ManagedBean
 @SessionScoped
 public class UsersBean {
