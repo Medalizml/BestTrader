@@ -212,7 +212,7 @@ $(document).ready(function() {
      */
     var nCloneTh = document.createElement( 'th' );
     var nCloneTd = document.createElement( 'td' );
-    nCloneTd.innerHTML = '<i class="fa fa-plus-circle"></i>';
+    nCloneTd.innerHTML = '';
     nCloneTd.className = "center";
      
     $('#example2 thead tr').each( function () {
