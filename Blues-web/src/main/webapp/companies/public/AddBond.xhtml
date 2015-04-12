@@ -1,0 +1,145 @@
+
+
+
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://xmlns.jcp.org/jsf/passthrough">
+
+	<div class="col-md-6">
+		<div class="grid simple">
+			<div class="grid-title no-border">
+				<h4>
+					Bond <span class="semi-bold">Information</span>
+				</h4>
+			</div>
+
+			<div class="grid-body no-border">
+				<div id="form_traditional_validation2">
+					<div class="form-group">
+						<label class="form-label">Bond</label> <span class="help">Number</span>
+						<div class="input-with-icon  right">
+							<i class=""></i>
+							<h:inputText class="form-control" data-v-max="999999999"
+								data-v-min="0" value="#{publicManagedBean.newCompany.nbShares}" />
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="form-label">Quoted</label> <span class="help">Bonds</span>
+						<div class="input-with-icon  right">
+							<i class=""></i>
+							<h:inputText class="form-control" data-v-max="999999999"
+								data-v-min="0"
+								value="#{publicManagedBean.newCompany.quotedShares}" />
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="form-label">Social</label> <span class="help">Share</span>
+						<div class="input-with-icon  right">
+							<i class=""></i>
+							<h:inputText class="form-control" data-v-max="9999999999"
+								data-v-min="0"
+								value="#{publicManagedBean.newCompany.socialShare}" />
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="form-label">Closing </label> <span class="help">Price</span>
+						<div class="input-with-icon  right">
+							<i class=""></i>
+							<h:inputText class="form-control" data-v-max="9999999999"
+								data-v-min="0"
+								value="#{publicManagedBean.share.closingPrice}" />
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="form-label">Highest</label> <span class="help">Price</span>
+						<div class="input-with-icon  right">
+							<i class=""></i>
+							<h:inputText class="form-control" data-v-max="9999999999"
+								data-v-min="0"
+								value="#{publicManagedBean.share.highestPrice}" />
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="form-label">Lowest</label> <span class="help">Price</span>
+						<div class="input-with-icon  right">
+							<i class=""></i>
+							<h:inputText class="form-control" data-v-max="99999999"
+								data-v-min="20000000"
+								value="#{publicManagedBean.share.lowestPrice}" />
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="form-label">Opening</label> <span class="help">Price</span>
+						<div class="input-with-icon  right">
+							<i class=""></i>
+							<h:inputText class="form-control" data-v-max="999999999"
+								data-v-min="0" value="#{publicManagedBean.share.opningPrice}" />
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="form-label">Emission</label> <span class="help">Value</span>
+						<div class="input-with-icon  right">
+							<i class=""></i>
+							<h:inputText class="form-control" data-v-max="999999999"
+								data-v-min="0" value="#{publicManagedBean.share.emissionValue}" />
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="form-label">Nominal</label> <span class="help">Rate</span>
+						<div class="input-with-icon  right">
+							<i class=""></i>
+							<h:inputText class="form-control" data-v-max="999999999"
+								data-v-min="0"
+								value="#{publicManagedBean.share.nominalRate}" />
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="form-label">Nominal</label> <span class="help">Value</span>
+						<div class="input-with-icon  right">
+							<i class=""></i>
+							<h:inputText class="form-control" data-v-max="9999999999"
+								data-v-min="0"
+								value="#{publicManagedBean.share.nominalValue}" />
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="form-label">Redemption </label> <span class="help">Value</span>
+						<div class="input-with-icon  right">
+							<i class=""></i>
+							<h:inputText class="form-control" data-v-max="9999999999"
+								data-v-min="0"
+								value="#{publicManagedBean.share.redemptionValue}" />
+						</div>
+					</div>
+					
+					<div class="form-group">
+						
+						
+					 <div class="input-append success date col-sm-9 no-padding">
+                    <h:inputText value="#{publicManagedBean.dateIss}" type="text" class="form-control" p:placeholder="Date Issue" id="dateOfIssue" />
+                    <span class="add-on"><span class="arrow"></span><i class="fa fa-th"></i></span> </div>
+					
+					
+					</div>
+					<br />
+					<br />
+					<br />
+					<br />
+					<div class="form-group">
+						
+						
+					 <div class="input-append success date col-sm-9 no-padding">
+                    <h:inputText value="#{publicManagedBean.dateClos}" type="text" class="form-control" p:placeholder="Closing Date" id="closingDate" />
+                    <span class="add-on"><span class="arrow"></span><i class="fa fa-th"></i></span> </div>
+					
+					
+					</div>
+
+
+				</div>
+			</div>
+		</div>
+	</div>
+</ui:composition>

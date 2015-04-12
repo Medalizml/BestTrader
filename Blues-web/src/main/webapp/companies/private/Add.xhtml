@@ -65,9 +65,18 @@
 							</h:selectOneMenu>
 						</div>
 					</div>
+					<div class="form-group">
+						<label class="form-label"></label> <span class="help"></span>
+						
+					 <div class="input-append success date col-sm-9 no-padding">
+                    <h:inputText value="#{privateManagedBean.datePrivate}" type="text" class="form-control" p:placeholder="Date of incorporation" id="dateOfIncorporation" />
+                    <span class="add-on"><span class="arrow"></span><i class="fa fa-th"></i></span> </div>
+					
+					
+					</div>
 					<br></br>
 					<h:inputFile value="#{demoBean.file1}" 
-						class="btn btn-primary dropdown-toggle btn-demo-space">
+						>
 					</h:inputFile>
 
 					<br></br>

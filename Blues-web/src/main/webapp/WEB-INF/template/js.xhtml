@@ -28,6 +28,8 @@
 	<script
 		src="/Blues-web/resource/plugins/jquery-slider/jquery.sidr.min.js"
 		type="text/javascript"></script>
+		
+		<script src="/Blues-web/resource/plugins/bootstrap-datepicker/js/bootstrap-datepicker.js" type="text/javascript"></script>
 	<script
 		src="/Blues-web/resource/plugins/jquery-numberAnimate/jquery.animateNumbers.js"
 		type="text/javascript"></script>
@@ -104,6 +106,7 @@
 	<!-- <script src="/Blues-web/resource/js/form_elements.js" type="text/javascript"></script> -->
 	<script src="/Blues-web/resource/js/support_ticket.js"
 		type="text/javascript"></script>
+		<script src="/Blues-web/resource/js/messages_notifications.js" type="text/javascript"></script>
 		
 
 	<!-- BEGIN CORE TEMPLATE JS -->
@@ -119,18 +122,17 @@ $('.input-append.date').datepicker({
 	todayHighlight: true
 });
 
-$('#dp5').datepicker();
+$(function(){
+    $("#form_validation_Bank\\:dateOfIncorporation").datepicker();
+    $("#form_validation_Private\\:dateOfIncorporation").datepicker();
+    $("#form_validation_Public\\:dateOfIncorporation").datepicker();
+    $("#form_validation_Public\\:dateOfIssue").datepicker();
+    $("#form_validation_Public\\:closingDate").datepicker();
+    
+});});
 
-$('#sandbox-advance').datepicker({
-format: "dd/mm/yyyy",
-startView: 1,
-daysOfWeekDisabled: "3,4",
-autoclose: true,
-todayHighlight: true
-});
 
-
-	});
+	
 	
 
 </script>

@@ -3,8 +3,9 @@
       xmlns:ui="http://java.sun.com/jsf/facelets"
       xmlns:f="http://java.sun.com/jsf/core"
       xmlns:h="http://java.sun.com/jsf/html"
-      xmlns:jsf="http://xmlns.jcp.org/jsf">
-      <script type="text/javascript"></script>
+      xmlns:jsf="http://xmlns.jcp.org/jsf"
+      xmlns:p="http://xmlns.jcp.org/jsf/passthrough">
+      
 <h:head>
 
 <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
@@ -188,14 +189,14 @@
    <!-- BEGIN SIDEBAR MENU -->	
 	<p class="menu-title">BROWSE <span class="pull-right"><a href="javascript:;"><i class="fa fa-refresh"></i></a></span></p>
     <ul>	
-      <li class="start active"> <a href="index.html"> <i class="icon-custom-home"></i> <span class="title">Dashboard</span> <span class="selected"></span> <span class="badge badge-important pull-right">5</span></a> </li>
+      <li class="start active"> <a href=""> <i class="icon-custom-home"></i> <span class="title">Dashboard</span> <span class="selected"></span> <span class="badge badge-important pull-right">5</span></a> </li>
 	  <li class=""> <a href="email.html"> <i class="fa fa-envelope"></i> <span class="title">Email</span>  <span class=" badge badge-disable pull-right ">203</span></a> </li>      
 
       <li class=""> <a href="javascript:;"> <i class="icon-custom-ui"></i> <span class="title">Companies</span> <span class="arrow "></span> </a>
         <ul class="sub-menu">
-		  <li > <a href=""> Public Companies </a> </li>
-		  <li > <a href=""> Private Companies </a> </li>
-		   <li > <a href="">Banks</a> </li>
+		  <li > <h:link p:href="#{request.contextPath}/companies/public/public.xhtml"> Public Companies </h:link> </li>
+		  <li > <h:link p:href="#{request.contextPath}/companies/private/private.xhtml"> Private Companies </h:link> </li>
+		   <li > <h:link p:href="#{request.contextPath}/companies/bank/bank.xhtml">Banks</h:link> </li>
 
 
         </ul>
