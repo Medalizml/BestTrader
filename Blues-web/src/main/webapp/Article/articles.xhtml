@@ -1,173 +1,99 @@
-
 <ui:composition xmlns="http://www.w3.org/1999/xhtml"
 	xmlns:ui="http://java.sun.com/jsf/facelets"
 	xmlns:f="http://java.sun.com/jsf/core"
 	xmlns:h="http://java.sun.com/jsf/html"
-	xmlns:p="http://primefaces.org/ui" 
-	xmlns:jsf="http://xmlns.jcp.org/jsf">
+	xmlns:jsf="http://java.sun.com/jsf"
+	xmlns:p="http://xmlns.jcp.org/jsf/passthrough">
 
-
-	<!--  ******************************************************************************* -->
-
-
-
-	<br />
-	<br />
-	<!--  ******************************************************************************* -->
-
-
-
-	<div class="col-md-6">
-
-		<div class="grid simple">
-
-			<div class="grid-title no-border">
-
-				<h4>
-					Add <span class="semi-bold">New Article</span>
-				</h4>
-
-				<div class="tools">
-					<a href="javascript:;" class="collapse" /> <a href="#grid-config"
-						data-toggle="modal" class="config" /> <a href="javascript:;"
-						class="reload" /> <a href="javascript:;" class="remove" />
+	<div class="clearfix"></div>
+	<div class="row">
+		<div class="col-md-12">
+			<div class="grid simple transparent" id="new-ticket-wrapper"
+				style="display: none">
+				<div class="grid-title no-border">
+					<h4 class="semi-bold">Add Article</h4>
+					
 				</div>
-			</div>
+				<div class="grid-body">
+					<div class="col-md-12">
 
-			<div class="grid-body no-border">
-				<h:form id="form_traditional_validation">
+						<div class="grid simple">
+
+							<div class="grid-body no-border">
+								<h:form id="form_traditional_validation">
 
 
-					<div class="form-group">
-						<label class="form-label">Name</label>
+									<div class="form-group">
+										<label class="form-label">Name</label>
 
 
-						<div class="input-with-icon  right">
-							<i class="" />
-							<h:inputText type="text" name="form1Amount" id="form1Amount"
-								class="form-control" value="#{ar.article.name}" />
-							<h:message for="form1Amount" id="nameError" style="color: red" />
+										<div class="input-with-icon  right">
+											<i class="" />
+											<h:inputText type="text" name="form1Amount" id="form1Amount"
+												class="form-control" value="#{ar.article.name}"
+												p:required="true" />
+
+										</div>
+									</div>
+
+									<div class="form-group">
+										<label class="form-label">Author</label> <span class="help"></span>
+
+										<div class="input-with-icon  right">
+											<i class="" />
+											<h:inputText type="text" name="form1CardHolderName"
+												id="form1CardHolderName" class="form-control"
+												value="#{ar.article.author}" p:required="true" />
+										</div>
+									</div>
+
+									<div class="form-group">
+										<label class="form-label">Topic</label>
+
+
+										<div class="input-with-icon  right">
+											<i class="" />
+											<h:inputTextarea rows="15" value="#{ar.article.topic}"
+												name="form1CardNumber" id="form1CardNumber"
+												class="form-control" p:required="true" />
+										</div>
+									</div>
+
+
+									<div class="form-group">
+										<label class="form-label">Date</label>
+										<div
+											class="input-append success date col-md-10 col-lg-6 no-padding">
+
+											<h:inputText class="form-control" value="#{ar.dateTest}"
+												id="dateOfExpense" p:required="true" />
+											<span class="add-on"><span class="arrow"></span><i
+												class="fa fa-th"></i></span>
+										</div>
+									</div>
+
+									<div class="row form-row">
+										<div class="col-md-12 margin-top-10">
+											<div class="pull-right">
+												<button class="btn btn-cons" type="button"
+													id="btn-close-ticket">Close</button>
+												<h:commandButton class="btn btn-primary btn-cons "
+													action="#{ar.doAddArticle()}" value="Add">
+													
+											
+
+												</h:commandButton>
+											</div>
+										</div>
+									</div>
+								</h:form>
+							</div>
+
 						</div>
 					</div>
-
-					<div class="form-group">
-						<label class="form-label">Author</label> <span class="help"></span>
-
-						<div class="input-with-icon  right">
-							<i class="" />
-							<h:inputText type="text" name="form1CardHolderName"
-								id="form1CardHolderName" class="form-control"
-								value="#{ar.article.author}" />
-						</div>
-					</div>
-
-					<div class="form-group">
-						<label class="form-label">Topic</label>
-
-
-						<div class="input-with-icon  right">
-							<i class="" />
-							<h:inputTextarea value="#{ar.article.topic}"
-								name="form1CardNumber" id="form1CardNumber" class="form-control" />
-						</div>
-					</div>
-					
-				    	
-				  <div class="form-group">
-						<label class="form-label">Date</label>
-				  <div class="input-append success date col-md-10 col-lg-6 no-padding">
-                    
-                    <h:inputText  class="form-control" value="#{ar.dateTest}" id="dateOfExpense"  />
-                    <span class="add-on"><span class="arrow"></span><i class="fa fa-th"></i></span>
-					</div>
-					</div>
-					
-					
-							<br></br>
-							<br></br>
-					<div class="form-actions">
-
-						<div class="pull-right">
-
-
-
-							<h:commandLink class="btn btn-danger btn-cons "
-								action="#{ar.inscrire()}">
-								<span class="bold">Save</span>
-							</h:commandLink>
-
-							<button type="button" class="btn btn-white btn-cons">Cancel</button>
-
-						</div>
-					</div>
-				</h:form>
-			</div>
-
-		</div>
-	</div>
-	<!-- ******************************************************************* -->
-	<div class="col-md-6">
-
-		<div class="grid simple">
-
-			<div class="grid-title no-border">
-
-				<h4>
-					Update <span class="semi-bold">Article</span>
-				</h4>
-
-				<div class="tools">
-					<a href="javascript:;" class="collapse" /> <a href="#grid-config"
-						data-toggle="modal" class="config" /> <a href="javascript:;"
-						class="reload" /> <a href="javascript:;" class="remove" />
 				</div>
-			</div>
-
-			<div class="grid-body no-border">
-				<br />
-				<form id="form_iconic_validation" action="#">
-
-					<div class="form-group">
-						<label class="form-label">Your Name</label> <span class="help">e.g.
-							"Jonh Smith"</span>
-
-						<div class="input-with-icon  right">
-							<i class="" /> <input type="text" name="form1Name"
-								id="form1Name" class="form-control" />
-						</div>
-					</div>
-
-					<div class="form-group">
-						<label class="form-label">Your email</label> <span class="help">e.g.
-							"john@examp.com"</span>
-
-						<div class="input-with-icon  right">
-							<i class="" /> <input type="text" name="form1Email"
-								id="form1Email" class="form-control" />
-						</div>
-					</div>
-
-					<div class="form-group">
-						<label class="form-label">Website</label> <span class="help">e.g.
-							"http://www.webarc.com"</span>
-
-						<div class="input-with-icon  right">
-							<i class="" /> <input type="text" name="form1Url" id="form1Url"
-								class="form-control" />
-						</div>
-					</div>
-
-					<div class="form-actions">
-
-						<div class="pull-right">
-							<button type="submit" class="btn btn-danger btn-cons">
-								<i class="icon-ok" /> Save
-							</button>
-							<button type="button" class="btn btn-white btn-cons">Cancel</button>
-						</div>
-					</div>
-				</form>
 			</div>
 		</div>
 	</div>
+
 </ui:composition>

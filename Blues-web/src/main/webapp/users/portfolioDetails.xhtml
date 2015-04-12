@@ -8,64 +8,73 @@
 
 
 
-		
-			<div class="grid simple ">
-				
-				<div class=" tiles white col-md-12 no-padding">
-					<div class="tiles green cover-pic-wrapper">
-						<div class="overlayer bottom-right">
-							<div class="overlayer-wrapper"></div>
-						</div>
-						<h:graphicImage value="/resource/img/profiles/money.jpg" />
-					</div>
-					<div class="tiles white">
 
-						<div class="row">
-						
-						<h3 class="text-success semi-bold" align="center">Portfolio_Details</h3>
-							<div class="col-md-8 user-description-box  col-sm-5"
-								style="margin-left: 100px; margin-top: 20px">
-								<br />
-								<h:form>
-									<p>
-										<i class="fa fa-briefcase"></i><i style="color: blue">Portfolio_Value
-											:</i>&#160;&#160;&#160;&#160;
-										<h:outputText value="#{usersBean.selectedCustomer.portfolio.value}" />
-									</p>
-								</h:form>
-								<h:form>
-									<p>
-										<i class="fa fa-globe"></i><i style="color: blue">Share_Number :</i>&#160;&#160;&#160;&#160;
-										<h:outputText value="#{usersBean.selectedCustomer.portfolio.sharesNumber}" />
-									</p>
-								</h:form>
-								<h:form>
-									<p>
-										<i class="fa fa-home"></i><i style="color: blue">Benefit :</i>&#160;&#160;&#160;&#160;
-										<h:outputText value="#{usersBean.selectedCustomer.portfolio.gain}" />
-									</p>
-								</h:form>
-							</div>
+	<div class="grid simple ">
 
-						</div>
-						<div class="tiles-body">
-							<div class="row">
-							</div>
-									<div class="pull-right actions">
-          <h:commandButton  value="Add Bonus" class="btn btn-primary btn-cons" type="button" id="btn-new-ticket"></h:commandButton>
-        </div>
-							<br/><br/><br/>
-						</div>
-					</div>
-					
+		<div class=" tiles white col-md-12 no-padding">
+			<div class="tiles green cover-pic-wrapper">
+				<div class="overlayer bottom-right">
+					<div class="overlayer-wrapper"></div>
 				</div>
-				
+				<h:graphicImage value="/resource/img/profiles/money.jpg" />
 			</div>
-			<div class="tiles-body">
-				<div class="row" style="margin-left: 240px">
-				</div></div>
+			<div class="tiles white">
 
-<ui:include src="/users/addBonus.xhtml" />
+				<div class="row">
+
+					<h3 class="text-success semi-bold" align="center">Portfolio_Details</h3>
+					<div class="col-md-8 user-description-box  col-sm-5"
+						style="margin-left: 100px; margin-top: 20px">
+						<br />
+						<h:form>
+							<p>
+								<i class="fa fa-briefcase"></i><i style="color: blue"><span class="bold">Portfolio_Value
+									:</span></i>&#160;&#160;&#160;&#160;
+								<h:outputText
+									value="#{usersBean.selectedCustomer.portfolio.value}" />
+							</p>
+						</h:form>
+						<h:form>
+							<p>
+								<i class="fa fa-globe"></i><i style="color: blue"><span class="bold">Share_Number
+									:</span></i>&#160;&#160;&#160;&#160;
+								<h:outputText
+									value="#{usersBean.selectedCustomer.portfolio.sharesNumber}" />
+							</p>
+						</h:form>
+						<h:form>
+							<p>
+								<i class="fa fa-home"></i><i style="color: blue"><span class="bold">Benefit :</span></i>&#160;&#160;&#160;&#160;
+								<h:outputText
+									value="#{usersBean.selectedCustomer.portfolio.gain}" />
+							</p>
+						</h:form>
+					</div>
+
+				</div>
+				<div class="tiles-body">
+					<div class="row"></div>
+										<br />
+					<br />
+					<div class="pull-right actions">
+						<h:commandButton value="Add Bonus"
+							class="btn btn-primary btn-cons" type="button"
+							id="btn-new-ticket"></h:commandButton>
+					</div>
+					<br />
+					<br />
+					<br />
+				</div>
+			</div>
+
+		</div>
+
+	</div>
+	<div class="tiles-body">
+		<div class="row" style="margin-left: 240px"></div>
+	</div>
+
+	<ui:include src="/users/addBonus.xhtml" />
 
 
 

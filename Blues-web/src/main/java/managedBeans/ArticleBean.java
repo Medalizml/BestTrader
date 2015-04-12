@@ -12,25 +12,13 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
-
-
-
-
 import javax.annotation.PostConstruct;
 import javax.ejb.EJB;
 import javax.faces.application.FacesMessage;
 import javax.faces.bean.ManagedBean;
-
-
-
+import javax.faces.bean.SessionScoped;
 import javax.faces.bean.ViewScoped;
 import javax.faces.context.FacesContext;
-
-
-
-
-
-
 
 import tn.esprit.Blues.ArticleServices.ArticleServicesWeb;
 import tn.esprit.Blues.entities.Article;
@@ -45,32 +33,24 @@ public class ArticleBean implements Serializable {
 	 */
 	private static final long serialVersionUID = 1L;
 	private Article article;
-	List<Article> articles=new ArrayList<Article>();
+	List<Article> articles = new ArrayList<Article>();
+
 	
-	private String destination="resource\\img\\";
-	private String serveurPath="C:\\JAVAEE\\serveur\\wildfly-8.2.0.Final\\standalone\\deployments\\Blues-web.war\\";
 	private String dateTest;
-	
-	
-	
-	
-	
-	
+
 	@EJB
 	ArticleServicesWeb articleServicesWeb;
-	
-	 
 
 	public ArticleBean() {
-		article=new Article();
-		
+		article = new Article();
+
 	}
 
 	@PostConstruct
-	public void init(){
+	public void init() {
 		setArticles(articleServicesWeb.findAll());
 	}
-	
+
 	public List<Article> getArticles() {
 		return articles;
 	}
@@ -79,68 +59,55 @@ public class ArticleBean implements Serializable {
 		this.articles = articles;
 	}
 
+	public String doUpdateArticle() {
+
+		
+
+		articleServicesWeb.update(article);
+		article.setEditable(false);
+		article = new Article();
+
+		
+		return null;
+
+	}
 
 	
-	public String saveAction() {
-		 
-		//get all existing value but set "editable" to false 
-		
-			articleServicesWeb.update(article);
-			article.setEditable(false);
-			article = new Article();
-			
-		
-		//return to current page
-		return null;
- 
-	}
- 
-	public String editAction(Article article) {
- 
-		article.setEditable(true);
-		return null;
-	}
-	
-	
-	public String inscrire() {
-		
+
+	public String doAddArticle() {
+
 		SimpleDateFormat sdf = new SimpleDateFormat("MM/dd/yyyy");
-	    try {
-			dateTest=sdf.format(sdf.parse(dateTest));
-			System.out.println(dateTest+"     1");
+		try {
+			dateTest = sdf.format(sdf.parse(dateTest));
+			System.out.println(dateTest + "     1");
 		} catch (ParseException e) {
-			// TODO Auto-generated catch block
+
 			e.printStackTrace();
 		}
-		Date date=new Date(dateTest);
-		
-			
-			Integer year = date.getYear();
-			System.out.println(year);
-			Integer month = date.getMonth();
-			System.out.println(month);
-			Integer day = date.getDate();
-			System.out.println(day);
-			java.sql.Date date1 = new java.sql.Date(year, month, day);
-			article.setDate(date1);
-			System.out.println(date1);
-			
-			System.out.println(date);
-			
-			
-		
-	    
-	    articleServicesWeb.add(article);
-		//FacesMessage message = new FacesMessage("Succès de l'inscription !");
-		//FacesContext.getCurrentInstance().addMessage(null, message);
+		Date date = new Date(dateTest);
+
+		Integer year = date.getYear();
+		System.out.println(year);
+		Integer month = date.getMonth();
+		System.out.println(month);
+		Integer day = date.getDate();
+		System.out.println(day);
+		java.sql.Date date1 = new java.sql.Date(year, month, day);
+		article.setDate(date1);
+		System.out.println(date1);
+
+		System.out.println(date);
+
+		articleServicesWeb.add(article);
+		// FacesMessage message = new FacesMessage("Succès de l'inscription !");
+		// FacesContext.getCurrentInstance().addMessage(null, message);
 		article = new Article();
 		this.init();
-		 
-		
-	
+
 		return null;
 	}
-	 public String getDateTest() {
+
+	public String getDateTest() {
 		return dateTest;
 	}
 
@@ -149,25 +116,18 @@ public class ArticleBean implements Serializable {
 	}
 
 	public void addMessage(String summary) {
-	        FacesMessage message = new FacesMessage(FacesMessage.SEVERITY_INFO, summary,  null);
-	        FacesContext.getCurrentInstance().addMessage(null, message);
-	    }
-	
-	public String cancel () {
-		
-		article = new Article();
-		this.init();
-		return null;
+		FacesMessage message = new FacesMessage(FacesMessage.SEVERITY_INFO,
+				summary, null);
+		FacesContext.getCurrentInstance().addMessage(null, message);
 	}
-	
-	
 
-	public void delete(Article article) {
+
+
+	public void doDeleteArticle(Article article) {
 
 		articleServicesWeb.remove(article);
 		this.init();
 
-		
 	}
 
 	public Article getArticle() {
@@ -178,56 +138,39 @@ public class ArticleBean implements Serializable {
 		this.article = article;
 	}
 
-	
 
 
-	
-	 
-	    
-	    /**public String getSelectedItems() {
+	/**
+	 * public String getSelectedItems() {
+	 * 
+	 * // Get selected items. articles = new ArrayList<Article>(); for (Article
+	 * article : articles) { if (article.isSelected()) { articles.add(article);
+	 * article.setSelected(false); // Reset. } }
+	 * 
+	 * // Do your thing with the MyData items in List selectedDataList.
+	 * 
+	 * return "selected"; // Navigation case. }
+	 **/
 
-	        // Get selected items.
-	        articles = new ArrayList<Article>();
-	        for (Article article : 	articles) {
-	            if (article.isSelected()) {
-	                articles.add(article);
-	                article.setSelected(false); // Reset.
-	            }
-	        }
+	//
+	// public void upload() {
+	//
+	//
+	// if(file != null) {
+	// FacesMessage message = new FacesMessage("Succesful", file.getFileName() +
+	// " is uploaded.");
+	// FacesContext.getCurrentInstance().addMessage(null, message);
+	// try {
+	// copyFile(file.getFileName(), file.getInputstream());
+	//
+	// System.out.println(file.getFileName());
+	// } catch (IOException e) {
+	// e.printStackTrace();
+	// System.out.println("ioexception");
+	// }
+	// }else{
+	// System.out.println("null");
+	// }
+	// }
 
-	        // Do your thing with the MyData items in List selectedDataList.
-
-	        return "selected"; // Navigation case.
-	    }
-	    **/
-	    
-	    
-	 
-	    
-//	    
-//		 public void upload() {
-//			 
-//			
-//		        if(file != null) {
-//		            FacesMessage message = new FacesMessage("Succesful", file.getFileName() + " is uploaded.");
-//		            FacesContext.getCurrentInstance().addMessage(null, message);
-//		            try {
-//		                copyFile(file.getFileName(), file.getInputstream());
-//		                
-//		                System.out.println(file.getFileName());
-//		            } catch (IOException e) {
-//		                e.printStackTrace();
-//		                System.out.println("ioexception");
-//		            }
-//		        }else{
-//		        	System.out.println("null");
-//		        }
-//		    }
-	    
-		
-	    
-	    
-	    
-	
-	
 }
