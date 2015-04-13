@@ -9,6 +9,7 @@ import javax.faces.context.FacesContext;
 import javax.servlet.http.HttpServletRequest;
 
 import tn.esprit.Blues.entities.Administrator;
+import tn.esprit.Blues.entities.Customer;
 import tn.esprit.Blues.entities.User;
 import authservice.AuthentificationServiceI;
 
@@ -49,7 +50,11 @@ public class Authentification {
 			System.out.println(isLoggedIn);
 			return "welcome?faces-redirect=true";
 			
-		} else {
+		} else if(user instanceof Customer) {
+			isLoggedIn = true;
+			return "soon?faces-redirect=true";
+		}
+		else{
 			return null;
 		}
 
