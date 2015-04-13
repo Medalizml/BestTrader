@@ -1,0 +1,56 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html">
+    
+      
+      
+      
+      <div class="row">
+			<div class="col-md-12 animated fadeIn" id="preview-email-wrapper" style="">
+				<div class="row">
+					<div class="col-md-12">
+						 <div class="grid simple">
+						 	<div class="grid-title no-border">
+								<h4></h4>
+								<div class="tools">
+									<a href="javascript:;" class="remove"></a>
+								</div>
+							</div>
+							<h:form>
+							<div class="grid-body no-border" style="min-height: 850px;">
+								<div class="">
+									<h1 id="emailheading">#{recl.reclamation.title}</h1>
+									<br/>
+									<div class="control">									
+										<div class="pull-left">
+										<div class="btn-group">
+										<a data-toggle="dropdown">
+										#{recl.reclamation.sender.firstName} #{recl.reclamation.sender.lastName}
+										</a>
+									</div>
+									<br/>
+										<label class="inline"><span class="bold small-text">#{recl.reclamation.sender.email}</span></label>
+										</div>
+										<div class="pull-right">
+											<span class="muted small-text">#{recl.reclamation.date}</span>
+										</div>
+										<div class="clearfix"></div>
+									</div>	
+									<br/>
+									<div class="email-body">
+										<p>
+										#{recl.reclamation.topic}
+										</p>
+									</div>						
+								</div>							
+							</div>
+							</h:form>
+							</div>	
+						</div>
+				</div>
+			</div>		
+		</div>
+      
+      
+      </ui:composition>

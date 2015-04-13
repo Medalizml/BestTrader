@@ -212,7 +212,7 @@ $(document).ready(function() {
      */
     var nCloneTh = document.createElement( 'th' );
     var nCloneTd = document.createElement( 'td' );
-    nCloneTd.innerHTML = '<i class="fa fa-plus-circle"></i>';
+    nCloneTd.innerHTML = '';
     nCloneTd.className = "center";
      
     $('#example2 thead tr').each( function () {
@@ -254,7 +254,7 @@ $(document).ready(function() {
 			"sInfo": "Showing <b>_START_ to _END_</b> of _TOTAL_ entries"
 		},
     });
-	$("div.toolbar").html('<div class="table-tools-actions"><button class="btn btn-primary" style="margin-left:12px" id="test2">Add</button></div>');
+	$("div.toolbar").html('<div class="table-tools-actions"></div>');
 	
 	$('#test2').on( "click",function() {
 		$("#quick-access").css("bottom","0px");

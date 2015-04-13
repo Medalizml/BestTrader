@@ -1,0 +1,161 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:jsf="http://java.sun.com/jsf">
+
+	<ul class="breadcrumb">
+		<li>
+			<p>YOU ARE HERE</p>
+		</li>
+		<li><a href="#" class="active">Articles</a></li>
+	</ul>
+
+	<div class="pull-right actions">
+		<h:commandButton class="btn btn-primary btn-cons" type="button"
+			id="btn-new-ticket" value="Add Article">
+
+
+
+		</h:commandButton>
+	</div>
+	<ui:include src="articles.xhtml" />
+	<div class="col-md-12">
+		<div class="row">
+			<div class="col-md-12">
+				<div class="grid simple">
+					<div class="grid-body no-border email-body">
+						<br />
+						<div class="row-fluid">
+							<div class="row-fluid dataTables_wrapper">
+								<h2 class=" inline">Manage Articles</h2>
+								<br />
+								<div class="row-fluid">
+									<div class="span12">
+										<div class="grid simple ">
+											<div class="grid-title">
+												<h4>
+													Articles <span class="semi-bold">List</span>
+												</h4>
+												<div class="tools">
+													<a href="javascript:;" class="collapse"></a> <a
+														href="javascript:;" class="remove"></a>
+												</div>
+
+											</div>
+
+
+											<div class="grid-body ">
+
+												<table
+													class="table table-striped table-fixed-layout table-hover"
+													id="emails">
+
+													<h:dataTable value="#{ar.articles}" var="o"
+														class="table table-hover table-condensed" id="example2">
+
+														<h:column>
+
+															<f:facet name="header" style=" widf:facet:10%;"
+																data-hide="phone,tablet">Name</f:facet>
+
+															<h:inputText value="#{o.name}" size="10"
+																rendered="#{o.editable}" />
+
+															<h:outputText value="#{o.name}"
+																rendered="#{not o.editable}" />
+
+														</h:column>
+														<h:column>
+															<f:facet name="header" style="widf:facet:10%"
+																data-hide="phone,tablet">Author</f:facet>
+															<h:inputText value="#{o.author}" size="10"
+																rendered="#{o.editable}" />
+															<h:outputText value="#{o.author}"
+																rendered="#{not o.editable}" />
+														</h:column>
+														<h:column>
+															<f:facet name="header" style="widf:facet:10%"
+																data-hide="phone,tablet">date</f:facet>
+															<h:inputText value="#{o.date}" size="10"
+																rendered="#{o.editable}">
+																<f:convertDateTime />
+															</h:inputText>
+															<h:outputText value="#{o.date}"
+																rendered="#{not o.editable}" />
+														</h:column>
+														<h:column>
+															<f:facet name="header" style="widf:facet:10%"
+																data-hide="phone,tablet">Topic</f:facet>
+															<h:inputText value="#{o.topic}" size="10"
+																rendered="#{o.editable}" />
+															<h:outputText value="#{o.topic}"
+																rendered="#{not o.editable}" />
+														</h:column>
+
+
+														<h:column>
+															<f:facet name="header" style="widf:facet:10%"
+																data-hide="phone,tablet">
+
+															</f:facet>
+
+
+															<h:form>
+																<h:commandLink action="#{ar.doDeleteArticle(o)}"
+																	class="btn btn-danger dropdown-toggle btn-demo-space "
+																	>
+																	<i class="fa fa-warning"></i>
+																	<span class="bold">Delete</span>
+																</h:commandLink>
+
+															</h:form>
+
+
+
+
+														</h:column>
+
+
+
+														<h:column>
+															<f:facet name="header" style="widf:facet:10%"
+																data-hide="phone,tablet">
+
+															</f:facet>
+															<div class="fa-hover col-md-3 col-sm-4">
+																<h:form>
+																	<h:commandLink class="btn btn-success btn-con"
+																		action="#{ar1.doInsert(o)}">
+																		<i class="fa fa-edit"></i>
+																		<span class="bold">Update</span>
+
+																	</h:commandLink>
+																</h:form>
+
+
+
+															</div>
+
+														</h:column>
+
+
+
+													</h:dataTable>
+												</table>
+
+
+
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+</ui:composition>

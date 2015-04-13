@@ -1,0 +1,27 @@
+
+	<ui:composition
+	xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html"
+      template="/WEB-INF/template/template.xhtml">
+      
+      <ui:define name="pageTitle">Update Bank</ui:define>
+      <ui:define name="content">
+      
+      <div class="page-title" style=""> <a href="bank.xhtml" id="btn-back">
+		<i class="icon-custom-left"></i></a>
+        <h3>Back- <span class="semi-bold">Banks</span></h3>
+     </div>
+     <br />
+                <br />
+                <br />  
+     <div style="width: 2000px; height: 1000px">
+     
+    <ui:include src="/companies/bank/Update.xhtml" />
+    
+    </div>
+      </ui:define>
+      
+			
+	</ui:composition>
