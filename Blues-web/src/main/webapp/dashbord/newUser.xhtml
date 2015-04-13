@@ -26,7 +26,13 @@
 										</div>
 									</div>
 									<div class="action-bar pull-right">
-										<button class="btn btn-primary" type="button">Activate</button>
+									<h:form>
+									<h:commandLink
+									class="btn btn-primary btn-demo-space btn-sm btn-small"
+									action="#{usersBean.doActivateUser(Dash.inactifs.get(0))}">
+									<i class="fa fa-check-square"></i>&#160;&#160;Activate
+								</h:commandLink>
+								</h:form>
 									</div>
 									<div class="clearfix"></div>
 								</div>
