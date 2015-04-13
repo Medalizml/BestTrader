@@ -1,0 +1,99 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:jsf="http://java.sun.com/jsf"
+	xmlns:p="http://xmlns.jcp.org/jsf/passthrough">
+
+
+	<div class="col-md-6">
+		<div class="grid simple">
+			<div class="grid-title no-border">
+				<h4>
+					Company <span class="semi-bold">Infomation</span>
+				</h4>
+			</div>
+
+			<div class="grid-body no-border">
+				<div id="form_traditional_validation" >
+
+					<div class="form-group">
+						<label class="form-label">Company</label> <span class="help">Name</span>
+						<div class="input-with-icon  right">
+							<i class=""></i>
+							<h:inputText class="form-control"
+								value="#{publicManagedBean.newCompany.name}" />
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="form-label">Head</label> <span class="help">Office</span>
+						<div class="input-with-icon  right">
+							<i class=""></i>
+							<h:inputText class="form-control"
+								value="#{publicManagedBean.newCompany.headOffice}" />
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="form-label">Phone</label> <span class="help">Number</span>
+						<div class="input-with-icon  right">
+							<i class=""></i>
+							<h:inputText class="form-control" data-v-max="99999999"
+								data-v-min="20000000"
+								value="#{publicManagedBean.newCompany.phone}" />
+						</div>
+					</div>
+					
+					
+					<div class="form-group">
+						<label class="form-label">Social</label> <span class="help">Capital</span>
+						<div class="input-with-icon  right">
+							<i class=""></i>
+							<h:inputText class="form-control" data-v-max="999999999"
+								data-v-min="0"
+								value="#{publicManagedBean.newCompany.socialCapital}" />
+						</div>
+					</div>
+					
+					<div class="form-group">
+						<label class="form-label">Company</label> <span class="help">Sector</span>
+						<div class="input-with-icon  right">
+							<i class=""></i>
+							<h:selectOneMenu value="#{publicManagedBean.sectorN}">
+								<f:selectItems value="#{publicManagedBean.sectors}"
+									var="sector" itemValue="#{sector.name}"
+									itemLabel="#{sector.name}" />
+							</h:selectOneMenu>
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="form-label"></label> <span class="help"></span>
+						
+					 <div class="input-append success date col-sm-9 no-padding">
+                    <h:inputText value="#{publicManagedBean.datePublic}" type="text" class="form-control" p:placeholder="Date of incorporation" id="dateOfIncorporation" />
+                    <span class="add-on"><span class="arrow"></span><i class="fa fa-th"></i></span> </div>
+					
+					
+					</div>
+					<br></br>
+					<h:inputFile value="#{demoBean.file1}" 
+						>
+					</h:inputFile>
+
+					<br></br>
+					<br></br>
+					<br></br>
+					<br></br>
+					<h:commandLink
+						class="btn btn-primary dropdown-toggle btn-demo-space"
+						action="#{publicManagedBean.doAdd()}">
+						<i class="fa fa-edit"></i>
+						<span class="bold">Submit</span>
+					</h:commandLink>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+
+</ui:composition>

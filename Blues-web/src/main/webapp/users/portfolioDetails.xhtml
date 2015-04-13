@@ -26,17 +26,20 @@
 					<div class="col-md-8 user-description-box  col-sm-5"
 						style="margin-left: 100px; margin-top: 20px">
 						<br />
-						<h:form>
+						<h:form id="portfolio">
 							<p>
-								<i class="fa fa-briefcase"></i><i style="color: blue"><span class="bold">Portfolio_Value
-									:</span></i>&#160;&#160;&#160;&#160;
+								<i class="fa fa-dollar"></i><i style="color: black"><span
+									class="bold">Portfolio_Value :</span></i>&#160;&#160;&#160;&#160;
 								<h:outputText
-									value="#{usersBean.selectedCustomer.portfolio.value}" />
+									value="#{usersBean.selectedCustomer.portfolio.value}">
+
+								</h:outputText>
+								&#160;&#160;TND
 							</p>
 						</h:form>
 						<h:form>
 							<p>
-								<i class="fa fa-globe"></i><i style="color: blue"><span class="bold">Share_Number
+								<i class="fa fa-exchange"></i><i style="color: black"><span class="bold">Share_Number
 									:</span></i>&#160;&#160;&#160;&#160;
 								<h:outputText
 									value="#{usersBean.selectedCustomer.portfolio.sharesNumber}" />
@@ -44,9 +47,9 @@
 						</h:form>
 						<h:form>
 							<p>
-								<i class="fa fa-home"></i><i style="color: blue"><span class="bold">Benefit :</span></i>&#160;&#160;&#160;&#160;
+								<i class="fa fa-money"></i><i style="color: black"><span class="bold">Benefit :</span></i>&#160;&#160;&#160;&#160;
 								<h:outputText
-									value="#{usersBean.selectedCustomer.portfolio.gain}" />
+									value="#{usersBean.selectedCustomer.portfolio.gain}" />&#160;&#160;TND
 							</p>
 						</h:form>
 					</div>
