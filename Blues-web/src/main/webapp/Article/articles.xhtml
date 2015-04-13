@@ -12,7 +12,7 @@
 				style="display: none">
 				<div class="grid-title no-border">
 					<h4 class="semi-bold">Add Article</h4>
-					
+
 				</div>
 				<div class="grid-body">
 					<div class="col-md-12">
@@ -20,7 +20,7 @@
 						<div class="grid simple">
 
 							<div class="grid-body no-border">
-								<h:form id="form_traditional_validation">
+								<h:form enctype="multipart/form-data" id="form_traditional_validation">
 
 
 									<div class="form-group">
@@ -71,7 +71,8 @@
 												class="fa fa-th"></i></span>
 										</div>
 									</div>
-
+									<h:inputFile value="#{demoBean.file1}">
+									</h:inputFile>
 									<div class="row form-row">
 										<div class="col-md-12 margin-top-10">
 											<div class="pull-right">
@@ -79,8 +80,8 @@
 													id="btn-close-ticket">Close</button>
 												<h:commandButton class="btn btn-primary btn-cons "
 													action="#{ar.doAddArticle()}" value="Add">
-													
-											
+
+
 
 												</h:commandButton>
 											</div>

@@ -1,0 +1,112 @@
+
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:jsf="http://java.sun.com/jsf"
+	xmlns:p="http://xmlns.jcp.org/jsf/passthrough">
+
+	<div class="col-md-6" style="margin-left: 255px">
+
+		<div class="grid simple">
+
+			<div class="grid-title no-border">
+
+				<h4>
+					Update <span class="semi-bold">New Article</span>
+				</h4>
+
+				<div class="tools">
+					<a href="javascript:;" class="collapse" /> <a href="#grid-config"
+						data-toggle="modal" class="config" /> <a href="javascript:;"
+						class="reload" /> <a href="javascript:;" class="remove" />
+				</div>
+			</div>
+
+			<div class="grid-body no-border">
+				<h:form id="form_traditional_validation">
+
+
+					<div class="form-group">
+						<label class="form-label">Name</label>
+
+
+						<div class="input-with-icon  right">
+							<i class="" />
+							<h:inputText type="text" name="form1Amount" id="form1Amount"
+								class="form-control" value="#{ar1.article.name}" />
+
+
+						</div>
+					</div>
+
+					<div class="form-group">
+						<label class="form-label">Author</label> <span class="help"></span>
+
+						<div class="input-with-icon  right">
+							<i class="" />
+							<h:inputText type="text" name="form1CardHolderName"
+								id="form1CardHolderName" class="form-control"
+								value="#{ar1.article.author}" />
+						</div>
+					</div>
+
+					<div class="form-group">
+						<label class="form-label">Topic</label>
+
+
+
+						<h:inputTextarea value="#{ar1.article.topic}"
+							name="form1CardNumber" id="text-editor" class="form-control"
+							rows="15" />
+
+					</div>
+
+
+					<div class="form-group">
+						<label class="form-label">Date</label>
+						<div
+							class="input-append success date col-md-10 col-sm-9 no-padding">
+
+							<h:inputText class="form-control" value="#{ar1.dateTest}"
+								id="dateOfExpense" p:placeholder="#{ar1.article.date}" />
+							<span class="add-on"><span class="arrow"></span><i
+								class="fa fa-th"></i></span>
+						</div>
+					</div>
+
+
+					<br></br>
+					<br></br>
+					<div class="form-actions">
+
+						<div class="pull-right">
+
+
+
+							<h:commandLink class="btn btn-danger btn-cons "
+								action="#{ar1.doUpdateAR()}" value="Save">
+								
+								<i class="fa fa-edit"></i>
+							</h:commandLink>
+
+
+
+						</div>
+					</div>
+				</h:form>
+			</div>
+
+		</div>
+	</div>
+
+
+
+
+
+
+
+
+
+
+</ui:composition>

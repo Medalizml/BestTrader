@@ -6,7 +6,7 @@
       xmlns:h="http://java.sun.com/jsf/html"
       template="/WEB-INF/template/template.xhtml">
       
-      <ui:define name="pageTitle">Update Bank</ui:define>
+      <ui:define name="pageTitle">Bank Details</ui:define>
       <ui:define name="content">
       
       <div class="page-title" style=""> <a href="bank.xhtml" id="btn-back">
@@ -22,13 +22,12 @@
 		<div class="grid simple">
 			<div class="grid-title no-border">
 				<h4>
-					Update <span class="semi-bold">Bank</span>
+					Bank <span class="semi-bold">Details</span>
 				</h4>
 			</div>
 
 			<div class="grid-body no-border">
-				<h:form id="form_traditional_validation" action="#"
-					novalidate="novalidate">
+				
 
 					<div class="form-group">
 						<label class="form-label">Company</label> <span class="help">Name</span>
@@ -84,13 +83,7 @@
 								data-v-min="0" value="#{bankManagedBean.bank.socialShare}" />
 						</div>
 					</div>
-					<h:commandLink
-						class="btn btn-primary dropdown-toggle btn-demo-space"
-						action="#{bankManagedBean.doUpdate()}">
-						<i class="fa fa-edit"></i>
-						<span class="bold">Submit</span>
-					</h:commandLink>
-				</h:form>
+					
 			</div>
 		</div>
 	</div>
