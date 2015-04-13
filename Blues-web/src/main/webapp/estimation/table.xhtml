@@ -1,0 +1,89 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html"
+      >
+      
+      <ul class="breadcrumb">
+		<li>
+			<p>YOU ARE HERE</p>
+		</li>
+		<li><a href="#" class="active">Estimation</a></li>
+	</ul>
+      
+	<h:dataTable value="#{estim.companies}" var="o"
+		class="table table-striped dataTable" id="example3"
+		aria-describedby="example2_info" headerClass="statBean-table-header"
+		rowClasses="statBean-table-odd-row,statBean-table-even-row">
+
+		<h:column>
+		
+			<f:facet name="header" class="sorting" role="columnheader" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" style="width: 164px;" aria-label="Rendering engine: activate to sort column ascending">Company Name</f:facet>
+    	<div id="Parks" class="just list">
+    	 <ul style="      ">				
+    	 <li class="mix alaska camping climbing fishing mix_all" data-name="Denali" data-area="4740911.37" style="  display: block; opacity: 1;">
+    			
+    			<div class="meta name">
+            <div class="img_wrapper"><h:graphicImage  value="#{o.logo}"/></div>
+            <div class="titles">
+              <h2><h:outputText value="#{o.name}" /></h2>
+              <p><em><h:outputText value="#{o.sector.name}" /></em></p>
+            </div>
+          </div>
+ 		</li>
+ 		</ul>
+ 		</div>
+    		</h:column>
+
+		<h:column>
+
+			<f:facet name="header">Closing price</f:facet>
+    		<div id="Parks" class="just list">
+    	 <ul style="      ">				
+    	 <li class="mix alaska camping climbing fishing mix_all" data-name="Denali" data-area="4740911.37" style="  display: block; opacity: 1;">	
+  <div class="meta region">
+            <p><h:outputText value="#{o.quotation.closingPrice} TND" /></p>
+          </div>
+          </li>
+ 		</ul>
+ 		</div>
+    		</h:column>
+
+		<h:column>
+
+			<f:facet name="header">Estimation</f:facet>
+			<div id="Parks" class="just list">
+    	 <ul style="      ">				
+    	 <li class="mix alaska camping climbing fishing mix_all" data-name="Denali" data-area="4740911.37" style="  display: block; opacity: 1;">
+    			<div class="meta rec">
+            <p> <h:outputText value="#{o.quotation.estimation} %" /> </p>
+          </div>
+   </li>
+ 		</ul>
+ 		</div>
+    		</h:column>
+
+		<h:column>
+
+			<f:facet name="header">New estimation</f:facet>
+			<div id="Parks" class="just list">
+    	 <ul style="      ">				
+    	 <li class="mix alaska camping climbing fishing mix_all" data-name="Denali" data-area="4740911.37" style="  display: block; opacity: 1;">
+    			<div class="meta area">
+    			<h:form>
+           <p> <h:inputText  class="form-control" data-v-max="9999" data-v-min="0" value="#{o.quotation.estimation}"/> <br />
+          
+          <h:commandLink class="btn btn-danger dropdown-toggle btn-demo-space " action="#{estim.doUpdatedec(o.quotation)}"><i class="fa fa-arrow-down"></i><span class="bold">Decrease</span></h:commandLink>
+
+          <h:commandLink class="btn btn-primary dropdown-toggle btn-demo-space" action="#{estim.doUpdate(o.quotation)}"><i class="fa fa-arrow-up" ></i><span class="bold">Increase</span></h:commandLink>
+           </p>
+           </h:form>
+          </div>
+   </li>
+ 		</ul>
+ 		</div>
+    		</h:column>
+
+	</h:dataTable>
+			
+	</ui:composition>

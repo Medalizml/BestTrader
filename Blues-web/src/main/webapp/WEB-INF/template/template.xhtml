@@ -189,7 +189,7 @@
    <!-- BEGIN SIDEBAR MENU -->	
 	<p class="menu-title">BROWSE <span class="pull-right"><a href="javascript:;"><i class="fa fa-refresh"></i></a></span></p>
     <ul>	
-      <li class="start active"> <a href=""> <i class="icon-custom-home"></i> <span class="title">Dashboard</span> <span class="selected"></span> <span class="badge badge-important pull-right">5</span></a> </li>
+      <li class="start active"> <h:link p:href="#{request.contextPath}/welcome.xhtml"> <i class="icon-custom-home"></i> <span class="title">Dashboard</span> <span class="selected"></span>  </h:link> </li>
 	  <li class=""><h:link p:href="#{request.contextPath}/mail/mail.xhtml"> <i class="fa fa-envelope"></i> <span class="title">Reclamtion</span>  <span class=" badge badge-disable pull-right ">203</span></h:link></li>      
 
       <li class=""> <a href="javascript:;"> <i class="icon-custom-ui"></i> <span class="title">Companies</span> <span class="arrow "></span> </a>
@@ -205,12 +205,11 @@
 
       <li class="">  <h:link p:href="#{request.contextPath}/users/user.xhtml"><i class="fa fa-users"></i> <span class="title">Users</span>  </h:link></li>
 
-      <li class=""> <a href="javascript:;"> <i class="fa fa-sort"></i> <span class="title">Estimations</span>  </a></li>
+      <li class="">  <h:link p:href="#{request.contextPath}/estimation/estimation.xhtml"> <i class="fa fa-sort"></i> <span class="title">Estimations</span>  </h:link></li>
 
-      <li class=""> <a href="javascript:;"> <i class="fa fa-bar-chart-o"></i> <span class="title">Statistics</span> </a></li>
+      <li class="">  <h:link p:href="#{request.contextPath}/statistiques/stat.xhtml"> <i class="fa fa-bar-chart-o"></i> <span class="title">Statistics</span> </h:link></li>
 
 
-      <li class=""> <a href="charts.html"> <i class="icon-custom-chart"></i> <span class="title">Charts</span> </a> </li>    
 
 
 
@@ -241,28 +240,7 @@
 		</ul>
 	  </li>    
     </ul>
-	<div class="side-bar-widgets">
-	<p class="menu-title">FOLDER <span class="pull-right"><a href="#" class="create-folder"> <i class="fa fa-plus"></i></a></span></p>
-	<ul class="folders" >
-		  <li><a href="#"><div class="status-icon green"></div> My quick tasks </a> </li>
-		  <li><a href="#"><div class="status-icon red"></div> To do list </a> </li>
-		  <li><a href="#"><div class="status-icon blue"></div> Projects </a> </li>
-		  <li class="folder-input" style="display:none"><input type="text" placeholder="Name of folder" class="no-boarder folder-name" name="" /></li>
-	</ul>
-	<p class="menu-title">PROJECTS </p>
-		<div class="status-widget">
-			<div class="status-widget-wrapper">
-				<div class="title">Freelancer<a href="#" class="remove-widget"><i class="icon-custom-cross"></i></a></div>
-				<p>Redesign home page</p>
-			</div>
-		</div>
-		<div class="status-widget">
-			<div class="status-widget-wrapper">
-				<div class="title">envato<a href="#" class="remove-widget"><i class="icon-custom-cross"></i></a></div>
-				<p>Statistical report</p>
-			</div>
-		</div>
-	</div>
+	
 	<a href="#" class="scrollup">Scroll</a>
 	<div class="clearfix"></div>
     <!-- END SIDEBAR MENU --> 
