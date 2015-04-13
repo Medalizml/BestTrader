@@ -4,6 +4,9 @@ import javax.annotation.PostConstruct;
 import javax.ejb.EJB;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
+import javax.faces.context.ExternalContext;
+import javax.faces.context.FacesContext;
+import javax.servlet.http.HttpServletRequest;
 
 import tn.esprit.Blues.entities.Administrator;
 import tn.esprit.Blues.entities.User;
@@ -64,7 +67,9 @@ public class Authentification {
 		user=new User();
 		isLoggedIn=false;
 		System.out.println(isLoggedIn);
-		return "login?faces-redirect=true";
+		HttpServletRequest origRequest = (HttpServletRequest)FacesContext.getCurrentInstance().getExternalContext().getRequest();
+		System.out.println(origRequest.getContextPath());
+		return origRequest.getContextPath();
 		
 	}
 }

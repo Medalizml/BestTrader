@@ -32,11 +32,11 @@
 		 <li class="dropdown"> <a id="main-menu-toggle" href="#main-menu"  class="" > <div class="iconset top-menu-toggle-white"></div> </a> </li>		 
 		</ul>
       <!-- BEGIN LOGO -->	
-      <a href="index.html"><h:graphicImage src=" img/logo.png" class="logo" alt=""  data-src=" img/logo2x.png" width="106" height="21"/></a>
+      <a href="index.html"><img src="#{request.contextPath}/resource/img/logo3.png" class="logo" alt=""  data-src=" #{request.contextPath}/resource/img/logo3.png" width="106" height="21"/></a>
       <!-- END LOGO --> 
       <ul class="nav pull-right notifcation-center">	
-        <li class="dropdown" id="header_task_bar"> <a href="index.html" class="dropdown-toggle active" data-toggle=""> <div class="iconset top-home"></div> </a> </li>
-        <li class="dropdown" id="header_inbox_bar" > <a href="email.html" class="dropdown-toggle" > <div class="iconset top-messages"></div>  <span class="badge" id="msgs-badge">2</span> </a></li>
+        <li class="dropdown" id="header_task_bar"> <a href="/Blues-web/welcome.xhtml" class="dropdown-toggle active" data-toggle=""> <div class="iconset top-home"></div> </a> </li>
+        <li class="dropdown" id="header_inbox_bar" > <a href="/Blues-web/mail/mail.xhtml" class="dropdown-toggle" > <div class="iconset top-messages"></div></a></li>
 		
       </ul>
       </div>
@@ -189,7 +189,7 @@
    <!-- BEGIN SIDEBAR MENU -->	
 	<p class="menu-title">BROWSE <span class="pull-right"><a href="javascript:;"><i class="fa fa-refresh"></i></a></span></p>
     <ul>	
-      <li class="start active"> <h:link p:href="#{request.contextPath}/welcome.xhtml"> <i class="icon-custom-home"></i> <span class="title">Dashboard</span> <span class="selected"></span>  </h:link> </li>
+      <li> <h:link p:href="#{request.contextPath}/welcome.xhtml"> <i class="icon-custom-home"></i> <span class="title">Dashboard</span> <span class="selected"></span>  </h:link> </li>
 	  <li class=""><h:link p:href="#{request.contextPath}/mail/mail.xhtml"> <i class="fa fa-envelope"></i> <span class="title">Reclamtion</span>  <span class=" badge badge-disable pull-right ">203</span></h:link></li>      
 
       <li class=""> <a href="javascript:;"> <i class="icon-custom-ui"></i> <span class="title">Companies</span> <span class="arrow "></span> </a>

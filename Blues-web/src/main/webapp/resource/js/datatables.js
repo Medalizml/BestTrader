@@ -155,16 +155,16 @@ $(document).ready(function() {
 	var tableElement = $('#example');
 
     tableElement.dataTable( {
-		"sDom": "<'row'<'col-md-6'l T><'col-md-6'f>r>t<'row'<'col-md-12'p i>>",
-			"oTableTools": {
-			"aButtons": [
-				{
-					"sExtends":    "collection",
-					"sButtonText": "<i class='fa fa-cloud-download'></i>",
-					"aButtons":    [ "csv", "xls", "pdf", "copy"]
-				}
-			]
-		},
+//		"sDom": "<'row'<'col-md-6'l T><'col-md-6'f>r>t<'row'<'col-md-12'p i>>",
+//			"oTableTools": {
+//			"aButtons": [
+//				{
+//					"sExtends":    "collection",
+//					"sButtonText": "<i class='fa fa-cloud-download'></i>",
+//					"aButtons":    [ "csv", "xls", "pdf", "copy"]
+//				}
+//			]
+//		},
 		"sPaginationType": "bootstrap",
 		 "aoColumnDefs": [
           { 'bSortable': false, 'aTargets': [ 0 ] }

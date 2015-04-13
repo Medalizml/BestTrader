@@ -8,93 +8,57 @@
     <div class="row">
 				<div class="tiles  col-md-12 no padding  ">			
 					<div class="tiles-body">
-						<h5><span class="semi-bold" style="color:red;">#{Dash.inactifs.size()}  new reclamations</span>
-						&#160;&#160; <a href="../users/user.xhtml" class="text-info normal-text"><span style="color: white">view all</span></a></h5>
+						<h5><span class="semi-bold" style="color:red;">#{Dash.reclamations.size()}  new reclamations</span>
+						&#160;&#160; <a href="/Blues-web/mail/mail.xhtml" class="text-info normal-text"><span style="color: white">view all</span></a></h5>
 						<div class="row">
-							<div class="col-md-3">
+							<div class="col-md-6">
 								<div class="friend-list">
 									<div class="friend-profile-pic">
 										<div class="user-profile-pic-normal">
-										<h:graphicImage value="#{Dash.inactifs.get(0).profilePicture}"  width="35" height="35"/>
+										<h:graphicImage value="#{Dash.reclamations.get(0).sender.profilePicture}"  width="35" height="35"/>
 										</div>
 									</div> 
 									<div class="friend-details-wrapper">
 										<div class="friend-name" style="color :navy;">
-											#{Dash.inactifs.get(0).firstName} &#160; #{Dash.inactifs.get(0).lastName}
+											#{Dash.reclamations.get(0).sender.firstName} &#160; #{Dash.reclamations.get(0).sender.lastName}
 										</div>
 										<div class="friend-description" style="color :white;">
-											#{Dash.inactifs.get(0).job}
+											#{Dash.reclamations.get(0).title}
 										</div>
 									</div>
 									<div class="action-bar pull-right">
+									<a href="/Blues-web/mail/mail.xhtml">
 										<button class="btn btn-danger" type="button">Read</button>
+									</a>
 									</div>
 									<div class="clearfix"></div>
 								</div>
 							</div>
-							<div class="col-md-3">
+							<div class="col-md-6">
 								<div class="friend-list">
 									<div class="friend-profile-pic">
 										<div class="user-profile-pic-normal">
-										<h:graphicImage value="#{Dash.inactifs.get(0).profilePicture}"  width="35" height="35"/>
+										<h:graphicImage value="#{Dash.reclamations.get(1).sender.profilePicture}"  width="35" height="35"/>
 										</div>
 									</div> 
 									<div class="friend-details-wrapper">
 										<div class="friend-name" style="color :navy;">
-											#{Dash.inactifs.get(0).firstName} &#160; #{Dash.inactifs.get(0).lastName}
+											#{Dash.reclamations.get(1).sender.firstName} &#160; #{Dash.reclamations.get(1).sender.lastName}
 										</div>
 										<div class="friend-description" style="color :white;">
-											#{Dash.inactifs.get(0).job}
+											#{Dash.reclamations.get(1).title}
 										</div>
 									</div>
 									<div class="action-bar pull-right">
+									<a href="/Blues-web/mail/mail.xhtml">
+									
 										<button class="btn btn-danger" type="button">Read</button>
+									</a>
 									</div>
 									<div class="clearfix"></div>
 								</div>
 							</div>
-							<div class="col-md-3">
-								<div class="friend-list">
-									<div class="friend-profile-pic">
-										<div class="user-profile-pic-normal">
-										<h:graphicImage value="#{Dash.inactifs.get(0).profilePicture}"  width="35" height="35"/>
-										</div>
-									</div> 
-									<div class="friend-details-wrapper">
-										<div class="friend-name" style="color :navy;">
-											#{Dash.inactifs.get(0).firstName} &#160; #{Dash.inactifs.get(0).lastName}
-										</div>
-										<div class="friend-description" style="color :white;">
-											#{Dash.inactifs.get(0).job}
-										</div>
-									</div>
-									<div class="action-bar pull-right">
-										<button class="btn btn-danger" type="button">Read</button>
-									</div>
-									<div class="clearfix"></div>
-								</div>
-							</div>
-							<div class="col-md-3">
-								<div class="friend-list">
-									<div class="friend-profile-pic">
-										<div class="user-profile-pic-normal">
-										<h:graphicImage value="#{Dash.inactifs.get(1).profilePicture}" width="35" height="35" />
-										</div>
-									</div>
-									<div class="friend-details-wrapper">
-										<div class="friend-name" style="color :navy;">
-											#{Dash.inactifs.get(1).firstName} &#160;  #{Dash.inactifs.get(1).lastName}
-										</div>
-										<div class="friend-description" style="color :white;">
-											#{Dash.inactifs.get(1).job}
-										</div>
-									</div>
-									<div class="action-bar pull-right">
-										<button class="btn btn-danger" type="button">Read</button>
-									</div>
-									<div class="clearfix"></div>
-								</div>	
-							</div>
+						
 							
 						</div>
 					</div>

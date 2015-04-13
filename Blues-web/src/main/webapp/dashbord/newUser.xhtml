@@ -8,7 +8,7 @@
     <div class="row">
 				<div class="tiles purple col-md-12 no padding  ">			
 					<div class="tiles-body">
-						<h5><span class="semi-bold" style="color:white;">#{Dash.inactifs.size()}  new users</span>&#160;&#160; <a href="../users/user.xhtml" class="text-info normal-text">view all</a></h5>
+						<h5><span class="semi-bold" style="color:white;">#{Dash.inactifs.size()}  new users</span>&#160;&#160; <a href="/Blues-web/users/user.xhtml" class="text-info normal-text">view all</a></h5>
 						<div class="row">
 							<div class="col-md-6">
 								<div class="friend-list">
@@ -26,10 +26,10 @@
 										</div>
 									</div>
 									<div class="action-bar pull-right">
-									<h:form>
+									<h:form >
 									<h:commandLink
 									class="btn btn-primary btn-demo-space btn-sm btn-small"
-									action="#{usersBean.doActivateUser(Dash.inactifs.get(0))}">
+									action="#{Dash.doActivateUser(Dash.inactifs.get(0))}">
 									<i class="fa fa-check-square"></i>&#160;&#160;Activate
 								</h:commandLink>
 								</h:form>
@@ -53,7 +53,13 @@
 										</div>
 									</div>
 									<div class="action-bar pull-right">
-										<button class="btn btn-primary" type="button">Activate</button>
+										<h:form >
+									<h:commandLink
+									class="btn btn-primary btn-demo-space btn-sm btn-small"
+									action="#{Dash.doActivateUser(Dash.inactifs.get(0))}">
+									<i class="fa fa-check-square"></i>&#160;&#160;Activate
+								</h:commandLink>
+								</h:form>
 									</div>
 									<div class="clearfix"></div>
 								</div>	
