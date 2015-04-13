@@ -97,10 +97,16 @@ public class ArticleBean implements Serializable {
 		System.out.println(date1);
 
 		System.out.println(date);
-
+		try {
+			DemoBean.upload();
+			System.out.println("iciiiii");
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			System.out.println("laaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa");
+			e.printStackTrace();
+		}
+		article.setPicture("resource/img/"+DemoBean.getFilename(DemoBean.file1));
 		articleServicesWeb.add(article);
-		// FacesMessage message = new FacesMessage("Succès de l'inscription !");
-		// FacesContext.getCurrentInstance().addMessage(null, message);
 		article = new Article();
 		this.init();
 

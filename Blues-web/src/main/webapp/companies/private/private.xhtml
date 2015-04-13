@@ -10,7 +10,12 @@
 	 xmlns:p="http://primefaces.org/ui">
 	<ui:define name="pageTitle">Private Companies</ui:define>
 	<ui:define name="content">
-		<h1>Private Companies</h1>
+	<ul class="breadcrumb">
+		<li>
+			<p>YOU ARE HERE</p>
+		</li>
+		<li><a href="#" class="active">Private Companies</a></li>
+	</ul>
 		
 		
 		<ui:include src="/companies/private/table.xhtml" />

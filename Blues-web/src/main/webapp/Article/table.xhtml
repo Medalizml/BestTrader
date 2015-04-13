@@ -55,17 +55,20 @@
 														class="table table-hover table-condensed" id="example2">
 
 														<h:column>
-
-															<f:facet name="header" style=" widf:facet:10%;"
-																data-hide="phone,tablet">Name</f:facet>
-
-															<h:inputText value="#{o.name}" size="10"
-																rendered="#{o.editable}" />
-
-															<h:outputText value="#{o.name}"
-																rendered="#{not o.editable}" />
-
-														</h:column>
+<div id="Parks" class="just list">
+									<div class="meta name">
+												<div class="img_wrapper">
+													<h:graphicImage value="#{resource.contextPath}/#{o.picture}"
+														width="20" height="50" alt="" />
+												</div>
+												<div class="titles">
+													<h4>
+														<h:outputText value="#{o.name}" />
+													</h4>
+												</div>
+											</div>
+								</div>
+						</h:column>
 														<h:column>
 															<f:facet name="header" style="widf:facet:10%"
 																data-hide="phone,tablet">Author</f:facet>
