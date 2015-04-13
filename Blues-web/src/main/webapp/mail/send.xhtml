@@ -3,6 +3,7 @@
 	xmlns:f="http://java.sun.com/jsf/core"
 	xmlns:h="http://java.sun.com/jsf/html"
 	xmlns:p="http://xmlns.jcp.org/jsf/passthrough"
+	xmlns:jsf="http://xmlns.jcp.org/jsf"
 	>
 	
 	<div class="row">
@@ -27,7 +28,7 @@
 											<div class="form-group col-md-12">
 												<label class="form-label">To</label>
 												<div class="controls">
-													<h:inputText class="form-control " value="#{mail.to}" p:placeholder="e.g. someone@example.com" p:required=""/>
+													<input type="email" class="form-control " jsf:value="#{mail.to}" p:placeholder="e.g. someone@example.com" p:required=""/>
 													</div>
 								</div>
 								</div>
