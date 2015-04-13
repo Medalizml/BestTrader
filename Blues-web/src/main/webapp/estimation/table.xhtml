@@ -2,9 +2,15 @@
       xmlns:ui="http://java.sun.com/jsf/facelets"
       xmlns:f="http://java.sun.com/jsf/core"
       xmlns:h="http://java.sun.com/jsf/html"
+      >
       
-xmlns:p="http://primefaces.org/ui">
-<p:button style= "display:none;"></p:button>
+      <ul class="breadcrumb">
+		<li>
+			<p>YOU ARE HERE</p>
+		</li>
+		<li><a href="#" class="active">Estimation</a></li>
+	</ul>
+      
 	<h:dataTable value="#{estim.companies}" var="o"
 		class="table table-striped dataTable" id="example3"
 		aria-describedby="example2_info" headerClass="statBean-table-header"

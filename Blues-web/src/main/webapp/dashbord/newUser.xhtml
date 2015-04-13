@@ -1,0 +1,62 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html"
+      >
+      <div class="row spacing-bottom 2col" >
+    
+    <div class="row">
+				<div class="tiles purple col-md-12 no padding  ">			
+					<div class="tiles-body">
+						<h5><span class="semi-bold" style="color:white;">#{Dash.inactifs.size()}  new users</span>&#160;&#160; <a href="../users/user.xhtml" class="text-info normal-text">view all</a></h5>
+						<div class="row">
+							<div class="col-md-6">
+								<div class="friend-list">
+									<div class="friend-profile-pic">
+										<div class="user-profile-pic-normal">
+										<h:graphicImage value="#{Dash.inactifs.get(0).profilePicture}"  width="35" height="35"/>
+										</div>
+									</div> 
+									<div class="friend-details-wrapper">
+										<div class="friend-name" style="color :navy;">
+											#{Dash.inactifs.get(0).firstName} &#160; #{Dash.inactifs.get(0).lastName}
+										</div>
+										<div class="friend-description" style="color :white;">
+											#{Dash.inactifs.get(0).job}
+										</div>
+									</div>
+									<div class="action-bar pull-right">
+										<button class="btn btn-primary" type="button">Activate</button>
+									</div>
+									<div class="clearfix"></div>
+								</div>
+							</div>
+							<div class="col-md-6">
+								<div class="friend-list">
+									<div class="friend-profile-pic">
+										<div class="user-profile-pic-normal">
+										<h:graphicImage value="#{Dash.inactifs.get(1).profilePicture}" width="35" height="35" />
+										</div>
+									</div>
+									<div class="friend-details-wrapper">
+										<div class="friend-name" style="color :navy;">
+											#{Dash.inactifs.get(1).firstName} &#160;  #{Dash.inactifs.get(1).lastName}
+										</div>
+										<div class="friend-description" style="color :white;">
+											#{Dash.inactifs.get(1).job}
+										</div>
+									</div>
+									<div class="action-bar pull-right">
+										<button class="btn btn-primary" type="button">Activate</button>
+									</div>
+									<div class="clearfix"></div>
+								</div>	
+							</div>
+							
+						</div>
+					</div>
+				</div>
+				</div>
+      </div>
+      
+      </ui:composition>

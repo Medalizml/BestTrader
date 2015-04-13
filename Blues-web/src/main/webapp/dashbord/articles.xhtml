@@ -1,0 +1,74 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html"
+      >
+    
+
+      
+      
+<div class="col-md-6 col-sm-12">
+					<div class="tiles white">
+						  <div class="tiles-body">
+							<div class="controller">								
+								<a href="javascript:;" class="reload"></a>
+								<a href="javascript:;" class="remove"></a>									
+							</div>
+							<div class="tiles-title">
+								Articles List
+								<a href="../users/user.xhtml" class="text-info normal-text"><span style="color: blue">&#160;&#160;view all</span></a>
+							</div>
+														
+						  <br/>
+							<div class="notification-messages danger">
+								
+								<div class="message-wrapper">
+									<div class="heading">
+										#{Dash.articles.get(0).name}  
+									</div>
+									<div class="description">
+										#{Dash.articles.get(0).author} 
+									</div>
+								</div>
+								<div class="date pull-right" style="color:red;">
+								<span class="bold" >#{Dash.articles.get(0).date} </span>
+								</div>
+							</div>
+							<br />
+							<div class="notification-messages info">
+								
+								<div class="message-wrapper">
+									<div class="heading">
+										#{Dash.articles.get(1).name}  
+									</div>
+									<div class="description">
+										#{Dash.articles.get(1).author} 
+									</div>
+								</div>
+								<div class="date pull-right" style="color:navy;">
+								<span class="bold" >#{Dash.articles.get(1).date} </span>
+								</div>
+							</div>
+							<BR />
+						<div class="notification-messages info">
+								
+								<div class="message-wrapper">
+									<div class="heading">
+										#{Dash.articles.get(0).name}  
+									</div>
+									<div class="description">
+										#{Dash.articles.get(0).author} 
+									</div>
+								</div>
+								<div class="date pull-right" style="color:blue;">
+								<span class="bold" >#{Dash.articles.get(0).date} </span>
+								</div>
+							</div>
+							<br />							
+					    </div>
+					</div>					
+				</div>
+				
+  
+	</ui:composition>
+

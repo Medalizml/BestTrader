@@ -1,0 +1,93 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html"
+      >
+	<div class="row spacing-bottom 2col">	
+			<div class="col-md-3 col-sm-6 spacing-bottom-sm spacing-bottom">	
+				<div class="tiles blue added-margin">
+				  <div class="tiles-body">
+					<div class="controller">								
+						<a href="javascript:;" class="reload"></a>
+						<a href="javascript:;" class="remove"></a>		
+					</div>		
+					<div class="tiles-title">
+						<h3 style="color: white;" ><span class="bold">#{Dash.estimCompanies.get(0).name}</span></h3>
+						Estimation
+					</div>	
+					<div class="heading">
+					<span class="animate-number" data-value="#{Dash.estimCompanies.get(0).quotation.estimation}" data-animation-duration="1200">#{Dash.estimCompanies.get(0).quotation.estimation}</span>&#160; &#160; %
+											
+					</div>
+					<div class="progress transparent progress-small no-radius">
+						<div class="progress-bar progress-bar-white animate-progress-bar" data-percentage="#{Dash.estimCompanies.get(0).quotation.estimation}" style="width: #{Dash.estimCompanies.get(0).quotation.estimation};"></div>
+					</div>					
+					</div>	
+				</div>
+			</div>
+			<div class="col-md-3 col-sm-6 spacing-bottom-sm spacing-bottom">
+				<div class="tiles green added-margin">
+				 <div class="tiles-body">
+					<div class="controller">								
+						<a href="javascript:;" class="reload"></a>
+						<a href="javascript:;" class="remove"></a>		
+					</div>		
+					<div class="tiles-title">
+<h3 style="color: white;" ><span class="bold">#{Dash.estimCompanies.get(1).name}</span></h3>
+						Estimation					</div>	
+					<div class="heading">
+					<span class="animate-number" data-value="#{Dash.estimCompanies.get(1).quotation.estimation}" data-animation-duration="1200">#{Dash.estimCompanies.get(1).quotation.estimation}</span>&#160; &#160; %
+											
+					</div>
+					<div class="progress transparent progress-small no-radius">
+						<div class="progress-bar progress-bar-white animate-progress-bar" data-percentage="#{Dash.estimCompanies.get(1).quotation.estimation}" style="width: #{Dash.estimCompanies.get(1).quotation.estimation};"></div>
+					</div>					
+					 </div>
+				</div>
+			</div>
+			<div class="col-md-3 col-sm-6 spacing-bottom">
+				<div class="tiles red added-margin">
+				<div class="tiles-body">
+					<div class="controller">								
+						<a href="javascript:;" class="reload"></a>
+						<a href="javascript:;" class="remove"></a>		
+					</div>		
+					<div class="tiles-title">
+<h3 style="color: white;" ><span class="bold">#{Dash.estimCompanies.get(2).name}</span></h3>
+						Estimation					</div>	
+					<div class="heading">
+					<span class="animate-number" data-value="#{Dash.estimCompanies.get(2).quotation.estimation}" data-animation-duration="1200">#{Dash.estimCompanies.get(2).quotation.estimation} </span>&#160; &#160; %
+											
+					</div>
+					<div class="progress transparent progress-small no-radius">
+						<div class="progress-bar progress-bar-white animate-progress-bar" data-percentage="#{Dash.estimCompanies.get(2).quotation.estimation}" style="width: #{Dash.estimCompanies.get(2).quotation.estimation};"></div>
+					</div>					
+						</div>
+				</div>
+		
+			</div> 
+			<div class="col-md-3 col-sm-6">
+				<div class="tiles purple added-margin">
+				  <div class="tiles-body">
+					<div class="controller">								
+						<a href="javascript:;" class="reload"></a>
+						<a href="javascript:;" class="remove"></a>		
+					</div>		
+					<div class="tiles-title">
+					<h3 style="color: white;" ><span class="bold">#{Dash.estimCompanies.get(3).name}</span></h3>
+						Estimation
+					</div>	
+					<div class="heading">
+					<span class="animate-number" data-value="#{Dash.estimCompanies.get(3).quotation.estimation}" data-animation-duration="1200">#{Dash.estimCompanies.get(3).quotation.estimation}</span>&#160;&#160; %
+											
+					</div>
+					<div class="progress transparent progress-small no-radius">
+						<div class="progress-bar progress-bar-white animate-progress-bar" data-percentage="#{Dash.estimCompanies.get(3).quotation.estimation}" style="width: #{Dash.estimCompanies.get(3).quotation.estimation};"></div>
+					</div>					
+						
+				 </div>
+				</div>
+			</div>			
+		</div>
+	</ui:composition>
+
