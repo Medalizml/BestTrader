@@ -120,8 +120,8 @@ public class BankManagedBean {
 		newBank.setDateIncorporation(date1);
 		bankService.add(newBank, share);
 		
-		//init();
-		return "private?faces-redirect=true";
+		init();
+		return "bank?faces-redirect=true";
 	}
 
 	public String doShow(Bank bank) {
