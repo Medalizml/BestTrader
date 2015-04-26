@@ -32,11 +32,11 @@
 		 <li class="dropdown"> <a id="main-menu-toggle" href="#main-menu"  class="" > <div class="iconset top-menu-toggle-white"></div> </a> </li>		 
 		</ul>
       <!-- BEGIN LOGO -->	
-      <a href="index.html"><img src="#{request.contextPath}/resource/img/logo3.png" class="logo" alt=""  data-src=" #{request.contextPath}/resource/img/logo3.png" width="106" height="21"/></a>
+      <a href="index.html"></a>
       <!-- END LOGO --> 
       <ul class="nav pull-right notifcation-center">	
         <li class="dropdown" id="header_task_bar"> <a href="/Blues-web/welcome.xhtml" class="dropdown-toggle active" data-toggle=""> <div class="iconset top-home"></div> </a> </li>
-        <li class="dropdown" id="header_inbox_bar" > <a href="/Blues-web/mail/mail.xhtml" class="dropdown-toggle" > <div class="iconset top-messages"></div></a></li>
+        <li class="dropdown" id="header_inbox_bar" > <a href="/Blues-web/admin/mail/mail.xhtml" class="dropdown-toggle" > <div class="iconset top-messages"></div></a></li>
 		
       </ul>
       </div>
@@ -190,24 +190,24 @@
 	<p class="menu-title">BROWSE <span class="pull-right"><a href="javascript:;"><i class="fa fa-refresh"></i></a></span></p>
     <ul>	
       <li> <h:link p:href="#{request.contextPath}/welcome.xhtml"> <i class="icon-custom-home"></i> <span class="title">Dashboard</span> <span class="selected"></span>  </h:link> </li>
-	  <li class=""><h:link p:href="#{request.contextPath}/mail/mail.xhtml"> <i class="fa fa-envelope"></i> <span class="title">Reclamations</span> <span class=" badge badge-disable pull-right ">#{numberMangedBean.number} </span></h:link></li>      
+	  <li class=""><h:link p:href="#{request.contextPath}/admin/mail/mail.xhtml"> <i class="fa fa-envelope"></i> <span class="title">Reclamations</span> <span class=" badge badge-disable pull-right ">#{numberMangedBean.number} </span></h:link></li>      
 
       <li class=""> <a href="javascript:;"> <i class="icon-custom-ui"></i> <span class="title">Companies</span> <span class="arrow "></span> </a>
         <ul class="sub-menu">
-		  <li > <h:link p:href="#{request.contextPath}/companies/public/public.xhtml"> Public Companies </h:link> </li>
-		  <li > <h:link p:href="#{request.contextPath}/companies/private/private.xhtml"> Private Companies </h:link> </li>
-		   <li > <h:link p:href="#{request.contextPath}/companies/bank/bank.xhtml">Banks</h:link> </li>
+		  <li > <h:link p:href="#{request.contextPath}/admin/companies/public/public.xhtml"> Public Companies </h:link> </li>
+		  <li > <h:link p:href="#{request.contextPath}/admin/companies/private/private.xhtml"> Private Companies </h:link> </li>
+		   <li > <h:link p:href="#{request.contextPath}/admin/companies/bank/bank.xhtml">Banks</h:link> </li>
 
 
         </ul>
       </li>
-	  <li class=""> <h:link p:href="#{request.contextPath}/Article/Article.xhtml">  <i class="icon-custom-form"></i> <span class="title">Articles</span>  </h:link></li>
+	  <li class=""> <h:link p:href="#{request.contextPath}/admin/Article/Article.xhtml">  <i class="icon-custom-form"></i> <span class="title">Articles</span>  </h:link></li>
 
-      <li class="">  <h:link p:href="#{request.contextPath}/users/user.xhtml"><i class="fa fa-users"></i> <span class="title">Users</span>  </h:link></li>
+      <li class="">  <h:link p:href="#{request.contextPath}/admin/users/user.xhtml"><i class="fa fa-users"></i> <span class="title">Users</span>  </h:link></li>
 
-      <li class="">  <h:link p:href="#{request.contextPath}/estimation/estimation.xhtml"> <i class="fa fa-sort"></i> <span class="title">Estimations</span>  </h:link></li>
+      <li class="">  <h:link p:href="#{request.contextPath}/admin/estimation/estimation.xhtml"> <i class="fa fa-sort"></i> <span class="title">Estimations</span>  </h:link></li>
 
-      <li class="">  <h:link p:href="#{request.contextPath}/statistiques/stat.xhtml"> <i class="fa fa-bar-chart-o"></i> <span class="title">Statistics</span> </h:link></li>
+      <li class="">  <h:link p:href="#{request.contextPath}/admin/statistiques/stat.xhtml"> <i class="fa fa-bar-chart-o"></i> <span class="title">Statistics</span> </h:link></li>
 
 
 

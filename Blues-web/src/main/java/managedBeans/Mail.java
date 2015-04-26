@@ -6,6 +6,7 @@ package managedBeans;
  */
 
 
+import javax.ejb.Asynchronous;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
 import javax.mail.*;
@@ -92,7 +93,6 @@ public class Mail {
     }
 
    
-
     public int sendMail() {
         try {
             Properties props = System.getProperties();
