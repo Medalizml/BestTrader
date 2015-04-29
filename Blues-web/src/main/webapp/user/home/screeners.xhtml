@@ -1,0 +1,88 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html">
+
+	<div class="col-sm-16 banner-outer wow fadeInLeft animated animated"
+		data-wow-delay="1s" data-wow-offset="50"
+		style="visibility: visible; -webkit-animation-delay: 1s;">
+		<div class="row">
+	<div class="col-sm-16 col-md-10 col-lg-8">
+	<ui:include src="/user/home/caroussel.xhtml" />
+	</div>
+			<div class="col-sm-6 col-md-6 col-lg-8 hidden-sm hidden-xs">
+				<div class="row">
+				
+					<div class="col-md-16 col-lg-10">
+						<div class="row">
+							<div class="col-sm-16 right-img-top " style="height: 250px">
+								<a href="#">
+									<div class="box" style="height: 250px">
+										<div class="carousel-caption">TunIndex values during the last 6 months</div>
+										<img class="img-responsive"
+											src="http://www.ilboursa.com/graphes/_graphe.aspx?s=PX1" width="440" height="320"
+											alt=""/>
+										<div class="overlay"></div>
+										<div class="overlay-info">
+											<div class="cat">
+												<p class="cat-data">
+													<span class="ion-arrow-graph-up-right"></span>Finance
+												</p>
+											</div>
+											<div class="info">
+												<p>
+													<span class="ion-android-data"></span>
+													read more
+												</p>
+											</div>
+										</div>
+									</div>
+								</a>
+							</div>
+							<div class="col-sm-16 right-img-btm " style="height: 200px">
+								<a href="#">
+									<div class="box" style="height: 190px">
+										<div class="carousel-caption">Visualize live shares values</div>
+										<img class="img-responsive"
+											src="#{request.contextPath}/resource/resourceClient/images/banner-static/stock.jpg" width="440" height="292"
+											alt="" />
+										<div class="overlay"></div>
+										<div class="overlay-info">
+											<div class="cat">
+												<p class="cat-data">
+													<span class="ion-arrow-graph-up-right"></span>Finance
+												</p>
+											</div>
+											<div class="info">
+												<p>
+													<span class="ion-android-data"></span>Go to Screeners
+												</p>
+											</div>
+										</div>
+									</div>
+								</a>
+							</div>
+						</div>
+					</div>
+						<div class="col-lg-6 hidden-md">
+						 <ul class="list-group">
+              <li class="list-group-item"> <a href="#"> #{home.sectors.get(0).name} <span class="badge pull-right">#{home.nbCompany.get(0)}</span> </a></li>
+              <li class="list-group-item"> <a href="#"> #{home.sectors.get(1).name} <span class="badge pull-right">#{home.nbCompany.get(1)}</span></a> </li>
+              <li class="list-group-item"> <a href="#">#{home.sectors.get(2).name}<span class="badge pull-right">#{home.nbCompany.get(2)}</span> </a></li>
+              <li class="list-group-item"> <a href="#"> #{home.sectors.get(3).name} <span class="badge pull-right">#{home.nbCompany.get(3)}</span></a> </li>
+              <li class="list-group-item"> <a href="#"> #{home.sectors.get(11).name}<span class="badge pull-right">#{home.nbCompany.get(11)}</span></a> </li>
+              <li class="list-group-item"> <a href="#"> #{home.sectors.get(5).name} <span class="badge pull-right">#{home.nbCompany.get(5)}</span> </a></li>
+              <li class="list-group-item"> <a href="#"> #{home.sectors.get(12).name} <span class="badge pull-right">#{home.nbCompany.get(12)}</span> </a></li>
+              <li class="list-group-item"> <a href="#"> #{home.sectors.get(7).name} <span class="badge pull-right">#{home.nbCompany.get(7)}</span></a> </li>
+              <li class="list-group-item"> <a href="#"> #{home.sectors.get(8).name} <span class="badge pull-right">#{home.nbCompany.get(8)}</span> </a></li>
+              <li class="list-group-item"> <a href="#"> #{home.sectors.get(9).name} <span class="badge pull-right">#{home.nbCompany.get(9)}</span> </a></li>
+              <li class="list-group-item"> <a href="#"> #{home.sectors.get(10).name} <span class="badge pull-right">#{home.nbCompany.get(10)}</span> </a></li>
+            </ul>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+</ui:composition>
