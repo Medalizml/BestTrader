@@ -92,7 +92,7 @@ Author : Webyzona.com
 	position: absolute;
 	left: 50%;
 	top: 50%;
-	background-image: url(../images/general/status-blue.gif);
+	background-image: url(../images/general/status-red.gif);
 	background-repeat: no-repeat;
 	background-position: center;
 	margin: -100px 0 0 -100px;
@@ -187,7 +187,7 @@ transform:rotate(360deg);
 
 #scrollUp {
 	background-color: #01c6d9;
-	background-image: url("../images/general/top-blue.png");
+	background-image: url("../images/general/top-red.png");
 	bottom: 20px;
 	right: 20px;
 	width: 38px;    /* Width of image */
