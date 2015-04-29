@@ -1,0 +1,84 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:jsf="http://java.sun.com/jsf"
+	xmlns:p="http://xmlns.jcp.org/jsf/passthrough">
+
+
+
+
+
+	<div class="grid simple ">
+
+		<div class=" tiles white col-md-12 no-padding">
+			<div class="tiles green cover-pic-wrapper">
+				<div class="overlayer bottom-right">
+					<div class="overlayer-wrapper"></div>
+				</div>
+				<h:graphicImage value="/resource/img/profiles/money.jpg" />
+			</div>
+			<div class="tiles white">
+
+				<div class="row">
+
+					<h3 class="text-success semi-bold" align="center">Portfolio_Details</h3>
+					<div class="col-md-8 user-description-box  col-sm-5"
+						style="margin-left: 100px; margin-top: 20px">
+						<br />
+						<h:form id="portfolio">
+							<p>
+								<i class="fa fa-dollar"></i><i style="color: black"><span
+									class="bold">Portfolio_Value :</span></i>&#160;&#160;&#160;&#160;
+								<h:outputText
+									value="#{usersBean.selectedCustomer.portfolio.value}">
+
+								</h:outputText>
+								&#160;&#160;TND
+							</p>
+						</h:form>
+						<h:form>
+							<p>
+								<i class="fa fa-exchange"></i><i style="color: black"><span class="bold">Share_Number
+									:</span></i>&#160;&#160;&#160;&#160;
+								<h:outputText
+									value="#{usersBean.selectedCustomer.portfolio.sharesNumber}" />
+							</p>
+						</h:form>
+						<h:form>
+							<p>
+								<i class="fa fa-money"></i><i style="color: black"><span class="bold">Benefit :</span></i>&#160;&#160;&#160;&#160;
+								<h:outputText
+									value="#{usersBean.selectedCustomer.portfolio.gain}" />&#160;&#160;TND
+							</p>
+						</h:form>
+					</div>
+
+				</div>
+				<div class="tiles-body">
+					<div class="row"></div>
+										<br />
+					<br />
+					<div class="pull-right actions">
+						<h:commandButton value="Add Bonus"
+							class="btn btn-primary btn-cons" type="button"
+							id="btn-new-ticket"></h:commandButton>
+					</div>
+					<br />
+					<br />
+					<br />
+				</div>
+			</div>
+
+		</div>
+
+	</div>
+	<div class="tiles-body">
+		<div class="row" style="margin-left: 240px"></div>
+	</div>
+
+	<ui:include src="/admin/users/addBonus.xhtml" />
+
+
+
+</ui:composition>

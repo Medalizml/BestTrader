@@ -1,0 +1,97 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:jsf="http://java.sun.com/jsf"
+	xmlns:p="http://xmlns.jcp.org/jsf/passthrough">
+
+	<div class="clearfix"></div>
+	<div class="row">
+		<div class="col-md-12">
+			<div class="grid simple transparent" id="new-ticket-wrapper"
+				style="display: none">
+				<div class="grid-title no-border">
+					<h4 class="semi-bold">Add Article</h4>
+
+				</div>
+				<div class="grid-body">
+					<div class="col-md-12">
+
+						<div class="grid simple">
+
+							<div class="grid-body no-border">
+								<h:form enctype="multipart/form-data" id="form_traditional_validation">
+
+
+									<div class="form-group">
+										<label class="form-label">Name</label>
+
+
+										<div class="input-with-icon  right">
+											<i class="" />
+											<h:inputText type="text" name="form1Amount" id="form1Amount"
+												class="form-control" value="#{ar.article.name}"
+												p:required="true" />
+
+										</div>
+									</div>
+
+									<div class="form-group">
+										<label class="form-label">Author</label> <span class="help"></span>
+
+										<div class="input-with-icon  right">
+											<i class="" />
+											<h:inputText type="text" name="form1CardHolderName"
+												id="form1CardHolderName" class="form-control"
+												value="#{ar.article.author}" p:required="true" />
+										</div>
+									</div>
+
+									<div class="form-group">
+										<label class="form-label">Topic</label>
+
+
+										<div class="input-with-icon  right">
+											<i class="" />
+											<h:inputTextarea rows="15" value="#{ar.article.topic}"
+												name="form1CardNumber" id="form1CardNumber"
+												class="form-control" p:required="true" />
+										</div>
+									</div>
+
+
+									<div class="form-group">
+										<label class="form-label">Date</label>
+										<div
+											class="input-append success date col-md-10 col-lg-6 no-padding">
+
+											<h:inputText class="form-control" value="#{ar.dateTest}"
+												id="dateOfExpense" p:required="true" />
+											<span class="add-on"><span class="arrow"></span><i
+												class="fa fa-th"></i></span>
+										</div>
+									</div>
+									<h:inputFile value="#{demoBean.file1}">
+									</h:inputFile>
+									<div class="row form-row">
+										<div class="col-md-12 margin-top-10">
+											<div class="pull-right">
+												<button class="btn btn-cons" type="button"
+													id="btn-close-ticket">Close</button>
+												<h:commandButton class="btn btn-primary btn-cons "
+													action="#{ar.doAddArticle()}" value="Add">
+												</h:commandButton>
+											</div>
+										</div>
+									</div>
+								</h:form>
+							</div>
+
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+</ui:composition>

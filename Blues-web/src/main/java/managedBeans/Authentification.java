@@ -72,9 +72,8 @@ public class Authentification {
 		user=new User();
 		isLoggedIn=false;
 		System.out.println(isLoggedIn);
-		HttpServletRequest origRequest = (HttpServletRequest)FacesContext.getCurrentInstance().getExternalContext().getRequest();
-		System.out.println(origRequest.getContextPath());
-		return origRequest.getContextPath();
+		
+		return "login.xhtml";
 		
 	}
 }

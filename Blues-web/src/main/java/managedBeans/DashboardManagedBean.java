@@ -33,10 +33,6 @@ public class DashboardManagedBean {
 	private List<Article> articles;
 	private List<Reclamation> Reclamations;
 
-	
-	
-	
-	
 	public List<Article> getArticles() {
 		return articles;
 	}
