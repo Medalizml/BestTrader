@@ -3,11 +3,14 @@
       xmlns:f="http://java.sun.com/jsf/core"
       xmlns:h="http://java.sun.com/jsf/html" >
       <!-- jQuery --> 
+      
 <script src="/Blues-web/resource/resourceClient/js/jquery.min.js"></script> 
 <!--jQuery easing--> 
 <script src="/Blues-web/resource/resourceClient/js/jquery.easing.1.3.js"></script> 
 <!-- bootstrab js --> 
 <script src="/Blues-web/resource/resourceClient/js/bootstrap.js"></script> 
+
+<script src="/Blues-web/resource/resourceClient/js/jquery.dataTables.js"></script>
 <!--style switcher--> 
 <script src="/Blues-web/resource/resourceClient/js/style-switcher.js"></script> <!--wow animation--> 
 <script src="/Blues-web/resource/resourceClient/js/wow.min.js"></script> 
@@ -34,5 +37,8 @@
 <script src="/Blues-web/resource/resourceClient/js/enquire.js"></script> 
 <!--custom functions--> 
 <script src="/Blues-web/resource/resourceClient/js/custom-fun.js"></script>
-      
+
+     <script> $(document).ready(function() {
+    $('#example').DataTable();
+} );</script>
       </ui:composition>
