@@ -15,6 +15,7 @@ import tn.esprit.Blues.entities.Operation;
 import tn.esprit.Blues.entities.Quotation;
 import clientServices.ProfileServices;
 import entity.Intermediaire;
+import entity.OperationAction;
 
 
 @ViewScoped
@@ -32,7 +33,25 @@ public class ProfileManagedBean {
 	public Float value;
 	public Operation operation;
 	public List<Intermediaire> intermediaires;
+	public List<OperationAction> actions;
+	public String color;
 	
+	public String getColor() {
+		return color;
+	}
+
+	public void setColor(String color) {
+		this.color = color;
+	}
+
+	public List<OperationAction> getActions() {
+		return actions;
+	}
+
+	public void setActions(List<OperationAction> actions) {
+		this.actions = actions;
+	}
+
 	public List<Intermediaire> getIntermediaires() {
 		return intermediaires;
 	}
@@ -108,15 +127,52 @@ public class ProfileManagedBean {
 		
 		return l;
 	}
-	
+	public List<OperationAction> remplirOperationAction(){
+		
+		List<OperationAction> l = new ArrayList<OperationAction>();
+		List<Operation> o = profile.getMyOperations(customer.getPortfolio().getId());
+		
+		for (int i = 0; i < o.size(); i++) {
+			
+			OperationAction a = new OperationAction();
+			
+			a.setOperation(o.get(i));
+			if(o.get(i).getNumberShares()<0)
+			{
+				a.setAction("Sell");
+				a.setColor("red");
+				a.getOperation().setNumberShares(-o.get(i).getNumberShares());
+			}
+			else {
+				a.setAction("Buy");
+				a.setColor("green");
+			}
+			a.setValue( a.getOperation().getNumberShares() * a.getOperation().getSharePrice());
+			l.add(a);
+		}
+		
+		
+		return l;
+	}
+	public void desactivate()
+	{
+		customer.setActive(false);
+		services.update(customer);
+	}
+	public void updateProfile()
+	{
+		
+		services.update(customer);
+	}
 	@PostConstruct
 	public void init(){
 		customer= services.findById(3);
 		operation = new Operation();
 		operation.setPortfolio(customer.getPortfolio());
-		
+		setColor("red");
 		setQuotations(profile.getMyQuotations(customer.getPortfolio().getId()));
 		setIntermediaires(this.remplirIntermediaire());
+		setActions(this.remplirOperationAction());
 	}
 	
 	
