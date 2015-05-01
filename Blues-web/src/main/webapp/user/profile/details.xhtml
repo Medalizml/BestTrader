@@ -1,0 +1,132 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://xmlns.jcp.org/jsf/passthrough">
+
+	<div class="col-sm-16 author-box">
+		<div class="row">
+			<div class=" col-xs-16 col-sm-3">
+				<img width="128" height="128" alt=""
+					src="#{profile.customer.profilePicture}" class="img-thumbnail"
+					style="max-height: 11em; height: 100%; min-height: 11em;" />
+			</div>
+			<div class="col-xs-16 col-sm-13">
+				<h3>#{profile.customer.firstName}&#160;#{profile.customer.lastName}
+				</h3>
+
+				<table>
+					<tr>
+						<td style="color: #01c6d9"><span class="ion-at"></span>
+							&#160;</td>
+						<td><h4>#{profile.customer.email}</h4></td>
+					</tr>
+					<tr>
+						<td style="color: #01c6d9"><span class="ion-briefcase"></span>
+							&#160;</td>
+						<td><h4>#{profile.customer.job}</h4></td>
+					</tr>
+					<tr>
+						<td style="color: #01c6d9"><span
+							class="glyphicon glyphicon-earphone"></span> &#160;</td>
+						<td><h4>#{profile.customer.phoneNumber}</h4></td>
+					</tr>
+					<tr>
+						<td style="color: #01c6d9"><span class="ion-earth"></span>
+							&#160;</td>
+						<td><h4>#{profile.customer.nationality}</h4></td>
+					</tr>
+					<tr>
+						<td style="color: #01c6d9"><span class="ion-map"></span>
+							&#160;</td>
+						<td><h4>#{profile.customer.address}</h4></td>
+					</tr>
+				</table>
+				<div class="pull-right">
+					<h:form>
+
+
+						<a class="open-popup-link" href="#log-in2"
+							data-effect="mfp-zoom-in"><span style="color: red"
+							class="glyphicon glyphicon-remove"></span></a>
+							
+						&#160;&#160;&#160;
+							
+							<a class="open-popup-link" href="#create-account2"
+							data-effect="mfp-zoom-in"><span style="color: #3D566E"
+							class="glyphicon glyphicon-pencil"></span></a>
+
+					</h:form>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div id="log-in2" class="white-popup mfp-with-anim mfp-hide">
+		<h:form>
+			<center>
+				<h3 style="color: red">Warning</h3>
+			</center>
+			<hr />
+			<p>You are going to desactivate your account ! You'll not be able
+				to log in until an admin reactivate your account !</p>
+			<hr />
+			<div class="row">
+				<div class="col-sm-16">
+
+					<center>
+						<h:commandButton class="btn btn-danger"
+							action="#{profile.desactivate()}" value="Desactivate" />
+					</center>
+
+				</div>
+			</div>
+		</h:form>
+	</div>
+	<div id="create-account2" class="white-popup mfp-with-anim mfp-hide">
+		<h:form>
+			<h3>Update your profile</h3>
+			<table class="table table-hover">
+				<tr>
+
+					<td>Email :</td>
+					<td><h:inputText value="#{profile.customer.email}"
+							class="form-control" /></td>
+				</tr>
+				<tr>
+
+					<td>Password :</td>
+					<td><h:inputText value="#{profile.customer.password}"
+							class="form-control" /></td>
+				</tr>
+
+				<tr>
+
+					<td>Job :</td>
+					<td><h:inputText value="#{profile.customer.job}"
+							class="form-control" /></td>
+				</tr>
+
+				<tr>
+
+					<td>Adress :</td>
+					<td><h:inputText value="#{profile.customer.address}"
+							class="form-control" /></td>
+				</tr>
+			</table>
+			<hr />
+			<div class="row">
+				<div class="col-sm-16">
+
+					<center>
+						<h:commandButton class="btn btn-success"
+							action="#{profile.updateProfile()}" value="Update" />
+					</center>
+
+				</div>
+			</div>
+
+		</h:form>
+	</div>
+
+
+</ui:composition>
