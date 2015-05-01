@@ -1,0 +1,413 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html">
+
+	
+			<div class="row ">
+			
+				<div class="col-sm-16 bt-spac wow fadeInUp animated animated"
+					data-wow-delay="1s" data-wow-offset="150"
+					style="visibility: visible; -webkit-animation-delay: 1s;">
+					<div class="table-responsive">
+						<table class="table table-bordered social">
+							<tbody>
+								<tr>
+								<td><a class="facebook" href="#">
+											<p class="">
+												<span class="ion-social-facebook"></span>  facebook
+											</p>
+									</a></td>
+									<td><a class="youtube" href="#">
+											<p class="">
+												<span class="ion-social-youtube"></span> youtube
+											</p>
+									</a></td>
+									<td><a class="instagram" href="#">
+											<p class="">
+												<span class="ion-social-instagram"></span> instagram
+											</p>
+									</a></td>
+									
+								</tr>
+								
+							</tbody>
+						</table>
+					</div>
+				</div>
+				<!-- activities start -->
+				<div class="col-sm-16 bt-space wow fadeInUp animated animated"
+					data-wow-delay="1s" data-wow-offset="130"
+					style="visibility: visible; -webkit-animation-delay: 1s;">
+					<div class="main-title-outer pull-left">
+						<div class="main-title">TOP closing prices</div>
+					</div>
+					<!-- Nav tabs -->
+					<ul class="nav nav-tabs nav-justified " role="tablist">
+						<li class="active"><a href="#popular" role="tab"
+							data-toggle="tab">Private</a></li>
+						<li><a href="#recent" role="tab" data-toggle="tab">Public</a></li>
+						<li><a href="#comments" role="tab" data-toggle="tab">Banks</a></li>
+					</ul>
+
+					<!-- Tab panes -->
+					
+					<div class="tab-content">
+						<div class="tab-pane active" id="popular">
+							<ul class="list-unstyled">
+								<li><a href="#">
+										<div class="row">
+											<div class="col-sm-5 col-md-4">
+												<img class="img-thumbnail pull-left"
+													src="#{home.privates.get(0).logo}"
+													width="164" height="152" style="min-height: 4em;   max-height: 4em;   height: 100%;" />
+											</div>
+											<div class="col-sm-11 col-md-12">
+												<h3>#{home.privates.get(0).name}</h3>
+												<H4><span class="ion-arrow-graph-up-right"></span> #{home.privates.get(0).quotation.closingPrice} TND</H4>
+												<div class="text-danger sub-info">
+													<div class="time">
+														<span class="ion-pricetags"></span> #{home.privates.get(0).sector.name}
+													</div>
+													
+													
+												</div>
+											</div>
+										</div>
+								</a></li>
+								<li><a href="#">
+										<div class="row">
+											<div class="col-sm-5 col-md-4">
+												<img class="img-thumbnail pull-left"
+													src="#{home.privates.get(0).logo}"
+													width="164" height="152" style="min-height: 4em;   max-height: 4em;   height: 100%;" />
+											</div>
+											<div class="col-sm-11 col-md-12">
+												<h3>#{home.privates.get(01).name}</h3>
+												<H4><span class="ion-arrow-graph-up-right"></span> #{home.privates.get(01).quotation.closingPrice} TND</H4>
+												<div class="text-danger sub-info">
+													<div class="time">
+														<span class="ion-pricetags"></span> #{home.privates.get(01).sector.name}
+													</div>
+													
+													
+												</div>
+											</div>
+										</div>
+								</a></li>
+								<li><a href="#">
+										<div class="row">
+											<div class="col-sm-5 col-md-4">
+												<img class="img-thumbnail pull-left"
+													src="#{home.privates.get(0).logo}"
+													width="164" height="152" style="min-height: 4em;   max-height: 4em;   height: 100%;" />
+											</div>
+											<div class="col-sm-11 col-md-12">
+												<h3>#{home.privates.get(02).name}</h3>
+												<H4><span class="ion-arrow-graph-up-right"></span> #{home.privates.get(02).quotation.closingPrice} TND</H4>
+												<div class="text-danger sub-info">
+													<div class="time">
+														<span class="ion-pricetags"></span> #{home.privates.get(02).sector.name}
+													</div>
+													
+													
+												</div>
+											</div>
+										</div>
+								</a></li>
+								<li><a href="#">
+										<div class="row">
+											<div class="col-sm-5 col-md-4">
+												<img class="img-thumbnail pull-left"
+													src="#{home.privates.get(0).logo}"
+													width="164" height="152" style="min-height: 4em;   max-height: 4em;   height: 100%;" />
+											</div>
+											<div class="col-sm-11 col-md-12">
+												<h3>#{home.privates.get(03).name}</h3>
+												<H4><span class="ion-arrow-graph-up-right"></span> #{home.privates.get(03).quotation.closingPrice} TND</H4>
+												<div class="text-danger sub-info">
+													<div class="time">
+														<span class="ion-pricetags"></span> #{home.privates.get(03).sector.name}
+													</div>
+													
+													
+												</div>
+											</div>
+										</div>
+								</a></li>
+								<li><a href="#">
+										<div class="row">
+											<div class="col-sm-5 col-md-4">
+												<img class="img-thumbnail pull-left"
+													src="#{home.privates.get(0).logo}"
+													width="164" height="152" style="min-height: 4em;   max-height: 4em;   height: 100%;" />
+											</div>
+											<div class="col-sm-11 col-md-12">
+												<h3>#{home.privates.get(04).name}</h3>
+												<H4><span class="ion-arrow-graph-up-right"></span> #{home.privates.get(04).quotation.closingPrice} TND</H4>
+												<div class="text-danger sub-info">
+													<div class="time">
+														<span class="ion-pricetags"></span> #{home.privates.get(04).sector.name}
+													</div>
+													
+													
+												</div>
+											</div>
+										</div>
+								</a></li>
+								<li><a href="#">
+										<div class="row">
+											<div class="col-sm-5 col-md-4">
+												<img class="img-thumbnail pull-left"
+													src="#{home.privates.get(0).logo}"
+													width="164" height="152" style="min-height: 4em;   max-height: 4em;   height: 100%;" />
+											</div>
+											<div class="col-sm-11 col-md-12">
+												<h3>#{home.privates.get(05).name}</h3>
+												<H4><span class="ion-arrow-graph-up-right"></span> #{home.privates.get(05).quotation.closingPrice} TND</H4>
+												<div class="text-danger sub-info">
+													<div class="time">
+														<span class="ion-pricetags"></span> #{home.privates.get(05).sector.name}
+													</div>
+													
+													
+												</div>
+											</div>
+										</div>
+								</a></li>
+								
+								
+							</ul>
+						</div>
+						
+						
+						
+						<div class="tab-pane" id="recent">
+								<ul class="list-unstyled">
+								<li><a href="#">
+										<div class="row">
+											<div class="col-sm-5 col-md-4">
+												<img class="img-thumbnail pull-left"
+													src="#{home.publics.get(0).logo}"
+													width="164" height="152" style="min-height: 4em;   max-height: 4em;   height: 100%;" />
+											</div>
+											<div class="col-sm-11 col-md-12">
+												<h3>#{home.publics.get(0).name}</h3>
+												<H4><span class="ion-arrow-graph-up-right"></span> #{home.publics.get(0).quotation.closingPrice} TND</H4>
+												<div class="text-danger sub-info">
+													<div class="time">
+														<span class="ion-pricetags"></span> #{home.publics.get(0).sector.name}
+													</div>
+													
+													
+												</div>
+											</div>
+										</div>
+								</a></li>
+								<li><a href="#">
+										<div class="row">
+											<div class="col-sm-5 col-md-4">
+												<img class="img-thumbnail pull-left"
+													src="#{home.publics.get(0).logo}"
+													width="164" height="152" style="min-height: 4em;   max-height: 4em;   height: 100%;" />
+											</div>
+											<div class="col-sm-11 col-md-12">
+												<h3>#{home.publics.get(01).name}</h3>
+												<H4><span class="ion-arrow-graph-up-right"></span> #{home.publics.get(01).quotation.closingPrice} TND</H4>
+												<div class="text-danger sub-info">
+													<div class="time">
+														<span class="ion-pricetags"></span> #{home.publics.get(01).sector.name}
+													</div>
+													
+													
+												</div>
+											</div>
+										</div>
+								</a></li>
+								<li><a href="#">
+										<div class="row">
+											<div class="col-sm-5 col-md-4">
+												<img class="img-thumbnail pull-left"
+													src="#{home.publics.get(0).logo}"
+													width="164" height="152" style="min-height: 4em;   max-height: 4em;   height: 100%;" />
+											</div>
+											<div class="col-sm-11 col-md-12">
+												<h3>#{home.publics.get(02).name}</h3>
+												<H4><span class="ion-arrow-graph-up-right"></span> #{home.publics.get(02).quotation.closingPrice} TND</H4>
+												<div class="text-danger sub-info">
+													<div class="time">
+														<span class="ion-pricetags"></span> #{home.publics.get(02).sector.name}
+													</div>
+													
+													
+												</div>
+											</div>
+										</div>
+								</a></li>
+								<li><a href="#">
+										<div class="row">
+											<div class="col-sm-5 col-md-4">
+												<img class="img-thumbnail pull-left"
+													src="#{home.publics.get(0).logo}"
+													width="164" height="152" style="min-height: 4em;   max-height: 4em;   height: 100%;" />
+											</div>
+											<div class="col-sm-11 col-md-12">
+												<h3>#{home.publics.get(03).name}</h3>
+												<H4><span class="ion-arrow-graph-up-right"></span> #{home.publics.get(03).quotation.closingPrice} TND</H4>
+												<div class="text-danger sub-info">
+													<div class="time">
+														<span class="ion-pricetags"></span> #{home.publics.get(03).sector.name}
+													</div>
+													
+													
+												</div>
+											</div>
+										</div>
+								</a></li>
+								<li><a href="#">
+										<div class="row">
+											<div class="col-sm-5 col-md-4">
+												<img class="img-thumbnail pull-left"
+													src="#{home.publics.get(0).logo}"
+													width="164" height="152" style="min-height: 4em;   max-height: 4em;   height: 100%;" />
+											</div>
+											<div class="col-sm-11 col-md-12">
+												<h3>#{home.publics.get(04).name}</h3>
+												<H4><span class="ion-arrow-graph-up-right"></span> #{home.publics.get(04).quotation.closingPrice} TND</H4>
+												<div class="text-danger sub-info">
+													<div class="time">
+														<span class="ion-pricetags"></span> #{home.publics.get(04).sector.name}
+													</div>
+													
+													
+												</div>
+											</div>
+										</div>
+								</a></li>
+								<li><a href="#">
+										<div class="row">
+											<div class="col-sm-5 col-md-4">
+												<img class="img-thumbnail pull-left"
+													src="#{home.publics.get(0).logo}"
+													width="164" height="152" style="min-height: 4em;   max-height: 4em;   height: 100%;" />
+											</div>
+											<div class="col-sm-11 col-md-12">
+												<h3>#{home.publics.get(05).name}</h3>
+												<H4><span class="ion-arrow-graph-up-right"></span> #{home.publics.get(05).quotation.closingPrice} TND</H4>
+												<div class="text-danger sub-info">
+													<div class="time">
+														<span class="ion-pricetags"></span> #{home.publics.get(05).sector.name}
+													</div>
+													
+													
+												</div>
+											</div>
+										</div>
+								</a></li>
+								
+								
+							</ul>
+						</div>
+						<div class="tab-pane" id="comments">
+							<ul class="list-unstyled">
+								<li><a href="#">
+										<div class="row">
+											<div class="col-sm-5  col-md-4 ">
+												<img class="img-thumbnail pull-left"
+													src="#{home.banks.get(0).logo}"
+													width="164" height="152" style="min-height: 4em;   max-height: 4em;   height: 100%;" />
+											</div>
+											<div class="col-sm-11  col-md-12 ">
+												<h3>#{home.banks.get(0).name}</h3>
+												<H4><span class="ion-arrow-graph-up-right"></span> #{home.banks.get(0).quotation.closingPrice} TND</H4>
+												</div>
+										</div>
+								</a></li>
+								<li><a href="#">
+										<div class="row">
+											<div class="col-sm-5  col-md-4 ">
+												<img class="img-thumbnail pull-left"
+													src="#{home.banks.get(01).logo}"
+													width="164" height="152" style="min-height: 4em;   max-height: 4em;   height: 100%;" />
+											</div>
+											<div class="col-sm-11  col-md-12 ">
+												<h3>#{home.banks.get(01).name}</h3>
+												<H4><span class="ion-arrow-graph-up-right"></span> #{home.banks.get(01).quotation.closingPrice} TND</H4>
+												</div>
+										</div>
+								</a></li>
+								<li><a href="#">
+										<div class="row">
+											<div class="col-sm-5  col-md-4 ">
+												<img class="img-thumbnail pull-left"
+													src="#{home.banks.get(02).logo}"
+													width="164" height="152" style="min-height: 4em;   max-height: 4em;   height: 100%;" />
+											</div>
+											<div class="col-sm-11  col-md-12 ">
+												<h3>#{home.banks.get(02).name}</h3>
+												<H4><span class="ion-arrow-graph-up-right"></span> #{home.banks.get(02).quotation.closingPrice} TND</H4>
+												</div>
+										</div>
+								</a></li>
+								<li><a href="#">
+										<div class="row">
+											<div class="col-sm-5  col-md-4 ">
+												<img class="img-thumbnail pull-left"
+													src="#{home.banks.get(03).logo}"
+													width="164" height="152" style="min-height: 4em;   max-height: 4em;   height: 100%;" />
+											</div>
+											<div class="col-sm-11  col-md-12 ">
+												<h3>#{home.banks.get(03).name}</h3>
+												<H4><span class="ion-arrow-graph-up-right"></span> #{home.banks.get(03).quotation.closingPrice} TND</H4>
+												</div>
+										</div>
+								</a></li>
+								<li><a href="#">
+										<div class="row">
+											<div class="col-sm-5  col-md-4 ">
+												<img class="img-thumbnail pull-left"
+													src="#{home.banks.get(04).logo}"
+													width="164" height="152" style="min-height: 4em;   max-height: 4em;   height: 100%;" />
+											</div>
+											<div class="col-sm-11  col-md-12 ">
+												<h3>#{home.banks.get(04).name}</h3>
+												<H4><span class="ion-arrow-graph-up-right"></span> #{home.banks.get(04).quotation.closingPrice} TND</H4>
+												</div>
+										</div>
+								</a></li>
+								<li><a href="#">
+										<div class="row">
+											<div class="col-sm-5  col-md-4 ">
+												<img class="img-thumbnail pull-left"
+													src="#{home.banks.get(05).logo}"
+													width="164" height="152" style="min-height: 4em;   max-height: 4em;   height: 100%;" />
+											</div>
+											<div class="col-sm-11  col-md-12 ">
+												<h3>#{home.banks.get(05).name}</h3>
+												<H4><span class="ion-arrow-graph-up-right"></span> #{home.banks.get(05).quotation.closingPrice} TND</H4>
+												</div>
+										</div>
+								</a></li>
+							
+							</ul>
+						</div>
+					</div>
+				</div>
+				<!-- activities end -->
+				<!-- radio start -->
+				
+				<!-- radio end -->
+
+				<!-- calendar start -->
+				<div class="col-sm-16 bt-space wow fadeInUp animated" data-wow-delay="1s" data-wow-offset="50">
+              <div class="single pull-left"></div>
+            </div>
+				<!-- calendar end -->
+				<!-- flicker imgs start -->
+				
+				<!-- flicker imgs end -->
+			</div>
+	
+
+
+</ui:composition>

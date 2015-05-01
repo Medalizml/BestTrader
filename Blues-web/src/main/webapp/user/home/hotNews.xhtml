@@ -1,0 +1,39 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html"
+      
+>
+
+
+<div class="col-sm-16 hot-news hidden-xs">
+        <div class="row">
+          <div class="col-sm-15"> <span class="ion-ios7-timer icon-news pull-left"></span>
+            <ul id="js-news" class="js-hidden">
+              <li class="news-item"><a href="#"><span style="color: black" > PRIVATE : </span> #{home.privates.get(0).name} <SPAN style="color: green">#{home.privates.get(0).quotation.closingPrice}  TND </SPAN>
+              			<span class="ion-arrow-graph-up-right"></span>	#{home.privates.get(01).name} <SPAN style="color: green"> #{home.privates.get(01).quotation.closingPrice}  TND </SPAN>
+              			<span class="ion-arrow-graph-up-right"></span>	#{home.privates.get(02).name} <SPAN style="color: green"> #{home.privates.get(02).quotation.closingPrice}  TND</SPAN>
+              			<span class="ion-arrow-graph-up-right"></span>	#{home.privates.get(03).name} <SPAN style="color: green"> #{home.privates.get(03).quotation.closingPrice}  TND</SPAN>
+              			<span class="ion-arrow-graph-up-right"></span>	#{home.privates.get(04).name} <SPAN style="color: green"> #{home.privates.get(04).quotation.closingPrice}  TND</SPAN>
+              				</a></li>
+              	 <li class="news-item"><a href="#"><span style="color: black" >PUBLIC :  </span>#{home.publics.get(0).name}<SPAN style="color: green"> #{home.publics.get(0).quotation.closingPrice}  TND</SPAN>
+              			<span class="ion-arrow-graph-up-right"></span>	#{home.publics.get(01).name} <SPAN style="color: green"> #{home.publics.get(01).quotation.closingPrice}  TND </SPAN>
+              			<span class="ion-arrow-graph-up-right"></span>	#{home.publics.get(02).name} <SPAN style="color: green"> #{home.publics.get(02).quotation.closingPrice}  TND</SPAN>
+              			<span class="ion-arrow-graph-up-right"></span>	#{home.publics.get(03).name} <SPAN style="color: green"> #{home.publics.get(03).quotation.closingPrice}  TND</SPAN>
+              			<span class="ion-arrow-graph-up-right"></span>	#{home.publics.get(04).name} <SPAN style="color: green"> #{home.publics.get(04).quotation.closingPrice}  TND</SPAN>
+              				</a></li>			
+              <li class="news-item"><a href="#"><span style="color: black" >BANKS :  </span>#{home.banks.get(0).name}<SPAN style="color: green"> #{home.banks.get(0).quotation.closingPrice}  TND</SPAN>
+              			<span class="ion-arrow-graph-up-right"></span>	#{home.banks.get(01).name} <SPAN style="color: green"> #{home.banks.get(01).quotation.closingPrice}  TND </SPAN>
+              			<span class="ion-arrow-graph-up-right"></span>	#{home.banks.get(02).name} <SPAN style="color: green"> #{home.banks.get(02).quotation.closingPrice}  TND</SPAN>
+              			<span class="ion-arrow-graph-up-right"></span>	#{home.banks.get(03).name} <SPAN style="color: green"> #{home.banks.get(03).quotation.closingPrice}  TND</SPAN>
+              			<span class="ion-arrow-graph-up-right"></span>	#{home.banks.get(04).name} <SPAN style="color: green"> #{home.banks.get(04).quotation.closingPrice}  TND</SPAN>
+              				</a></li>
+              </ul>
+          </div>
+          <div class="col-sm-1 shuffle text-right"><a href="#"><span class="ion-shuffle"></span></a></div>
+        </div>
+      </div>
+      
+      
+      
+ </ui:composition>

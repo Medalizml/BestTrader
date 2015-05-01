@@ -1,65 +1,65 @@
 <ui:composition xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:ui="http://java.sun.com/jsf/facelets"
-      xmlns:f="http://java.sun.com/jsf/core"
-      xmlns:h="http://java.sun.com/jsf/html"
-		xmlns:jsf="http://java.sun.com/jsf">
-      
-      
-      <div class="container"> 
-    
-    <!-- bage header start -->
-    <div class="page-header">
-      <h1>section page style 2 </h1>
-      <ol class="breadcrumb">
-        <li><a href="#">Home</a></li>
-        <li><a href="#">pages</a></li>
-        <li class="active">private companies</li>
-      </ol>
-    </div>
-    
-    <!-- bage header end --> 
-    
-  </div>
-      
-      
-       <div class="container ">
-      <div class="row "> 
-        <!-- left sec start -->
-       
-              <div class="row">
-              
-              
-<!--              
-<div class="tools"> <a href="javascript:;" class="collapse"></a> <a href="#grid-config" data-toggle="modal" class="config"></a> <a href="javascript:;" class="reload"></a> <a href="javascript:;" class="remove"></a> </div> -->
-              <div class="grid-body ">
-              <h:dataTable value="#{screeners.listCompany}" var="l" class="table table-hover table-condensed" id="example2">
-              <h:column>
-              <f:facet name="header" style="widf:facet:10%"
-				data-hide="phone,tablet"/>
-                <div class="col-sm-7"><h:graphicImage value="/resource/img/profiles/nike.jpg" /></div>
-                <div class="col-sm-9"> <a href="#">
-                  <div class="sec-info">
-                    <h:form><h:commandLink action="#{screeners.detailsCompany(l)}"><h1>#{l.name}</h1></h:commandLink></h:form>
-                    <div class="text-danger sub-info-bordered">
-                      <div class="time"><span class="ion icon">Incorporation-date :</span>#{l.dateIncorporation}</div>
-                      <div class="comments"><span class="ion-phone icon">Tel :</span>#{l.phone}</div>
-                      <div class="stars"><span>#{l.sector.name}</span></div>
-                    </div>
-                  </div>
-                  </a>
-                  <p>Address : #{l.headOffice} </p>
-                  <p>Social-Capital : #{l.socialCapital} </p>
-                  <p>Social-Share : #{l.socialShare} </p>
-                </div>
-                
-                </h:column>
-                </h:dataTable>
-           
-              </div>
-            </div>
-            </div></div>
-      
-      
-      
-      
-      </ui:composition>
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:jsf="http://java.sun.com/jsf">
+
+
+	<div class="container">
+
+		<!-- bage header start -->
+		<div class="page-header">
+			<h1>Private Companies</h1>
+			<ol class="breadcrumb">
+				<li><a href="#">Home</a></li>
+				<li><a href="#">pages</a></li>
+				<li class="active">private companies</li>
+			</ol>
+		</div>
+	</div>
+
+	<div class="container ">
+		<div class="row ">
+			<div class="grid-body ">
+				<h:dataTable value="#{screeners.listCompany}" var="l"
+					class="datatable table table-striped table-bordered">
+					<thead>
+						<h:column>
+							<f:facet name="header" style="widf:facet:10%"
+								data-hide="phone,tablet">Companies List</f:facet>
+							<div class="col-sm-7">
+								<h:graphicImage value="/resource/img/profiles/nike.jpg" />
+							</div>
+							<div class="col-sm-9">
+								<a href="#">
+									<div class="sec-info">
+										<h:form>
+											<h:commandLink action="#{screeners.detailsCompany(l)}">
+												<h1>#{l.name}</h1>
+											</h:commandLink>
+										</h:form>
+										<div class="text-danger sub-info-bordered">
+											<div class="time">
+												<span class="ion icon">Incorporation-date :</span>#{l.dateIncorporation}
+											</div>
+											<div class="comments">
+												<span class="ion-phone icon">Tel :</span>#{l.phone}
+											</div>
+											<div class="stars">
+												<span>#{l.sector.name}</span>
+											</div>
+										</div>
+									</div>
+								</a>
+								<p>Address : #{l.headOffice}</p>
+								<p>Social-Capital : #{l.socialCapital}</p>
+								<p>Social-Share : #{l.socialShare}</p>
+							</div>
+						</h:column>
+					</thead>
+				</h:dataTable>
+			</div>
+		</div>
+	</div>
+
+</ui:composition>

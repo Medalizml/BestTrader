@@ -377,6 +377,20 @@
      itemsTablet: [768, 2],
      itemsMobile: [479, 1],
    });
+   $("#owl-lifestyle1").owlCarousel({
+	     autoPlay: false, //Set AutoPlay to 3 seconds
+	     navigation: true,
+	     pagination: false,
+	     items: 3,
+	     itemsDesktop: [1199,
+	       3
+	     ],
+	     itemsDesktopSmall: [
+	       979, 2
+	     ],
+	     itemsTablet: [768, 2],
+	     itemsMobile: [479, 1],
+	   });
    $("#owl-blog").owlCarousel({
      navigation: true,
      pagination: false,
@@ -385,14 +399,16 @@
      singleItem: true,
    });
       
+   
  });
+ 
  
  /* -------------------------------------------------------------------------*
  * WEATHER
  * -------------------------------------------------------------------------*/
    $.simpleWeather({
      location: '',
-     woeid: '1521894',
+     woeid: '2347256',
      unit: 'c',
      success: function(weather) {
        html = '<i class="icon-' + weather.code + '"></i> ' + weather.city +

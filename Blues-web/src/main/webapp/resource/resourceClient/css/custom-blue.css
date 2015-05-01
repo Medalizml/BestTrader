@@ -92,7 +92,7 @@ Author : Webyzona.com
 	position: absolute;
 	left: 50%;
 	top: 50%;
-	background-image: url(../images/general/status-blue.gif);
+	background-image: url(../images/general/status-red.gif);
 	background-repeat: no-repeat;
 	background-position: center;
 	margin: -100px 0 0 -100px;
@@ -187,7 +187,7 @@ transform:rotate(360deg);
 
 #scrollUp {
 	background-color: #01c6d9;
-	background-image: url("../images/general/top-blue.png");
+	background-image: url("../images/general/top-red.png");
 	bottom: 20px;
 	right: 20px;
 	width: 38px;    /* Width of image */
@@ -227,6 +227,25 @@ transform:rotate(360deg);
 	margin-top: 0;
 	min-height: 100%;
 	z-index: 10;
+}
+/*title new*/
+.main-title2 {
+	border: solid 2px ;
+	position: relative;
+	z-index: 1;
+	
+	float: left;
+	margin: 0 5px;
+	text-align: center;
+	border-bottom: none;
+	padding: 0 10px 0 5px;
+	font-size: 18px;
+	font-weight: bold;
+	text-transform: uppercase;
+	text-align: left;
+	color: #fff;
+	height: 36px;
+	line-height: 36px;
 }
 /*1-5 PAGINATION*/
 .pagination {

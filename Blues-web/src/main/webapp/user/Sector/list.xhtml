@@ -1,0 +1,448 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html">
+	
+	
+	
+
+		
+		<div class="page-header">
+			<h1>Sectors</h1>
+			<ol class="breadcrumb">
+				<li><a href="#">Home</a></li>
+				<li><a href="#">pages</a></li>
+				<li class="active">sectors</li>
+			</ol>
+		</div>
+
+	<div class="col-md-11 col-sm-11">
+		<div class="row">
+			<div class="panel-group" id="accordion">
+
+				<div class="panel panel-default">
+					<div class="panel-heading">
+						<h4 class="panel-title">
+							<a data-toggle="collapse" data-parent="#accordion"
+								href="#collapse"><span class="ion-pricetags"></span>
+								#{sector.sectors.get(0).name} </a>
+						</h4>
+					</div>
+					<div id="collapse" class="panel-collapse collapse">
+						<div class="panel-body">
+							
+								<h:dataTable value="#{sector.companies1}" var="c">
+									<h:column>
+										<f:facet name="header" />
+										<div class="btn-group">
+											<h:form><h:commandLink type="button" class="btn-group " action="#{companies.detailsCompany(c)}">
+												<h3>#{c.name} &#160;&#160;&#160;&#160;</h3>
+											</h:commandLink></h:form>
+										</div>
+									</h:column>
+									<h:column>
+										<f:facet name="header" />
+										<h:form><h:commandLink type="button" class="btn-group " action="#{companies.detailsCompany(c)}">#{c.headOffice}</h:commandLink></h:form>
+									</h:column>
+								</h:dataTable>
+							
+						</div>
+					</div>
+				</div>
+
+				<div class="panel panel-default">
+					<div class="panel-heading">
+						<h4 class="panel-title">
+							<a data-toggle="collapse" data-parent="#accordion"
+								href="#collapse-2"><span class="ion-pricetags"></span>
+								#{sector.sectors.get(01).name} </a>
+						</h4>
+					</div>
+					<div id="collapse-2" class="panel-collapse collapse">
+						<div class="panel-body">
+							<h:form>
+								<h:dataTable value="#{sector.companies2}" var="c">
+									<h:column>
+										<f:facet name="header" />
+										<div class="btn-group">
+											<h:commandLink type="button" class="btn-group " action="#{companies.detailsCompany(c)}">
+												<h3>#{c.name} &#160;&#160;&#160;&#160;</h3>
+											</h:commandLink>
+										</div>
+									</h:column>
+									<h:column>
+										<f:facet name="header" />
+										<h:commandLink type="button" class="btn-group " action="#{companies.detailsCompany(c)}">#{c.headOffice}</h:commandLink>
+									</h:column>
+								</h:dataTable>
+							</h:form>
+						</div>
+					</div>
+				</div>
+<div class="panel panel-default">
+					<div class="panel-heading">
+						<h4 class="panel-title">
+							<a data-toggle="collapse" data-parent="#accordion"
+								href="#collapse-3"><span class="ion-pricetags"></span>
+								#{sector.sectors.get(02).name} </a>
+						</h4>
+					</div>
+					<div id="collapse-3" class="panel-collapse collapse">
+						<div class="panel-body">
+							<h:form>
+								<h:dataTable value="#{sector.companies3}" var="c">
+									<h:column>
+										<f:facet name="header" />
+										<div class="btn-group">
+											<h:commandLink type="button" class="btn-group " action="#{companies.detailsCompany(c)}">
+												<h3>#{c.name} &#160;&#160;&#160;&#160;</h3>
+											</h:commandLink>
+										</div>
+									</h:column>
+									<h:column>
+										<f:facet name="header" />
+										<h:commandLink type="button" class="btn-group " action="#{companies.detailsCompany(c)}">#{c.headOffice}</h:commandLink>
+									</h:column>
+								</h:dataTable>
+							</h:form>
+						</div>
+					</div>
+				</div>
+<div class="panel panel-default">
+					<div class="panel-heading">
+						<h4 class="panel-title">
+							<a data-toggle="collapse" data-parent="#accordion"
+								href="#collapse-4"><span class="ion-pricetags"></span>
+								#{sector.sectors.get(03).name} </a>
+						</h4>
+					</div>
+					<div id="collapse-4" class="panel-collapse collapse">
+						<div class="panel-body">
+							<h:form>
+								<h:dataTable value="#{sector.companies4}" var="c">
+									<h:column>
+										<f:facet name="header" />
+										<div class="btn-group">
+											<h:commandLink type="button" class="btn-group " action="#{companies.detailsCompany(c)}">
+												<h3>#{c.name} &#160;&#160;&#160;&#160;</h3>
+											</h:commandLink>
+										</div>
+									</h:column>
+									<h:column>
+										<f:facet name="header" />
+										<h:commandLink type="button" class="btn-group " action="#{companies.detailsCompany(c)}">#{c.headOffice}</h:commandLink>
+									</h:column>
+								</h:dataTable>
+							</h:form>
+						</div>
+					</div>
+				</div>
+				
+				<div class="panel panel-default">
+					<div class="panel-heading">
+						<h4 class="panel-title">
+							<a data-toggle="collapse" data-parent="#accordion"
+								href="#collapse-5"><span class="ion-pricetags"></span>
+								#{sector.sectors.get(04).name} </a>
+						</h4>
+					</div>
+					<div id="collapse-5" class="panel-collapse collapse">
+						<div class="panel-body">
+							<h:form>
+								<h:dataTable value="#{sector.companies5}" var="c">
+									<h:column>
+										<f:facet name="header" />
+										<div class="btn-group">
+											<h:commandLink type="button" class="btn-group " action="#{companies.detailsCompany(c)}">
+												<h3>#{c.name} &#160;&#160;&#160;&#160;</h3>
+											</h:commandLink>
+										</div>
+									</h:column>
+									<h:column>
+										<f:facet name="header" />
+										<h:commandLink type="button" class="btn-group " action="#{companies.detailsCompany(c)}">#{c.headOffice}</h:commandLink>
+									</h:column>
+								</h:dataTable>
+							</h:form>
+						</div>
+					</div>
+				</div>
+				<div class="panel panel-default">
+					<div class="panel-heading">
+						<h4 class="panel-title">
+							<a data-toggle="collapse" data-parent="#accordion"
+								href="#collapse-6"><span class="ion-pricetags"></span>
+								#{sector.sectors.get(05).name} </a>
+						</h4>
+					</div>
+					<div id="collapse-6" class="panel-collapse collapse">
+						<div class="panel-body">
+							<h:form>
+								<h:dataTable value="#{sector.companies6}" var="c">
+									<h:column>
+										<f:facet name="header" />
+										<div class="btn-group">
+											<h:commandLink type="button" class="btn-group " action="#{companies.detailsCompany(c)}">
+												<h3>#{c.name} &#160;&#160;&#160;&#160;</h3>
+											</h:commandLink>
+										</div>
+									</h:column>
+									<h:column>
+										<f:facet name="header" />
+										<h:commandLink type="button" class="btn-group " action="#{companies.detailsCompany(c)}">#{c.headOffice}</h:commandLink>
+									</h:column>
+								</h:dataTable>
+							</h:form>
+						</div>
+					</div>
+				</div>
+				<div class="panel panel-default">
+					<div class="panel-heading">
+						<h4 class="panel-title">
+							<a data-toggle="collapse" data-parent="#accordion"
+								href="#collapse-7"><span class="ion-pricetags"></span>
+								#{sector.sectors.get(06).name} </a>
+						</h4>
+					</div>
+					<div id="collapse-7" class="panel-collapse collapse">
+						<div class="panel-body">
+							<h:form>
+								<h:dataTable value="#{sector.companies7}" var="c">
+									<h:column>
+										<f:facet name="header" />
+										<div class="btn-group">
+											<h:commandLink type="button" class="btn-group " action="#{companies.detailsCompany(c)}">
+												<h3>#{c.name} &#160;&#160;&#160;&#160;</h3>
+											</h:commandLink>
+										</div>
+									</h:column>
+									<h:column>
+										<f:facet name="header" />
+										<h:commandLink type="button" class="btn-group " action="#{companies.detailsCompany(c)}">#{c.headOffice}</h:commandLink>
+									</h:column>
+								</h:dataTable>
+							</h:form>
+						</div>
+					</div>
+				</div>
+				
+				<div class="panel panel-default">
+					<div class="panel-heading">
+						<h4 class="panel-title">
+							<a data-toggle="collapse" data-parent="#accordion"
+								href="#collapse-8"><span class="ion-pricetags"></span>
+								#{sector.sectors.get(07).name} </a>
+						</h4>
+					</div>
+					<div id="collapse-8" class="panel-collapse collapse">
+						<div class="panel-body">
+							<h:form>
+								<h:dataTable value="#{sector.companies8}" var="c">
+									<h:column>
+										<f:facet name="header" />
+										<div class="btn-group">
+											<h:commandLink type="button" class="btn-group " action="#{companies.detailsCompany(c)}">
+												<h3>#{c.name} &#160;&#160;&#160;&#160;</h3>
+											</h:commandLink>
+										</div>
+									</h:column>
+									<h:column>
+										<f:facet name="header" />
+										<h:commandLink type="button" class="btn-group " action="#{companies.detailsCompany(c)}">#{c.headOffice}</h:commandLink>
+									</h:column>
+								</h:dataTable>
+							</h:form>
+						</div>
+					</div>
+				</div>
+				
+				<div class="panel panel-default">
+					<div class="panel-heading">
+						<h4 class="panel-title">
+							<a data-toggle="collapse" data-parent="#accordion"
+								href="#collapse-9"><span class="ion-pricetags"></span>
+								#{sector.sectors.get(08).name} </a>
+						</h4>
+					</div>
+					<div id="collapse-9" class="panel-collapse collapse">
+						<div class="panel-body">
+							<h:form>
+								<h:dataTable value="#{sector.companies9}" var="c">
+									<h:column>
+										<f:facet name="header" />
+										<div class="btn-group">
+											<h:commandLink type="button" class="btn-group " action="#{companies.detailsCompany(c)}">
+												<h3>#{c.name} &#160;&#160;&#160;&#160;</h3>
+											</h:commandLink>
+										</div>
+									</h:column>
+									<h:column>
+										<f:facet name="header" />
+										<h:commandLink type="button" class="btn-group " action="#{companies.detailsCompany(c)}">#{c.headOffice}</h:commandLink>
+									</h:column>
+								</h:dataTable>
+							</h:form>
+						</div>
+					</div>
+				</div>
+
+<div class="panel panel-default">
+					<div class="panel-heading">
+						<h4 class="panel-title">
+							<a data-toggle="collapse" data-parent="#accordion"
+								href="#collapse-10"><span class="ion-pricetags"></span>
+								#{sector.sectors.get(09).name} </a>
+						</h4>
+					</div>
+					<div id="collapse-10" class="panel-collapse collapse">
+						<div class="panel-body">
+							<h:form>
+								<h:dataTable value="#{sector.companies10}" var="c">
+									<h:column>
+										<f:facet name="header" />
+										<div class="btn-group">
+											<h:commandLink type="button" class="btn-group " action="#{companies.detailsCompany(c)}">
+												<h3>#{c.name} &#160;&#160;&#160;&#160;</h3>
+											</h:commandLink>
+										</div>
+									</h:column>
+									<h:column>
+										<f:facet name="header" />
+										<h:commandLink type="button" class="btn-group " action="#{companies.detailsCompany(c)}">#{c.headOffice}</h:commandLink>
+									</h:column>
+								</h:dataTable>
+							</h:form>
+						</div>
+					</div>
+				</div>
+				
+				<div class="panel panel-default">
+					<div class="panel-heading">
+						<h4 class="panel-title">
+							<a data-toggle="collapse" data-parent="#accordion"
+								href="#collapse-11"><span class="ion-pricetags"></span>
+								#{sector.sectors.get(10).name} </a>
+						</h4>
+					</div>
+					<div id="collapse-11" class="panel-collapse collapse">
+						<div class="panel-body">
+							<h:form>
+								<h:dataTable value="#{sector.companies11}" var="c">
+									<h:column>
+										<f:facet name="header" />
+										<div class="btn-group">
+											<h:commandLink type="button" class="btn-group " action="#{companies.detailsCompany(c)}">
+												<h3>#{c.name} &#160;&#160;&#160;&#160;</h3>
+											</h:commandLink>
+										</div>
+									</h:column>
+									<h:column>
+										<f:facet name="header" />
+										<h:commandLink type="button" class="btn-group " action="#{companies.detailsCompany(c)}">#{c.headOffice}</h:commandLink>
+									</h:column>
+								</h:dataTable>
+							</h:form>
+						</div>
+					</div>
+				</div>
+				
+				<div class="panel panel-default">
+					<div class="panel-heading">
+						<h4 class="panel-title">
+							<a data-toggle="collapse" data-parent="#accordion"
+								href="#collapse-12"><span class="ion-pricetags"></span>
+								#{sector.sectors.get(11).name} </a>
+						</h4>
+					</div>
+					<div id="collapse-12" class="panel-collapse collapse">
+						<div class="panel-body">
+							<h:form>
+								<h:dataTable value="#{sector.companies12}" var="c">
+									<h:column>
+										<f:facet name="header" />
+										<div class="btn-group">
+											<h:commandLink type="button" class="btn-group " action="#{companies.detailsCompany(c)}">
+												<h3>#{c.name} &#160;&#160;&#160;&#160;</h3>
+											</h:commandLink>
+										</div>
+									</h:column>
+									<h:column>
+										<f:facet name="header" />
+										<h:commandLink type="button" class="btn-group " action="#{companies.detailsCompany(c)}">#{c.headOffice}</h:commandLink>
+									</h:column>
+								</h:dataTable>
+							</h:form>
+						</div>
+					</div>
+				</div>
+				<div class="panel panel-default">
+					<div class="panel-heading">
+						<h4 class="panel-title">
+							<a data-toggle="collapse" data-parent="#accordion"
+								href="#collapse-13"><span class="ion-pricetags"></span>
+								#{sector.sectors.get(12).name} </a>
+						</h4>
+					</div>
+					<div id="collapse-13" class="panel-collapse collapse">
+						<div class="panel-body">
+							<h:form>
+								<h:dataTable value="#{sector.companies13}" var="c">
+									<h:column>
+										<f:facet name="header" />
+										<div class="btn-group">
+											<h:commandLink type="button" class="btn-group " action="#{companies.detailsCompany(c)}">
+												<h3>#{c.name} &#160;&#160;&#160;&#160;</h3>
+											</h:commandLink>
+										</div>
+									</h:column>
+									<h:column>
+										<f:facet name="header" />
+										<h:commandLink type="button" class="btn-group " action="#{companies.detailsCompany(c)}">#{c.headOffice}</h:commandLink>
+									</h:column>
+								</h:dataTable>
+							</h:form>
+						</div>
+					</div>
+				</div>
+
+<div class="panel panel-default">
+					<div class="panel-heading">
+						<h4 class="panel-title">
+							<a data-toggle="collapse" data-parent="#accordion"
+								href="#collapse-14"><span class="ion-pricetags"></span>
+								#{sector.sectors.get(13).name} </a>
+						</h4>
+					</div>
+					<div id="collapse-14" class="panel-collapse collapse">
+						<div class="panel-body">
+							<h:form>
+								<h:dataTable value="#{sector.companies14}" var="c">
+									<h:column>
+										<f:facet name="header" />
+										<div class="btn-group">
+											<h:commandLink type="button" class="btn-group " action="#{companies.detailsCompany(c)}">
+												<h3>#{c.name} &#160;&#160;&#160;&#160;</h3>
+											</h:commandLink>
+										</div>
+									</h:column>
+									<h:column>
+										<f:facet name="header" />
+										<h:commandLink type="button" class="btn-group " action="#{companies.detailsCompany(c)}">#{c.headOffice}</h:commandLink>
+									</h:column>
+								</h:dataTable>
+							</h:form>
+						</div>
+					</div>
+				</div>
+
+
+
+
+
+
+
+
+			</div>
+		</div>
+	</div>
+</ui:composition>

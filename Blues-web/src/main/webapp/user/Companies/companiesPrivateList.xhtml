@@ -4,10 +4,7 @@
 	xmlns:h="http://java.sun.com/jsf/html"
 	xmlns:jsf="http://java.sun.com/jsf">
 
-
 	<div class="container">
-
-		<!-- bage header start -->
 		<div class="page-header">
 			<h1>Private Companies</h1>
 			<ol class="breadcrumb">
@@ -16,11 +13,7 @@
 				<li class="active">private companies</li>
 			</ol>
 		</div>
-
-
-
 	</div>
-
 
 	<div class="col-md-11 col-sm-11">
 		<div class="row">
@@ -32,34 +25,34 @@
 						style="visibility: visible; -webkit-animation-delay: 0.5s;">
 						<div class="row">
 							<h:dataTable value="#{companies.listPrivate}" var="l"
-								class="table table-striped">
-								<h:column>
-									<f:facet name="header" />
-									<div class="col-sm-4">
-										<h:graphicImage value="/resource/img/profiles/nike.jpg"
-											style="max-height: 6em; height: 100%; width:80%; min-height: 6em;" />
-									</div>
-									<div class="col-sm-9">
-										<a href="#">
-											<div class="sec-info">
-												<h:form>
-													<h:commandLink action="#{companies.detailsCompany(l)}">
-														<h1 style="color: #3d566e">#{l.name}</h1>
-													</h:commandLink>
-												</h:form>
-												<div class="text-danger sub-info-bordered">
-													<div class="time">
-														<span class="ion icon"></span>#{l.sector.name}
+								class="datatable table table-striped table-bordered">
+								<thead>
+									<h:column>
+										<f:facet name="header">Private Companies List</f:facet>
+										<div class="col-sm-4">
+											<h:graphicImage value="/resource/img/profiles/nike.jpg"
+												style="max-height: 6em; height: 100%; width:80%; min-height: 6em;" />
+										</div>
+										<div class="col-sm-9">
+											<a href="#">
+												<div class="sec-info">
+													<h:form>
+														<h:commandLink action="#{companies.detailsCompany(l)}"
+															class="btn-group ">
+															<h1 style="color: #3d566e">#{l.name}</h1>
+														</h:commandLink>
+													</h:form>
+													<div class="text-danger sub-info-bordered">
+														<div class="time">
+															<span class="ion-pricetags"></span> #{l.sector.name}
+														</div>
 													</div>
 												</div>
-											</div>
-										</a>
-
-									</div>
-
-								</h:column>
+											</a>
+										</div>
+									</h:column>
+								</thead>
 							</h:dataTable>
-
 						</div>
 					</div>
 				</div>

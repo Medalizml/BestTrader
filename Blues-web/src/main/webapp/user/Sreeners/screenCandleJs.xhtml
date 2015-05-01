@@ -73,7 +73,7 @@ AmCharts.ready(function () {
 
 			function createStockChart() {
 				chart = new AmCharts.AmStockChart();
-				chart.pathToImages = "../amcharts/images/";
+				chart.pathToImages = "/Blues-web/resource/resourceClient/screeners/amcharts/images/";
 				chart.balloon.horizontalPadding = 13;
 
 				// DATASET //////////////////////////////////////////
@@ -97,7 +97,7 @@ AmCharts.ready(function () {
 					fromField: "value",
 					toField: "value"
 				}];
-				dataSet.color = "#7f8da9";
+				dataSet.color = "#16bb1e";
 				dataSet.dataProvider = chartData;
 				dataSet.categoryField = "date";
 
@@ -115,8 +115,8 @@ AmCharts.ready(function () {
 				graph.highField = "high";
 				graph.lowField = "low";
 				graph.valueField = "close";
-				graph.lineColor = "#7f8da9";
-				graph.fillColors = "#7f8da9";
+				graph.lineColor = "#16bb1e";
+				graph.fillColors = "#16bb1e";
 				graph.negativeLineColor = "#db4c3c";
 				graph.negativeFillColors = "#db4c3c";
 				graph.fillAlphas = 1;
@@ -174,7 +174,7 @@ AmCharts.ready(function () {
 					label: "1 year"
 				}, {
 					period: "MAX",
-					label: "MAX"
+					label: "1 year per week"
 				}];
 				chart.periodSelector = periodSelector;
 
