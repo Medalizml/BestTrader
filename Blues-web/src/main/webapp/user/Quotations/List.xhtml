@@ -1,0 +1,32 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html">
+
+
+	<h:dataTable class="table table-bordered" value="#{sector.companies1}" var="ex" headerClass="alert alert-info">
+		<h:column class="info">
+			<f:facet name="header">Exemple</f:facet>
+			#{ex.headOffice}
+			
+	
+	</h:column>
+	<h:column>
+			<f:facet name="header">Exemple</f:facet>
+			#{ex.headOffice}
+	
+	</h:column>
+	<h:column class="info">
+			<f:facet name="header">Exemple</f:facet>
+			#{ex.headOffice}
+	
+	</h:column>
+	<h:column>
+			<f:facet name="header">Exemple</f:facet>
+			#{ex.headOffice}
+	
+	</h:column>
+	</h:dataTable>
+
+
+</ui:composition>
