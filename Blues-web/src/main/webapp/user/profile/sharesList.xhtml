@@ -1,0 +1,54 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html">
+
+
+	<h:dataTable class="table table-bordered"
+		value="#{buyShareManagedBean.buyShares}" var="ex"
+		headerClass="alert alert-info">
+		<h:column>
+			<f:facet name="header">Company Name</f:facet>
+			#{ex.share.company.name}
+			
+	
+	</h:column>
+		<h:column>
+			<f:facet name="header">Opening Price</f:facet>
+			#{ex.share.opningPrice}
+	
+	</h:column>
+		<h:column>
+			<f:facet name="header">Last Value</f:facet>
+			#{ex.share.closingPrice}
+	
+	</h:column>
+
+		<h:column>
+			<f:facet name="header">Highest Price</f:facet>
+			#{ex.share.highestPrice}
+	
+	</h:column>
+		<h:column>
+			<f:facet name="header">Lowest Price</f:facet>
+			#{ex.share.lowestPrice}
+	
+	</h:column>
+		<h:column>
+			<f:facet name="header">Estimation</f:facet>
+			#{ex.share.estimation}
+	
+	</h:column>
+		<h:column>
+			<f:facet name="header">Buy</f:facet>
+			<h:form class="form-inline">
+                  <h:inputText value="#{ex.opVolume}"  class="form-control" id="input-email"/>
+                  <h:commandLink  type="submit" class="btn"> <span class="glyphicon glyphicon-shopping-cart"></span> </h:commandLink>
+                </h:form>
+	
+	</h:column>
+	</h:dataTable>
+
+
+
+</ui:composition>
