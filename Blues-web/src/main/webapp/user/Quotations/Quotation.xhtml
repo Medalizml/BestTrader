@@ -1,12 +1,30 @@
 <ui:composition xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:ui="http://java.sun.com/jsf/facelets"
-      xmlns:f="http://java.sun.com/jsf/core"
-      xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
 	template="/WEB-INF/templateClient/templateClient.xhtml">
 	<ui:define name="content">
-	
-	 	<ui:include src="/user/Quotations/List.xhtml" />
-	
-	
+		<h1>Quotations from A to Z : Tunisia Stock Market</h1>
+		<br />
+		<h3><label class="form-label">Select</label> <span class="help">Currency</span></h3>
+		<h:form class="form-inline">
+			<div class="form-group">
+				
+				
+					<h:selectOneMenu value="#{quotations.selectedCurr}"  class="form-control" >
+						<f:selectItem itemValue="TND" itemLabel="TND" />
+						<f:selectItem itemValue="EUR" itemLabel="EUR" />
+						<f:selectItem itemValue="USD" itemLabel="USD" />
+						<f:selectItem itemValue="GBP" itemLabel="GBP" />
+					</h:selectOneMenu>
+				
+			</div>
+								<h:commandButton action="#{quotations.setList()}" value="Convert" class="btn btn-primary" style="margin-left:2%"/>
+			
+		</h:form>
+		<br />
+		<ui:include src="/user/Quotations/List.xhtml" />
+
+
 	</ui:define>
-	</ui:composition>
+</ui:composition>
