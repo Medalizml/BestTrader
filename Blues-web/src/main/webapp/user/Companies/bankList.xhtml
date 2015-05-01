@@ -1,0 +1,72 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:jsf="http://java.sun.com/jsf">
+
+
+	<div class="container">
+		<div class="page-header">
+			<h1>Bank</h1>
+			<ol class="breadcrumb">
+				<li><a href="#">Home</a></li>
+				<li><a href="#">pages</a></li>
+				<li class="active">bank</li>
+			</ol>
+		</div>
+	</div>
+
+	<div class="col-md-11 col-sm-11">
+		<div class="row">
+			<!-- post details start -->
+			<div class="col-sm-16">
+				<div class="row">
+					<div class="sec-topic col-sm-16  wow fadeInDown animated  animated"
+						data-wow-delay="0.5s"
+						style="visibility: visible; -webkit-animation-delay: 0.5s;">
+						<div class="row">
+							<h:dataTable value="#{companies.listBank}" var="l"
+								class="datatable table table-striped table-bordered">
+								<thead>
+									<h:column>
+										<f:facet name="header">Bank List</f:facet>
+										<div class="col-sm-4">
+											<h:graphicImage value="/resource/img/profiles/nike.jpg"
+												style="max-height: 6em; height: 100%; width:80%; min-height: 6em;" />
+										</div>
+										<div class="col-sm-9">
+											<a href="#">
+												<div class="sec-info">
+													<h:form>
+														<h:commandLink action="#{companies.detailsCompany(l)}"
+															class="btn-group ">
+															<h1 style="color: #3d566e">#{l.name}</h1>
+														</h:commandLink>
+													</h:form>
+													<div class="text-danger sub-info-bordered">
+														<div class="time">
+															<span class="ion-pricetags"></span> #{l.sector.name}
+														</div>
+													</div>
+												</div>
+											</a>
+										</div>
+									</h:column>
+								</thead>
+							</h:dataTable>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="col-sm-5 hidden-xs right-sec" style="margin-top: -46px">
+		<div class="bordered top-margin">
+			<ui:include src="/user/companies/first.xhtml" />
+		</div>
+	</div>
+
+
+
+</ui:composition>
