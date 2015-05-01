@@ -1,0 +1,50 @@
+
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html">
+
+
+
+
+	<div class="page-header">
+		<h1>Your portfolio</h1>
+		<div class="pull-right">
+			<h1 style="color: green">#{profile.customer.portfolio.value} TND</h1>
+		</div>
+	</div>
+
+	<h3>Your Shares</h3>
+
+	#{profile.nbrShares}
+	<h:dataTable value="#{profile.intermediaires}" var="i" class="table table-hover ">
+		<h:column>
+			<f:facet name="header"> Company Name</f:facet>
+	#{i.quotation.company.name}
+	</h:column>
+		<h:column>
+			<f:facet name="header"> Actual price</f:facet>
+	#{i.quotation.closingPrice}
+	
+	</h:column>
+		<h:column>
+			<f:facet name="header"> Number of shares</f:facet>
+	#{i.nbrShares}
+		</h:column>
+		<h:column>
+			<f:facet name="header"> Value</f:facet>
+	#{i.value}
+		</h:column>
+		 
+    
+		<h:column>
+			<f:facet name="header">Sell</f:facet>
+			<h:form class="form-inline">
+                  <h:inputText value="#{profile.operation.numberShares}"  class="form-control" id="input-email"/>
+                  <h:commandLink action="#{profile.doAddOperation(i.quotation)}" type="submit" class="btn"> <span class="ion-paper-airplane text-danger"></span> </h:commandLink>
+                </h:form>
+		</h:column>
+
+	</h:dataTable>
+
+</ui:composition>

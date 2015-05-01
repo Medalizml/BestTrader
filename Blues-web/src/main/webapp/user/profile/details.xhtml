@@ -1,0 +1,47 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html">
+
+	<div class="col-sm-16 author-box">
+		<div class="row">
+			<div class=" col-xs-16 col-sm-3">
+				<img width="128" height="128" alt=""
+					src="#{profile.customer.profilePicture}" class="img-thumbnail"
+					style="max-height: 11em; height: 100%; min-height: 11em;" />
+			</div>
+			<div class="col-xs-16 col-sm-13">
+				<h3>#{profile.customer.firstName}&#160;#{profile.customer.lastName}
+				</h3>
+
+				<table>
+					<tr>
+						<td style="color: #01c6d9"><span class="ion-at"></span>
+							&#160;</td>
+						<td><h4>#{profile.customer.email}</h4></td>
+					</tr>
+					<tr>
+						<td style="color: #01c6d9"><span class="ion-briefcase"></span>
+							&#160;</td>
+						<td><h4>#{profile.customer.job}</h4></td>
+					</tr>
+					<tr>
+						<td style="color: #01c6d9"><span class="glyphicon glyphicon-earphone"></span>
+							&#160;</td>
+						<td><h4>#{profile.customer.phoneNumber}</h4></td>
+					</tr><tr>
+						<td style="color: #01c6d9"><span class="ion-earth"></span>
+							&#160;</td>
+						<td><h4>#{profile.customer.nationality}</h4></td>
+					</tr><tr>
+						<td style="color: #01c6d9"><span class="ion-map"></span>
+							&#160;</td>
+						<td><h4>#{profile.customer.address}</h4></td>
+					</tr>
+				</table>
+
+			</div>
+		</div>
+	</div>
+
+</ui:composition>
