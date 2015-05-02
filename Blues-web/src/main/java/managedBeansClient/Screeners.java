@@ -41,18 +41,29 @@ public class Screeners {
 	private List<Float> closingPrice;
 	private List<Float> lowestPrice;
 	private List<Float> highestPrice;
+	private List<Float> listVolume;
 	private int valeur;
 	private List<Integer> listDay = new ArrayList<>();
 	private List<Integer> listMonth = new ArrayList<>();
+	private List<Integer> listYear = new ArrayList<>();
+	public List<Integer> getListYear() {
+		return listYear;
+	}
+
+	public void setListYear(List<Integer> listYear) {
+		this.listYear = listYear;
+	}
+
 	private Date date;
+	
 
 	public String detailsCompany(Company c) {
 		setCompany(c);
-		System.out.println(c.getName());
 		setOpningPrice(screenersServices.findAllPrice(c.getQuotation().getId()));
 		setClosingPrice(screenersServices.findAllClosePrice(c.getQuotation().getId()));
 		setLowestPrice(screenersServices.findAllLowPrice(c.getQuotation().getId()));
 		setHighestPrice(screenersServices.findAllHighPrice(c.getQuotation().getId()));
+		setListVolume(screenersServices.findAllVolume(c.getQuotation().getId()));
 		setListDate(screenersServices.findAllDate(c.getQuotation().getId()));
 		destribute();
 		return "companyScreene";
@@ -65,9 +76,9 @@ public class Screeners {
 		for (int i = 0; i < listDate.size(); i++) {
 			date = listDate.get(i);
 			dateS = sm.format(date);
-			System.out.println(dateS);
 			listDay.add(Integer.parseInt(dateS.substring(3, 5)));
 			listMonth.add(Integer.parseInt(dateS.substring(0, 2)));
+			listYear.add(Integer.parseInt(dateS.substring(6, 10)));
 
 		}
 
@@ -75,8 +86,7 @@ public class Screeners {
 
 	@PostConstruct
 	public void Init() {
-		setList(services.findAllID());
-
+		setList(services.findAllID());			
 		setListCompany(screenersServices.findAllPrivate());
 		setListPublic(screenersServices.findAllPublic());
 		setListBank(screenersServices.findAllBank());
@@ -197,6 +207,14 @@ public class Screeners {
 
 	public void setListBank(List<Bank> listBank) {
 		this.listBank = listBank;
+	}
+
+	public List<Float> getListVolume() {
+		return listVolume;
+	}
+
+	public void setListVolume(List<Float> listVolume) {
+		this.listVolume = listVolume;
 	}
 
 }

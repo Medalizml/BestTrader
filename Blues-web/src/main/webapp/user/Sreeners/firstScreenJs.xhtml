@@ -29,19 +29,21 @@
 					var arraylow = JSON.parse(listlow);
 					var listhigh='#{screeners.highestPrice}';
 					var arrayhigh = JSON.parse(listhigh);
+					var listVolume='#{screeners.listVolume}';
+					var arrayVolume=JSON.parse(listVolume);
 					
 					var day='#{screeners.listDay}';
 					var arrayDay = JSON.parse(day);
 					var month='#{screeners.listMonth}';
 					var arrayMonth = JSON.parse(month);
-					var year=2014;
-					
+					var year='#{screeners.listYear}';
+					var arrayYear=JSON.parse(year);
 					
 				for (var i = 0; i &lt; array.length; i++) {
-					var newDate = new Date(year,arrayMonth[0],arrayDay[0]);
-					//console.log(arrayMonth[i]+"month");
+					var newDate = new Date(arrayYear[0],arrayMonth[0],arrayDay[0]);
+					console.log(arrayMonth[i]+"month");
 					//console.log(arrayDay[i]+"day");
-					newDate.setFullYear(year);
+					newDate.setFullYear(arrayYear[i]);
 					newDate.setMonth(arrayMonth[i]);
 					
 					newDate.setDate(arrayDay[i]);
@@ -50,19 +52,19 @@
 					//console.log(array[i]);
 					if(array[i]==0){array[i]=array[i-1]}
 					var a1 = array[i];
-					var b1 = array[i];
+					var b1 = arrayVolume[i];
 					
 					if(i>1){
 					var a2 =(array[i]+array[i-1])/2;
-					var b2 =(array[i]+array[i-1])/2;}
+					var b2 =(arrayVolume[i]+arrayVolume[i-1])/2;}
 					
 					if(i>10){
 					var a3 = (array[i]+array[i-10])/2;
-					var b3 = (array[i]+array[i-10])/2;}
+					var b3 = (arrayVolume[i]+arrayVolume[i-10])/2;}
 					
 					if(i>20){
 					var a4 = (array[i]+array[i-20])/2;
-					var b4 = (array[i]+array[i-20])/2;}
+					var b4 = (arrayVolume[i]+arrayVolume[i-20])/2;}
 
 					chartData1.push({
 						date: newDate,
@@ -207,11 +209,7 @@
 						selected: true,
 						count: 1,
 						label: "1 month"
-					}, {
-						period: "YYYY",
-						count: 1,
-						label: "1 year"
-					}, {
+					},  {
 						period: "1 year",
 						label: "1 year"
 					}, {
