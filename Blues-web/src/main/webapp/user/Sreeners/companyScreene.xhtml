@@ -1,0 +1,46 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	template="/WEB-INF/templateClient/templateClient.xhtml">
+	<div class="container">
+		<div class="row">
+			<ui:define name="content">
+				<div class="row">
+					<div class="panel-group" id="accordion">
+						<div class="panel panel-default">
+							<div class="panel-heading">
+								<h4 class="panel-title">
+									<a data-toggle="collapse" data-parent="#accordion"
+										href="#collapse-1"><span
+										class="ion-ios7-help icon ion-podium"></span> Line Chart </a>
+								</h4>
+							</div>
+							<div id="collapse-1" class="panel-collapse collapse ">
+								<div class="panel-body">
+									<ui:include src="/user/Sreeners/firstScreen.xhtml" />
+								</div>
+							</div>
+						</div>
+						<div class="panel panel-default">
+							<div class="panel-heading">
+								<h4 class="panel-title">
+									<a data-toggle="collapse" data-parent="#accordion"
+										href="#collapse-2"><span
+										class="ion-ios7-help icon ion-podium"></span> Candlestick
+										Chart </a>
+								</h4>
+							</div>
+							<div id="collapse-2" class="panel-collapse collapse in">
+								<div class="panel-body">
+									<ui:include src="/user/Sreeners/screenCandle.xhtml" />
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</ui:define>
+		</div>
+	</div>
+
+</ui:composition>
