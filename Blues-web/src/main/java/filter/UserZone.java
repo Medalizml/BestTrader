@@ -2,9 +2,6 @@ package filter;
 
 import java.io.IOException;
 
-
-
-
 import javax.servlet.Filter;
 import javax.servlet.FilterChain;
 import javax.servlet.FilterConfig;
@@ -15,15 +12,15 @@ import javax.servlet.annotation.WebFilter;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import managedBeans.Authentification;
 import tn.esprit.Blues.entities.Administrator;
 import tn.esprit.Blues.entities.Customer;
-import managedBeans.Authentification;
 
-@WebFilter("/login.jsf")
-public class LoginFilter implements Filter {
+@WebFilter("/user/profile/*")
+public class UserZone implements Filter{
 
-
-	public LoginFilter() {
+	public UserZone() {
+		super();
 		// TODO Auto-generated constructor stub
 	}
 
@@ -37,22 +34,21 @@ public class LoginFilter implements Filter {
 	public void doFilter(ServletRequest request, ServletResponse response,
 			FilterChain chain) throws IOException, ServletException {
 		
-		System.out.println("filter");
+		
 		HttpServletRequest req = (HttpServletRequest) request;
 		HttpServletResponse resp = (HttpServletResponse) response;
 		Authentification session = (Authentification) req.getSession().getAttribute("auth");
 		
-		if(session!=null && session.isLoggedIn()&& session.getUser() instanceof Administrator){
-			System.out.println((session.getUser() instanceof Administrator)+"filter login");
-			
-			resp.sendRedirect(req.getContextPath() + "/admin/welcome.xhtml");
-		}else{
-			System.out.println("filterlogin");
+		if(session!=null && session.isLoggedIn()&&session.getUser() instanceof Customer){
+			System.out.println("filterUser userlogged");
 			chain.doFilter(request, response);
 			
+		}else{
+			System.out.println("filterUser user not logged");
+			
+			resp.sendRedirect(req.getContextPath() + "/login.jsf");
 			
 		}
-		
 		
 	}
 
@@ -61,7 +57,5 @@ public class LoginFilter implements Filter {
 		// TODO Auto-generated method stub
 		
 	}
-
-	
 
 }
