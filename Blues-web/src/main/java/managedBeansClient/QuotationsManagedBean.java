@@ -82,9 +82,9 @@ public class QuotationsManagedBean implements Serializable {
 			changeE = (1f);
 			e.printStackTrace();
 		}
-		System.out.println(changeD);
-		System.out.println(changeE);
-		System.out.println(changeP);
+//		System.out.println(changeD);
+//		System.out.println(changeE);
+//		System.out.println(changeP);
 		for (int i = 0; i < sharesConT.size(); i++) {
 
 			Share share2 = new Share();
@@ -130,10 +130,10 @@ public class QuotationsManagedBean implements Serializable {
 			sharesConP.add(share4);
 		}
 
-		System.out.println(sharesConT);
-		System.out.println(sharesConD);
-		System.out.println(sharesConE);
-		System.out.println(sharesConP);
+//		System.out.println(sharesConT);
+//		System.out.println(sharesConD);
+//		System.out.println(sharesConE);
+//		System.out.println(sharesConP);
 
 	}
 

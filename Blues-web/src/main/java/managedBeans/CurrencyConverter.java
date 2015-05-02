@@ -31,7 +31,7 @@ public class CurrencyConverter {
 		in.close();
 
 		// print result
-		System.out.println(response.toString());
+		//System.out.println(response.toString());
 		float price;
 		try{
 		price=Float.parseFloat(response.toString());}

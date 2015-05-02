@@ -1,54 +1,92 @@
 <ui:composition xmlns="http://www.w3.org/1999/xhtml"
 	xmlns:ui="http://java.sun.com/jsf/facelets"
 	xmlns:f="http://java.sun.com/jsf/core"
-	xmlns:h="http://java.sun.com/jsf/html">
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:jsf="http://java.sun.com/jsf"
+	xmlns:p="http://xmlns.jcp.org/jsf/passthrough">
 
-
-	<h:dataTable class="table table-bordered"
+	<h:dataTable class="datatable table table-striped table-bordered"
 		value="#{buyShareManagedBean.buyShares}" var="ex"
 		headerClass="alert alert-info">
-		<h:column>
-			<f:facet name="header">Company Name</f:facet>
+		<thead>
+			<h:column>
+				<f:facet name="header">Company Name</f:facet>
 			#{ex.share.company.name}
 			
 	
 	</h:column>
-		<h:column>
-			<f:facet name="header">Opening Price</f:facet>
+			<h:column>
+				<f:facet name="header">Opening Price</f:facet>
 			#{ex.share.opningPrice}
 	
 	</h:column>
-		<h:column>
-			<f:facet name="header">Last Value</f:facet>
+			<h:column>
+				<f:facet name="header">Last Value</f:facet>
 			#{ex.share.closingPrice}
 	
 	</h:column>
 
-		<h:column>
-			<f:facet name="header">Highest Price</f:facet>
+			<h:column>
+				<f:facet name="header">Highest Price</f:facet>
 			#{ex.share.highestPrice}
 	
 	</h:column>
-		<h:column>
-			<f:facet name="header">Lowest Price</f:facet>
+			<h:column>
+				<f:facet name="header">Lowest Price</f:facet>
 			#{ex.share.lowestPrice}
 	
 	</h:column>
-		<h:column>
-			<f:facet name="header">Estimation</f:facet>
+			<h:column>
+				<f:facet name="header">Estimation</f:facet>
 			#{ex.share.estimation}
 	
 	</h:column>
-		<h:column>
-			<f:facet name="header">Buy</f:facet>
-			<h:form class="form-inline">
-                  <h:inputText value="#{ex.opVolume}"  class="form-control" id="input-email"/>
-                  <h:commandLink  type="submit" class="btn"> <span class="glyphicon glyphicon-shopping-cart"></span> </h:commandLink>
-                </h:form>
-	
-	</h:column>
+			<h:column>
+				<f:facet name="header">Buy</f:facet>
+				<h:form class="form-inline" id="buy">
+					<h:inputText p:type="number" p:min="1" value="#{ex.opVolume}"
+						class="form-control" p:placeholder="#{buyShareManagedBean.holder}" />
+
+
+
+					<h:commandLink action="#{buyShareManagedBean.buyShare(ex)}"
+						type="submit" class="btn">
+						<f:ajax execute="@form" render="@form"></f:ajax>
+						<span class="glyphicon glyphicon-shopping-cart"></span>
+					</h:commandLink>
+					<h:form rendered="#{buyShareManagedBean.opMessage}">
+					<div class="alert alert-success alert-dismissible" role="alert">
+						<button type="button" class="close" data-dismiss="alert"
+							aria-label="Close">
+							<span aria-hidden="true" class="glyphicon glyphicon-remove"></span>
+						</button>
+						<strong>Operation success :)</strong><p> you spent #{buyShareManagedBean.opValue} TND and your
+						actual portfolio value is #{buyShareManagedBean.customer.portfolio.value} TND</p>
+					</div>
+					</h:form>
+				</h:form>
+
+			</h:column>
+		</thead>
 	</h:dataTable>
 
+	<div id="log-in3" class="white-popup mfp-with-anim mfp-hide">
+		<h:form>
+			<center>
+				<h3 style="color: red">Warning</h3>
+			</center>
+			<hr />
+			<p>You are going to desactivate your account ! You'll not be able
+				to log in until an admin reactivate your account !</p>
+			<hr />
+			<div class="row">
+				<div class="col-sm-16">
 
+					<center></center>
+
+				</div>
+			</div>
+		</h:form>
+	</div>
 
 </ui:composition>
