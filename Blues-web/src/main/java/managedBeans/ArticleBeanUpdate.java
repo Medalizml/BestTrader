@@ -174,6 +174,11 @@ public class ArticleBeanUpdate implements Serializable {
 		
 		return "Article";
 	}
+	
+	public String donavigation( Article a)
+	{article=a;
+	return "Detail"; 
+	}
 
 
 	
