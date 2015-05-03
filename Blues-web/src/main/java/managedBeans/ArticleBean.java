@@ -101,7 +101,7 @@ public class ArticleBean implements Serializable {
 			DemoBean.upload();
 			System.out.println("iciiiii");
 		} catch (IOException e) {
-			// TODO Auto-generated catch block
+			
 			System.out.println("laaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa");
 			e.printStackTrace();
 		}
@@ -146,37 +146,5 @@ public class ArticleBean implements Serializable {
 
 
 
-	/**
-	 * public String getSelectedItems() {
-	 * 
-	 * // Get selected items. articles = new ArrayList<Article>(); for (Article
-	 * article : articles) { if (article.isSelected()) { articles.add(article);
-	 * article.setSelected(false); // Reset. } }
-	 * 
-	 * // Do your thing with the MyData items in List selectedDataList.
-	 * 
-	 * return "selected"; // Navigation case. }
-	 **/
-
-	//
-	// public void upload() {
-	//
-	//
-	// if(file != null) {
-	// FacesMessage message = new FacesMessage("Succesful", file.getFileName() +
-	// " is uploaded.");
-	// FacesContext.getCurrentInstance().addMessage(null, message);
-	// try {
-	// copyFile(file.getFileName(), file.getInputstream());
-	//
-	// System.out.println(file.getFileName());
-	// } catch (IOException e) {
-	// e.printStackTrace();
-	// System.out.println("ioexception");
-	// }
-	// }else{
-	// System.out.println("null");
-	// }
-	// }
 
 }
