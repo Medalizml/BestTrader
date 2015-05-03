@@ -31,6 +31,20 @@ public class Companies {
 		return "companyDetails";
 	}
 	
+	public String lienCompany(){
+		
+		if(company.getNature().equals("public")){
+			return	"companiesPublic.xhtml";
+
+		}
+		else if (company.getNature().equals("private")){
+			return	"companiesPrivate.xhtml";
+
+		}
+		else {
+		return	"bank.xhtml";
+		}
+	}
 	
 	public Company getCompany() {
 		return company;
