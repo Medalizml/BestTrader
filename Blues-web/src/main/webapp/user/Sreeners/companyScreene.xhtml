@@ -3,9 +3,22 @@
 	xmlns:f="http://java.sun.com/jsf/core"
 	xmlns:h="http://java.sun.com/jsf/html"
 	template="/WEB-INF/templateClient/templateClient.xhtml">
-	<div class="container">
-		<div class="row">
+
+		
 			<ui:define name="content">
+			<div class="container">
+
+		<!-- bage header start -->
+		<h:form>
+		<div class="page-header">
+			<h1>Screeners</h1>
+			<ol class="breadcrumb">
+				<li><h:commandLink action="#{screeners.lien()}" >companies</h:commandLink></li>
+				<li class="active">screeners</li>
+			</ol>
+		</div>
+		</h:form>
+	</div>
 				<div class="row">
 					<div class="panel-group" id="accordion">
 						<div class="panel panel-default">
@@ -13,7 +26,7 @@
 								<h4 class="panel-title">
 									<a data-toggle="collapse" data-parent="#accordion"
 										href="#collapse-1"><span
-										class="ion-ios7-help icon ion-podium"></span> Line Chart </a>
+										class="ion-ios7-help icon ion-podium"></span> Line Chart for #{screeners.company.name} </a>
 								</h4>
 							</div>
 							<div id="collapse-1" class="panel-collapse collapse ">
@@ -28,7 +41,7 @@
 									<a data-toggle="collapse" data-parent="#accordion"
 										href="#collapse-2"><span
 										class="ion-ios7-help icon ion-podium"></span> Candlestick
-										Chart </a>
+										Chart for #{screeners.company.name}</a>
 								</h4>
 							</div>
 							<div id="collapse-2" class="panel-collapse collapse in">
@@ -40,7 +53,7 @@
 					</div>
 				</div>
 			</ui:define>
-		</div>
-	</div>
+		
+	
 
 </ui:composition>

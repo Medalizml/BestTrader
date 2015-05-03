@@ -1,0 +1,85 @@
+
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html">
+
+
+<div class="container">
+
+		<!-- bage header start -->
+		<div class="page-header">
+			<h1>Articles</h1>
+			<ol class="breadcrumb">
+				<li><a href="#">Home</a></li>
+				
+				<li class="active">Articles</li>
+			</ol>
+		</div>
+	</div>
+
+
+
+
+ <div class="col-md-11 col-sm-11">
+<div class="row">
+			<!-- post details start -->
+			<div class="col-sm-16">
+				<div class="row">
+					<div class="sec-topic col-sm-16  wow fadeInDown animated  animated"
+						data-wow-delay="0.5s"
+						style="visibility: visible; -webkit-animation-delay: 0.5s;">
+						<div class="row">
+	<h:form>
+		<h:dataTable value="#{ar.articles}" var="o" class="datatable table table-striped table-bordered">
+		<thead>
+			<h:column>
+			<f:facet name="header" style="widf:facet:10%"
+								data-hide="phone,tablet">Articles List</f:facet>
+			
+					<div class="col-sm-4">
+					<h:commandLink action="#{ar1.donavigation(o)}" value="">
+						<img 
+							style="max-height: 6em; height: 100%; width: 80%; min-height: 6em;"
+							 src="#{o.picture}"
+							class="img-thumbnail" /></h:commandLink></div>
+							<div class="col-sm-9">
+						<div class="sec-info">
+							<h3>
+								<h:outputText value="#{o.name}" />
+							</h3>
+
+							<div class="text-danger sub-info-bordered">
+								<div class="time">
+									<span class="ion-android-data icon" />
+									<h:outputText value="#{o.date}" />
+								</div>
+								<div class="stars">
+									
+								</div>
+							</div>
+						</div>
+					</div>
+				
+			</h:column>
+			</thead>
+		</h:dataTable>
+	</h:form>
+	</div>
+	</div>
+	</div>
+	</div>
+	</div>
+	</div>
+
+
+
+<div class="col-sm-5 hidden-xs right-sec" style="margin-top: -46px">
+	<div class="bordered top-margin">
+		<ui:include src="/user/Article/first.xhtml" />
+	</div>
+</div>
+
+
+
+</ui:composition>
