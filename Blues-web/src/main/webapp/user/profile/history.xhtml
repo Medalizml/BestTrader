@@ -1,0 +1,55 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html">
+
+	<div class="page-header">
+		<h1>History</h1>
+		<div class="pull-right"></div>
+	</div>
+
+	<div class="panel-group" id="accordion">
+
+		<div class="panel panel-default">
+			<div class="panel-heading">
+				<h4 class="panel-title">
+					<a data-toggle="collapse" data-parent="#accordion" href="#collapse"><span
+						class="glyphicon glyphicon-list-alt"></span> Show your operations history </a>
+				</h4>
+			</div>
+			<div id="collapse" class="panel-collapse collapse">
+				<div class="panel-body">
+					<h:form>
+						<h:dataTable value="#{profile.actions}" var="c" class="table table-hover ">
+							<h:column>
+								<f:facet name="header" > Action </f:facet>
+							<h4><span style="color: #{c.color};"  >	#{c.action}</span></h4>
+							</h:column>
+							<h:column>
+								<f:facet name="header" > Date </f:facet>
+								#{c.operation.dateOperation}
+							</h:column>
+							<h:column>
+								<f:facet name="header" > Company name </f:facet>
+								<h:commandLink type="button" class="btn-group ">
+												<h4>#{c.operation.quotation.company.name}</h4>
+											</h:commandLink>
+							</h:column>
+							<h:column>
+								<f:facet name="header" > Number of shares </f:facet>
+								#{c.operation.numberShares}
+							</h:column>
+							<h:column>
+								<f:facet name="header" > Value of transaction </f:facet>
+								#{c.value}
+							</h:column>
+						</h:dataTable>
+					</h:form>
+				</div>
+			</div>
+		</div>
+
+
+	</div>
+
+</ui:composition>

@@ -7,8 +7,6 @@ import javax.ejb.EJB;
 import javax.faces.application.FacesMessage;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.RequestScoped;
-import javax.faces.bean.ViewScoped;
-import javax.faces.component.UIComponent;
 import javax.faces.context.ExternalContext;
 import javax.faces.context.FacesContext;
 
@@ -50,7 +48,7 @@ UsersServices user;
 		
 		}
 		else{
-			fc.addMessage(null,new FacesMessage(FacesMessage.SEVERITY_ERROR,"password does not much",null));
+			fc.addMessage(null,new FacesMessage(FacesMessage.SEVERITY_ERROR,"password does not match",null));
 			}
 		return null;
 	}

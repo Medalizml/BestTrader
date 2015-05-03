@@ -2,6 +2,19 @@
 	xmlns:ui="http://java.sun.com/jsf/facelets"
 	xmlns:f="http://java.sun.com/jsf/core"
 	xmlns:h="http://java.sun.com/jsf/html">
+	
+	
+	
+
+		
+		<div class="page-header">
+			<h1>Sectors</h1>
+			<ol class="breadcrumb">
+				<li><a href="#">Home</a></li>
+				<li><a href="#">pages</a></li>
+				<li class="active">sectors</li>
+			</ol>
+		</div>
 
 	<div class="col-md-11 col-sm-11">
 		<div class="row">
@@ -17,22 +30,22 @@
 					</div>
 					<div id="collapse" class="panel-collapse collapse">
 						<div class="panel-body">
-							<h:form>
+							
 								<h:dataTable value="#{sector.companies1}" var="c">
 									<h:column>
 										<f:facet name="header" />
 										<div class="btn-group">
-											<h:commandLink type="button" class="btn-group ">
+											<h:form><h:commandLink type="button" class="btn-group " action="#{companies.detailsCompany(c)}">
 												<h3>#{c.name} &#160;&#160;&#160;&#160;</h3>
-											</h:commandLink>
+											</h:commandLink></h:form>
 										</div>
 									</h:column>
 									<h:column>
 										<f:facet name="header" />
-										<h:commandLink type="button" class="btn-group ">#{c.headOffice}</h:commandLink>
+										<h:form><h:commandLink type="button" class="btn-group " action="#{companies.detailsCompany(c)}">#{c.headOffice}</h:commandLink></h:form>
 									</h:column>
 								</h:dataTable>
-							</h:form>
+							
 						</div>
 					</div>
 				</div>
@@ -52,14 +65,14 @@
 									<h:column>
 										<f:facet name="header" />
 										<div class="btn-group">
-											<h:commandLink type="button" class="btn-group ">
+											<h:commandLink type="button" class="btn-group " action="#{companies.detailsCompany(c)}">
 												<h3>#{c.name} &#160;&#160;&#160;&#160;</h3>
 											</h:commandLink>
 										</div>
 									</h:column>
 									<h:column>
 										<f:facet name="header" />
-										<h:commandLink type="button" class="btn-group ">#{c.headOffice}</h:commandLink>
+										<h:commandLink type="button" class="btn-group " action="#{companies.detailsCompany(c)}">#{c.headOffice}</h:commandLink>
 									</h:column>
 								</h:dataTable>
 							</h:form>
@@ -81,14 +94,14 @@
 									<h:column>
 										<f:facet name="header" />
 										<div class="btn-group">
-											<h:commandLink type="button" class="btn-group ">
+											<h:commandLink type="button" class="btn-group " action="#{companies.detailsCompany(c)}">
 												<h3>#{c.name} &#160;&#160;&#160;&#160;</h3>
 											</h:commandLink>
 										</div>
 									</h:column>
 									<h:column>
 										<f:facet name="header" />
-										<h:commandLink type="button" class="btn-group ">#{c.headOffice}</h:commandLink>
+										<h:commandLink type="button" class="btn-group " action="#{companies.detailsCompany(c)}">#{c.headOffice}</h:commandLink>
 									</h:column>
 								</h:dataTable>
 							</h:form>
@@ -110,14 +123,14 @@
 									<h:column>
 										<f:facet name="header" />
 										<div class="btn-group">
-											<h:commandLink type="button" class="btn-group ">
+											<h:commandLink type="button" class="btn-group " action="#{companies.detailsCompany(c)}">
 												<h3>#{c.name} &#160;&#160;&#160;&#160;</h3>
 											</h:commandLink>
 										</div>
 									</h:column>
 									<h:column>
 										<f:facet name="header" />
-										<h:commandLink type="button" class="btn-group ">#{c.headOffice}</h:commandLink>
+										<h:commandLink type="button" class="btn-group " action="#{companies.detailsCompany(c)}">#{c.headOffice}</h:commandLink>
 									</h:column>
 								</h:dataTable>
 							</h:form>
@@ -140,14 +153,14 @@
 									<h:column>
 										<f:facet name="header" />
 										<div class="btn-group">
-											<h:commandLink type="button" class="btn-group ">
+											<h:commandLink type="button" class="btn-group " action="#{companies.detailsCompany(c)}">
 												<h3>#{c.name} &#160;&#160;&#160;&#160;</h3>
 											</h:commandLink>
 										</div>
 									</h:column>
 									<h:column>
 										<f:facet name="header" />
-										<h:commandLink type="button" class="btn-group ">#{c.headOffice}</h:commandLink>
+										<h:commandLink type="button" class="btn-group " action="#{companies.detailsCompany(c)}">#{c.headOffice}</h:commandLink>
 									</h:column>
 								</h:dataTable>
 							</h:form>
@@ -169,14 +182,14 @@
 									<h:column>
 										<f:facet name="header" />
 										<div class="btn-group">
-											<h:commandLink type="button" class="btn-group ">
+											<h:commandLink type="button" class="btn-group " action="#{companies.detailsCompany(c)}">
 												<h3>#{c.name} &#160;&#160;&#160;&#160;</h3>
 											</h:commandLink>
 										</div>
 									</h:column>
 									<h:column>
 										<f:facet name="header" />
-										<h:commandLink type="button" class="btn-group ">#{c.headOffice}</h:commandLink>
+										<h:commandLink type="button" class="btn-group " action="#{companies.detailsCompany(c)}">#{c.headOffice}</h:commandLink>
 									</h:column>
 								</h:dataTable>
 							</h:form>
@@ -198,14 +211,14 @@
 									<h:column>
 										<f:facet name="header" />
 										<div class="btn-group">
-											<h:commandLink type="button" class="btn-group ">
+											<h:commandLink type="button" class="btn-group " action="#{companies.detailsCompany(c)}">
 												<h3>#{c.name} &#160;&#160;&#160;&#160;</h3>
 											</h:commandLink>
 										</div>
 									</h:column>
 									<h:column>
 										<f:facet name="header" />
-										<h:commandLink type="button" class="btn-group ">#{c.headOffice}</h:commandLink>
+										<h:commandLink type="button" class="btn-group " action="#{companies.detailsCompany(c)}">#{c.headOffice}</h:commandLink>
 									</h:column>
 								</h:dataTable>
 							</h:form>
@@ -228,14 +241,14 @@
 									<h:column>
 										<f:facet name="header" />
 										<div class="btn-group">
-											<h:commandLink type="button" class="btn-group ">
+											<h:commandLink type="button" class="btn-group " action="#{companies.detailsCompany(c)}">
 												<h3>#{c.name} &#160;&#160;&#160;&#160;</h3>
 											</h:commandLink>
 										</div>
 									</h:column>
 									<h:column>
 										<f:facet name="header" />
-										<h:commandLink type="button" class="btn-group ">#{c.headOffice}</h:commandLink>
+										<h:commandLink type="button" class="btn-group " action="#{companies.detailsCompany(c)}">#{c.headOffice}</h:commandLink>
 									</h:column>
 								</h:dataTable>
 							</h:form>
@@ -258,14 +271,14 @@
 									<h:column>
 										<f:facet name="header" />
 										<div class="btn-group">
-											<h:commandLink type="button" class="btn-group ">
+											<h:commandLink type="button" class="btn-group " action="#{companies.detailsCompany(c)}">
 												<h3>#{c.name} &#160;&#160;&#160;&#160;</h3>
 											</h:commandLink>
 										</div>
 									</h:column>
 									<h:column>
 										<f:facet name="header" />
-										<h:commandLink type="button" class="btn-group ">#{c.headOffice}</h:commandLink>
+										<h:commandLink type="button" class="btn-group " action="#{companies.detailsCompany(c)}">#{c.headOffice}</h:commandLink>
 									</h:column>
 								</h:dataTable>
 							</h:form>
@@ -288,14 +301,14 @@
 									<h:column>
 										<f:facet name="header" />
 										<div class="btn-group">
-											<h:commandLink type="button" class="btn-group ">
+											<h:commandLink type="button" class="btn-group " action="#{companies.detailsCompany(c)}">
 												<h3>#{c.name} &#160;&#160;&#160;&#160;</h3>
 											</h:commandLink>
 										</div>
 									</h:column>
 									<h:column>
 										<f:facet name="header" />
-										<h:commandLink type="button" class="btn-group ">#{c.headOffice}</h:commandLink>
+										<h:commandLink type="button" class="btn-group " action="#{companies.detailsCompany(c)}">#{c.headOffice}</h:commandLink>
 									</h:column>
 								</h:dataTable>
 							</h:form>
@@ -318,14 +331,14 @@
 									<h:column>
 										<f:facet name="header" />
 										<div class="btn-group">
-											<h:commandLink type="button" class="btn-group ">
+											<h:commandLink type="button" class="btn-group " action="#{companies.detailsCompany(c)}">
 												<h3>#{c.name} &#160;&#160;&#160;&#160;</h3>
 											</h:commandLink>
 										</div>
 									</h:column>
 									<h:column>
 										<f:facet name="header" />
-										<h:commandLink type="button" class="btn-group ">#{c.headOffice}</h:commandLink>
+										<h:commandLink type="button" class="btn-group " action="#{companies.detailsCompany(c)}">#{c.headOffice}</h:commandLink>
 									</h:column>
 								</h:dataTable>
 							</h:form>
@@ -348,14 +361,14 @@
 									<h:column>
 										<f:facet name="header" />
 										<div class="btn-group">
-											<h:commandLink type="button" class="btn-group ">
+											<h:commandLink type="button" class="btn-group " action="#{companies.detailsCompany(c)}">
 												<h3>#{c.name} &#160;&#160;&#160;&#160;</h3>
 											</h:commandLink>
 										</div>
 									</h:column>
 									<h:column>
 										<f:facet name="header" />
-										<h:commandLink type="button" class="btn-group ">#{c.headOffice}</h:commandLink>
+										<h:commandLink type="button" class="btn-group " action="#{companies.detailsCompany(c)}">#{c.headOffice}</h:commandLink>
 									</h:column>
 								</h:dataTable>
 							</h:form>
@@ -377,14 +390,14 @@
 									<h:column>
 										<f:facet name="header" />
 										<div class="btn-group">
-											<h:commandLink type="button" class="btn-group ">
+											<h:commandLink type="button" class="btn-group " action="#{companies.detailsCompany(c)}">
 												<h3>#{c.name} &#160;&#160;&#160;&#160;</h3>
 											</h:commandLink>
 										</div>
 									</h:column>
 									<h:column>
 										<f:facet name="header" />
-										<h:commandLink type="button" class="btn-group ">#{c.headOffice}</h:commandLink>
+										<h:commandLink type="button" class="btn-group " action="#{companies.detailsCompany(c)}">#{c.headOffice}</h:commandLink>
 									</h:column>
 								</h:dataTable>
 							</h:form>
@@ -407,14 +420,14 @@
 									<h:column>
 										<f:facet name="header" />
 										<div class="btn-group">
-											<h:commandLink type="button" class="btn-group ">
+											<h:commandLink type="button" class="btn-group " action="#{companies.detailsCompany(c)}">
 												<h3>#{c.name} &#160;&#160;&#160;&#160;</h3>
 											</h:commandLink>
 										</div>
 									</h:column>
 									<h:column>
 										<f:facet name="header" />
-										<h:commandLink type="button" class="btn-group ">#{c.headOffice}</h:commandLink>
+										<h:commandLink type="button" class="btn-group " action="#{companies.detailsCompany(c)}">#{c.headOffice}</h:commandLink>
 									</h:column>
 								</h:dataTable>
 							</h:form>

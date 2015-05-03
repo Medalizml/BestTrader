@@ -87,11 +87,11 @@ Author : Webyzona.com
 	z-index: 3000; /* makes sure it stays on top */
 }
 #status {
-	width: 200px;
-	height: 150px;
+	width: 400px;
+	height: 300px;
 	position: absolute;
-	left: 50%;
-	top: 50%;
+	left: 41%;
+	top: 43%;
 	background-image: url(../images/general/status-red.gif);
 	background-repeat: no-repeat;
 	background-position: center;
@@ -227,6 +227,25 @@ transform:rotate(360deg);
 	margin-top: 0;
 	min-height: 100%;
 	z-index: 10;
+}
+/*title new*/
+.main-title2 {
+	border: solid 2px ;
+	position: relative;
+	z-index: 1;
+	
+	float: left;
+	margin: 0 5px;
+	text-align: center;
+	border-bottom: none;
+	padding: 0 10px 0 5px;
+	font-size: 18px;
+	font-weight: bold;
+	text-transform: uppercase;
+	text-align: left;
+	color: #fff;
+	height: 36px;
+	line-height: 36px;
 }
 /*1-5 PAGINATION*/
 .pagination {
@@ -1637,8 +1656,8 @@ none;
 	color: #01c6d9;
 }
 .btn-danger {
-	background: #01c6d9;
-	border: 1px solid #01c6d9;
+	background: #d9534f;
+	border: 1px solid #d43f3a;
 }
 .btn-danger:hover {
 	background: #04b9ca;
