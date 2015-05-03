@@ -42,7 +42,7 @@ AmCharts.ready(function () {
 				for (var i = 0; i &lt; arrayop.length; i++) {
 					var newDate = new Date(arrayYear[0],arrayMonth[0],arrayDay[0]);
 					newDate.setFullYear(arrayYear[i]);
-					newDate.setMonth(arrayMonth[i]);
+					newDate.setMonth(arrayMonth[i]-1);
 					newDate.setDate(arrayDay[i]);
 					
 				
@@ -163,15 +163,16 @@ AmCharts.ready(function () {
 					label: "10 days"
 				}, {
 					period: "MM",
-					selected: true,
 					count: 1,
 					label: "1 month"
 				},  {
-					period: "1year",
-					label: "1 year"
+					period: "MM",
+					selected: true,
+					count:6,
+					label: "6 months"
 				}, {
 					period: "MAX",
-					label: "1 year per week"
+					label: "MAX"
 				}];
 				chart.periodSelector = periodSelector;
 

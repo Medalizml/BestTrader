@@ -15,8 +15,6 @@ import tn.esprit.Blues.Services.CustomerServices;
 import tn.esprit.Blues.entities.Bank;
 import tn.esprit.Blues.entities.Company;
 import tn.esprit.Blues.entities.Customer;
-import tn.esprit.Blues.entities.Pricehistory;
-import tn.esprit.Blues.entities.Quotation;
 import ScreenersServices.ScreenersServices;
 
 @ManagedBean
@@ -82,6 +80,20 @@ public class Screeners {
 
 		}
 
+	}
+	public String lien(){
+		
+		if(company.getNature().equals("public")){
+			return	"companiesPublic.xhtml";
+
+		}
+		else if (company.getNature().equals("private")){
+			return	"companies.xhtml";
+
+		}
+		else {
+		return	"bank.xhtml";
+		}
 	}
 
 	@PostConstruct

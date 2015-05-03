@@ -42,14 +42,12 @@
 				for (var i = 0; i &lt; array.length; i++) {
 					var newDate = new Date(arrayYear[0],arrayMonth[0],arrayDay[0]);
 					console.log(arrayMonth[i]+"month");
-					//console.log(arrayDay[i]+"day");
 					newDate.setFullYear(arrayYear[i]);
-					newDate.setMonth(arrayMonth[i]);
+					newDate.setMonth(arrayMonth[i]-1);
 					
 					newDate.setDate(arrayDay[i]);
 					
 					
-					//console.log(array[i]);
 					if(array[i]==0){array[i]=array[i-1]}
 					var a1 = array[i];
 					var b1 = arrayVolume[i];
@@ -58,13 +56,13 @@
 					var a2 =(array[i]+array[i-1])/2;
 					var b2 =(arrayVolume[i]+arrayVolume[i-1])/2;}
 					
-					if(i>10){
-					var a3 = (array[i]+array[i-10])/2;
-					var b3 = (arrayVolume[i]+arrayVolume[i-10])/2;}
+					if(arrayhigh[i]==0){arrayhigh[i]=arrayhigh[i-1]}
+					var a3=(arrayhigh[i]);
+					var b3 =arrayVolume[i];
 					
-					if(i>20){
-					var a4 = (array[i]+array[i-20])/2;
-					var b4 = (arrayVolume[i]+arrayVolume[i-20])/2;}
+					if(arraylow[i]==0){arraylow[i]=arraylow[i-1]}
+					var a4 =(arraylow[i]);
+					var b4 = arrayVolume[i];
 
 					chartData1.push({
 						date: newDate,
@@ -119,7 +117,7 @@
 				},
 
 				{
-					title: "Avereage(10)",
+					title: "HighestPrice",
 					fieldMappings: [{
 						fromField: "value",
 						toField: "value"
@@ -132,7 +130,7 @@
 				},
 
 				{
-					title: "Avereage(20)",
+					title: "LowestPrice",
 					fieldMappings: [{
 						fromField: "value",
 						toField: "value"
@@ -210,11 +208,13 @@
 						count: 1,
 						label: "1 month"
 					},  {
-						period: "1 year",
-						label: "1 year"
+						period: "MM",
+						selected: true,
+						count: 6,
+						label: "6 months"
 					}, {
 						period: "MAX",
-						label: "1 year per week"
+						label: "MAX"
 					}]
 				},
 
