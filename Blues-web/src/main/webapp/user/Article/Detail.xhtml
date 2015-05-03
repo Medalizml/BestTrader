@@ -3,49 +3,58 @@
 	xmlns:f="http://java.sun.com/jsf/core"
 	xmlns:h="http://java.sun.com/jsf/html"
 	template="/WEB-INF/templateClient/templateClient.xhtml">
-	
+
 	<ui:define name="content">
 
 
-	<div class="container">
-	<div class="page-header">
-			<h1>Articles</h1>
-			<ol class="breadcrumb">
-				<li><a href="article.xhtml">Home</a></li>
-				
-				<li class="active">Details Articles</li>
-			</ol>
-		</div>
-	
-	<div class="row">
-                    
-<div class="col-sm-16"><img style="max-height: 20em; height: 100%; width:80%; min-height: 6em;" alt="" src="#{request.contextPath}/#{ar1.article.picture}" class="img-thumbnail" /></div>
-                    
-<div class="col-sm-16 sec-info">
-                      
-<h3><h:outputText value="#{ar1.article.name}" /></h3>
-                      
-<div class="text-danger sub-info-bordered">
-                        
-<div class="author"><span class="ion-person icon" />By:<h:outputText value="#{ar1.article.author}" /> </div>
-                        
-<div class="time"><span class="ion-android-data icon" /><h:outputText value="#{ar1.article.date}" /></div>
-                        
+		<div class="container">
+		<div class="row">
+			<div class="page-header">
+				<h1>Articles</h1>
+				<ol class="breadcrumb">
+					<li><a href="article.xhtml">Articles</a></li>
 
-                        
-<div class="stars"><span class="ion-ios7-star" /><span class="ion-ios7-star" /><span class="ion-ios7-star" /><span class="ion-ios7-star" /><span class="ion-ios7-star-half" /></div>
-                      </div>
-                      
-<p><span class="letter-badge"></span>
-<h:outputText value="#{ar1.article.topic}" />
-</p>
-                      
- 
-                    </div>
-                  </div>
-                  </div>
-           
-                  
-                  
-                  </ui:define>
+					<li class="active">Details Articles</li>
+				</ol>
+			</div>
+			<div class="col-md-11 col-sm-11">
+				<div class="row">
+					<div class="col-sm-16">
+						<img
+							style="max-height: 20em; height: 100%; width: 80%; min-height: 6em;"
+							alt="" src="#{ar1.article.picture}"
+							class="img-thumbnail" />
+					</div>
+					<div class="col-sm-16 sec-info">
+						<h3>
+							<h:outputText value="#{ar1.article.name}" />
+						</h3>
+						<div class="text-danger sub-info-bordered">
+							<div class="author">
+								<span class="ion-person icon" />By:
+								<h:outputText value="#{ar1.article.author}" />
+							</div>
+							<div class="time">
+								<span class="ion-android-data icon" />
+								<h:outputText value="#{ar1.article.date}" />
+							</div>
+						</div>
+						<p>
+							<span class="letter-badge"></span>
+							<h:outputText value="#{ar1.article.topic}" />
+						</p>
+					</div>
+				</div>
+			</div>
+			
+<div class="col-sm-5 hidden-xs right-sec" style="margin-top: -46px">
+	<div class="bordered top-margin">
+		<ui:include src="/user/Article/first.xhtml" />
+	</div></div>
+		</div>
+		</div>
+		
+
+	</ui:define>
+
 </ui:composition>
