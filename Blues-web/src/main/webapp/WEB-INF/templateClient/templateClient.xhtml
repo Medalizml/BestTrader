@@ -1,205 +1,264 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:ui="http://java.sun.com/jsf/facelets"
-      xmlns:f="http://java.sun.com/jsf/core"
-      xmlns:h="http://java.sun.com/jsf/html"> 
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html">
 
 <h:head>
-<meta charset="utf-8"/>
-<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
-<meta name="viewport" content="width=device-width, initial-scale=1"/>
-<ui:insert name="title"><title>Best-Trader - Home</title></ui:insert>
-<ui:include src="/WEB-INF/templateClient/css.xhtml" />
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<ui:insert name="title">
+		<title>Best-Trader - Home</title>
+	</ui:insert>
+	<ui:include src="/WEB-INF/templateClient/css.xhtml" />
 
-</h:head> 
-<body><!-- preloader start -->
-<div id="preloader">
-  <div id="status"></div>
-</div>
-<!-- preloader end -->
+</h:head>
+<body>
+	<!-- preloader start -->
+	<div id="preloader">
+		<div id="status"></div>
+	</div>
+	<!-- preloader end -->
 
- <!-- wrapper start -->
-<div class="wrapper"> 
-  <!-- header toolbar start -->
-  <div class="header-toolbar">
-    <div class="container">
-      <div class="row">
-        <div class="col-md-16 text-uppercase">
-          <div class="row">
-            <div class="col-sm-8 col-xs-16">
-              <ul id="inline-popups" class="list-inline">
-               
-                <li><a class="open-popup-link" href="#log-in" data-effect="mfp-zoom-in">log in</a></li>
-                <li><a class="open-popup-link" href="#create-account" data-effect="mfp-zoom-in">Register Now </a></li>
-                <li><a  href="#">Cantact us</a></li>
-              </ul>
-            </div>
-            <div class="col-sm-8 col-xs-16">
-              <div class="row">
-                <div id="weather" class="col-lg-9 col-sm-8 col-xs-16"></div>
-                <div id="time-date" class="col-lg-7 col-sm-8 col-xs-16"></div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <!-- header toolbar end --> 
-  
-  <!-- header start -->
-  <div class="container header">
-    <div class="row">
-      <div class="col-sm-5 col-md-5 wow fadeInUpLeft animated"><a class="navbar-brand" href="index-2.html">globalnews</a></div>
-      <div class="col-sm-11 col-md-11 hidden-xs text-right"><img src="images/ads/468-60-ad.gif" width="468" height="60" alt=""/></div>
-    </div>
-  </div>
-  <!-- header end --> 
-  <!-- nav and search start -->
-  <div class="nav-search-outer"> 
-    <!-- nav start -->
-    
-    <nav class="navbar navbar-inverse" role="navigation">
-      <div class="container">
-        <div class="row">
-          <div class="col-sm-16"> <a href="javascript:;" class="toggle-search pull-right"><span class="ion-ios7-search"></span></a>
-            <div class="navbar-header">
-              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
-            </div>
-            <div class="collapse navbar-collapse" id="navbar-collapse">
-              <ul class="nav navbar-nav text-uppercase main-nav ">
-                <li class="active"><a href="index-2.html">home</a></li>
-                
-                <li class="dropdown"> <a href="javascript:void(0)" class="dropdown-toggle" data-toggle="dropdown">Companies<span class="ion-ios7-arrow-down nav-icn"></span></a>
-                  <ul class="dropdown-menu text-capitalize " role="menu">
-                                
-                             
-                                <li><a href="#"><span class="ion-ios7-arrow-right nav-sub-icn"></span>Private Companies </a></li>
-                                <li><a href="#"><span class="ion-ios7-arrow-right nav-sub-icn"></span>Public Companies</a> </li>
-                                <li><a href="#"><span class="ion-ios7-arrow-right nav-sub-icn"></span>Banks </a></li>                            
-                                                                  
-                   
-                  </ul>
-                </li>
-                <li> <a href="javascript:void(0)">Sectors</a></li>
-                <li class="dropdown"> <a href="javascript:void(0)" class="dropdown-toggle" data-toggle="dropdown">stock price of the day</a>
-                  
-                </li>
-              
-                <li class="dropdown"> <a href="javascript:void(0)" class="dropdown-toggle" data-toggle="dropdown">Screeners<span class="ion-ios7-arrow-down nav-icn"></span></a>
-                  <ul class="dropdown-menu text-capitalize" role="menu">
-                  
-                    <li><a href="search-result-found.html"><span class="ion-ios7-arrow-right nav-sub-icn"></span>Private Companies</a></li>
-                    <li><a href="search-result-not-found.html"><span class="ion-ios7-arrow-right nav-sub-icn"></span>Public Companies</a></li>
-                    <li><a href="faqs.html"><span class="ion-ios7-arrow-right nav-sub-icn"></span>Banks</a></li>
-                  </ul>
-                </li>
-                <li class="dropdown"> <a href="javascript:void(0)" class="dropdown-toggle" data-toggle="dropdown">Articles</a></li>
-                 <li class="dropdown"> <a href="javascript:void(0)" class="dropdown-toggle" data-toggle="dropdown">Pair of currencies</a></li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </div>
-      <!-- nav end --> 
-      <!-- search start -->
-      
-      <div class="search-container ">
-        <div class="container">
-          <form action="#" method="" role="search">
-            <input id="search-bar" placeholder="Type  Hit Enter.." autocomplete="off"/>
-          </form>
-        </div>
-      </div>
-      <!-- search end --> 
-    </nav>
-    <!--nav end--> 
-  </div>
-  
-  <!-- nav and search end--> 
-   <div class="container" style="margin-left: 7%">
-  <ui:insert name="content"></ui:insert>
-  </div>
-  <!-- Footer start -->
-  <footer>
-    <div class="top-sec">
-      <div class="container ">
-        <div class="row match-height-container">
-          <div class="col-sm-6 subscribe-info wow fadeInDown animated" data-wow-delay="1s" data-wow-offset="40">
-            
-          <div class="col-sm-5 recent-posts  wow fadeInDown animated" data-wow-delay="1s" data-wow-offset="40">
-          
-                
-          
-             </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </footer>
-  <!-- Footer end -->
-  <div id="create-account" class="white-popup mfp-with-anim mfp-hide">
-    <form role="form">
-      <h3>Create Account</h3>
-      <hr/>
-      <div class="row">
-        <div class="col-sm-8">
-          <div class="form-group">
-            <input type="text" name="first_name" id="first_name" class="form-control" placeholder="First Name" tabindex="1"/>
-          </div>
-        </div>
-        <div class="col-sm-8">
-          <div class="form-group">
-            <input type="text" name="last_name" id="last_name" class="form-control" placeholder="Last Name" tabindex="2"/>
-          </div>
-        </div>
-      </div>
-      <div class="form-group">
-        <input type="text" name="display_name" id="display_name" class="form-control" placeholder="Display Name" tabindex="3"/>
-      </div>
-      <div class="form-group">
-        <input type="email" name="email" id="email" class="form-control " placeholder="Email Address" tabindex="4"/>
-      </div>
-      <div class="row">
-        <div class="col-sm-8">
-          <div class="form-group">
-            <input type="password" name="password" id="password" class="form-control " placeholder="Password" tabindex="5"/>
-          </div>
-        </div>
-        <div class="col-sm-8">
-          <div class="form-group">
-            <input type="password" name="password_confirmation" id="password_confirmation" class="form-control" placeholder="Confirm Password" tabindex="6"/>
-          </div>
-        </div>
-      </div>
-      <hr/>
-      <div class="row">
-        <div class="col-sm-16">
-          <input type="submit" value="Register" class="btn btn-danger btn-block btn-lg" tabindex="7"/>
-        </div>
-      </div>
-    </form>
-  </div>
-  <div id="log-in" class="white-popup mfp-with-anim mfp-hide">
-    <form role="form">
-      <h3>Log In Your Account</h3>
-      <hr/>
-      <div class="form-group">
-        <input type="text" name="access_name" id="access_name" class="form-control" placeholder="Name" tabindex="3"/>
-      </div>
-      <div class="form-group">
-        <input type="password" name="password" id="password" class="form-control " placeholder="Password" tabindex="4"/>
-      </div>
-      <hr/>
-      <div class="row">
-        <div class="col-sm-16">
-          <input type="submit" value="Log In" class="btn btn-danger btn-block btn-lg" tabindex="7"/>
-        </div>
-      </div>
-    </form>
-  </div>
-</div>
-<!-- wrapper end -->  
-<ui:include src="/WEB-INF/templateClient/js.xhtml" />
-</body> 
+	<!-- wrapper start -->
+	<div class="wrapper">
+		<!-- header toolbar start -->
+		<div class="header-toolbar">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-16 text-uppercase">
+						<div class="row">
+							<div class="col-sm-8 col-xs-16">
+								<ul id="inline-popups" class="list-inline">
+
+									<li><a class="open-popup-link" href="#log-in"
+										data-effect="mfp-zoom-in">log in</a></li>
+									<li><a class="open-popup-link" href="#create-account"
+										data-effect="mfp-zoom-in">Register Now </a></li>
+									<li><a href="#">Cantact us</a></li>
+								</ul>
+							</div>
+							<div class="col-sm-8 col-xs-16">
+								<div class="row">
+									<div id="weather" class="col-lg-9 col-sm-8 col-xs-16"></div>
+									<div id="time-date" class="col-lg-7 col-sm-8 col-xs-16"></div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- header toolbar end -->
+
+		<!-- header start -->
+		<div class="container header">
+			<div class="row">
+				<div class="col-sm-5 col-md-5 wow fadeInUpLeft animated">
+					 <img
+						src="#{request.contextPath}/resource/img/logoBestTrader.png" alt=""/>
+				</div>
+				<div class="col-sm-11 col-md-11 hidden-xs text-right">
+					<img src="images/ads/468-60-ad.gif" width="468" height="60" alt="" />
+				</div>
+			</div>
+		</div>
+		<!-- header end -->
+		<!-- nav and search start -->
+		<div class="nav-search-outer">
+			<!-- nav start -->
+
+			<nav class="navbar navbar-inverse" role="navigation">
+			<div class="container">
+				<div class="row">
+					<div class="col-sm-16">
+						<a href="javascript:;" class="toggle-search pull-right"><span
+							class="ion-ios7-search"></span></a>
+						<div class="navbar-header">
+							<button type="button" class="navbar-toggle collapsed"
+								data-toggle="collapse" data-target="#navbar-collapse">
+								<span class="sr-only">Toggle navigation</span> <span
+									class="icon-bar"></span> <span class="icon-bar"></span> <span
+									class="icon-bar"></span>
+							</button>
+						</div>
+						<div class="collapse navbar-collapse" id="navbar-collapse">
+							<ul class="nav navbar-nav text-uppercase main-nav ">
+								<li class="active"><a href="index-2.html">home</a></li>
+
+								<li class="dropdown"><a href="javascript:void(0)"
+									class="dropdown-toggle" data-toggle="dropdown">Companies<span
+										class="ion-ios7-arrow-down nav-icn"></span></a>
+									<ul class="dropdown-menu text-capitalize " role="menu">
+
+
+										<li><a href="#"><span
+												class="ion-ios7-arrow-right nav-sub-icn"></span>Private
+												Companies </a></li>
+										<li><a href="#"><span
+												class="ion-ios7-arrow-right nav-sub-icn"></span>Public
+												Companies</a></li>
+										<li><a href="#"><span
+												class="ion-ios7-arrow-right nav-sub-icn"></span>Banks </a></li>
+
+
+									</ul></li>
+								<li><a href="javascript:void(0)">Sectors</a></li>
+								<li class="dropdown"><a href="javascript:void(0)"
+									class="dropdown-toggle" data-toggle="dropdown">stock price
+										of the day</a></li>
+
+								<li class="dropdown"><a href="javascript:void(0)"
+									class="dropdown-toggle" data-toggle="dropdown">Screeners<span
+										class="ion-ios7-arrow-down nav-icn"></span></a>
+									<ul class="dropdown-menu text-capitalize" role="menu">
+
+										<li><a href="search-result-found.html"><span
+												class="ion-ios7-arrow-right nav-sub-icn"></span>Private
+												Companies</a></li>
+										<li><a href="search-result-not-found.html"><span
+												class="ion-ios7-arrow-right nav-sub-icn"></span>Public
+												Companies</a></li>
+										<li><a href="faqs.html"><span
+												class="ion-ios7-arrow-right nav-sub-icn"></span>Banks</a></li>
+									</ul></li>
+								<li class="dropdown"><a href="javascript:void(0)"
+									class="dropdown-toggle" data-toggle="dropdown">Articles</a></li>
+								<li class="dropdown"><a href="javascript:void(0)"
+									class="dropdown-toggle" data-toggle="dropdown">Pair of
+										currencies</a></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- nav end --> <!-- search start -->
+
+			<div class="search-container ">
+				<div class="container">
+					<form action="#" method="" role="search">
+						<input id="search-bar" placeholder="Type  Hit Enter.."
+							autocomplete="off" />
+					</form>
+				</div>
+			</div>
+			<!-- search end --> </nav>
+			<!--nav end-->
+		</div>
+
+		<!-- nav and search end-->
+		<div class="container" style="margin-left: 7%">
+			<ui:insert name="content"></ui:insert>
+		</div>
+		<!-- Footer start -->
+		<footer>
+		<div class="top-sec">
+			<div class="container ">
+				<div class="row match-height-container">
+					<div class="fadeInDown animated" data-wow-delay="1s"
+						data-wow-offset="40">
+
+
+						<img src="#{request.contextPath}/resource/img/best-trader.png"
+							alt=""
+							style="max-height: 6em; min-height: 6em; max-width: 6em; min-width: 6em;" />
+						<div class="pull-right">
+							<img src="#{request.contextPath}/resource/img/blues.png" alt=""
+								style="max-height: 6em; min-height: 6em; max-width: 6em; min-width: 6em;" />
+						</div>
+
+					</div>
+
+					<div class="fadeInDown animated" data-wow-delay="1s"
+						data-wow-offset="40">
+
+						<center>
+							<p>
+								Copyright © Best-trader 2015 All Rights Reserved. <br /> No
+								part of this website may be reproduced without BLUES's express
+								consent.
+							</p>
+						</center>
+					</div>
+				</div>
+			</div>
+		</div>
+		</footer>
+		<!-- Footer end -->
+		<div id="create-account" class="white-popup mfp-with-anim mfp-hide">
+			<form role="form">
+				<h3>Create Account</h3>
+				<hr />
+				<div class="row">
+					<div class="col-sm-8">
+						<div class="form-group">
+							<input type="text" name="first_name" id="first_name"
+								class="form-control" placeholder="First Name" tabindex="1" />
+						</div>
+					</div>
+					<div class="col-sm-8">
+						<div class="form-group">
+							<input type="text" name="last_name" id="last_name"
+								class="form-control" placeholder="Last Name" tabindex="2" />
+						</div>
+					</div>
+				</div>
+				<div class="form-group">
+					<input type="text" name="display_name" id="display_name"
+						class="form-control" placeholder="Display Name" tabindex="3" />
+				</div>
+				<div class="form-group">
+					<input type="email" name="email" id="email" class="form-control "
+						placeholder="Email Address" tabindex="4" />
+				</div>
+				<div class="row">
+					<div class="col-sm-8">
+						<div class="form-group">
+							<input type="password" name="password" id="password"
+								class="form-control " placeholder="Password" tabindex="5" />
+						</div>
+					</div>
+					<div class="col-sm-8">
+						<div class="form-group">
+							<input type="password" name="password_confirmation"
+								id="password_confirmation" class="form-control"
+								placeholder="Confirm Password" tabindex="6" />
+						</div>
+					</div>
+				</div>
+				<hr />
+				<div class="row">
+					<div class="col-sm-16">
+						<input type="submit" value="Register"
+							class="btn btn-danger btn-block btn-lg" tabindex="7" />
+					</div>
+				</div>
+			</form>
+		</div>
+		<div id="log-in" class="white-popup mfp-with-anim mfp-hide">
+			<form role="form">
+				<h3>Log In Your Account</h3>
+				<hr />
+				<div class="form-group">
+					<input type="text" name="access_name" id="access_name"
+						class="form-control" placeholder="Name" tabindex="3" />
+				</div>
+				<div class="form-group">
+					<input type="password" name="password" id="password"
+						class="form-control " placeholder="Password" tabindex="4" />
+				</div>
+				<hr />
+				<div class="row">
+					<div class="col-sm-16">
+						<input type="submit" value="Log In"
+							class="btn btn-danger btn-block btn-lg" tabindex="7" />
+					</div>
+				</div>
+			</form>
+		</div>
+	</div>
+	<!-- wrapper end -->
+	<ui:include src="/WEB-INF/templateClient/js.xhtml" />
+</body>
 </html>
