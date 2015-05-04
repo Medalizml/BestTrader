@@ -1,0 +1,85 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://xmlns.jcp.org/jsf/passthrough"
+	xmlns:h="http://java.sun.com/jsf/html">
+	
+
+
+	<div class="row">
+		<div class="col-md-9">
+
+			<div class="panel panel-success">
+				<div class="panel-heading">
+					<h1>Fill the form to send a reclamation</h1>
+				</div>
+				<div class="panel-body">
+
+					<h:form role="form" style="width: 500px; margin: 60px">
+						<div class="form-group">
+							<h3>Subject</h3>
+							<h:inputText type="text"
+								value="#{reclamationBean.reclamation.title}" name="access_name"
+								id="access_name" class="form-control" p:placeholder="Title"
+								tabindex="3" p:required="" />
+						</div>
+						<h3>Reclamation body</h3>
+						<div class="form-group">
+							<h:inputTextarea type="text"
+								value="#{reclamationBean.reclamation.topic}" name="access_name"
+								id="access_name2" class="form-control" p:placeholder="Topic"
+								rows="15" tabindex="4"/>
+						</div>
+
+						<div class="row">
+							<div class="col-sm-16">
+								<h:commandButton action="#{reclamationBean.addRec()}"
+									value="Send reclamation"
+									class="btn btn-success btn-block btn-lg" />
+
+							</div>
+						</div>
+					</h:form>
+				</div>
+			</div>
+
+		</div>
+		<div class="col-md-6">
+			<div class="row">
+				<h1>Your Last Reclamations</h1>
+				<br />
+				<h:dataTable value="#{reclamationBean.recList}" var="l"
+					class="table table-striped table-bordered">
+					<thead>
+
+						<h:column>
+							<f:facet name="header">title</f:facet>
+										#{l.title}
+									</h:column>
+						<h:column>
+							<f:facet name="header">date</f:facet>
+										#{l.date}
+									</h:column>
+						<h:column>
+							<f:facet name="header">Reclamations topic</f:facet>
+										#{l.topic}
+									</h:column>
+
+					</thead>
+				</h:dataTable>
+
+			</div>
+
+			<br />
+			<div class="row">
+				<!-- calendar start -->
+				<div class="col-sm-16 bt-space wow fadeInUp animated"
+					data-wow-delay="1s" data-wow-offset="50">
+					<div class="single pull-left"></div>
+				</div>
+				<!-- calendar end -->
+			</div>
+
+		</div>
+	</div>
+</ui:composition>

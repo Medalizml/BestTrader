@@ -2,7 +2,9 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:ui="http://java.sun.com/jsf/facelets"
       xmlns:f="http://java.sun.com/jsf/core"
-      xmlns:h="http://java.sun.com/jsf/html"> 
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://xmlns.jcp.org/jsf/passthrough"
+	xmlns:jsf="http://xmlns.jcp.org/jsf"> 
 
 <h:head>
 <meta charset="utf-8"/>
@@ -29,9 +31,12 @@
             <div class="col-sm-8 col-xs-16">
               <ul id="inline-popups" class="list-inline">
                
-                <li><a class="open-popup-link" href="#log-in" data-effect="mfp-zoom-in">log in</a></li>
-                <li><a class="open-popup-link" href="#create-account" data-effect="mfp-zoom-in">Register Now </a></li>
+                <h:panelGroup rendered="#{not auth.loggedIn}"><li><a class="open-popup-link" href="#log-in" data-effect="mfp-zoom-in">log in</a></li></h:panelGroup>
+                <h:panelGroup rendered="#{auth.loggedIn}"><li>welcome #{auth.customer.firstName}</li></h:panelGroup>
+                <h:panelGroup rendered="#{not auth.loggedIn}"> <li><a class="open-popup-link" href="#create-account" data-effect="mfp-zoom-in">Register Now </a></li></h:panelGroup>
+                <h:panelGroup rendered="#{auth.loggedIn}"> <li><h:form><h:commandLink  action="#{auth.doLogOut}"   value="log out"  p:class="open-popup-link"/></h:form>  </li></h:panelGroup>
                 <li><a  href="#">Cantact us</a></li>
+        		
               </ul>
             </div>
             <div class="col-sm-8 col-xs-16">
@@ -51,7 +56,9 @@
   <div class="container header">
     <div class="row">
       <div class="col-sm-5 col-md-5 wow fadeInUpLeft animated"><a class="navbar-brand" href="index-2.html">globalnews</a></div>
-      <div class="col-sm-11 col-md-11 hidden-xs text-right"><img src="images/ads/468-60-ad.gif" width="468" height="60" alt=""/></div>
+      <div class="col-sm-11 col-md-11 hidden-xs text-right">
+      <h:panelGroup rendered="#{auth.loggedIn}"><a href="#{request.contextPath}/user/profile/profile.xhtml" class="btn btn-primary btn-lg" style="font-size: 35px ;background-color:rgb(30, 144, 36) ;">Consult your Profile &#160;<span class="glyphicon glyphicon-briefcase"></span></a></h:panelGroup>
+      </div>
     </div>
   </div>
   <!-- header end --> 
@@ -68,15 +75,15 @@
             </div>
             <div class="collapse navbar-collapse" id="navbar-collapse">
               <ul class="nav navbar-nav text-uppercase main-nav ">
-                <li class="active"><a href="index-2.html">home</a></li>
+                <li class="active"><a href="#{request.contextPath}/login.jsf">home</a></li>
                 
                 <li class="dropdown"> <a href="javascript:void(0)" class="dropdown-toggle" data-toggle="dropdown">Companies<span class="ion-ios7-arrow-down nav-icn"></span></a>
                   <ul class="dropdown-menu text-capitalize " role="menu">
                                 
                              
-                                <li><a href="#"><span class="ion-ios7-arrow-right nav-sub-icn"></span>Private Companies </a></li>
-                                <li><a href="#"><span class="ion-ios7-arrow-right nav-sub-icn"></span>Public Companies</a> </li>
-                                <li><a href="#"><span class="ion-ios7-arrow-right nav-sub-icn"></span>Banks </a></li>                            
+                                <li><a href="#{request.contextPath}/user/companies/companiesPrivate.xhtml"><span class="ion-ios7-arrow-right nav-sub-icn"></span>Private Companies </a></li>
+                                <li><a href="#{request.contextPath}/user/companies/companiesPublic.xhtml"><span class="ion-ios7-arrow-right nav-sub-icn"></span>Public Companies</a> </li>
+                                <li><a href="#{request.contextPath}/user/companies/bank.xhtml"><span class="ion-ios7-arrow-right nav-sub-icn"></span>Banks </a></li>                            
                                                                   
                    
                   </ul>
@@ -96,6 +103,7 @@
                 </li>
                 <li class="dropdown"> <a href="javascript:void(0)" class="dropdown-toggle" data-toggle="dropdown">Articles</a></li>
                  <li class="dropdown"> <a href="javascript:void(0)" class="dropdown-toggle" data-toggle="dropdown">Pair of currencies</a></li>
+                 
               </ul>
             </div>
           </div>
@@ -118,7 +126,7 @@
   
   <!-- nav and search end--> 
 
-   <div class="container" style="margin-left: 7%">
+   <div class="container">
   <ui:insert name="content"></ui:insert>
   </div>
   <!-- Footer start -->
@@ -182,22 +190,26 @@
     </form>
   </div>
   <div id="log-in" class="white-popup mfp-with-anim mfp-hide">
-    <form role="form">
+    <h:form role="form">
       <h3>Log In Your Account</h3>
       <hr/>
       <div class="form-group">
-        <input type="text" name="access_name" id="access_name" class="form-control" placeholder="Name" tabindex="3"/>
+        <h:inputText value="#{auth.user.email}" name="access_name" id="access_name" class="form-control" p:placeholder="Name" p:tabindex="3"/>
       </div>
       <div class="form-group">
-        <input type="password" name="password" id="password" class="form-control " placeholder="Password" tabindex="4"/>
+        <h:inputSecret value="#{auth.user.password}" name="password" id="password" class="form-control " p:placeholder="Password" p:tabindex="4"/>
       </div>
       <hr/>
       <div class="row">
         <div class="col-sm-16">
-          <input type="submit" value="Log In" class="btn btn-danger btn-block btn-lg" tabindex="7"/>
+          <h:commandButton action="#{auth.doAuthentificate()}" value="Log in"  class="btn btn-success btn-block btn-lg">
+          <f:ajax execute="@form" render="@form errorlogin"></f:ajax>
+          </h:commandButton>
+          <h:panelGroup id="log"><h:panelGroup rendered="#{auth.ispressed}"> <div class="alert alert-danger"> <h:messages  id="errorlogin"/></div></h:panelGroup></h:panelGroup>
         </div>
       </div>
-    </form>
+    
+    </h:form>
   </div>
 </div>
 <!-- wrapper end -->  

@@ -1,12 +1,10 @@
+<ui:composition  xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html">
+      <h:outputScript>
 
-
-<ui:composition xmlns="http://www.w3.org/1999/xhtml"
-	xmlns:ui="http://java.sun.com/jsf/facelets"
-	xmlns:f="http://java.sun.com/jsf/core"
-	xmlns:h="http://java.sun.com/jsf/html">
-	<h:outputScript>
-
-			var chartData1 = [];
+var chartData1 = [];
 			var chartData2 = [];
 			var chartData3 = [];
 			var chartData4 = [];
@@ -19,50 +17,46 @@
 				
 				
 				
-					var idlist ='#{screeners.opningPrice}';
-					var listDate='#{screeners.listDate}';
-					
-					var array = JSON.parse(idlist);
-					var listcl='#{screeners.closingPrice}';
-					var arraycl = JSON.parse(listcl);
-					var listlow='#{screeners.lowestPrice}';
-					var arraylow = JSON.parse(listlow);
-					var listhigh='#{screeners.highestPrice}';
-					var arrayhigh = JSON.parse(listhigh);
-					var listVolume='#{screeners.listVolume}';
-					var arrayVolume=JSON.parse(listVolume);
-					
-					var day='#{screeners.listDay}';
+			var listlc1 ='#{compareBean.closingPrice}';
+				var arraylc1 = JSON.parse(listlc1);
+				var listlc2 ='#{compareBean.closingPrice2}';
+				console.log(listlc2)
+				var arraylc2 = JSON.parse(listlc2);
+				console.log(arraylc2);
+				console.log(arraylc2)
+
+				var listDate='#{compareBean.listDate}';
+				var day='#{compareBean.listDay}';
 					var arrayDay = JSON.parse(day);
-					var month='#{screeners.listMonth}';
+					var month='#{compareBean.listMonth}';
 					var arrayMonth = JSON.parse(month);
-					var year='#{screeners.listYear}';
-					var arrayYear=JSON.parse(year);
+					var year='#{compareBean.listYear}';
+					console.log(year)
+					var arrayYear = JSON.parse(year);
 					
-				for (var i = 0; i &lt; array.length; i++) {
-					var newDate = new Date(arrayYear[0],arrayMonth[0],arrayDay[0]);
-					console.log(arrayMonth[i]+"month");
+					
+				for (var i = 1; i &lt; arraylc1.length; i++) {
+					var newDate = new Date(year,arrayMonth[0],arrayDay[0]);
+					
 					newDate.setFullYear(arrayYear[i]);
 					newDate.setMonth(arrayMonth[i]-1);
 					
 					newDate.setDate(arrayDay[i]);
 					
 					
-					if(array[i]==0){array[i]=array[i-1]}
-					var a1 = array[i];
-					var b1 = arrayVolume[i];
 					
-					if(i>1){
-					var a2 =(array[i]+array[i-1])/2;
-					var b2 =(arrayVolume[i]+arrayVolume[i-1])/2;}
+					if(arraylc1[i]==0){arraylc1[i]=arraylc1[i-1]}
+						if(arraylc2[i]==0){arraylc2[i]=arraylc2[i-1]}
+					var a1 = arraylc1[i];
+					var b1 = (((arraylc1[i])/100)-((arraylc2[i])/100));
 					
-					if(arrayhigh[i]==0){arrayhigh[i]=arrayhigh[i-1]}
-					var a3=(arrayhigh[i]);
-					var b3 =arrayVolume[i];
 					
-					if(arraylow[i]==0){arraylow[i]=arraylow[i-1]}
-					var a4 =(arraylow[i]);
-					var b4 = arrayVolume[i];
+					var a2 =arraylc2[i];
+					var b2 =((-(arraylc1[i])/100)+((arraylc2[i])/100));
+					
+					
+					
+					
 
 					chartData1.push({
 						date: newDate,
@@ -74,16 +68,7 @@
 						value: a2,
 						volume: b2
 					});
-					chartData3.push({
-						date: newDate,
-						value: a3,
-						volume: b3
-					});
-					chartData4.push({
-						date: newDate,
-						value: a4,
-						volume: b4
-					});
+					
 				}
 			}
 			
@@ -91,7 +76,7 @@
 				type: "stock",
 				pathToImages: "/Blues-web/resource/resourceClient/screeners/amcharts/images/",
 				dataSets: [{
-					title: "OpningPrice",
+					title: "'#{compareBean.newCompany.name}'",
 					fieldMappings: [{
 						fromField: "value",
 						toField: "value"
@@ -104,7 +89,7 @@
 				},
 
 				{
-					title: "Avreage",
+					title: "'#{compareBean.newCompany2.name}'",
 					fieldMappings: [{
 						fromField: "value",
 						toField: "value"
@@ -116,31 +101,7 @@
 					categoryField: "date"
 				},
 
-				{
-					title: "HighestPrice",
-					fieldMappings: [{
-						fromField: "value",
-						toField: "value"
-					}, {
-						fromField: "volume",
-						toField: "volume"
-					}],
-					dataProvider: chartData3,
-					categoryField: "date"
-				},
-
-				{
-					title: "LowestPrice",
-					fieldMappings: [{
-						fromField: "value",
-						toField: "value"
-					}, {
-						fromField: "volume",
-						toField: "volume"
-					}],
-					dataProvider: chartData4,
-					categoryField: "date"
-				}],
+				],
 
 				panels: [{
 
@@ -207,14 +168,13 @@
 						selected: true,
 						count: 1,
 						label: "1 month"
-					},  {
-						period: "MM",
-						selected: true,
+					}, {
+						period: "DD",
 						count: 6,
 						label: "6 months"
-					}, {
+					},  {
 						period: "MAX",
-						label: "MAX"
+						label: "1 year per week"
 					}]
 				},
 
@@ -222,8 +182,6 @@
 					position: "left"
 				}
 			});
-		</h:outputScript>
 
-
+</h:outputScript>
 </ui:composition>
-
