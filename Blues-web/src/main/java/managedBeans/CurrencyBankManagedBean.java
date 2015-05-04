@@ -6,10 +6,8 @@ import java.util.List;
 import javax.annotation.PostConstruct;
 import javax.ejb.EJB;
 import javax.faces.bean.ManagedBean;
-import javax.faces.bean.SessionScoped;
 import javax.faces.bean.ViewScoped;
 
-import tn.esprit.Blues.entities.Bank;
 import tn.esprit.Blues.entities.Currency;
 import tn.esprit.Blues.entities.Currencybank;
 import Bank.BankService;

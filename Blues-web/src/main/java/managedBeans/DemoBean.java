@@ -21,10 +21,11 @@ public class DemoBean {
 
 	public static String upload() throws IOException {
 		System.out.println("laaa");
-		file1.write("C:\\Users\\Wess\\git\\bestTrader-admin-web\\Blues-web\\src\\main\\webapp\\resource\\img\\"
+		file1.write("C:\\Users\\asus\\git\\bestTrader-admin-web\\Blues-web\\src\\main\\webapp\\resource\\img\\"
 				+ getFilename(file1));
+		
 		System.out.println("hedhi mchet");
-		file1.write("C:\\JEE\\Serveur\\wildfly-8.2.0.Final\\standalone\\deployments\\Blues-web.war\\resource\\img\\"
+		file1.write("D:\\JavaEE\\Serveur\\wildfly-8.2.0.Final\\standalone\\deployments\\Blues-web.war\\resource\\img\\"
 				+ getFilename(file1));
 		// System.out.println(getFilename(file1));
 		return "success";

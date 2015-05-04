@@ -31,7 +31,7 @@ public class NumberMangedBean {
 	@PostConstruct
 	public void init(){
 		
-		number=reclServices.numberRec();
+		//number=reclServices.numberRec();
 		
 	}
 	

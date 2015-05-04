@@ -18,16 +18,15 @@ import clientServices.ProfileServices;
 import entity.Intermediaire;
 import entity.OperationAction;
 
-
 @ViewScoped
-@ManagedBean(name="profile")
+@ManagedBean(name = "profile")
 public class ProfileManagedBean {
 
 	@EJB
 	UsersServices services;
 	@EJB
 	ProfileServices profile;
-	
+
 	@ManagedProperty("#{auth.customer}")
 	public Customer customer;
 	public List<Quotation> quotations;
@@ -37,7 +36,7 @@ public class ProfileManagedBean {
 	public List<Intermediaire> intermediaires;
 	public List<OperationAction> actions;
 	public String color;
-	
+
 	public String getColor() {
 		return color;
 	}
@@ -101,74 +100,81 @@ public class ProfileManagedBean {
 	public void setCustomer(Customer customer) {
 		this.customer = customer;
 	}
-	public void doAddOperation(Quotation q){
-		Date d= new Date();
+
+	public void doAddOperation(Quotation q) {
+		Date d = new Date();
 		operation.setDateOperation(d);
 		operation.setSharePrice(q.getClosingPrice());
 		operation.setQuotation(q);
-		operation.setNumberShares(-operation.getNumberShares());
+		if (operation.getNumberShares() > 0) {
+			operation.setNumberShares(-operation.getNumberShares());
+		}
+
 		profile.addOperation(operation);
-		customer.getPortfolio().setValue( customer.getPortfolio().getValue() - operation.getNumberShares()*q.getClosingPrice());
+		customer.getPortfolio().setValue(
+				customer.getPortfolio().getValue()
+						- operation.getNumberShares() * q.getClosingPrice());
 		services.update(customer.getPortfolio());
 		this.init();
 	}
-	
-	public List<Intermediaire> remplirIntermediaire(){
+
+	public List<Intermediaire> remplirIntermediaire() {
 		List<Intermediaire> l = new ArrayList<Intermediaire>();
-		
+
 		for (int i = 0; i < quotations.size(); i++) {
-		
+
 			Intermediaire o = new Intermediaire();
 			o.setQuotation(quotations.get(i));
-			o.setNbrShares(profile.getNumberOfShares(customer.getPortfolio().getId(),quotations.get(i).getId()));
-			o.setValue( o.getNbrShares() * o.getQuotation().getClosingPrice() );
-			
+			o.setNbrShares(profile.getNumberOfShares(customer.getPortfolio()
+					.getId(), quotations.get(i).getId()));
+			o.setValue(o.getNbrShares() * o.getQuotation().getClosingPrice());
+
 			l.add(i, o);
 		}
-		
-		
+
 		return l;
 	}
-	public List<OperationAction> remplirOperationAction(){
-		
+
+	public List<OperationAction> remplirOperationAction() {
+
 		List<OperationAction> l = new ArrayList<OperationAction>();
-		List<Operation> o = profile.getMyOperations(customer.getPortfolio().getId());
-		
+		List<Operation> o = profile.getMyOperations(customer.getPortfolio()
+				.getId());
+
 		for (int i = 0; i < o.size(); i++) {
-			
+
 			OperationAction a = new OperationAction();
-			
+
 			a.setOperation(o.get(i));
-			if(o.get(i).getNumberShares()<0)
-			{
+			if (o.get(i).getNumberShares() < 0) {
 				a.setAction("Sell");
 				a.setColor("red");
 				a.getOperation().setNumberShares(-o.get(i).getNumberShares());
-			}
-			else {
+			} else {
 				a.setAction("Buy");
 				a.setColor("green");
 			}
-			a.setValue( a.getOperation().getNumberShares() * a.getOperation().getSharePrice());
+			a.setValue(a.getOperation().getNumberShares()
+					* a.getOperation().getSharePrice());
 			l.add(a);
 		}
-		
-		
+
 		return l;
 	}
-	public void desactivate()
-	{
+
+	public void desactivate() {
 		customer.setActive(false);
 		services.update(customer);
 	}
-	public void updateProfile()
-	{
-		
+
+	public void updateProfile() {
+
 		services.update(customer);
 	}
+
 	@PostConstruct
-	public void init(){
-		
+	public void init() {
+
 		operation = new Operation();
 		operation.setPortfolio(customer.getPortfolio());
 		setColor("red");
@@ -176,8 +182,5 @@ public class ProfileManagedBean {
 		setIntermediaires(this.remplirIntermediaire());
 		setActions(this.remplirOperationAction());
 	}
-	
-	
-	
-	
+
 }

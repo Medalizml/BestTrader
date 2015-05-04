@@ -97,7 +97,7 @@ public class Authentification {
 		}}else{
 			ispressed=true;
 			FacesContext context=FacesContext.getCurrentInstance();
-			context.addMessage(null, new FacesMessage(FacesMessage.SEVERITY_ERROR,"login or password false",null));
+			context.addMessage(null, new FacesMessage(FacesMessage.SEVERITY_ERROR,"login or password are not correct",null));
 			return null;
 		}
 

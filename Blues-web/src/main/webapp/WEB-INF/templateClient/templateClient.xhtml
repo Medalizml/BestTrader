@@ -1,5 +1,6 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
+
       xmlns:ui="http://java.sun.com/jsf/facelets"
       xmlns:f="http://java.sun.com/jsf/core"
       xmlns:h="http://java.sun.com/jsf/html"
@@ -7,18 +8,22 @@
 	xmlns:jsf="http://xmlns.jcp.org/jsf"> 
 
 <h:head>
-<meta charset="utf-8"/>
-<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
-<meta name="viewport" content="width=device-width, initial-scale=1"/>
-<ui:insert name="title"><title>Best-Trader - Home</title></ui:insert>
-<ui:include src="/WEB-INF/templateClient/css.xhtml" />
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<ui:insert name="title">
+		<title>Best-Trader - Home</title>
+	</ui:insert>
+	<ui:include src="/WEB-INF/templateClient/css.xhtml" />
 
-</h:head> 
-<body><!-- preloader start -->
-<div id="preloader">
-  <div id="status"></div>
-</div>
-<!-- preloader end -->
+</h:head>
+<body>
+	<!-- preloader start -->
+	<div id="preloader">
+		<div id="status"></div>
+	</div>
+	<!-- preloader end -->
+
 
  <!-- wrapper start -->
 <div class="wrapper"> 
@@ -35,7 +40,7 @@
                 <h:panelGroup rendered="#{auth.loggedIn}"><li>welcome #{auth.customer.firstName}</li></h:panelGroup>
                 <h:panelGroup rendered="#{not auth.loggedIn}"> <li><a class="open-popup-link" href="#create-account" data-effect="mfp-zoom-in">Register Now </a></li></h:panelGroup>
                 <h:panelGroup rendered="#{auth.loggedIn}"> <li><h:form><h:commandLink  action="#{auth.doLogOut}"   value="log out"  p:class="open-popup-link"/></h:form>  </li></h:panelGroup>
-                <li><a  href="#">Cantact us</a></li>
+                <li><a  href="#{request.contextPath}/user/contactUs/ContactUs.xhtml">Cantact us</a></li>
         		
               </ul>
             </div>
@@ -89,21 +94,29 @@
                    
                   </ul>
                 </li>
-                <li> <a href="javascript:void(0)">Sectors</a></li>
-                <li class="dropdown"> <a href="javascript:void(0)" class="dropdown-toggle" data-toggle="dropdown">stock price of the day</a>
+                <li> <a href="#{request.contextPath}/user/Sector/sector.xhtml">Sectors</a></li>
+                <li > <a href="#{request.contextPath}/user/Quotations/Quotation.xhtml" >stock price of the day</a>
                   
                 </li>
               
                 <li class="dropdown"> <a href="javascript:void(0)" class="dropdown-toggle" data-toggle="dropdown">Screeners<span class="ion-ios7-arrow-down nav-icn"></span></a>
                   <ul class="dropdown-menu text-capitalize" role="menu">
                   
-                    <li><a href="search-result-found.html"><span class="ion-ios7-arrow-right nav-sub-icn"></span>Private Companies</a></li>
-                    <li><a href="search-result-not-found.html"><span class="ion-ios7-arrow-right nav-sub-icn"></span>Public Companies</a></li>
-                    <li><a href="faqs.html"><span class="ion-ios7-arrow-right nav-sub-icn"></span>Banks</a></li>
+                    <li><a href="#{request.contextPath}/user/Sreeners/companies.xhtml"><span class="ion-ios7-arrow-right nav-sub-icn"></span>Private Companies</a></li>
+                    <li><a href="#{request.contextPath}/user/Sreeners/companiesPublic.xhtml"><span class="ion-ios7-arrow-right nav-sub-icn"></span>Public Companies</a></li>
+                    <li><a href="#{request.contextPath}/user/Sreeners/bank.xhtml"><span class="ion-ios7-arrow-right nav-sub-icn"></span>Banks</a></li>
                   </ul>
                 </li>
-                <li class="dropdown"> <a href="javascript:void(0)" class="dropdown-toggle" data-toggle="dropdown">Articles</a></li>
-                 <li class="dropdown"> <a href="javascript:void(0)" class="dropdown-toggle" data-toggle="dropdown">Pair of currencies</a></li>
+                <li> <a href="#{request.contextPath}/user/Article/article.xhtml" >Articles</a></li>
+                 <li class="dropdown"> <a href="javascript:void(0)" class="dropdown-toggle" data-toggle="dropdown">Currencies<span class="ion-ios7-arrow-down nav-icn"></span></a>
+                  <ul class="dropdown-menu text-capitalize" role="menu">
+                  
+                    <li><a href="#{request.contextPath}/user/Sreeners/Currency.xhtml"><span class="ion-ios7-arrow-right nav-sub-icn"></span>Pair of Currency</a></li>
+                    <li><a href="#{request.contextPath}/user/currencyBank/currencyBank.xhtml"><span class="ion-ios7-arrow-right nav-sub-icn"></span>Currency Bank</a></li>
+                    
+                  </ul>
+                 </li>
+                 <li class=""><a href="#{request.contextPath}/user/CompareBySector/CompanyListxhtml.xhtml">Compare Shares</a></li>
                  
               </ul>
             </div>
@@ -165,48 +178,113 @@
 		</div>
 		</footer>
   <!-- Footer end -->
-  <div id="create-account" class="white-popup mfp-with-anim mfp-hide">
-    <form role="form">
-      <h3>Create Account</h3>
-      <hr/>
-      <div class="row">
-        <div class="col-sm-8">
-          <div class="form-group">
-            <input type="text" name="first_name" id="first_name" class="form-control" placeholder="First Name" tabindex="1"/>
-          </div>
-        </div>
-        <div class="col-sm-8">
-          <div class="form-group">
-            <input type="text" name="last_name" id="last_name" class="form-control" placeholder="Last Name" tabindex="2"/>
-          </div>
-        </div>
-      </div>
-      <div class="form-group">
-        <input type="text" name="display_name" id="display_name" class="form-control" placeholder="Display Name" tabindex="3"/>
-      </div>
-      <div class="form-group">
-        <input type="email" name="email" id="email" class="form-control " placeholder="Email Address" tabindex="4"/>
-      </div>
-      <div class="row">
-        <div class="col-sm-8">
-          <div class="form-group">
-            <input type="password" name="password" id="password" class="form-control " placeholder="Password" tabindex="5"/>
-          </div>
-        </div>
-        <div class="col-sm-8">
-          <div class="form-group">
-            <input type="password" name="password_confirmation" id="password_confirmation" class="form-control" placeholder="Confirm Password" tabindex="6"/>
-          </div>
-        </div>
-      </div>
-      <hr/>
-      <div class="row">
-        <div class="col-sm-16">
-          <input type="submit" value="Register" class="btn btn-danger btn-block btn-lg" tabindex="7"/>
-        </div>
-      </div>
-    </form>
-  </div>
+		<div id="create-account" class="white-popup mfp-with-anim mfp-hide">
+			<h:form enctype="multipart/form-data" role="form">
+				<h3>Create Account</h3>
+				<hr />
+				<div class="row">
+					<div class="col-sm-8">
+						<div class="form-group">
+							<h:inputText value="#{addUserManagedBean.customer.firstName}"
+								type="text" name="first_name" id="first_name"
+								class="form-control" p:placeholder="First Name" p:required=""
+								tabindex="1" />
+						</div>
+					</div>
+					<div class="col-sm-8">
+						<div class="form-group">
+							<h:inputText value="#{addUserManagedBean.customer.lastName}"
+								type="text" name="last_name" id="last_name" class="form-control"
+								p:placeholder="Last Name" p:required="" tabindex="2" />
+						</div>
+					</div>
+				</div>
+				<div class="form-group">
+					<h:inputText value="#{addUserManagedBean.customer.address}"
+						type="text" name="address" id="address" class="form-control"
+						p:placeholder="Address" p:required="" tabindex="3" />
+				</div>
+				<div class="form-group">
+					<input jsf:value="#{addUserManagedBean.customer.email}"
+						type="email" name="email" id="email" class="form-control "
+						p:placeholder="Email Address" p:required="" tabindex="4" />
+				</div>
+				<div class="row">
+					<div class="col-sm-8">
+						<div class="form-group">
+							<h:inputText value="#{addUserManagedBean.customer.nationality}"
+								type="text" name="nationaity" id="nationaity"
+								class="form-control " p:placeholder="Nationaity" p:required=""
+								tabindex="5" />
+						</div>
+					</div>
+					<div class="col-sm-8">
+						<div class="form-group">
+							<h:inputText value="#{addUserManagedBean.customer.age}"
+								p:type="number" name="age" id="age" class="form-control"
+								p:placeholder="Age" p:required="" tabindex="6" p:min="18"
+								p:max="100" />
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-sm-8">
+						<div class="form-group">
+							<h:inputText value="#{addUserManagedBean.customer.job}"
+								type="text" name="job" id="job" class="form-control "
+								p:placeholder="Job" p:required="" tabindex="7" />
+						</div>
+					</div>
+					<div class="col-sm-8">
+						<div class="form-group">
+							<h:inputText value="#{addUserManagedBean.customer.phoneNumber}"
+								p:type="number" name="phoneNumber" id="phoneNumber"
+								class="form-control" p:placeholder="Phone number" p:required=""
+								tabindex="8" p:min="10000000" p:max="99999999" />
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-sm-8">
+						<div class="form-group">
+							<h:inputSecret value="#{addUserManagedBean.customer.password}"
+								type="password" name="password" id="password"
+								class="form-control " p:placeholder="Password" p:required=""
+								tabindex="9" />
+						</div>
+					</div>
+					<div class="col-sm-8">
+						<div class="form-group">
+
+							<h:inputSecret id="confirm" type="password"
+								value="#{addUserManagedBean.passConfirm}"
+								name="password_confirmation" class="form-control"
+								p:placeholder="Confirm Password" p:required="" tabindex="10" />
+
+
+						</div>
+					</div>
+					<div class="row">
+					<h:inputFile value="#{demoBean.file1}" />
+					<h:messages id="m_confirm" errorStyle="color:red;" />
+					</div>
+				</div>
+
+				<hr />
+
+
+				<div class="row">
+					<div class="col-sm-16">
+						<h:commandButton action="#{addUserManagedBean.doAdd()}"
+							type="submit" value="Register"
+							class="btn btn-danger btn-block btn-lg" tabindex="7">
+							<f:ajax execute="@form" render="@form m_confirm"></f:ajax>
+						</h:commandButton>
+					</div>
+
+				</div>
+			</h:form>
+		</div>
   <div id="log-in" class="white-popup mfp-with-anim mfp-hide">
     <h:form role="form">
       <h3>Log In Your Account</h3>
@@ -223,6 +301,7 @@
           <h:commandButton action="#{auth.doAuthentificate()}" value="Log in"  class="btn btn-success btn-block btn-lg">
           <f:ajax execute="@form" render="@form errorlogin"></f:ajax>
           </h:commandButton>
+          <br/>
           <h:panelGroup id="log"><h:panelGroup rendered="#{auth.ispressed}"> <div class="alert alert-danger"> <h:messages  id="errorlogin"/></div></h:panelGroup></h:panelGroup>
         </div>
       </div>
