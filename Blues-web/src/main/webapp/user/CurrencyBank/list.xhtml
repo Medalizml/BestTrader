@@ -1,0 +1,359 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html">
+
+
+
+
+
+	<div class="page-header">
+		<h1>Currency Bank</h1>
+		<ol class="breadcrumb">
+			<li><a href="#">Home</a></li>
+			<li class="active">Currency Bank</li>
+		</ol>
+	</div>
+
+	<div class="col-md-11 col-sm-11">
+		<div class="row">
+			<div class="panel-group" id="accordion">
+
+				<div class="panel panel-default">
+					<div class="panel-heading">
+						<h4 class="panel-title">
+						<a data-toggle="collapse" data-parent="#accordion"
+								href="#collapse"><span class="fa fa-money fa-2x" style="color:#339928"/>
+								#{cbank.banks.get(0).name} </a>
+						</h4>
+					</div>
+					<div id="collapse" class="panel-collapse collapse">
+						<div class="panel-body">
+
+							<h:dataTable value="#{cbank.currencybank1}" var="c"
+								class="datatable table table-striped table-bordered">
+								<h:column>
+									<f:facet name="header">Currency Name</f:facet>
+									#{c.currency.name}
+								</h:column>
+								<h:column>
+									<f:facet name="header">Currency Unity</f:facet>
+									#{c.currency.unity}
+								</h:column>
+
+								<h:column>
+									<f:facet name="header">Buy Price</f:facet>
+									#{c.buyPrice}
+								</h:column>
+								<h:column>
+									<f:facet name="header">Sell Price</f:facet>
+									#{c.sellPrice}
+								</h:column>
+							</h:dataTable>
+
+						</div>
+					</div>
+				</div>
+
+				<div class="panel panel-default">
+					<div class="panel-heading">
+						<h4 class="panel-title">
+							<a data-toggle="collapse" data-parent="#accordion"
+								href="#collapse-2"><span class="fa fa-money fa-2x" style="color:#339928"/>
+								#{cbank.banks.get(01).name} </a>
+						</h4>
+					</div>
+					<div id="collapse-2" class="panel-collapse collapse">
+						<div class="panel-body">
+
+							<h:dataTable value="#{cbank.currencybank2}" var="c"
+								class="datatable table table-striped table-bordered">
+								<h:column>
+									<f:facet name="header">Currency Name</f:facet>
+									#{c.currency.name}
+								</h:column>
+								<h:column>
+									<f:facet name="header">Currency Unity</f:facet>
+									#{c.currency.unity}
+								</h:column>
+
+								<h:column>
+									<f:facet name="header">Buy Price</f:facet>
+									#{c.buyPrice}
+								</h:column>
+								<h:column>
+									<f:facet name="header">Sell Price</f:facet>
+									#{c.sellPrice}
+								</h:column>
+							</h:dataTable>
+
+						</div>
+					</div>
+				</div>
+				<div class="panel panel-default">
+					<div class="panel-heading">
+						<h4 class="panel-title">
+							<a data-toggle="collapse" data-parent="#accordion"
+								href="#collapse-3"><span class="fa fa-money fa-2x" style="color:#339928"/>
+								#{cbank.banks.get(02).name} </a>
+						</h4>
+					</div>
+					<div id="collapse-3" class="panel-collapse collapse">
+						<div class="panel-body">
+								<h:dataTable value="#{cbank.currencybank3}" var="c" class="datatable table table-striped table-bordered">
+								<h:column>
+									<f:facet name="header">Currency Name</f:facet>
+									#{c.currency.name}
+								</h:column>
+								<h:column>
+									<f:facet name="header">Currency Unity</f:facet>
+									#{c.currency.unity}
+								</h:column>
+								
+								<h:column>
+									<f:facet name="header">Buy Price</f:facet>
+									#{c.buyPrice}
+								</h:column>
+								<h:column>
+									<f:facet name="header">Sell Price</f:facet>
+									#{c.sellPrice}
+								</h:column>
+							</h:dataTable>
+						</div>
+					</div>
+				</div>
+				<div class="panel panel-default">
+					<div class="panel-heading">
+						<h4 class="panel-title">
+							<a data-toggle="collapse" data-parent="#accordion"
+								href="#collapse-4"><span class="fa fa-money fa-2x" style="color:#339928"/>
+								#{cbank.banks.get(03).name} </a>
+						</h4>
+					</div>
+					<div id="collapse-4" class="panel-collapse collapse">
+						<div class="panel-body">
+								<h:dataTable value="#{cbank.currencybank4}" var="c" class="datatable table table-striped table-bordered">
+								<h:column>
+									<f:facet name="header">Currency Name</f:facet>
+									#{c.currency.name}
+								</h:column>
+								<h:column>
+									<f:facet name="header">Currency Unity</f:facet>
+									#{c.currency.unity}
+								</h:column>
+								
+								<h:column>
+									<f:facet name="header">Buy Price</f:facet>
+									#{c.buyPrice}
+								</h:column>
+								<h:column>
+									<f:facet name="header">Sell Price</f:facet>
+									#{c.sellPrice}
+								</h:column>
+							</h:dataTable>
+						</div>
+					</div>
+				</div>
+
+				<div class="panel panel-default">
+					<div class="panel-heading">
+						<h4 class="panel-title">
+							<a data-toggle="collapse" data-parent="#accordion"
+								href="#collapse-5"><span class="fa fa-money fa-2x" style="color:#339928"/>
+								#{cbank.banks.get(04).name} </a>
+						</h4>
+					</div>
+					<div id="collapse-5" class="panel-collapse collapse">
+						<div class="panel-body">
+								<h:dataTable value="#{cbank.currencybank5}" var="c" class="datatable table table-striped table-bordered">
+								<h:column>
+									<f:facet name="header">Currency Name</f:facet>
+									#{c.currency.name}
+								</h:column>
+								<h:column>
+									<f:facet name="header">Currency Unity</f:facet>
+									#{c.currency.unity}
+								</h:column>
+								
+								<h:column>
+									<f:facet name="header">Buy Price</f:facet>
+									#{c.buyPrice}
+								</h:column>
+								<h:column>
+									<f:facet name="header">Sell Price</f:facet>
+									#{c.sellPrice}
+								</h:column>
+							</h:dataTable>
+						</div>
+					</div>
+				</div>
+				<div class="panel panel-default">
+					<div class="panel-heading">
+						<h4 class="panel-title">
+							<a data-toggle="collapse" data-parent="#accordion"
+								href="#collapse-6"><span class="fa fa-money fa-2x" style="color:#339928"/>
+								#{cbank.banks.get(05).name} </a>
+						</h4>
+					</div>
+					<div id="collapse-6" class="panel-collapse collapse">
+						<div class="panel-body">
+								<h:dataTable value="#{cbank.currencybank6}" var="c" class="datatable table table-striped table-bordered">
+								<h:column>
+									<f:facet name="header">Currency Name</f:facet>
+									#{c.currency.name}
+								</h:column>
+								<h:column>
+									<f:facet name="header">Currency Unity</f:facet>
+									#{c.currency.unity}
+								</h:column>
+								
+								<h:column>
+									<f:facet name="header">Buy Price</f:facet>
+									#{c.buyPrice}
+								</h:column>
+								<h:column>
+									<f:facet name="header">Sell Price</f:facet>
+									#{c.sellPrice}
+								</h:column>
+							</h:dataTable>
+						</div>
+					</div>
+				</div>
+				<div class="panel panel-default">
+					<div class="panel-heading">
+						<h4 class="panel-title">
+							<a data-toggle="collapse" data-parent="#accordion"
+								href="#collapse-7"><span class="fa fa-money fa-2x" style="color:#339928"/>
+								#{cbank.banks.get(06).name} </a>
+						</h4>
+					</div>
+					<div id="collapse-7" class="panel-collapse collapse">
+						<div class="panel-body">
+								<h:dataTable value="#{cbank.currencybank7}" var="c" class="datatable table table-striped table-bordered">
+								<h:column>
+									<f:facet name="header">Currency Name</f:facet>
+									#{c.currency.name}
+								</h:column>
+								<h:column>
+									<f:facet name="header">Currency Unity</f:facet>
+									#{c.currency.unity}
+								</h:column>
+								
+								<h:column>
+									<f:facet name="header">Buy Price</f:facet>
+									#{c.buyPrice}
+								</h:column>
+								<h:column>
+									<f:facet name="header">Sell Price</f:facet>
+									#{c.sellPrice}
+								</h:column>
+							</h:dataTable>
+						</div>
+					</div>
+				</div>
+
+				<div class="panel panel-default">
+					<div class="panel-heading">
+						<h4 class="panel-title">
+							<a data-toggle="collapse" data-parent="#accordion"
+								href="#collapse-8"><span class="fa fa-money fa-2x" style="color:#339928"/>
+								#{cbank.banks.get(07).name} </a>
+						</h4>
+					</div>
+					<div id="collapse-8" class="panel-collapse collapse">
+						<div class="panel-body">
+								<h:dataTable value="#{cbank.currencybank8}" var="c" class="datatable table table-striped table-bordered">
+								<h:column>
+									<f:facet name="header">Currency Name</f:facet>
+									#{c.currency.name}
+								</h:column>
+								<h:column>
+									<f:facet name="header">Currency Unity</f:facet>
+									#{c.currency.unity}
+								</h:column>
+								
+								<h:column>
+									<f:facet name="header">Buy Price</f:facet>
+									#{c.buyPrice}
+								</h:column>
+								<h:column>
+									<f:facet name="header">Sell Price</f:facet>
+									#{c.sellPrice}
+								</h:column>
+							</h:dataTable>
+						</div>
+					</div>
+				</div>
+
+				<div class="panel panel-default">
+					<div class="panel-heading">
+						<h4 class="panel-title">
+							<a data-toggle="collapse" data-parent="#accordion"
+								href="#collapse-9"><span class="fa fa-money fa-2x" style="color:#339928"/>
+								#{cbank.banks.get(08).name} </a>
+						</h4>
+					</div>
+					<div id="collapse-9" class="panel-collapse collapse">
+						<div class="panel-body">
+								<h:dataTable value="#{cbank.currencybank9}" var="c" class="datatable table table-striped table-bordered">
+								<h:column>
+									<f:facet name="header">Currency Name</f:facet>
+									#{c.currency.name}
+								</h:column>
+								<h:column>
+									<f:facet name="header">Currency Unity</f:facet>
+									#{c.currency.unity}
+								</h:column>
+								
+								<h:column>
+									<f:facet name="header">Buy Price</f:facet>
+									#{c.buyPrice}
+								</h:column>
+								<h:column>
+									<f:facet name="header">Sell Price</f:facet>
+									#{c.sellPrice}
+								</h:column>
+							</h:dataTable>
+						</div>
+					</div>
+				</div>
+
+				<div class="panel panel-default">
+					<div class="panel-heading">
+						<h4 class="panel-title">
+							<a data-toggle="collapse" data-parent="#accordion"
+								href="#collapse-10"><span class="fa fa-money fa-2x" style="color:#339928"/>
+								#{cbank.banks.get(09).name} </a>
+						</h4>
+					</div>
+					<div id="collapse-10" class="panel-collapse collapse">
+						<div class="panel-body">
+								<h:dataTable value="#{cbank.currencybank10}" var="c" class="datatable table table-striped table-bordered">
+								<h:column>
+									<f:facet name="header">Currency Name</f:facet>
+									#{c.currency.name}
+								</h:column>
+								<h:column>
+									<f:facet name="header">Currency Unity</f:facet>
+									#{c.currency.unity}
+								</h:column>
+								
+								<h:column>
+									<f:facet name="header">Buy Price</f:facet>
+									#{c.buyPrice}
+								</h:column>
+								<h:column>
+									<f:facet name="header">Sell Price</f:facet>
+									#{c.sellPrice}
+								</h:column>
+							</h:dataTable>
+						</div>
+					</div>
+				</div>
+
+
+			</div>
+		</div>
+	</div>
+
+</ui:composition>

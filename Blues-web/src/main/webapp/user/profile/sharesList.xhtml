@@ -55,38 +55,21 @@
 						<span class="glyphicon glyphicon-shopping-cart"></span>
 					</h:commandLink>
 					<h:form rendered="#{buyShareManagedBean.opMessage}">
-					<div class="alert alert-success alert-dismissible" role="alert">
-						<button type="button" class="close" data-dismiss="alert"
-							aria-label="Close">
-							<span aria-hidden="true" class="glyphicon glyphicon-remove"></span>
-						</button>
-						<strong>Operation success :)</strong><p> you spent #{buyShareManagedBean.opValue} TND and your
-						actual portfolio value is #{buyShareManagedBean.customer.portfolio.value} TND</p>
-					</div>
+						<div class="alert alert-success alert-dismissible" role="alert">
+							<button type="button" class="close" data-dismiss="alert"
+								aria-label="Close">
+								<span aria-hidden="true" class="glyphicon glyphicon-remove"></span>
+							</button>
+							<strong>Operation success :)</strong>
+							<p>you spent #{buyShareManagedBean.opValue} TND and your
+								actual portfolio value is
+								#{buyShareManagedBean.customer.portfolio.value} TND</p>
+						</div>
 					</h:form>
 				</h:form>
 
 			</h:column>
 		</thead>
 	</h:dataTable>
-
-	<div id="log-in3" class="white-popup mfp-with-anim mfp-hide">
-		<h:form>
-			<center>
-				<h3 style="color: red">Warning</h3>
-			</center>
-			<hr />
-			<p>You are going to desactivate your account ! You'll not be able
-				to log in until an admin reactivate your account !</p>
-			<hr />
-			<div class="row">
-				<div class="col-sm-16">
-
-					<center></center>
-
-				</div>
-			</div>
-		</h:form>
-	</div>
 
 </ui:composition>
