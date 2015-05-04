@@ -10,7 +10,6 @@ import javax.annotation.PostConstruct;
 import javax.ejb.EJB;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
-import javax.faces.bean.ViewScoped;
 
 import tn.esprit.Blues.entities.Bank;
 import tn.esprit.Blues.entities.Share;
@@ -120,8 +119,8 @@ public class BankManagedBean {
 		newBank.setDateIncorporation(date1);
 		bankService.add(newBank, share);
 		
-		//init();
-		return "private?faces-redirect=true";
+		init();
+		return "bank?faces-redirect=true";
 	}
 
 	public String doShow(Bank bank) {

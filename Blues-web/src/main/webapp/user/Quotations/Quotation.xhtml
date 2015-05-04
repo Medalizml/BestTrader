@@ -1,0 +1,33 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	template="/WEB-INF/templateClient/templateClient.xhtml">
+	<ui:define name="content">
+		<div class="page-header">
+      <h1>quotations list : tunisian stock market</h1>
+    </div>
+    <div style="margin-left: 77.8%">
+		<h:form class="form-inline">
+			<div class="form-group">
+				
+				
+					<h:selectOneMenu value="#{quotations.selectedCurr}"  class="form-control" >
+						<f:selectItem itemValue="TND" itemLabel="TND" />
+						<f:selectItem itemValue="EUR" itemLabel="EUR" />
+						<f:selectItem itemValue="USD" itemLabel="USD" />
+						<f:selectItem itemValue="GBP" itemLabel="GBP" />
+					</h:selectOneMenu>
+				
+			</div>
+								<h:commandButton action="#{quotations.setList()}" value="Convert" class="btn btn-primary" style="margin-left:2%"/>
+			
+		</h:form>
+		</div>
+		
+		<br />
+		<ui:include src="/user/Quotations/List.xhtml" />
+
+
+	</ui:define>
+</ui:composition>

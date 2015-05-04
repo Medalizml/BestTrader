@@ -12,7 +12,7 @@ import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
 
 import privateCompany.PrivateCompnayService;
-import tn.esprit.Blues.entities.Bond;
+import tn.esprit.Blues.entities.Share;
 import tn.esprit.Blues.entities.Company;
 import tn.esprit.Blues.entities.Sector;
 
@@ -28,7 +28,7 @@ public class PublicManagedBean {
 	private List<Sector> sectors;
 	private String sectorN;
 	private String datePublic;
-	private Bond share = new Bond();
+	private Share share = new Share();
 	private String dateIss;
 	private String dateClos;
 
@@ -112,8 +112,8 @@ public class PublicManagedBean {
 	}
 
 	public String doUpdate() {
-		privateCompnayService.updatePublic(publicCompany,
-				(Bond) publicCompany.getQuotation());
+		privateCompnayService.update(publicCompany,
+				(Share) publicCompany.getQuotation());
 		return "public";
 	}
 
@@ -172,8 +172,6 @@ public class PublicManagedBean {
 		newCompany.setNature("public");
 		newCompany.setSector(privateCompnayService.findSectorByName(sectorN));
 		newCompany.setDateIncorporation(date1);
-		share.setClosingDate(dateC);
-		share.setDateIssue(dateI);
 		privateCompnayService.add(newCompany, share);
 		init();
 		return "public?faces-redirect=true";
@@ -203,11 +201,11 @@ public class PublicManagedBean {
 		this.sectorN = sectorN;
 	}
 
-	public Bond getShare() {
+	public Share getShare() {
 		return share;
 	}
 
-	public void setShare(Bond share) {
+	public void setShare(Share share) {
 		this.share = share;
 	}
 
