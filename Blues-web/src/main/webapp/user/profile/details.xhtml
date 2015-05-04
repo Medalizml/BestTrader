@@ -2,13 +2,14 @@
 	xmlns:ui="http://java.sun.com/jsf/facelets"
 	xmlns:f="http://java.sun.com/jsf/core"
 	xmlns:h="http://java.sun.com/jsf/html"
-	xmlns:p="http://xmlns.jcp.org/jsf/passthrough">
+	xmlns:p="http://xmlns.jcp.org/jsf/passthrough"
+	xmlns:jsf="http://xmlns.jcp.org/jsf">
 
 	<div class="col-sm-16 author-box">
 		<div class="row">
 			<div class=" col-xs-16 col-sm-3">
 				<img width="128" height="128" alt=""
-					src="#{profile.customer.profilePicture}" class="img-thumbnail"
+					src="#{request.contextPath}#{profile.customer.profilePicture}" class="img-thumbnail"
 					style="max-height: 11em; height: 100%; min-height: 11em;" />
 			</div>
 			<div class="col-xs-16 col-sm-13">
@@ -89,28 +90,30 @@
 				<tr>
 
 					<td>Email :</td>
-					<td><h:inputText value="#{profile.customer.email}"
-							class="form-control" /></td>
+
+
+					<td><input type="email" class="form-control "
+						jsf:value="#{profile.customer.email}" /></td>
 				</tr>
 				<tr>
 
 					<td>Password :</td>
-					<td><h:inputText value="#{profile.customer.password}"
-							class="form-control" /></td>
+					<td><h:inputText p:type="password"
+							value="#{profile.customer.password}" class="form-control" /></td>
 				</tr>
 
 				<tr>
 
 					<td>Job :</td>
-					<td><h:inputText value="#{profile.customer.job}"
+					<td><h:inputText p:type="text" value="#{profile.customer.job}"
 							class="form-control" /></td>
 				</tr>
 
 				<tr>
 
 					<td>Adress :</td>
-					<td><h:inputText value="#{profile.customer.address}"
-							class="form-control" /></td>
+					<td><h:inputText p:type="text"
+							value="#{profile.customer.address}" class="form-control" /></td>
 				</tr>
 			</table>
 			<hr />

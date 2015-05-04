@@ -15,7 +15,8 @@
 		</div>
 		<div class="sec-topic col-sm-16 col-md-8 wow fadeInDown animated "
 			data-wow-delay="0.5s">
-			<a href="#"><img width="1000" height="606" alt=""
+			<a href="#{request.contextPath}/user/Article/article.xhtml"><img
+				width="1000" height="606" alt=""
 				src="#{home.articles.get(0).picture}" class="img-thumbnail"
 				style="max-height: 20em; height: 100%; min-height: 20em;" />
 				<div class="sec-info">
@@ -27,12 +28,14 @@
 
 					</div>
 				</div> </a>
-			<p>#{home.articles.get(0).topic}</p>
+			<p style="line-height: 1.2em; height: 3.6em; overflow: hidden;">#{home.articles.get(0).topic}</p>
 		</div>
 		<div class="sec-topic col-sm-16 col-md-8 wow fadeInDown animated "
 			data-wow-delay="0.5s">
-			<a href="#"><img width="1000" height="606" alt=""
-				src="#{home.articles.get(01).picture}" class="img-thumbnail" style="max-height: 20em; height: 100%; min-height: 20em;"/>
+			<a href="#{request.contextPath}/user/Article/article.xhtml#"><img
+				width="1000" height="606" alt=""
+				src="#{home.articles.get(01).picture}" class="img-thumbnail"
+				style="max-height: 20em; height: 100%; min-height: 20em;" />
 				<div class="sec-info">
 					<h3>#{home.articles.get(01).name}</h3>
 					<div class="text-danger sub-info-bordered">
@@ -42,39 +45,8 @@
 
 					</div>
 				</div> </a>
-			<p>#{home.articles.get(01).topic}</p>
+			<p style="line-height: 1.2em; height: 3.6em; overflow: hidden;">#{home.articles.get(01).topic}</p>
 		</div>
-		<div class="sec-topic col-sm-16 col-md-8 wow fadeInDown animated "
-			data-wow-delay="0.5s">
-			<a href="#"><img width="1000" height="606" alt=""
-				src="#{home.articles.get(02).picture}" class="img-thumbnail" style="max-height: 20em; height: 100%; min-height: 20em;"/>
-				<div class="sec-info">
-					<h3>#{home.articles.get(02).name}</h3>
-					<div class="text-danger sub-info-bordered">
-						<div class="time">
-							<span class="ion-android-data icon"></span>#{home.articles.get(02).date}
-						</div>
-
-					</div>
-				</div> </a>
-			<p>#{home.articles.get(02).topic}</p>
-		</div>
-		<div class="sec-topic col-sm-16 col-md-8 wow fadeInDown animated "
-			data-wow-delay="0.5s">
-			<a href="#"><img width="1000" height="606" alt=""
-				src="#{home.articles.get(03).picture}" class="img-thumbnail" style="max-height: 20em; height: 100%; min-height: 20em;"/>
-				<div class="sec-info">
-					<h3>#{home.articles.get(03).name}</h3>
-					<div class="text-danger sub-info-bordered">
-						<div class="time">
-							<span class="ion-android-data icon"></span>#{home.articles.get(03).date}
-						</div>
-
-					</div>
-				</div> </a>
-			<p>#{home.articles.get(03).topic}</p>
-		</div>
-
 
 
 	</div>
