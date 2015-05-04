@@ -1,0 +1,229 @@
+
+
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html">
+	<h:outputScript>
+
+			var chartData1 = [];
+			var chartData2 = [];
+			var chartData3 = [];
+			var chartData4 = [];
+
+			generateChartData();
+			
+			
+			function generateChartData() {
+				var firstDate = new Date();
+				
+				
+				
+					var idlist ='#{screeners.opningPrice}';
+					var listDate='#{screeners.listDate}';
+					
+					var array = JSON.parse(idlist);
+					var listcl='#{screeners.closingPrice}';
+					var arraycl = JSON.parse(listcl);
+					var listlow='#{screeners.lowestPrice}';
+					var arraylow = JSON.parse(listlow);
+					var listhigh='#{screeners.highestPrice}';
+					var arrayhigh = JSON.parse(listhigh);
+					var listVolume='#{screeners.listVolume}';
+					var arrayVolume=JSON.parse(listVolume);
+					
+					var day='#{screeners.listDay}';
+					var arrayDay = JSON.parse(day);
+					var month='#{screeners.listMonth}';
+					var arrayMonth = JSON.parse(month);
+					var year='#{screeners.listYear}';
+					var arrayYear=JSON.parse(year);
+					
+				for (var i = 0; i &lt; array.length; i++) {
+					var newDate = new Date(arrayYear[0],arrayMonth[0],arrayDay[0]);
+					console.log(arrayMonth[i]+"month");
+					newDate.setFullYear(arrayYear[i]);
+					newDate.setMonth(arrayMonth[i]-1);
+					
+					newDate.setDate(arrayDay[i]);
+					
+					
+					if(array[i]==0){array[i]=array[i-1]}
+					var a1 = array[i];
+					var b1 = arrayVolume[i];
+					
+					if(i>1){
+					var a2 =(array[i]+array[i-1])/2;
+					var b2 =(arrayVolume[i]+arrayVolume[i-1])/2;}
+					
+					if(arrayhigh[i]==0){arrayhigh[i]=arrayhigh[i-1]}
+					var a3=(arrayhigh[i]);
+					var b3 =arrayVolume[i];
+					
+					if(arraylow[i]==0){arraylow[i]=arraylow[i-1]}
+					var a4 =(arraylow[i]);
+					var b4 = arrayVolume[i];
+
+					chartData1.push({
+						date: newDate,
+						value: a1,
+						volume: b1
+					});
+					chartData2.push({
+						date: newDate,
+						value: a2,
+						volume: b2
+					});
+					chartData3.push({
+						date: newDate,
+						value: a3,
+						volume: b3
+					});
+					chartData4.push({
+						date: newDate,
+						value: a4,
+						volume: b4
+					});
+				}
+			}
+			
+			AmCharts.makeChart("chartdiv1", {
+				type: "stock",
+				pathToImages: "/Blues-web/resource/resourceClient/screeners/amcharts/images/",
+				dataSets: [{
+					title: "OpningPrice",
+					fieldMappings: [{
+						fromField: "value",
+						toField: "value"
+					}, {
+						fromField: "volume",
+						toField: "volume"
+					}],
+					dataProvider: chartData1,
+					categoryField: "date"
+				},
+
+				{
+					title: "Avreage",
+					fieldMappings: [{
+						fromField: "value",
+						toField: "value"
+					}, {
+						fromField: "volume",
+						toField: "volume"
+					}],
+					dataProvider: chartData2,
+					categoryField: "date"
+				},
+
+				{
+					title: "HighestPrice",
+					fieldMappings: [{
+						fromField: "value",
+						toField: "value"
+					}, {
+						fromField: "volume",
+						toField: "volume"
+					}],
+					dataProvider: chartData3,
+					categoryField: "date"
+				},
+
+				{
+					title: "LowestPrice",
+					fieldMappings: [{
+						fromField: "value",
+						toField: "value"
+					}, {
+						fromField: "volume",
+						toField: "volume"
+					}],
+					dataProvider: chartData4,
+					categoryField: "date"
+				}],
+
+				panels: [{
+
+					showCategoryAxis: false,
+					title: "Value",
+					percentHeight: 70,
+
+					stockGraphs: [{
+						id: "g1",
+
+						valueField: "value",
+						comparable: true,
+						compareField: "value",
+						bullet: "round",
+						bulletBorderColor: "#FFFFFF",
+						bulletBorderAlpha: 1,
+						balloonText: "[[title]]:<b>[[value]]</b>",
+						compareGraphBalloonText: "[[title]]:<b>[[value]]</b>",
+						compareGraphBullet: "round",
+						compareGraphBulletBorderColor: "#FFFFFF",
+						compareGraphBulletBorderAlpha: 1
+					}],
+
+					stockLegend: {
+						periodValueTextComparing: "[[percents.value.close]]%",
+						periodValueTextRegular: "[[value.close]]"
+					}
+				},
+
+				{
+					title: "Volume",
+					percentHeight: 30,
+					stockGraphs: [{
+						valueField: "volume",
+						type: "column",
+						showBalloon: false,
+						fillAlphas: 1
+					}],
+
+
+					stockLegend: {
+						periodValueTextRegular: "[[value.close]]"
+					}
+				}],
+
+				chartScrollbarSettings: {
+					graph: "g1"
+				},
+
+				chartCursorSettings: {
+					valueBalloonsEnabled: true,
+					valueLineEnabled:true,
+					valueLineBalloonEnabled:true
+				},
+
+				periodSelector: {
+					position: "left",
+					periods: [{
+						period: "DD",
+						count: 10,
+						label: "10 days"
+					}, {
+						period: "MM",
+						selected: true,
+						count: 1,
+						label: "1 month"
+					},  {
+						period: "MM",
+						selected: true,
+						count: 6,
+						label: "6 months"
+					}, {
+						period: "MAX",
+						label: "MAX"
+					}]
+				},
+
+				dataSetSelector: {
+					position: "left"
+				}
+			});
+		</h:outputScript>
+
+
+</ui:composition>
+
