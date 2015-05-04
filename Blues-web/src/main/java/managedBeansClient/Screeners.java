@@ -21,7 +21,7 @@ import ScreenersServices.ScreenersServices;
 @SessionScoped
 public class Screeners {
 
-	@ManagedProperty(value = "#{list1}")
+	
 	private List<Integer> list;
 
 	@EJB
