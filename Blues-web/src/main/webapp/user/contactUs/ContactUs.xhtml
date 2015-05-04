@@ -1,0 +1,30 @@
+
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html"
+	template="/WEB-INF/templateClient/templateClient.xhtml">
+	<ui:define name="content">
+	 <div class="page-header">
+      <h1>Contact us </h1>
+    </div>
+	
+		
+		
+	<div class="col-md-11 col-sm-11">
+        <div class="row"> 
+       
+ 	
+ 	<ui:include src="/user/contactUs/Map.xhtml" />
+ 	 <hr></hr>
+ 	 
+ 	  	<ui:include src="/user/contactUs/Coord.xhtml" />
+ 	 
+ 	</div></div>
+	<div class="col-sm-5 hidden-xs right-sec">
+		<div class="bordered top-margin">
+		 	<ui:include src="/user/contactUs/first.xhtml" />
+		</div></div>
+	
+	</ui:define>
+	</ui:composition>	

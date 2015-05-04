@@ -60,7 +60,8 @@
   <!-- header start -->
   <div class="container header">
     <div class="row">
-      <div class="col-sm-5 col-md-5 wow fadeInUpLeft animated"><a class="navbar-brand" href="index-2.html">globalnews</a></div>
+      <div class="col-sm-5 col-md-5 wow fadeInUpLeft animated"> <img
+						src="#{request.contextPath}/resource/img/logoBestTrader.png" alt=""/></div>
       <div class="col-sm-11 col-md-11 hidden-xs text-right">
       <h:panelGroup rendered="#{auth.loggedIn}"><a href="#{request.contextPath}/user/profile/profile.xhtml" class="btn btn-primary btn-lg" style="font-size: 35px ;background-color:rgb(30, 144, 36) ;">Consult your Profile &#160;<span class="glyphicon glyphicon-briefcase"></span></a></h:panelGroup>
       </div>
@@ -136,21 +137,38 @@
   </div>
   <!-- Footer start -->
   <footer>
-    <div class="top-sec">
-      <div class="container ">
-        <div class="row match-height-container">
-          <div class="col-sm-6 subscribe-info wow fadeInDown animated" data-wow-delay="1s" data-wow-offset="40">
-            
-          <div class="col-sm-5 recent-posts  wow fadeInDown animated" data-wow-delay="1s" data-wow-offset="40">
-          
-                
-          
-             </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </footer>
+		<div class="top-sec">
+			<div class="container ">
+				<div class="row match-height-container">
+					<div class="fadeInDown animated" data-wow-delay="1s"
+						data-wow-offset="40">
+
+
+						<img src="#{request.contextPath}/resource/img/best-trader.png"
+							alt=""
+							style="max-height: 6em; min-height: 6em; max-width: 6em; min-width: 6em;" />
+						<div class="pull-right">
+							<img src="#{request.contextPath}/resource/img/blues.png" alt=""
+								style="max-height: 6em; min-height: 6em; max-width: 6em; min-width: 6em;" />
+						</div>
+
+					</div>
+
+					<div class="fadeInDown animated" data-wow-delay="1s"
+						data-wow-offset="40">
+
+						<center>
+							<p>
+								Copyright © Best-trader 2015 All Rights Reserved. <br /> No
+								part of this website may be reproduced without BLUES's express
+								consent.
+							</p>
+						</center>
+					</div>
+				</div>
+			</div>
+		</div>
+		</footer>
   <!-- Footer end -->
 		<div id="create-account" class="white-popup mfp-with-anim mfp-hide">
 			<h:form role="form">

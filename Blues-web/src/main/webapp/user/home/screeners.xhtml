@@ -15,68 +15,52 @@
 				
 					<div class="col-md-16 col-lg-10">
 						<div class="row">
-							<div class="col-sm-16 right-img-top " style="height: 250px">
-								<a href="#">
-									<div class="box" style="height: 250px">
-										<div class="carousel-caption">TunIndex values during the last 6 months</div>
-										<img class="img-responsive"
-											src="http://www.ilboursa.com/graphes/_graphe.aspx?s=PX1" width="440" height="320"
-											alt=""/>
-										<div class="overlay"></div>
-										<div class="overlay-info">
-											<div class="cat">
-												<p class="cat-data">
-													<span class="ion-arrow-graph-up-right"></span>Finance
-												</p>
-											</div>
-											<div class="info">
-												<p>
-													<span class="ion-android-data"></span>
-													read more
-												</p>
-											</div>
-										</div>
-									</div>
-								</a>
-							</div>
-							<div class="col-sm-16 right-img-btm " style="height: 200px">
-								<a href="#">
-									<div class="box" style="height: 190px">
-										<div class="carousel-caption">Visualize live shares values</div>
-										<img class="img-responsive"
-											src="#{request.contextPath}/resource/resourceClient/images/banner-static/stock.jpg" width="440" height="292"
-											alt="" />
-										<div class="overlay"></div>
-										<div class="overlay-info">
-											<div class="cat">
-												<p class="cat-data">
-													<span class="ion-arrow-graph-up-right"></span>Finance
-												</p>
-											</div>
-											<div class="info">
-												<p>
-													<span class="ion-android-data"></span>Go to Screeners
-												</p>
-											</div>
-										</div>
-									</div>
-								</a>
-							</div>
+<link rel="stylesheet" type="text/css" href="http://www.foreignexchange.org.uk/widget/FE-FERT2-css.php?w=180&amp;nb=10&amp;bdrc=cbcbcb&amp;mbg=&amp;fc=000000&amp;tc=1280d0" media="screen" />
+<div id="fefert2">
+   <div id="fefert2-widget" style="width: 360px;height: 450px"></div>
+  <div id="fefert2-infolink">Source: <a href="http://www.foreignexchange.org.uk/" target="_new" title="ForeignExchange.org.uk">ForeignExchange.org.uk</a></div>
+<script type="text/javascript">	
+var tz = 'userset';
+var w = '180';
+var mc = 'GBP';
+var nb = '10';
+var c1 = 'USD';
+var c2 = 'EUR';
+var c3 = 'AUD';
+var c4 = 'JPY';
+var c5 = 'INR';
+var c6 = 'CAD';
+var c7 = 'ZAR';
+var c8 = 'NZD';
+var c9 = 'SGD';
+var c10 = 'CNY';
+var bc = 'Base Currency';
+var lc = '1280d0';
+var bdrc = 'cbcbcb';
+var t = 'Foreign Exchange Today';
+var tc = '1280d0';
+var fc = '000000';
+
+var ccHost = (("https:" == document.location.protocol) ? "https://www." : "http://www.");
+document.write(unescape("%3Cscript src='" + ccHost + "foreignexchange.org.uk/widget/FE-FERT2-1.php' type='text/javascript'%3E%3C/script%3E"));
+</script>
+</div>
+<!-- FOREIGNEXCHANGE.ORG.UK FOREIGN EXCHANGE RATES TABLE v2 END -->
 						</div>
 					</div>
 						<div class="col-lg-6 hidden-md">
 						 <ul class="list-group">
-              <li class="list-group-item"> <a href="#"> #{home.sectors.get(0).name} <span class="badge pull-right">#{home.nbCompany.get(0)}</span> </a></li>
-              <li class="list-group-item"> <a href="#"> #{home.sectors.get(1).name} <span class="badge pull-right">#{home.nbCompany.get(1)}</span></a> </li>
-              <li class="list-group-item"> <a href="#">#{home.sectors.get(2).name}<span class="badge pull-right">#{home.nbCompany.get(2)}</span> </a></li>
-              <li class="list-group-item"> <a href="#"> #{home.sectors.get(3).name} <span class="badge pull-right">#{home.nbCompany.get(3)}</span></a> </li>
-              <li class="list-group-item"> <a href="#"> #{home.sectors.get(11).name}<span class="badge pull-right">#{home.nbCompany.get(11)}</span></a> </li>
-              <li class="list-group-item"> <a href="#"> #{home.sectors.get(5).name} <span class="badge pull-right">#{home.nbCompany.get(5)}</span> </a></li>
-              <li class="list-group-item"> <a href="#"> #{home.sectors.get(12).name} <span class="badge pull-right">#{home.nbCompany.get(12)}</span> </a></li>
-              <li class="list-group-item"> <a href="#"> #{home.sectors.get(7).name} <span class="badge pull-right">#{home.nbCompany.get(7)}</span></a> </li>
-              <li class="list-group-item"> <a href="#"> #{home.sectors.get(8).name} <span class="badge pull-right">#{home.nbCompany.get(8)}</span> </a></li>
-              <li class="list-group-item"> <a href="#"> #{home.sectors.get(9).name} <span class="badge pull-right">#{home.nbCompany.get(9)}</span> </a></li>
-              <li class="list-group-item"> <a href="#"> #{home.sectors.get(10).name} <span class="badge pull-right">#{home.nbCompany.get(10)}</span> </a></li>
+              <li class="list-group-item">  #{home.sectors.get(0).name} <span class="badge pull-right">#{home.nbCompany.get(0)}</span> </li>
+              <li class="list-group-item">  #{home.sectors.get(1).name} <span class="badge pull-right">#{home.nbCompany.get(1)}</span> </li>
+              <li class="list-group-item"> #{home.sectors.get(2).name}<span class="badge pull-right">#{home.nbCompany.get(2)}</span> </li>
+              <li class="list-group-item">  #{home.sectors.get(3).name} <span class="badge pull-right">#{home.nbCompany.get(3)}</span> </li>
+              <li class="list-group-item">  #{home.sectors.get(11).name}<span class="badge pull-right">#{home.nbCompany.get(11)}</span> </li>
+              <li class="list-group-item">  #{home.sectors.get(5).name} <span class="badge pull-right">#{home.nbCompany.get(5)}</span> </li>
+              <li class="list-group-item">  #{home.sectors.get(12).name} <span class="badge pull-right">#{home.nbCompany.get(12)}</span> </li>
+              <li class="list-group-item">  #{home.sectors.get(7).name} <span class="badge pull-right">#{home.nbCompany.get(7)}</span> </li>
+              <li class="list-group-item">  #{home.sectors.get(8).name} <span class="badge pull-right">#{home.nbCompany.get(8)}</span> </li>
+              <li class="list-group-item">  #{home.sectors.get(9).name} <span class="badge pull-right">#{home.nbCompany.get(9)}</span> </li>
+              <li class="list-group-item">  #{home.sectors.get(10).name} <span class="badge pull-right">#{home.nbCompany.get(10)}</span> </li>
             </ul>
 					</div>
 				</div>
