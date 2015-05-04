@@ -8,6 +8,7 @@ import java.util.List;
 import javax.annotation.PostConstruct;
 import javax.ejb.EJB;
 import javax.faces.bean.ManagedBean;
+import javax.faces.bean.ManagedProperty;
 import javax.faces.bean.ViewScoped;
 
 import tn.esprit.Blues.UsersServices.UsersServices;
@@ -43,6 +44,7 @@ public class buyShareManagedBean implements Serializable {
 
 	private boolean opMessage = false;
 
+	@ManagedProperty("#{auth.customer}")
 	Customer customer = new Customer();
 	
 	private float opValue;
@@ -74,7 +76,6 @@ public class buyShareManagedBean implements Serializable {
 	@PostConstruct
 	public void init() {
 		setShares(buyServices.getShares());
-		customer = services.findById(3);
 		setHolder("type number of shares");
 		remplirList();
 

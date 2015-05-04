@@ -13,6 +13,7 @@ import javax.faces.context.FacesContext;
 import managedBeans.DemoBean;
 import tn.esprit.Blues.UsersServices.UsersServices;
 import tn.esprit.Blues.entities.Customer;
+import tn.esprit.Blues.entities.Portfolio;
 
 @ManagedBean
 @RequestScoped
@@ -35,7 +36,7 @@ UsersServices user;
 	public String doAdd() {
 		System.out.println("test");
 		FacesContext fc=FacesContext.getCurrentInstance();
-		
+		Portfolio p=new Portfolio();
 		if(passConfirm.equals(customer.getPassword())){
 //			try{
 //			customer.setProfilePicture("resource/img/" + DemoBean.getFilename(DemoBean.file1));}
@@ -43,6 +44,12 @@ UsersServices user;
 //				exception.printStackTrace();
 //			}
 		customer.setActive(false);
+		customer.setProfilePicture("resource/img/" + DemoBean.getFilename(DemoBean.file1));
+		p.setValue(10000);
+		p.setSharesNumber(0);
+		p.setGain(0);
+		p.setCustomer(customer);
+		customer.setPortfolio(p);
 		user.add(customer);
 		ExternalContext ec=fc.getExternalContext();
 		try {

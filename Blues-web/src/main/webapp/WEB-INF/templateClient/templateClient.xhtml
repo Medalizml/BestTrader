@@ -40,7 +40,7 @@
                 <h:panelGroup rendered="#{auth.loggedIn}"><li>welcome #{auth.customer.firstName}</li></h:panelGroup>
                 <h:panelGroup rendered="#{not auth.loggedIn}"> <li><a class="open-popup-link" href="#create-account" data-effect="mfp-zoom-in">Register Now </a></li></h:panelGroup>
                 <h:panelGroup rendered="#{auth.loggedIn}"> <li><h:form><h:commandLink  action="#{auth.doLogOut}"   value="log out"  p:class="open-popup-link"/></h:form>  </li></h:panelGroup>
-                <li><a  href="#">Cantact us</a></li>
+                <li><a  href="#{request.contextPath}/user/contactUs/ContactUs.xhtml">Cantact us</a></li>
         		
               </ul>
             </div>
@@ -94,21 +94,29 @@
                    
                   </ul>
                 </li>
-                <li> <a href="javascript:void(0)">Sectors</a></li>
-                <li class="dropdown"> <a href="javascript:void(0)" class="dropdown-toggle" data-toggle="dropdown">stock price of the day</a>
+                <li> <a href="#{request.contextPath}/user/Sector/sector.xhtml">Sectors</a></li>
+                <li > <a href="#{request.contextPath}/user/Quotations/Quotation.xhtml" >stock price of the day</a>
                   
                 </li>
               
                 <li class="dropdown"> <a href="javascript:void(0)" class="dropdown-toggle" data-toggle="dropdown">Screeners<span class="ion-ios7-arrow-down nav-icn"></span></a>
                   <ul class="dropdown-menu text-capitalize" role="menu">
                   
-                    <li><a href="search-result-found.html"><span class="ion-ios7-arrow-right nav-sub-icn"></span>Private Companies</a></li>
-                    <li><a href="search-result-not-found.html"><span class="ion-ios7-arrow-right nav-sub-icn"></span>Public Companies</a></li>
-                    <li><a href="faqs.html"><span class="ion-ios7-arrow-right nav-sub-icn"></span>Banks</a></li>
+                    <li><a href="#{request.contextPath}/user/Sreeners/companies.xhtml"><span class="ion-ios7-arrow-right nav-sub-icn"></span>Private Companies</a></li>
+                    <li><a href="#{request.contextPath}/user/Sreeners/companiesPublic.xhtml"><span class="ion-ios7-arrow-right nav-sub-icn"></span>Public Companies</a></li>
+                    <li><a href="#{request.contextPath}/user/Sreeners/bank.xhtml"><span class="ion-ios7-arrow-right nav-sub-icn"></span>Banks</a></li>
                   </ul>
                 </li>
-                <li class="dropdown"> <a href="javascript:void(0)" class="dropdown-toggle" data-toggle="dropdown">Articles</a></li>
-                 <li class="dropdown"> <a href="javascript:void(0)" class="dropdown-toggle" data-toggle="dropdown">Pair of currencies</a></li>
+                <li> <a href="#{request.contextPath}/user/Article/article.xhtml" >Articles</a></li>
+                 <li class="dropdown"> <a href="javascript:void(0)" class="dropdown-toggle" data-toggle="dropdown">Currencies<span class="ion-ios7-arrow-down nav-icn"></span></a>
+                  <ul class="dropdown-menu text-capitalize" role="menu">
+                  
+                    <li><a href="#{request.contextPath}/user/Sreeners/Currency.xhtml"><span class="ion-ios7-arrow-right nav-sub-icn"></span>Pair of Currency</a></li>
+                    <li><a href="#{request.contextPath}/user/currencyBank/currencyBank.xhtml"><span class="ion-ios7-arrow-right nav-sub-icn"></span>Currency Bank</a></li>
+                    
+                  </ul>
+                 </li>
+                 <li class=""><a href="#{request.contextPath}/user/CompareBySector/CompanyListxhtml.xhtml">Compare Shares</a></li>
                  
               </ul>
             </div>
@@ -171,7 +179,7 @@
 		</footer>
   <!-- Footer end -->
 		<div id="create-account" class="white-popup mfp-with-anim mfp-hide">
-			<h:form role="form">
+			<h:form enctype="multipart/form-data" role="form">
 				<h3>Create Account</h3>
 				<hr />
 				<div class="row">
@@ -256,7 +264,10 @@
 
 						</div>
 					</div>
+					<div class="row">
+					<h:inputFile value="#{demoBean.file1}" />
 					<h:messages id="m_confirm" errorStyle="color:red;" />
+					</div>
 				</div>
 
 				<hr />
@@ -290,6 +301,7 @@
           <h:commandButton action="#{auth.doAuthentificate()}" value="Log in"  class="btn btn-success btn-block btn-lg">
           <f:ajax execute="@form" render="@form errorlogin"></f:ajax>
           </h:commandButton>
+          <br/>
           <h:panelGroup id="log"><h:panelGroup rendered="#{auth.ispressed}"> <div class="alert alert-danger"> <h:messages  id="errorlogin"/></div></h:panelGroup></h:panelGroup>
         </div>
       </div>
@@ -300,5 +312,4 @@
 <!-- wrapper end -->  
 <ui:include src="/WEB-INF/templateClient/js.xhtml" />
 </body> 
->>>>>>> branch 'master' of https://gitlab.com/DaliZml/bestTrader-admin-web.git
 </html>
