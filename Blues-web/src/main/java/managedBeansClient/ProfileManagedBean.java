@@ -7,6 +7,7 @@ import java.util.List;
 import javax.annotation.PostConstruct;
 import javax.ejb.EJB;
 import javax.faces.bean.ManagedBean;
+import javax.faces.bean.ManagedProperty;
 import javax.faces.bean.ViewScoped;
 
 import tn.esprit.Blues.UsersServices.UsersServices;
@@ -27,6 +28,7 @@ public class ProfileManagedBean {
 	@EJB
 	ProfileServices profile;
 	
+	@ManagedProperty("#{auth.customer}")
 	public Customer customer;
 	public List<Quotation> quotations;
 	public Long nbrShares;
@@ -166,7 +168,7 @@ public class ProfileManagedBean {
 	}
 	@PostConstruct
 	public void init(){
-		customer= services.findById(3);
+		
 		operation = new Operation();
 		operation.setPortfolio(customer.getPortfolio());
 		setColor("red");
