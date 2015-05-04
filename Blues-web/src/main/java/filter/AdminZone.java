@@ -2,9 +2,6 @@ package filter;
 
 import java.io.IOException;
 
-
-
-
 import javax.servlet.Filter;
 import javax.servlet.FilterChain;
 import javax.servlet.FilterConfig;
@@ -15,15 +12,16 @@ import javax.servlet.annotation.WebFilter;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import tn.esprit.Blues.entities.Administrator;
-import tn.esprit.Blues.entities.Customer;
 import managedBeans.Authentification;
+import tn.esprit.Blues.entities.Administrator;
 
-@WebFilter("/login.jsf")
-public class LoginFilter implements Filter {
+@WebFilter("/admin/*")
+public class AdminZone implements Filter{
+	
+	
 
-
-	public LoginFilter() {
+	public AdminZone() {
+		super();
 		// TODO Auto-generated constructor stub
 	}
 
@@ -42,14 +40,14 @@ public class LoginFilter implements Filter {
 		HttpServletResponse resp = (HttpServletResponse) response;
 		Authentification session = (Authentification) req.getSession().getAttribute("auth");
 		
-		if(session!=null && session.isLoggedIn()&& session.getUser() instanceof Administrator){
-			System.out.println((session.getUser() instanceof Administrator)+"filter login");
-			
-			resp.sendRedirect(req.getContextPath() + "/admin/welcome.xhtml");
-		}else{
-			System.out.println("filterlogin");
+		if(session!=null && session.isLoggedIn()&&session.getUser() instanceof Administrator){
+			System.out.println("filterAdmin");
 			chain.doFilter(request, response);
 			
+		}else{
+			System.out.println("filterAdmin");
+			
+			resp.sendRedirect(req.getContextPath() + "/login.jsf");
 			
 		}
 		
@@ -61,7 +59,4 @@ public class LoginFilter implements Filter {
 		// TODO Auto-generated method stub
 		
 	}
-
-	
-
 }
