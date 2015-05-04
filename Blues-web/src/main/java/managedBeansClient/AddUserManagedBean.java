@@ -10,6 +10,7 @@ import javax.faces.bean.RequestScoped;
 import javax.faces.context.ExternalContext;
 import javax.faces.context.FacesContext;
 
+import managedBeans.DemoBean;
 import tn.esprit.Blues.UsersServices.UsersServices;
 import tn.esprit.Blues.entities.Customer;
 
@@ -36,6 +37,11 @@ UsersServices user;
 		FacesContext fc=FacesContext.getCurrentInstance();
 		
 		if(passConfirm.equals(customer.getPassword())){
+//			try{
+//			customer.setProfilePicture("resource/img/" + DemoBean.getFilename(DemoBean.file1));}
+//			catch(Exception exception){
+//				exception.printStackTrace();
+//			}
 		customer.setActive(false);
 		user.add(customer);
 		ExternalContext ec=fc.getExternalContext();
