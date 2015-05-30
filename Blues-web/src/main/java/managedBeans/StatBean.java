@@ -11,6 +11,7 @@ import javax.faces.bean.SessionScoped;
 
 import tn.esprit.Blues.StatServices.StatServices;
 import tn.esprit.Blues.entities.Customer;
+import StatAdminServices.StatAdminServices;
 
 @ManagedBean(name = "statBean")
 @SessionScoped
@@ -23,11 +24,22 @@ public class StatBean implements Serializable {
 
 	@EJB
 	private StatServices statServices;
+	@EJB
+	private StatAdminServices services;
 	private String test;
 	public static  List<Customer> customers;
 	private Date date;
 	public static Customer customer= new Customer();
 	private boolean open=false;
+	private List<Float> benefices; 
+	private List<Integer> buy;
+	private List<Integer> sell;
+	private List<Float> buyPrice;
+	private List<Float> sellPrice;
+	private List<Integer> shares;
+	private List<Float> Price;
+	
+	
 	@PostConstruct
 	public void init() {
 		//setTest(statServices.getName());
@@ -77,6 +89,13 @@ public class StatBean implements Serializable {
 
 	public String put(Customer customer){
 		StatBean.customer=customer;
+		setBenefices(services.findBenefice(customer.getPortfolio().getId()));
+		setBuy(services.findBuy(customer.getPortfolio().getId()));
+		setSell(services.findSell(customer.getPortfolio().getId()));
+		setBuyPrice(services.findPriceBuy(customer.getPortfolio().getId()));
+		setSellPrice(services.findPriceSell(customer.getPortfolio().getId()));
+		setShares(services.findNumberShares(customer.getPortfolio().getId()));
+		setPrice(services.findPrice(customer.getPortfolio().getId()));
 		System.out.println(customer.getFirstName());
 		return "userCharts";
 	}
@@ -91,6 +110,62 @@ public class StatBean implements Serializable {
 
 	public void setOpen(boolean open) {
 		this.open = open;
+	}
+
+	public List<Float> getBenefices() {
+		return benefices;
+	}
+
+	public void setBenefices(List<Float> benefices) {
+		this.benefices = benefices;
+	}
+
+	public List<Integer> getBuy() {
+		return buy;
+	}
+
+	public void setBuy(List<Integer> buy) {
+		this.buy = buy;
+	}
+
+	public List<Integer> getSell() {
+		return sell;
+	}
+
+	public void setSell(List<Integer> sell) {
+		this.sell = sell;
+	}
+
+	public List<Float> getBuyPrice() {
+		return buyPrice;
+	}
+
+	public void setBuyPrice(List<Float> buyPrice) {
+		this.buyPrice = buyPrice;
+	}
+
+	public List<Float> getSellPrice() {
+		return sellPrice;
+	}
+
+	public void setSellPrice(List<Float> sellPrice) {
+		this.sellPrice = sellPrice;
+	}
+
+	public List<Integer> getShares() {
+		return shares;
+	}
+
+	public void setShares(List<Integer> shares) {
+		this.shares = shares;
+	}
+
+	public List<Float> getPrice() {
+		return Price;
+	}
+
+	public void setPrice(List<Float> price) {
+		Price = price;
 	}
 
 }

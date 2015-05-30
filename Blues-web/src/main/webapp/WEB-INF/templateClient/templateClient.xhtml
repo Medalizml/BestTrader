@@ -1,11 +1,10 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
-
-      xmlns:ui="http://java.sun.com/jsf/facelets"
-      xmlns:f="http://java.sun.com/jsf/core"
-      xmlns:h="http://java.sun.com/jsf/html"
-      xmlns:p="http://xmlns.jcp.org/jsf/passthrough"
-	xmlns:jsf="http://xmlns.jcp.org/jsf"> 
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://xmlns.jcp.org/jsf/passthrough"
+	xmlns:jsf="http://xmlns.jcp.org/jsf">
 
 <h:head>
 	<meta charset="utf-8" />
@@ -25,126 +24,204 @@
 	<!-- preloader end -->
 
 
- <!-- wrapper start -->
-<div class="wrapper"> 
-  <!-- header toolbar start -->
-  <div class="header-toolbar">
-    <div class="container">
-      <div class="row">
-        <div class="col-md-16 text-uppercase">
-          <div class="row">
-            <div class="col-sm-8 col-xs-16">
-              <ul id="inline-popups" class="list-inline">
-               
-                <h:panelGroup rendered="#{not auth.loggedIn}"><li><a class="open-popup-link" href="#log-in" data-effect="mfp-zoom-in">log in</a></li></h:panelGroup>
-                <h:panelGroup rendered="#{auth.loggedIn}"><li>welcome #{auth.customer.firstName}</li></h:panelGroup>
-                <h:panelGroup rendered="#{not auth.loggedIn}"> <li><a class="open-popup-link" href="#create-account" data-effect="mfp-zoom-in">Register Now </a></li></h:panelGroup>
-                <h:panelGroup rendered="#{auth.loggedIn}"> <li><h:form><h:commandLink  action="#{auth.doLogOut}"   value="log out"  p:class="open-popup-link"/></h:form>  </li></h:panelGroup>
-                <li><a  href="#{request.contextPath}/user/contactUs/ContactUs.xhtml">Cantact us</a></li>
-        		
-              </ul>
-            </div>
-            <div class="col-sm-8 col-xs-16">
-              <div class="row">
-                <div id="weather" class="col-lg-9 col-sm-8 col-xs-16"></div>
-                <div id="time-date" class="col-lg-7 col-sm-8 col-xs-16"></div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <!-- header toolbar end --> 
-  
-  <!-- header start -->
-  <div class="container header">
-    <div class="row">
-      <div class="col-sm-5 col-md-5 wow fadeInUpLeft animated"> <img
-						src="#{request.contextPath}/resource/img/logoBestTrader.png" alt=""/></div>
-      <div class="col-sm-11 col-md-11 hidden-xs text-right">
-      <h:panelGroup rendered="#{auth.loggedIn}"><a href="#{request.contextPath}/user/profile/profile.xhtml" class="btn btn-primary btn-lg" style="font-size: 35px ;background-color:rgb(30, 144, 36) ;">Consult your Profile &#160;<span class="glyphicon glyphicon-briefcase"></span></a></h:panelGroup>
-      </div>
-    </div>
-  </div>
-  <!-- header end --> 
-  <!-- nav and search start -->
-  <div class="nav-search-outer"> 
-    <!-- nav start -->
-    
-    <nav class="navbar navbar-inverse" role="navigation">
-      <div class="container">
-        <div class="row">
-          <div class="col-sm-16"> <a href="javascript:;" class="toggle-search pull-right"><span class="ion-ios7-search"></span></a>
-            <div class="navbar-header">
-              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
-            </div>
-            <div class="collapse navbar-collapse" id="navbar-collapse">
-              <ul class="nav navbar-nav text-uppercase main-nav ">
-                <li class="active"><a href="#{request.contextPath}/login.jsf">home</a></li>
-                
-                <li class="dropdown"> <a href="javascript:void(0)" class="dropdown-toggle" data-toggle="dropdown">Companies<span class="ion-ios7-arrow-down nav-icn"></span></a>
-                  <ul class="dropdown-menu text-capitalize " role="menu">
-                                
-                             
-                                <li><a href="#{request.contextPath}/user/companies/companiesPrivate.xhtml"><span class="ion-ios7-arrow-right nav-sub-icn"></span>Private Companies </a></li>
-                                <li><a href="#{request.contextPath}/user/companies/companiesPublic.xhtml"><span class="ion-ios7-arrow-right nav-sub-icn"></span>Public Companies</a> </li>
-                                <li><a href="#{request.contextPath}/user/companies/bank.xhtml"><span class="ion-ios7-arrow-right nav-sub-icn"></span>Banks </a></li>                            
-                                                                  
-                   
-                  </ul>
-                </li>
-                <li> <a href="#{request.contextPath}/user/Sector/sector.xhtml">Sectors</a></li>
-                <li > <a href="#{request.contextPath}/user/Quotations/Quotation.xhtml" >stock price of the day</a>
-                  
-                </li>
-              
-                <li class="dropdown"> <a href="javascript:void(0)" class="dropdown-toggle" data-toggle="dropdown">Screeners<span class="ion-ios7-arrow-down nav-icn"></span></a>
-                  <ul class="dropdown-menu text-capitalize" role="menu">
-                  
-                    <li><a href="#{request.contextPath}/user/Sreeners/companies.xhtml"><span class="ion-ios7-arrow-right nav-sub-icn"></span>Private Companies</a></li>
-                    <li><a href="#{request.contextPath}/user/Sreeners/companiesPublic.xhtml"><span class="ion-ios7-arrow-right nav-sub-icn"></span>Public Companies</a></li>
-                    <li><a href="#{request.contextPath}/user/Sreeners/bank.xhtml"><span class="ion-ios7-arrow-right nav-sub-icn"></span>Banks</a></li>
-                  </ul>
-                </li>
-                <li> <a href="#{request.contextPath}/user/Article/article.xhtml" >Articles</a></li>
-                 <li class="dropdown"> <a href="javascript:void(0)" class="dropdown-toggle" data-toggle="dropdown">Currencies<span class="ion-ios7-arrow-down nav-icn"></span></a>
-                  <ul class="dropdown-menu text-capitalize" role="menu">
-                  
-                    <li><a href="#{request.contextPath}/user/Sreeners/Currency.xhtml"><span class="ion-ios7-arrow-right nav-sub-icn"></span>Pair of Currency</a></li>
-                    <li><a href="#{request.contextPath}/user/currencyBank/currencyBank.xhtml"><span class="ion-ios7-arrow-right nav-sub-icn"></span>Currency Bank</a></li>
-                    
-                  </ul>
-                 </li>
-                 <li class=""><a href="#{request.contextPath}/user/CompareBySector/CompanyListxhtml.xhtml">Compare Shares</a></li>
-                 
-              </ul>
-            </div>
-          </div>
-        </div>
-      </div>
-      <!-- nav end --> 
-      <!-- search start -->
-      
-      <div class="search-container ">
-        <div class="container">
-          <form action="#" method="" role="search">
-            <input id="search-bar" placeholder="Type  Hit Enter.." autocomplete="off"/>
-          </form>
-        </div>
-      </div>
-      <!-- search end --> 
-    </nav>
-    <!--nav end--> 
-  </div>
-  
-  <!-- nav and search end--> 
+	<!-- wrapper start -->
+	<div class="wrapper">
+		<!-- header toolbar start -->
+		<div class="header-toolbar">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-16 text-uppercase">
+						<div class="row">
+							<div class="col-sm-8 col-xs-16">
+								<ul id="inline-popups" class="list-inline">
 
-   <div class="container">
-  <ui:insert name="content"></ui:insert>
-  </div>
-  <!-- Footer start -->
-  <footer>
+									<h:panelGroup rendered="#{not auth.loggedIn}">
+										<li><a class="open-popup-link" href="#log-in"
+											data-effect="mfp-zoom-in">log in</a></li>
+									</h:panelGroup>
+									<h:panelGroup rendered="#{auth.loggedIn}">
+										<li>welcome #{auth.customer.firstName}</li>
+									</h:panelGroup>
+									<h:panelGroup rendered="#{not auth.loggedIn}">
+										<li><a class="open-popup-link" href="#create-account"
+											data-effect="mfp-zoom-in">Register Now </a></li>
+									</h:panelGroup>
+									<h:panelGroup rendered="#{auth.loggedIn}">
+										<li><h:form>
+												<h:commandLink action="#{auth.doLogOut}" value="log out"
+													p:class="open-popup-link" />
+											</h:form></li>
+									</h:panelGroup>
+									<li><a
+										href="#{request.contextPath}/user/contactUs/ContactUs.xhtml">Cantact
+											us</a></li>
+									<li>
+									
+									<!-- Translator -->
+
+								<div >
+
+									<div id="google_translate_element"></div>
+									<script type="text/javascript">
+function googleTranslateElementInit() {
+  new google.translate.TranslateElement({pageLanguage: 'en', includedLanguages: 'ar,fr', layout: google.translate.TranslateElement.InlineLayout.SIMPLE}, 'google_translate_element');
+}
+</script>
+									<script type="text/javascript"
+										src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+
+								</div>
+									
+									</li>
+
+								</ul>
+							</div>
+							<div class="col-sm-8 col-xs-16">
+								<div class="row">
+									<div id="weather" class="col-lg-9 col-sm-8 col-xs-16"></div>
+									<div id="time-date" class="col-lg-7 col-sm-8 col-xs-16"></div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- header toolbar end -->
+
+		<!-- header start -->
+		<div class="container header">
+			<div class="row">
+				<div class="col-sm-5 col-md-5 wow fadeInUpLeft animated">
+					<img src="#{request.contextPath}/resource/img/logoBestTrader.png"
+						alt="" />
+				</div>
+				<div class="col-sm-11 col-md-11 hidden-xs text-right">
+					<h:panelGroup rendered="#{auth.loggedIn}">
+						<a href="#{request.contextPath}/user/profile/profile.xhtml"
+							class="btn btn-primary btn-lg"
+							style="font-size: 35px; background-color: rgb(30, 144, 36);">Consult
+							your Profile &#160;<span class="glyphicon glyphicon-briefcase"></span>
+						</a>
+					</h:panelGroup>
+				</div>
+			</div>
+		</div>
+		<!-- header end -->
+		<!-- nav and search start -->
+		<div class="nav-search-outer">
+			<!-- nav start -->
+
+			<nav class="navbar navbar-inverse" role="navigation">
+			<div class="container">
+				<div class="row">
+					<div class="col-sm-16">
+						<a href="javascript:;" class="toggle-search pull-right"><span
+							class="ion-ios7-search"></span></a>
+						<div class="navbar-header">
+							<button type="button" class="navbar-toggle collapsed"
+								data-toggle="collapse" data-target="#navbar-collapse">
+								<span class="sr-only">Toggle navigation</span> <span
+									class="icon-bar"></span> <span class="icon-bar"></span> <span
+									class="icon-bar"></span>
+							</button>
+						</div>
+						<div class="collapse navbar-collapse" id="navbar-collapse">
+							<ul class="nav navbar-nav text-uppercase main-nav ">
+								<li class="active"><a
+									href="#{request.contextPath}/login.jsf">home</a></li>
+
+								<li class="dropdown"><a href="javascript:void(0)"
+									class="dropdown-toggle" data-toggle="dropdown">Companies<span
+										class="ion-ios7-arrow-down nav-icn"></span></a>
+									<ul class="dropdown-menu text-capitalize " role="menu">
+
+
+										<li><a
+											href="#{request.contextPath}/user/companies/companiesPrivate.xhtml"><span
+												class="ion-ios7-arrow-right nav-sub-icn"></span>Private
+												Companies </a></li>
+										<li><a
+											href="#{request.contextPath}/user/companies/companiesPublic.xhtml"><span
+												class="ion-ios7-arrow-right nav-sub-icn"></span>Public
+												Companies</a></li>
+										<li><a
+											href="#{request.contextPath}/user/companies/bank.xhtml"><span
+												class="ion-ios7-arrow-right nav-sub-icn"></span>Banks </a></li>
+
+
+									</ul></li>
+								<li><a
+									href="#{request.contextPath}/user/Sector/sector.xhtml">Sectors</a></li>
+								<li><a
+									href="#{request.contextPath}/user/Quotations/Quotation.xhtml">stock
+										price of the day</a></li>
+
+								<li class="dropdown"><a href="javascript:void(0)"
+									class="dropdown-toggle" data-toggle="dropdown">Screeners<span
+										class="ion-ios7-arrow-down nav-icn"></span></a>
+									<ul class="dropdown-menu text-capitalize" role="menu">
+
+										<li><a
+											href="#{request.contextPath}/user/Sreeners/companies.xhtml"><span
+												class="ion-ios7-arrow-right nav-sub-icn"></span>Private
+												Companies</a></li>
+										<li><a
+											href="#{request.contextPath}/user/Sreeners/companiesPublic.xhtml"><span
+												class="ion-ios7-arrow-right nav-sub-icn"></span>Public
+												Companies</a></li>
+										<li><a
+											href="#{request.contextPath}/user/Sreeners/bank.xhtml"><span
+												class="ion-ios7-arrow-right nav-sub-icn"></span>Banks</a></li>
+									</ul></li>
+								<li><a
+									href="#{request.contextPath}/user/Article/article.xhtml">Articles</a></li>
+								<li class="dropdown"><a href="javascript:void(0)"
+									class="dropdown-toggle" data-toggle="dropdown">Currencies<span
+										class="ion-ios7-arrow-down nav-icn"></span></a>
+									<ul class="dropdown-menu text-capitalize" role="menu">
+
+										<li><a
+											href="#{request.contextPath}/user/Sreeners/Currency.xhtml"><span
+												class="ion-ios7-arrow-right nav-sub-icn"></span>Pair of
+												Currency</a></li>
+										<li><a
+											href="#{request.contextPath}/user/currencyBank/currencyBank.xhtml"><span
+												class="ion-ios7-arrow-right nav-sub-icn"></span>Currency
+												Bank</a></li>
+
+									</ul></li>
+								<li class=""><a
+									href="#{request.contextPath}/user/CompareBySector/CompanyListxhtml.xhtml">Compare
+										Shares</a></li>
+
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- nav end --> <!-- search start -->
+
+			<div class="search-container ">
+				<div class="container">
+					<form action="#" method="" role="search">
+						<input id="search-bar" placeholder="Type  Hit Enter.."
+							autocomplete="off" />
+					</form>
+				</div>
+			</div>
+			<!-- search end --> </nav>
+			<!--nav end-->
+		</div>
+
+		<!-- nav and search end-->
+
+		<div class="container">
+			<ui:insert name="content"></ui:insert>
+		</div>
+		<!-- Footer start -->
+		<footer>
 		<div class="top-sec">
 			<div class="container ">
 				<div class="row match-height-container">
@@ -177,7 +254,7 @@
 			</div>
 		</div>
 		</footer>
-  <!-- Footer end -->
+		<!-- Footer end -->
 		<div id="create-account" class="white-popup mfp-with-anim mfp-hide">
 			<h:form enctype="multipart/form-data" role="form">
 				<h3>Create Account</h3>
@@ -265,8 +342,8 @@
 						</div>
 					</div>
 					<div class="row">
-					<h:inputFile value="#{demoBean.file1}" />
-					<h:messages id="m_confirm" errorStyle="color:red;" />
+						<h:inputFile value="#{demoBean.file1}" />
+						<h:messages id="m_confirm" errorStyle="color:red;" />
 					</div>
 				</div>
 
@@ -285,31 +362,42 @@
 				</div>
 			</h:form>
 		</div>
-  <div id="log-in" class="white-popup mfp-with-anim mfp-hide">
-    <h:form role="form">
-      <h3>Log In Your Account</h3>
-      <hr/>
-      <div class="form-group">
-        <h:inputText value="#{auth.user.email}" name="access_name" id="access_name" class="form-control" p:placeholder="Name" p:tabindex="3"/>
-      </div>
-      <div class="form-group">
-        <h:inputSecret value="#{auth.user.password}" name="password" id="password" class="form-control " p:placeholder="Password" p:tabindex="4"/>
-      </div>
-      <hr/>
-      <div class="row">
-        <div class="col-sm-16">
-          <h:commandButton action="#{auth.doAuthentificate()}" value="Log in"  class="btn btn-success btn-block btn-lg">
-          <f:ajax execute="@form" render="@form errorlogin"></f:ajax>
-          </h:commandButton>
-          <br/>
-          <h:panelGroup id="log"><h:panelGroup rendered="#{auth.ispressed}"> <div class="alert alert-danger"> <h:messages  id="errorlogin"/></div></h:panelGroup></h:panelGroup>
-        </div>
-      </div>
-    
-    </h:form>
-  </div>
-</div>
-<!-- wrapper end -->  
-<ui:include src="/WEB-INF/templateClient/js.xhtml" />
-</body> 
+		<div id="log-in" class="white-popup mfp-with-anim mfp-hide">
+			<h:form role="form">
+				<h3>Log In Your Account</h3>
+				<hr />
+				<div class="form-group">
+					<h:inputText value="#{auth.user.email}" name="access_name"
+						id="access_name" class="form-control" p:placeholder="Name"
+						p:tabindex="3" />
+				</div>
+				<div class="form-group">
+					<h:inputSecret value="#{auth.user.password}" name="password"
+						id="password" class="form-control " p:placeholder="Password"
+						p:tabindex="4" />
+				</div>
+				<hr />
+				<div class="row">
+					<div class="col-sm-16">
+						<h:commandButton action="#{auth.doAuthentificate()}"
+							value="Log in" class="btn btn-success btn-block btn-lg">
+							<f:ajax execute="@form" render="@form errorlogin"></f:ajax>
+						</h:commandButton>
+						<br />
+						<h:panelGroup id="log">
+							<h:panelGroup rendered="#{auth.ispressed}">
+								<div class="alert alert-danger">
+									<h:messages id="errorlogin" />
+								</div>
+							</h:panelGroup>
+						</h:panelGroup>
+					</div>
+				</div>
+
+			</h:form>
+		</div>
+	</div>
+	<!-- wrapper end -->
+	<ui:include src="/WEB-INF/templateClient/js.xhtml" />
+</body>
 </html>

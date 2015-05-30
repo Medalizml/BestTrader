@@ -39,7 +39,37 @@
 					var year='#{screeners.listYear}';
 					var arrayYear=JSON.parse(year);
 					
-				for (var i = 0; i &lt; array.length; i++) {
+					var K=2/25;
+					var M=2/8;
+					
+					//MMS
+					var MMS=0;
+					for (var i = 0; i &lt; 24; i++) {
+					
+					MMS = MMS + arraycl[i];
+					
+					}
+					MMS = MMS/24;
+					
+					var MMS1=0;
+					for (var i = 0; i &lt; 7; i++) {
+					
+					MMS1 = MMS1 + arraycl[i];
+					
+					}
+					MMS1 = MMS1/7;
+					
+					
+					var MME=[] ;
+					MME.push((arraycl[0]-MMS)*K+MMS);
+					
+					var MME1=[] ;
+					MME1.push((arraycl[0]-MMS1)*M+MMS1);
+					
+					 
+					
+					
+				for (var i = 0; i &lt; arraycl.length; i++) {
 					var newDate = new Date(arrayYear[0],arrayMonth[0],arrayDay[0]);
 					console.log(arrayMonth[i]+"month");
 					newDate.setFullYear(arrayYear[i]);
@@ -49,17 +79,19 @@
 					
 					
 					if(array[i]==0){array[i]=array[i-1]}
-					var a1 = array[i];
+					var a1 = arraycl[i];
 					var b1 = arrayVolume[i];
 					
-					if(i>1){
-					var a2 =(array[i]+array[i-1])/2;
+					if(i>0){
+					MME.push((arraycl[i]-MME[i-1])*K+MME[i-1]);
+					var a2=MME[i];
 					var b2 =(arrayVolume[i]+arrayVolume[i-1])/2;}
 					
-					if(arrayhigh[i]==0){arrayhigh[i]=arrayhigh[i-1]}
-					var a3=(arrayhigh[i]);
+					if(i>0){
+					MME1.push((arraycl[i]-MME1[i-1])*M+MME1[i-1]);
+					var a3=MME1[i];
 					var b3 =arrayVolume[i];
-					
+					}
 					if(arraylow[i]==0){arraylow[i]=arraylow[i-1]}
 					var a4 =(arraylow[i]);
 					var b4 = arrayVolume[i];
@@ -85,13 +117,14 @@
 						volume: b4
 					});
 				}
+				
 			}
 			
-			AmCharts.makeChart("chartdiv1", {
+		var chart=	AmCharts.makeChart("chartdiv1", {
 				type: "stock",
 				pathToImages: "/Blues-web/resource/resourceClient/screeners/amcharts/images/",
 				dataSets: [{
-					title: "OpningPrice",
+					title: "ClosingPrice",
 					fieldMappings: [{
 						fromField: "value",
 						toField: "value"
@@ -100,11 +133,13 @@
 						toField: "volume"
 					}],
 					dataProvider: chartData1,
-					categoryField: "date"
+					categoryField: "date",
+					
+					
 				},
 
 				{
-					title: "Avreage",
+					title: "MME(24)",
 					fieldMappings: [{
 						fromField: "value",
 						toField: "value"
@@ -117,7 +152,7 @@
 				},
 
 				{
-					title: "HighestPrice",
+					title: "MME(7)",
 					fieldMappings: [{
 						fromField: "value",
 						toField: "value"
@@ -129,24 +164,22 @@
 					categoryField: "date"
 				},
 
-				{
-					title: "LowestPrice",
-					fieldMappings: [{
-						fromField: "value",
-						toField: "value"
-					}, {
-						fromField: "volume",
-						toField: "volume"
-					}],
-					dataProvider: chartData4,
-					categoryField: "date"
-				}],
+				],
+				
+				panelsSettings:{
+					creditsPosition: "bottom-right"
+				},
+				stockPanel:{
+				recalculateToPercents:"never"
+				},
 
 				panels: [{
 
 					showCategoryAxis: false,
 					title: "Value",
 					percentHeight: 70,
+					eraseAll: true,
+					
 
 					stockGraphs: [{
 						id: "g1",
@@ -161,13 +194,16 @@
 						compareGraphBalloonText: "[[title]]:<b>[[value]]</b>",
 						compareGraphBullet: "round",
 						compareGraphBulletBorderColor: "#FFFFFF",
-						compareGraphBulletBorderAlpha: 1
+						compareGraphBulletBorderAlpha: 1,
+						
 					}],
 
 					stockLegend: {
-						periodValueTextComparing: "[[percents.value.close]]%",
-						periodValueTextRegular: "[[value.close]]"
-					}
+						periodValueTextComparing: "[[percents.value.open]]%",
+						periodValueTextRegular: "[[value.open]]"
+					},
+					
+					drawingIconsEnabled: true
 				},
 
 				{
@@ -222,6 +258,8 @@
 					position: "left"
 				}
 			});
+			console.log(chart)
+			chart.panelsSettings.recalculateToPercents = "never";
 		</h:outputScript>
 
 
