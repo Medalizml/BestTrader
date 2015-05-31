@@ -9,13 +9,13 @@
 				<div class="tiles  col-md-12 no padding  ">			
 					<div class="tiles-body">
 						<h5><span class="semi-bold" style="color:red;">#{Dash.reclamations.size()}  new reclamations</span>
-						&#160;&#160; <a href="/Blues-web/mail/mail.xhtml" class="text-info normal-text"><span style="color: white">view all</span></a></h5>
+						&#160;&#160; <a href="/Blues-web/admin/mail/mail.xhtml" class="text-info normal-text"><span style="color: white">view all</span></a></h5>
 						<div class="row">
 							<div class="col-md-6">
 								<div class="friend-list">
 									<div class="friend-profile-pic">
 										<div class="user-profile-pic-normal">
-										<h:graphicImage value="#{Dash.reclamations.get(0).sender.profilePicture}"  width="35" height="35"/>
+										<img src="#{request.contextPath}/#{Dash.reclamations.get(0).sender.profilePicture}"  width="35" height="35"/>
 										</div>
 									</div> 
 									<div class="friend-details-wrapper">
@@ -27,7 +27,7 @@
 										</div>
 									</div>
 									<div class="action-bar pull-right">
-									<a href="/Blues-web/mail/mail.xhtml">
+									<a href="/Blues-web/admin/mail/mail.xhtml">
 										<button class="btn btn-danger" type="button">Read</button>
 									</a>
 									</div>
@@ -38,7 +38,7 @@
 								<div class="friend-list">
 									<div class="friend-profile-pic">
 										<div class="user-profile-pic-normal">
-										<h:graphicImage value="#{Dash.reclamations.get(1).sender.profilePicture}"  width="35" height="35"/>
+										<img src="#{request.contextPath}/#{Dash.reclamations.get(1).sender.profilePicture}"  width="35" height="35"/>
 										</div>
 									</div> 
 									<div class="friend-details-wrapper">
@@ -50,7 +50,7 @@
 										</div>
 									</div>
 									<div class="action-bar pull-right">
-									<a href="/Blues-web/mail/mail.xhtml">
+									<a href="/Blues-web/admin/mail/mail.xhtml">
 									
 										<button class="btn btn-danger" type="button">Read</button>
 									</a>

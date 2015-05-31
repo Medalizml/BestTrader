@@ -6,9 +6,11 @@ import java.util.List;
 
 import javax.annotation.PostConstruct;
 import javax.ejb.EJB;
+import javax.faces.application.FacesMessage;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ManagedProperty;
 import javax.faces.bean.ViewScoped;
+import javax.faces.context.FacesContext;
 
 import tn.esprit.Blues.UsersServices.UsersServices;
 import tn.esprit.Blues.entities.Customer;
@@ -101,21 +103,28 @@ public class ProfileManagedBean {
 		this.customer = customer;
 	}
 
-	public void doAddOperation(Quotation q) {
+	public void doAddOperation(Intermediaire q) {
 		Date d = new Date();
-		operation.setDateOperation(d);
-		operation.setSharePrice(q.getClosingPrice());
-		operation.setQuotation(q);
-		if (operation.getNumberShares() > 0) {
-			operation.setNumberShares(-operation.getNumberShares());
-		}
+		FacesContext fc=FacesContext.getCurrentInstance();
 
-		profile.addOperation(operation);
+		operation.setDateOperation(d);
+		operation.setSharePrice(q.getQuotation().getClosingPrice());
+		operation.setQuotation(q.getQuotation());
+		if (operation.getNumberShares() > 0 && operation.getNumberShares()<= q.getNbrShares()) {
+			
+			
+		
 		customer.getPortfolio().setValue(
 				customer.getPortfolio().getValue()
-						- operation.getNumberShares() * q.getClosingPrice());
+						- operation.getNumberShares() * q.getQuotation().getClosingPrice());
+		
+		operation.setNumberShares(-operation.getNumberShares());
+		profile.addOperation(operation);
 		services.update(customer.getPortfolio());
 		this.init();
+		}
+		
+		
 	}
 
 	public List<Intermediaire> remplirIntermediaire() {
@@ -128,8 +137,11 @@ public class ProfileManagedBean {
 			o.setNbrShares(profile.getNumberOfShares(customer.getPortfolio()
 					.getId(), quotations.get(i).getId()));
 			o.setValue(o.getNbrShares() * o.getQuotation().getClosingPrice());
-
-			l.add(i, o);
+			if(o.getNbrShares() > 0){
+		
+				l.add(o);
+				}
+			
 		}
 
 		return l;

@@ -5,7 +5,6 @@
 	xmlns:f="http://java.sun.com/jsf/core"
 	xmlns:h="http://java.sun.com/jsf/html"
 	xmlns:jsf="http://java.sun.com/jsf">
-	<ui:include src="/users/addUser.xhtml" />
 
 
 	<div class="row-fluid">
@@ -45,7 +44,7 @@
 									data-hide="phone,tablet">Portfolio Value</f:facet>
 						#{o.portfolio.value}
                     </h:column>
-                    <h:column>
+							<h:column>
 								<f:facet name="header" style="widf:facet:10%"
 									data-hide="phone,tablet">Benefit</f:facet>
 						#{o.portfolio.gain}
@@ -58,7 +57,7 @@
 									<h:commandLink action="#{statBean.put(o)}"
 										class="btn btn-success btn-cons">
 										<i class="fa fa-bar-chart-o"></i>&#160;See Charts</h:commandLink>
-										</h:form>
+								</h:form>
 							</h:column>
 						</h:dataTable>
 					</table>
