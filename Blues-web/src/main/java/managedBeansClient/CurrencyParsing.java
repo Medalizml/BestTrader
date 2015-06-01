@@ -58,6 +58,7 @@ public class CurrencyParsing {
 		List<Date> dates = new ArrayList<Date>();
 		try {
 			SimpleDateFormat formatter = new SimpleDateFormat("dd-MM-yyyy");
+
 			Date date = formatter.parse("01-04-2015");
 			Date date2 = new Date();
 			GregorianCalendar caldeb = new GregorianCalendar();

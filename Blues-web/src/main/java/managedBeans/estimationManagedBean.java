@@ -77,9 +77,16 @@ public Company getSelectedCompnay() {
 
 public String doUpdate(Quotation s){
 		
+		if(s.getEstimation()>100){
+		s.setEstimation(100);
 		
+		}
+		else if (s.getEstimation()<-100) {
+			s.setEstimation(-100);
+
+			
+		}
 		estimServices.updateEstimation(s);
-	
 		return null;
 	}
 public String doUpdatedec(Quotation s){

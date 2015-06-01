@@ -141,22 +141,154 @@ $(function(){
 });});
 
 </script>
-	<script>
-$("#spark-2").sparkline([Math.floor((Math.random() * 1000) + 1),Math.floor((Math.random() * 1000) + 1),Math.floor((Math.random() * 1000) + 1),Math.floor((Math.random() * 1000) + 1),Math.floor((Math.random() * 1000) + 1),Math.floor((Math.random() * 1000) + 1),Math.floor((Math.random() * 1000) + 1),Math.floor((Math.random() * 1000) + 1),Math.floor((Math.random() * 1000) + 1),Math.floor((Math.random() * 1000) + 1),Math.floor((Math.random() * 1000) + 1)], {
+
+<h:outputScript>
+	
+	var list ='#{statBean.price}';
+	var array = JSON.parse(list);
+	var list1='#{statBean.shares}';
+	var array1= JSON.parse(list1);
+	
+	var array2= [10000];
+		
+	for (var i = 0; i &lt; array.length; i++) {
+	
+	array2[i+1]=array2[i]-(array[i]*array1[i]);
+	console.log(array2[i]);
+	}
+
+$("#spark-4").sparkline(array2
+, {
 		type: 'line',
 		width: '100%',
 		height: '200',
-		lineColor: '#0aa699',
-		fillColor: '#e6f6f5',
-		minSpotColor: '#0c948a',
-		maxSpotColor: '#78cec7',
+		lineColor: '#0E34F5',
+		fillColor: '#92A1EC',
+		minSpotColor: '#FFFC07',
+		maxSpotColor: '#FFFC07',
 		highlightSpotColor: '#78cec7',
 		highlightLineColor: '#78cec7',
 		spotRadius: 5
 	});
-	</script>
+	</h:outputScript>
 
+	<h:outputScript>
+	
+	var list ='#{statBean.buy}';
+	var array = JSON.parse(list);
+	var listPrice='#{statBean.buyPrice}';
+	var arrayPrice=  JSON.parse(listPrice);
+	
+	var array1= [];
+		
+	for (var i = 0; i &lt; array.length; i++) {
+	
+	array1[i]=array[i]*arrayPrice[i];
+	}
 
+$("#spark-2").sparkline(array1
+, {
+		type: 'line',
+		width: '100%',
+		height: '200',
+		lineColor: '#00FF20',
+		fillColor: '#A9E09A',
+		minSpotColor: '#FFFC07',
+		maxSpotColor: '#FFFC07',
+		highlightSpotColor: '#78cec7',
+		highlightLineColor: '#78cec7',
+		spotRadius: 5
+	});
+	</h:outputScript>
+	
+	<h:outputScript>
+	var list ='#{statBean.sell}';
+	var array = JSON.parse(list);
+	
+	var listPrice='#{statBean.sellPrice}';
+	var arrayPrice=  JSON.parse(listPrice);
+	
+	var array1= [];
+		
+	for (var i = 0; i &lt; array.length; i++) {
+	
+	array1[i]=array[i]*arrayPrice[i];
+	}
+	
+$("#spark-3").sparkline(array1
+, {
+		type: 'line',
+		width: '100%',
+		height: '200',
+		lineColor: '#E81010',
+		fillColor: '#E5878B',
+		minSpotColor: '#FFFC07',
+		maxSpotColor: '#FFFC07',
+		highlightSpotColor: '#FF07CD',
+		highlightLineColor: '#78cec7',
+		spotRadius: 5
+	});
+	</h:outputScript>
+	<h:outputScript>
+	
+	var list ='#{statBean.buy}';
+	var array = JSON.parse(list);
+	var listPrice='#{statBean.buyPrice}';
+	var arrayPrice=  JSON.parse(listPrice);
+	
+	var array1= [];
+		
+	for (var i = 0; i &lt; array.length; i++) {
+	
+	array1[i]=array[i]*arrayPrice[i];
+	}
+	
+	var list1 ='#{statBean.sell}';
+	var array2 = JSON.parse(list1);
+	
+	var listPrice1='#{statBean.sellPrice}';
+	var arrayPrice1=  JSON.parse(listPrice1);
+	
+	var array3= [];
+		
+	for (var i = 0; i &lt; array2.length; i++) {
+	
+	array3[i]=array2[i]*arrayPrice1[i];
+	}
+	
+	
+	
+	$('#mysparkline').sparkline(array1, {
+			type: 'line', 
+			width: '100%',
+			height:'250px',
+			fillColor: 'rgba(209, 218, 222, 0.30)',
+			lineColor: '#00FF20',
+			spotRadius: 4,
+			valueSpots:[4,3,3,1,4,3,2,2,3],
+			minSpotColor: '#00FF20',
+			maxSpotColor: '#00FF20',
+			highlightSpotColor: '#00FF20',
+			 highlightLineColor: '#00FF20',
+			normalRangeMin: 0
+	});
+	$('#mysparkline').sparkline(array3, {
+					type: 'line', 
+					composite: true,
+					width: '100%',
+					fillColor: ' rgba(0, 141, 214, 0.10)',
+					lineColor: '#E81010',
+					minSpotColor: '#E81010',
+					maxSpotColor: '#E81010',
+					highlightSpotColor: '#E81010',
+					highlightLineColor: '#E81010',
+					spotRadius: 4,
+					valueSpots:[3,2,3,4,3,2,4,1,3],
+					normalRangeMin: 0
+	});	
+	
+	</h:outputScript>
+	
 </ui:composition>
 
 

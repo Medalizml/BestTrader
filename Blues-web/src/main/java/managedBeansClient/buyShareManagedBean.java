@@ -86,6 +86,7 @@ public class buyShareManagedBean implements Serializable {
 			sellAction action = new sellAction();
 			action.setOpVolume(null);
 			action.setShare(shares.get(i));
+			
 			buyShares.add(action);
 		}
 	}
