@@ -3,11 +3,17 @@
 	xmlns:f="http://java.sun.com/jsf/core"
 	xmlns:h="http://java.sun.com/jsf/html"
 	template="/WEB-INF/templateClient/templateClient.xhtml">
+	<ui:define  name="tuto"><h:panelGroup>
+										<li><a id="startButtonQuotation" class="open-popup-link btn btn-warning"
+											data-effect="mfp-zoom-in" style="color: white;"
+											href="javascript:void(0);"
+											><i class="fa fa-info"></i> Need help </a></li>
+									</h:panelGroup></ui:define>
 	<ui:define name="content">
 		<div class="page-header">
       <h1>quotations list : tunisian stock market</h1>
     </div>
-    <div style="margin-left: 77.8%">
+    <div style="margin-left: 77.8%"  data-step="4" data-intro="choose the currency that you want to dispaly the price with " data-position='top'>
 		<h:form class="form-inline">
 			<div class="form-group">
 				
@@ -26,6 +32,7 @@
 		</div>
 		
 		<br />
+		
 		<ui:include src="/user/Quotations/List.xhtml" />
 
 

@@ -52,10 +52,26 @@
 <script src="/Blues-web/resource/resourceClient/js/enquire.js"></script> 
 <!--custom functions--> 
 <script src="/Blues-web/resource/resourceClient/js/custom-fun.js"></script>
+<script src="/Blues-web/resource/resourceClient/js/intro.js"></script>
 
 
 
      <script> $(document).ready(function() {
     $('#example').DataTable();
 } );</script>
+ <script type="text/javascript">
+       document.getElementById('startButtonQuotation').onclick = function() {
+           introJs().goToStep(3).start();}
+   
+      </script>
+      <script type="text/javascript">
+      
+		
+		       
+       $('#addPanelButton').attr('data-step', '3');
+      $('#addPanelButton').attr('data-intro', 'here you find charts');
+      $('.amcharts-chart-div').attr('data-step', '4');
+      $('.amcharts-chart-div').attr('data-intro', 'here you find charts');
+      
+      console.log("hello");</script>
       </ui:composition>

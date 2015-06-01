@@ -3,12 +3,22 @@
       xmlns:f="http://java.sun.com/jsf/core"
       xmlns:h="http://java.sun.com/jsf/html"
 	template="/WEB-INF/templateClient/templateClient.xhtml">
+	
+	<ui:define name="tuto">
+	<h:panelGroup>
+										<li><a id="startButtonProfile" class="open-popup-link btn btn-warning"
+											data-effect="mfp-zoom-in" style="color: white;"
+											href="javascript:void(0);"
+											 onclick="javascript:introJs().start();"><i class="fa fa-info"></i> Need help ! </a></li>
+									</h:panelGroup>
+		
+		</ui:define>
 	<ui:define name="content">
 	 
 	 <div class="page-header">
       <h1>Your profile </h1>
-      <a class="btn btn-success pull-right" href="#{request.contextPath}/user/profile/buyShare.xhtml">Buy Shares</a>
-       <a class="btn btn-danger pull-right" style="margin-right:5px;" href="#{request.contextPath}/user/profile/contact.xhtml">Send Reclamation</a>
+      <a class="btn btn-success pull-right" href="#{request.contextPath}/user/profile/buyShare.xhtml" data-step="1" data-intro="to buy shares and increase your chance to make profit click on this button"  data-position='top'>Buy Shares</a>
+       <a class="btn btn-danger pull-right" style="margin-right:5px;" href="#{request.contextPath}/user/profile/contact.xhtml" data-step="2" data-intro="Any problems? send us your reclamation"  data-position='top'>Send Reclamation</a>
     </div>
 	
 	<div class="col-md-11 col-sm-11">
@@ -19,7 +29,7 @@
 	 	<div class="row"> 
 	 	<ui:include src="/user/profile/portfolio.xhtml" />
 	 	</div>
-	 	<div class="row"> 
+	 	<div class="row" data-step="5" data-intro="click here to check your operation history "  data-position='top'> 
 	 	<ui:include src="/user/profile/history.xhtml" />
 	 	</div>
 	 	</div>

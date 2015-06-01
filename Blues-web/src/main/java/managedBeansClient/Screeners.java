@@ -64,7 +64,7 @@ public class Screeners {
 		setListVolume(screenersServices.findAllVolume(c.getQuotation().getId()));
 		setListDate(screenersServices.findAllDate(c.getQuotation().getId()));
 		destribute();
-		return "companyScreene";
+		return "companyScreene?faces-redirect=true";
 
 	}
 	

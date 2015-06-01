@@ -4,49 +4,50 @@
 	xmlns:h="http://java.sun.com/jsf/html">
 
 
-	<h:dataTable class="datatable table table-striped table-bordered" value="#{quotations.shares}"
-		var="ex" headerClass="alert alert-info">
+<div data-step="3" data-intro="have a look for the different quotation's price and infomation" data-position='top'>
+	<h:dataTable class="datatable table table-striped table-bordered"
+		value="#{quotations.shares}" var="ex" headerClass="alert alert-info" >
 		<thead>
-		<h:column>
-			<f:facet name="header">Company Name</f:facet>
+			<h:column>
+				<f:facet name="header">Company Name</f:facet>
 			#{ex.company.name}
 			
 	
 	</h:column>
-		<h:column>
-			<f:facet name="header">Opening Price</f:facet>
+			<h:column>
+				<f:facet name="header">Opening Price</f:facet>
 			#{ex.opningPrice}
 	
 	</h:column>
-		<h:column>
-			<f:facet name="header">Last Value</f:facet>
+			<h:column>
+				<f:facet name="header">Last Value</f:facet>
 			#{ex.closingPrice}
 	
 	</h:column>
 
-		<h:column>
-			<f:facet name="header">Highest Price</f:facet>
+			<h:column>
+				<f:facet name="header">Highest Price</f:facet>
 			#{ex.highestPrice}
 	
 	</h:column>
-		<h:column>
-			<f:facet name="header">Lowest Price</f:facet>
+			<h:column>
+				<f:facet name="header">Lowest Price</f:facet>
 			#{ex.lowestPrice}
 	
 	</h:column>
-		<h:column>
-			<f:facet name="header">Volume</f:facet>
+			<h:column>
+				<f:facet name="header">Volume</f:facet>
 			#{ex.volume}
 	
 	</h:column>
-		<h:column>
-			<f:facet name="header">Estimation</f:facet>
+			<h:column>
+				<f:facet name="header">Estimation</f:facet>
 			#{ex.estimation}
 	
 	</h:column>
-	</thead>
+		</thead>
 	</h:dataTable>
 
-
+</div>
 
 </ui:composition>

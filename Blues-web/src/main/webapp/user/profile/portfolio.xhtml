@@ -17,7 +17,9 @@
 	<h3>Your Shares</h3>
 
 	#{profile.nbrShares}
-	<h:dataTable value="#{profile.intermediaires}" var="i" class="table table-hover ">
+	<div data-step="4" data-intro="this table contains your own shares either their values.
+	Once you specified a number of share and clicked on the button a sell operation will be made"  data-position='right'>
+	<h:dataTable value="#{profile.intermediaires}" var="i" class="table table-hover " >
 		<h:column>
 			<f:facet name="header"> Company Name</f:facet>
 	#{i.quotation.company.name}
@@ -45,6 +47,6 @@
                 </h:form>
 		</h:column>
 
-	</h:dataTable>
+	</h:dataTable></div>
 
 </ui:composition>
