@@ -43,6 +43,7 @@ public class buyShareManagedBean implements Serializable {
 	private String holder;
 
 	private boolean opMessage = false;
+	private boolean opMessageErr = false;
 
 	@ManagedProperty("#{auth.customer}")
 	Customer customer = new Customer();
@@ -93,7 +94,7 @@ public class buyShareManagedBean implements Serializable {
 
 	public void buyShare(sellAction sellAction) {
 		if (sellAction.getOpVolume() * sellAction.getShare().getClosingPrice() < customer
-				.getPortfolio().getValue()) {
+				.getPortfolio().getValue() && sellAction.getOpVolume()>0) {
 			Operation operation = new Operation();
 			operation.setDateOperation(new Date());
 			operation.setNumberShares(sellAction.getOpVolume().intValue());
@@ -107,12 +108,17 @@ public class buyShareManagedBean implements Serializable {
 			this.opValue=sellAction.getOpVolume() * sellAction.getShare().getClosingPrice();
 			sellAction.setOpVolume(null);
 			setOpMessage(true);
+			setOpMessageErr(false);
 			try {
 				services.update(customer.getPortfolio());
 				profile.addOperation(operation);
 			} catch (Exception exception) {
 				exception.printStackTrace();
 			}
+		}
+		else {
+			setOpMessageErr(true);
+			setOpMessage(false);
 		}
 	}
 
@@ -138,6 +144,14 @@ public class buyShareManagedBean implements Serializable {
 
 	public void setOpValue(float opValue) {
 		this.opValue = opValue;
+	}
+
+	public boolean isOpMessageErr() {
+		return opMessageErr;
+	}
+
+	public void setOpMessageErr(boolean opMessageErr) {
+		this.opMessageErr = opMessageErr;
 	}
 
 }

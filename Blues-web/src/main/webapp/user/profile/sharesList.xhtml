@@ -66,6 +66,16 @@
 								#{buyShareManagedBean.customer.portfolio.value} TND</p>
 						</div>
 					</h:form>
+					<h:form rendered="#{buyShareManagedBean.opMessageErr}">
+						<div class="alert alert-danger alert-dismissible" role="alert">
+							<button type="button" class="close" data-dismiss="alert"
+								aria-label="Close">
+								<span aria-hidden="true" class="glyphicon glyphicon-remove"></span>
+							</button>
+							<strong>Operation failed :(</strong>
+							<p>Your Portfolio value don't allow you to make this operation!!</p>
+						</div>
+					</h:form>
 				</h:form>
 
 			</h:column>
